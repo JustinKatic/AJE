@@ -12,10 +12,15 @@ public class GunController : MonoBehaviour
     public float timeBetweenShots;
     private float shotCounter;
     public Transform firePoint;
+    private MovementJoystick _moveScript;
 
+    private void Start()
+    {
+        _moveScript = gameObject.GetComponent<MovementJoystick>();
+    }
     void Update()
     {
-        if (isFiring)
+        if (_moveScript._shooting)
         {
             shotCounter -= Time.deltaTime;
             if (shotCounter <= 0)
