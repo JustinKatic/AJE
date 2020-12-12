@@ -27,12 +27,13 @@ public class BulletController : MonoBehaviour
     { 
         if(collision.gameObject.tag == "Enemy")
         {
-            gameObject.SetActive(false);
+            SetUnActive();
             collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(_damage);
         }
 
         if (collision.gameObject.tag == "Wall")
         {
+            SetUnActive();
             gameObject.SetActive(false);
         }
     }   
@@ -40,6 +41,7 @@ public class BulletController : MonoBehaviour
     void SetUnActive()
     {
         gameObject.SetActive(false);
+        CancelInvoke();
     }    
     
   
