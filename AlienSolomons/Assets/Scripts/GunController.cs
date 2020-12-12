@@ -7,11 +7,11 @@ using UnityEngine;
 /// </summary>
 public class GunController : MonoBehaviour
 {
-    public bool isFiring;
+    public bool _isFiring;
 
-    public float timeBetweenShots;
-    private float shotCounter;
-    public Transform firePoint;
+    [SerializeField] float _timeBetweenShots;
+    private float _shotCounter;
+    [SerializeField] Transform _firePoint;
     private MovementJoystick _moveScript;
 
     private void Start()
@@ -22,13 +22,13 @@ public class GunController : MonoBehaviour
     {
         if (_moveScript._shooting)
         {
-            shotCounter -= Time.deltaTime;
-            if (shotCounter <= 0)
+            _shotCounter -= Time.deltaTime;
+            if (_shotCounter <= 0)
             {
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("PlayerBullet");
-                shotCounter = timeBetweenShots;
-                bullet.transform.position = firePoint.position;
-                bullet.transform.rotation = firePoint.transform.rotation;
+                _shotCounter = _timeBetweenShots;
+                bullet.transform.position = _firePoint.position;
+                bullet.transform.rotation = _firePoint.transform.rotation;
                 bullet.SetActive(true);
             }
         }

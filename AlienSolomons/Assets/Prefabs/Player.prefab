@@ -267,9 +267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bee21f9468bf7248ae9aa9e24a2e813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFiring: 0
-  timeBetweenShots: 0.2
-  firePoint: {fileID: 0}
+  _isFiring: 0
+  _timeBetweenShots: 0.2
+  _firePoint: {fileID: 1876099119856645368}
 --- !u!1 &1052458763509391800
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5322676826325322747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1052458762446774458}

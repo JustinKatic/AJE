@@ -7,16 +7,16 @@ public class ObjectPooler : MonoBehaviour
     [System.Serializable]
     public class ObjectPoolItem
     {
-        public int amountToPool;
-        public GameObject objectToPool;
-        public bool shouldExpand = true;
+        public int _amountToPool;
+        public GameObject _objectToPool;
+        public bool _shouldExpand = true;
     }
 
     public static ObjectPooler SharedInstance;
 
-    private List<GameObject> pooledObjects;
+    private List<GameObject> _pooledObjects;
 
-    public List<ObjectPoolItem> itemsToPool;
+    public List<ObjectPoolItem> _itemsToPool;
 
 
     private void Awake()
@@ -29,37 +29,37 @@ public class ObjectPooler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pooledObjects = new List<GameObject>();
+        _pooledObjects = new List<GameObject>();
 
-        foreach (ObjectPoolItem item in itemsToPool)
+        foreach (ObjectPoolItem item in _itemsToPool)
         {
-            for (int i = 0; i < item.amountToPool; i++)
+            for (int i = 0; i < item._amountToPool; i++)
             {
-                GameObject obj = (GameObject)Instantiate(item.objectToPool);
+                GameObject obj = (GameObject)Instantiate(item._objectToPool);
                 obj.SetActive(false);
-                pooledObjects.Add(obj);
+                _pooledObjects.Add(obj);
             }
         }
     }
 
     public GameObject GetPooledObject(string tag)
     {
-        for (int i = 0; i < pooledObjects.Count; i++)
+        for (int i = 0; i < _pooledObjects.Count; i++)
         {
-            if (!pooledObjects[i].activeInHierarchy && pooledObjects[i].tag == tag)
+            if (!_pooledObjects[i].activeInHierarchy && _pooledObjects[i].tag == tag)
             {
-                return pooledObjects[i];
+                return _pooledObjects[i];
             }
         }
-        foreach (ObjectPoolItem item in itemsToPool)
+        foreach (ObjectPoolItem item in _itemsToPool)
         {
-            if (item.objectToPool.tag == tag)
+            if (item._objectToPool.tag == tag)
             {
-                if (item.shouldExpand)
+                if (item._shouldExpand)
                 {
-                    GameObject obj = (GameObject)Instantiate(item.objectToPool);
+                    GameObject obj = (GameObject)Instantiate(item._objectToPool);
                     obj.SetActive(false);
-                    pooledObjects.Add(obj);
+                    _pooledObjects.Add(obj);
                     return obj;
                 }
             }

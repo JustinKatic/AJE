@@ -7,12 +7,19 @@ using UnityEngine;
 /// </summary>
 public class BulletController : MonoBehaviour
 {
-    public float speed;
+    [SerializeField] float _speed;
+    [SerializeField] float _bulletLife;
+
+
+    private void OnEnable()
+    {
+        Invoke("SetUnActive", _bulletLife);
+    }
 
     void Update()
     {
         //Move bullet forward
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -21,6 +28,12 @@ public class BulletController : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-    }
+    }   
 
+    void SetUnActive()
+    {
+        gameObject.SetActive(false);
+    }    
+    
+  
 }
