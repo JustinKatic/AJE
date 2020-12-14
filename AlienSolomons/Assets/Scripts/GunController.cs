@@ -12,11 +12,11 @@ public class GunController : MonoBehaviour
     [SerializeField] float _timeBetweenShots;
     private float _shotCounter;
     [SerializeField] Transform _firePoint;
-    private MovementJoystick _moveScript;
+    private GunMovement _moveScript;
 
     private void Start()
     {
-        _moveScript = gameObject.GetComponent<MovementJoystick>();
+        _moveScript = gameObject.GetComponent<GunMovement>();
     }
     void Update()
     {

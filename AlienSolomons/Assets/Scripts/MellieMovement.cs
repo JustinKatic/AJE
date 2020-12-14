@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementJoystick : MonoBehaviour
+public class MellieMovement : MonoBehaviour
 {
     [SerializeField] float _moveSpeed;
     [SerializeField] VirtualJoystick _moveJoystick;
