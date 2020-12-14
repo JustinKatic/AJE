@@ -22,7 +22,7 @@ public class MovementJoystick : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-       // _anim = GetComponentInChildren<Animator>();
+        _anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -43,8 +43,10 @@ public class MovementJoystick : MonoBehaviour
         if (_playerDirection.sqrMagnitude > 0.0f)
             transform.rotation = Quaternion.LookRotation(_playerDirection * Time.deltaTime, Vector3.up);
 
-        //if (_moveJoystick.InputDirection != Vector3.zero)
-        //    _anim.Play("Rifle Run");
+        if (_moveJoystick.InputDirection != Vector3.zero)
+            _anim.SetBool("IsRunning", true);
+        else
+            _anim.SetBool("IsRunning", false);
 
         if (_shootJoystick.InputDirection != Vector3.zero)
         {
