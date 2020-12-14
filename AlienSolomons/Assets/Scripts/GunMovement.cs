@@ -16,13 +16,13 @@ public class GunMovement : MonoBehaviour
     private Vector3 _moveVelocity;
     private Rigidbody _rb;
 
-    //Animator _anim;
+    Animator _anim;
 
 
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        // _anim = GetComponentInChildren<Animator>();
+        _anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -44,17 +44,13 @@ public class GunMovement : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(_playerDirection * Time.deltaTime, Vector3.up);
 
         if (_moveJoystick.InputDirection != Vector3.zero)
-        {
+            _anim.SetBool("IsRunning", true);
+        else
+            _anim.SetBool("IsRunning", false);
 
-        }
-        //    _anim.SetBool("IsRunning", true);
-        //else
-        //    _anim.SetBool("IsRunning", false);
 
-        if (_shootJoystick.InputDirection != Vector3.zero)
-        {
-            _shooting = true;
-        }
+        if (_shootJoystick.InputDirection != Vector3.zero)      
+            _shooting = true;       
         else
             _shooting = false;
     }
