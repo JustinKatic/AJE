@@ -1079,7 +1079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.5549171, y: 0, z: 0, w: 0.8319057}
-  m_LocalPosition: {x: -42.93, y: 23, z: 28.2}
+  m_LocalPosition: {x: -42.93, y: 20.08, z: 31.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1098,7 +1098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1312703984}
-  offset: {x: 0, y: 22, z: -9}
+  offset: {x: 0, y: 19.08, z: -6.1}
 --- !u!1 &983651449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,6 +2344,11 @@ PrefabInstance:
       propertyPath: _shootJoystick
       value: 
       objectReference: {fileID: 516969766}
+    - target: {fileID: 1052458762446774456, guid: fae770e3e175cfc44ba953e5b301f1c6,
+        type: 3}
+      propertyPath: _moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1052458763840665417, guid: fae770e3e175cfc44ba953e5b301f1c6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2413,6 +2418,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467828879968645479, guid: fae770e3e175cfc44ba953e5b301f1c6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467828879968645479, guid: fae770e3e175cfc44ba953e5b301f1c6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467828879968645479, guid: fae770e3e175cfc44ba953e5b301f1c6,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fae770e3e175cfc44ba953e5b301f1c6, type: 3}
