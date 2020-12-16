@@ -19,6 +19,7 @@ public class EnemyHealthManager : MonoBehaviour
             SetUnActive();
     }
 
+
     public void HurtEnemy(float damage)
     {
         _currentHealth -= damage;

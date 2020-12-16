@@ -24,8 +24,8 @@ public class BulletController : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    { 
-        if(collision.gameObject.tag == "Enemy")
+    {
+        if (collision.gameObject.tag == "Enemy")
         {
             SetUnActive();
             collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(_damage);
