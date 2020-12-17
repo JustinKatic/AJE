@@ -191,7 +191,7 @@ MonoBehaviour:
   - {fileID: 1390719595}
   _listOfEnemies:
   - {fileID: 2195095275369445426, guid: 1c603738e60458c41b258d82f91d2194, type: 3}
-  - {fileID: 8550611466304156086, guid: f0e72b1268fac6b47bbff40afc2d9f09, type: 3}
+  - {fileID: 4510174301315084257, guid: 587d0aef2b8323b43bd9e135a811eb86, type: 3}
   - {fileID: 3557938079552038670, guid: bc74962114ad4574a87ee53e1da1696c, type: 3}
 --- !u!1 &151502471
 GameObject:
@@ -2419,6 +2419,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406266903902202111, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406266903902202111, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 4653675418608558826, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
