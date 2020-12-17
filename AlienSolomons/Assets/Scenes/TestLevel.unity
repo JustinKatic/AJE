@@ -1079,7 +1079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.5549171, y: 0, z: 0, w: 0.8319057}
-  m_LocalPosition: {x: -42.93, y: 19.08, z: 31.1}
+  m_LocalPosition: {x: -42.93, y: 20.08, z: 31.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2335,6 +2335,11 @@ PrefabInstance:
       propertyPath: _shootJoystick
       value: 
       objectReference: {fileID: 516969766}
+    - target: {fileID: 2558695775705105432, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2675361471369286829, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
       propertyPath: m_Center.x
@@ -2440,6 +2445,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerModel
       objectReference: {fileID: 0}
+    - target: {fileID: 5702156430824435240, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8024430942955482010, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
       propertyPath: maxHealth
@@ -2450,6 +2460,11 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 5416434505503529724}
+    - target: {fileID: 8442734559109722451, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d23263cb0bec14241938b115ad05a3f9, type: 3}
 --- !u!114 &5416434505503529724 stripped

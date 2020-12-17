@@ -42,7 +42,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e5b08ac55b3e34f91d640a048852b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBetweenShots: 0.3
+  _timeBetweenShots: 1
   _firePoint: {fileID: 3269454935677810673}
 --- !u!1001 &6164518041845033842
 PrefabInstance:
@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: 6067840610563444101, guid: acc0e2bc80b66cf4daaff674f779e17f,
         type: 3}
       propertyPath: _damageEveryX
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6067840610563444101, guid: acc0e2bc80b66cf4daaff674f779e17f,
         type: 3}
