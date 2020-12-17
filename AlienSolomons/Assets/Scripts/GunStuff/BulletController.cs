@@ -10,7 +10,13 @@ public class BulletController : MonoBehaviour
     [SerializeField] float _speed;
     [SerializeField] float _bulletLife;
     [SerializeField] float _damage;
+    PlayerHealthManager _playerHealth;
 
+
+    private void Start()
+    {
+        _playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealthManager>();
+    }
 
     private void OnEnable()
     {
@@ -25,10 +31,10 @@ public class BulletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Player")
         {
             SetUnActive();
-            collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(_damage);
+            _playerHealth.HurtPlayer(_damage);
         }
 
         if (collision.gameObject.tag == "Wall")
