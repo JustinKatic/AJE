@@ -5,13 +5,26 @@ using UnityEngine.AI;
 
 public class TerraformSlow : MonoBehaviour
 {
-    [SerializeField] float speedReduction;
+    [SerializeField] float _slowedSpeed;
 
+    private float _defaultSpeed;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+            _defaultSpeed = other.GetComponent<NavMeshAgent>().speed;
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<NavMeshAgent>().speed *= speedReduction;
+            other.gameObject.GetComponent<NavMeshAgent>().speed = _slowedSpeed;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+            other.gameObject.GetComponent<NavMeshAgent>().speed = _defaultSpeed;
     }
 }
