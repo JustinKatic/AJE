@@ -14,7 +14,7 @@ public class TerraformSlow : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             _defaultSpeed = other.GetComponent<NavMeshAgent>().speed;
-            other.gameObject.GetComponent<NavMeshAgent>().speed = _slowedSpeed;
+            other.gameObject.GetComponent<NavMeshAgent>().speed = other.gameObject.GetComponent<NavMeshAgent>().speed -= _slowedSpeed;
         }
     }
 
