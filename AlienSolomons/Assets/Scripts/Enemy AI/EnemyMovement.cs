@@ -8,10 +8,13 @@ public class EnemyMovement : MonoBehaviour
 {
     Transform destination;
     NavMeshAgent navMeshAgent;
+    GameObject player;
+
 
     void Start()
     {
         destination = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
         navMeshAgent = GetComponent<NavMeshAgent>();
 
         if (navMeshAgent == null)
@@ -23,5 +26,15 @@ public class EnemyMovement : MonoBehaviour
     private void Update()
     {
         navMeshAgent.SetDestination(destination.position);      
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject == player)
+            navMeshAgent.isStopped = true;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject == player)
+            navMeshAgent.isStopped = false;
     }
 }
