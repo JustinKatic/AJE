@@ -27,22 +27,41 @@ public class TerraformSlow : MonoBehaviour
     }
 
 
-    private void OnTriggerStay(Collider other)
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Enemy1" || other.gameObject.tag == "Enemy2" || other.gameObject.tag == "Enemy3" || other.gameObject.tag == "EnemyRanged")
+    //    {
+    //        EnemyMovement enemyMovement = other.gameObject.GetComponent<EnemyMovement>();
+    //        enemyMovement.SetEnemyMoveSpeed(1.5f);
+    //    }
+    //}
+
+    private void OnTriggerEnter(Collider other)
     {
+        if (!enabled)
+            return;
+
         if (other.gameObject.tag == "Enemy1" || other.gameObject.tag == "Enemy2" || other.gameObject.tag == "Enemy3" || other.gameObject.tag == "EnemyRanged")
         {
             EnemyMovement enemyMovement = other.gameObject.GetComponent<EnemyMovement>();
-            enemyMovement.SetEnemyMoveSpeed(1.5f);
+            if (enemyMovement.GetEnemyMoveSpeed() <= 1.5f)
+                return;
+            else
+                enemyMovement.SetEnemyMoveSpeed(1.5f);
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
+        if (!enabled)
+            return;
+
         if (other.gameObject.tag == "Enemy1" || other.gameObject.tag == "Enemy2" ||
             other.gameObject.tag == "Enemy3" || other.gameObject.tag == "EnemyRanged")
         {
+
             EnemyMovement enemyMovement = other.gameObject.GetComponent<EnemyMovement>();
             enemyMovement.SetEnemyMoveSpeed(enemyMovement._defaultMoveSpeed);
         }
     }
+
 }

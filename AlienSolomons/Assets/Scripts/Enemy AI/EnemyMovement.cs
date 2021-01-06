@@ -72,4 +72,9 @@ public class EnemyMovement : MonoBehaviour
         if (navMeshAgent != null)
             navMeshAgent.speed = enemyMoveSpeed;
     }
+
+    public float GetEnemyMoveSpeed()
+    {
+        return navMeshAgent.speed;
+    }
 }
