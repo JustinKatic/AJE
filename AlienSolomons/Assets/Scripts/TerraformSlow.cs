@@ -7,21 +7,36 @@ public class TerraformSlow : MonoBehaviour
 {
     [SerializeField] float _slowedSpeed;
 
-    private float _defaultSpeed;
+    [SerializeField] Material _slowMat;
+
+    private Material _defaultMat;
+
+
+    private void Awake()
+    {
+        _defaultMat = gameObject.GetComponent<MeshRenderer>().material;
+    }
+
+    private void OnEnable()
+    {
+        gameObject.GetComponent<MeshRenderer>().material = _slowMat;
+    }
+    private void OnDisable()
+    {
+        gameObject.GetComponent<MeshRenderer>().material = _defaultMat;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            _defaultSpeed = other.GetComponent<NavMeshAgent>().speed;
-            other.gameObject.GetComponent<NavMeshAgent>().speed = other.gameObject.GetComponent<NavMeshAgent>().speed -= _slowedSpeed;
+            other.gameObject.GetComponent<NavMeshAgent>().speed -= _slowedSpeed;
         }
     }
-
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
-            other.gameObject.GetComponent<NavMeshAgent>().speed = _defaultSpeed;
+            other.gameObject.GetComponent<NavMeshAgent>().speed += _slowedSpeed;
     }
 }

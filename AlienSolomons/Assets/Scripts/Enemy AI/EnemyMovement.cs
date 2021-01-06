@@ -10,7 +10,6 @@ public class EnemyMovement : MonoBehaviour
     NavMeshAgent navMeshAgent;
     GameObject player;
 
-
     void Start()
     {
         destination = GameObject.FindGameObjectWithTag("Player").transform;
@@ -23,9 +22,10 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+
     private void Update()
     {
-        navMeshAgent.SetDestination(destination.position);      
+        navMeshAgent.SetDestination(destination.position);
     }
     private void OnCollisionEnter(Collision collision)
     {

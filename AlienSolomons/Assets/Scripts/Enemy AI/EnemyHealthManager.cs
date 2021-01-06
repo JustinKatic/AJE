@@ -7,16 +7,10 @@ public class EnemyHealthManager : MonoBehaviour
 {
     [SerializeField] float _maxHealth;
     private float _currentHealth;
-    //NavMeshAgent navMeshAgent;
-    //PlayerHurt hurtScript;
-    //EnemyMovement moveScript;
     public HealthBar healthBar;
 
     private void Start()
     {
-        //navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
-        //hurtScript = gameObject.GetComponent<PlayerHurt>();
-        //moveScript = gameObject.GetComponent<EnemyMovement>();
     }
 
     private void OnEnable()

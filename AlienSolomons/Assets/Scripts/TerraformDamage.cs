@@ -8,6 +8,24 @@ public class TerraformDamage : MonoBehaviour
     float _timer;
     [SerializeField] float _damage;
 
+    [SerializeField] Material _DOTMat;
+    private Material _defaultMat;
+
+
+    private void Awake()
+    {
+        _defaultMat = gameObject.GetComponent<MeshRenderer>().material;
+    }
+
+    private void OnEnable()
+    {
+        gameObject.GetComponent<MeshRenderer>().material = _DOTMat;
+    }
+    private void OnDisable()
+    {
+        gameObject.GetComponent<MeshRenderer>().material = _defaultMat;
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
