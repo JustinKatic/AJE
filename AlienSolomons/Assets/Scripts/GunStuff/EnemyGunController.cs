@@ -7,11 +7,11 @@ public class EnemyGunController : MonoBehaviour
     [SerializeField] float _timeBetweenShots;
     private float _shotCounter;
     [SerializeField] Transform _firePoint;
-    private EnemyRangedMove _moveScript;
+    private EnemyMovement _moveScript;
 
     private void Start()
     {
-        _moveScript = gameObject.GetComponent<EnemyRangedMove>();
+        _moveScript = gameObject.GetComponent<EnemyMovement>();
     }
     void Update()
     {
@@ -20,7 +20,7 @@ public class EnemyGunController : MonoBehaviour
             _shotCounter -= Time.deltaTime;
             if (_shotCounter <= 0)
             {
-                GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("PlayerBullet");
+                GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("EnemyBullet");
                 _shotCounter = _timeBetweenShots;
                 bullet.transform.position = _firePoint.position;
                 bullet.transform.rotation = _firePoint.transform.rotation;

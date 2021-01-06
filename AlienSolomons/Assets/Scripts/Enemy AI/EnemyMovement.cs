@@ -7,8 +7,14 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 {
     Transform destination;
-    NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
     GameObject player;
+    public float _defaultMoveSpeed;
+
+    [SerializeField] float _range;
+    public bool _shooting;
+
+
 
     void Start()
     {
@@ -23,10 +29,33 @@ public class EnemyMovement : MonoBehaviour
     }
 
 
+    private void OnDisable()
+    {
+        SetEnemyMoveSpeed(_defaultMoveSpeed);
+    }
+
     private void Update()
     {
-        navMeshAgent.SetDestination(destination.position);
+        if (gameObject.tag == "Enemy1" || gameObject.tag == "Enemy2" || gameObject.tag == "Enemy3")
+            navMeshAgent.SetDestination(destination.position);
+        else if (gameObject.tag == "EnemyRanged")
+        {
+            float dist = Vector3.Distance(transform.position, player.transform.position);
+            if (dist > _range)
+            {
+                navMeshAgent.isStopped = false;
+                _shooting = false;
+                navMeshAgent.SetDestination(destination.position);
+            }
+            else
+            {
+                navMeshAgent.isStopped = true;
+                _shooting = true;
+                transform.LookAt(player.transform);
+            }
+        }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject == player)
@@ -36,5 +65,11 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject == player)
             navMeshAgent.isStopped = false;
+    }
+
+    public void SetEnemyMoveSpeed(float enemyMoveSpeed)
+    {
+        if (navMeshAgent != null)
+            navMeshAgent.speed = enemyMoveSpeed;
     }
 }

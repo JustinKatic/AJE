@@ -28,7 +28,8 @@ public class TerraformDamage : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy1" || other.gameObject.tag == "Enemy2" ||
+            other.gameObject.tag == "Enemy3" || other.gameObject.tag == "EnemyRanged")
         {
             _timer += Time.deltaTime;
             if (_timer > _damageEveryX)
