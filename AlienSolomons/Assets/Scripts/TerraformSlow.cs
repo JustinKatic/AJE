@@ -44,10 +44,10 @@ public class TerraformSlow : MonoBehaviour
         if (other.gameObject.tag == "Enemy1" || other.gameObject.tag == "Enemy2" || other.gameObject.tag == "Enemy3" || other.gameObject.tag == "EnemyRanged")
         {
             EnemyMovement enemyMovement = other.gameObject.GetComponent<EnemyMovement>();
-            if (enemyMovement.GetEnemyMoveSpeed() <= 1.5f)
+            if (enemyMovement.GetEnemyMoveSpeed() <= enemyMovement._defaultMoveSpeed - _slowedSpeed)
                 return;
             else
-                enemyMovement.SetEnemyMoveSpeed(1.5f);
+                enemyMovement.SetEnemyMoveSpeed(enemyMovement._defaultMoveSpeed - _slowedSpeed);
         }
     }
     private void OnTriggerExit(Collider other)
