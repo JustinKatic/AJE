@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8706491132849282179}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: -3717838673459331762}
   - component: {fileID: 5483322456190262183}
   - component: {fileID: -1264221554999887665}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy2
   m_TagString: Enemy2
   m_Icon: {fileID: 0}
@@ -225,6 +225,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyHealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 770455883235892101, guid: 49123db2f35569c42857aec1d39e73a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2696857272211027578, guid: 49123db2f35569c42857aec1d39e73a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -330,6 +335,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8173431261703399530, guid: 49123db2f35569c42857aec1d39e73a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8173431261703399531, guid: 49123db2f35569c42857aec1d39e73a9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -339,6 +349,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173431262759028592, guid: 49123db2f35569c42857aec1d39e73a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173431262923567262, guid: 49123db2f35569c42857aec1d39e73a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49123db2f35569c42857aec1d39e73a9, type: 3}
