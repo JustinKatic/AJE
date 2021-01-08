@@ -19,6 +19,9 @@ public class WaveSpawner : MonoBehaviour
 
     public Wave[] waves;
     private int nextWave = 0;
+    private UpgradeManager _upgradeManager;
+
+
     public int NextWave
     {
         get { return nextWave + 1; }
@@ -41,8 +44,12 @@ public class WaveSpawner : MonoBehaviour
         get { return state; }
     }
 
+
+
     void Start()
     {
+        _upgradeManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<UpgradeManager>();
+
         if (spawnPoints.Length == 0)
         {
             Debug.LogError("No spawn points referenced.");
@@ -50,12 +57,15 @@ public class WaveSpawner : MonoBehaviour
         waveCountdown = timeBetweenWaves;
     }
 
+
+
     void Update()
     {
         if (state == SpawnState.WAITING)
         {
             if (!EnemyIsAlive())
             {
+                _upgradeManager.DisplayUpgradeScreen();
                 WaveCompleted();
             }
             else
@@ -76,6 +86,9 @@ public class WaveSpawner : MonoBehaviour
             waveCountdown -= Time.deltaTime;
         }
     }
+
+
+
 
     void WaveCompleted()
     {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1417617560444277822}
   - component: {fileID: 1417617560444277823}
   - component: {fileID: -7158612986896830846}
+  - component: {fileID: 1198577432277351787}
   m_Layer: 0
   m_Name: TerraformSlow
   m_TagString: Untagged
@@ -116,7 +117,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417617560444277820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: deebb7e3a7d7c1d4a95b28d50c9cda77, type: 3}
   m_Name: 
@@ -124,3 +125,15 @@ MonoBehaviour:
   _damageEveryX: 0.5
   _damage: 1
   _DOTMat: {fileID: 2100000, guid: 5a26de236ce89e94b963be8fa2b7ade6, type: 2}
+--- !u!114 &1198577432277351787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417617560444277820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2418771be212164fb9acd0c223adcf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
