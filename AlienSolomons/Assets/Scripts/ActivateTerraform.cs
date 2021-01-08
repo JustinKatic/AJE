@@ -42,4 +42,5 @@ public class ActivateTerraform : MonoBehaviour
         TerraformManager.terraformDamageChosen = false;
         TerraformManager.terraformNoOptionSlected = true;
     }
+
 }

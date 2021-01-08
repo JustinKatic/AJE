@@ -15,11 +15,14 @@ public class WaveSpawner : MonoBehaviour
         public Transform[] enemy;
         public int count;
         public float rate;
+        public float waveTimer;
     }
 
     public Wave[] waves;
     private int nextWave = 0;
     private UpgradeManager _upgradeManager;
+
+    public static int _enemyCount;
 
 
     public int NextWave
@@ -38,12 +41,13 @@ public class WaveSpawner : MonoBehaviour
 
     private float searchCountdown = 1f;
 
+    [SerializeField] float waveLengthx;
+
     private SpawnState state = SpawnState.COUNTING;
     public SpawnState State
     {
         get { return state; }
     }
-
 
 
     void Start()
@@ -57,13 +61,11 @@ public class WaveSpawner : MonoBehaviour
         waveCountdown = timeBetweenWaves;
     }
 
-
-
     void Update()
     {
         if (state == SpawnState.WAITING)
         {
-            if (!EnemyIsAlive())
+            if (StartNextWave())
             {
                 _upgradeManager.DisplayUpgradeScreen();
                 WaveCompleted();
@@ -88,8 +90,6 @@ public class WaveSpawner : MonoBehaviour
     }
 
 
-
-
     void WaveCompleted()
     {
         state = SpawnState.COUNTING;
@@ -105,19 +105,25 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    bool EnemyIsAlive()
+    bool StartNextWave()
     {
+        waves[NextWave - 1].waveTimer -= Time.deltaTime;
         searchCountdown -= Time.deltaTime;
         if (searchCountdown <= 0f)
         {
             searchCountdown = 1f;
-            if (GameObject.FindGameObjectWithTag("Enemy1") == null && GameObject.FindGameObjectWithTag("Enemy2") == null &&
-                GameObject.FindGameObjectWithTag("Enemy3") == null && GameObject.FindGameObjectWithTag("EnemyRanged") == null)
+
+            if (waves[NextWave - 1].waveTimer <= 0f)
             {
-                return false;
+                return true;
+            }
+
+            if (_enemyCount <= 5)
+            {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     IEnumerator SpawnWave(Wave _wave)
@@ -145,7 +151,7 @@ public class WaveSpawner : MonoBehaviour
             enemy.transform.position = _sp.position;
             enemy.transform.rotation = _sp.rotation;
             enemy.SetActive(true);
+            _enemyCount += 1;
         }
     }
-
 }

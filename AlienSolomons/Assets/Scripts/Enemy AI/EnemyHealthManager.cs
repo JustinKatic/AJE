@@ -11,6 +11,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     private void Start()
     {
+
     }
 
     private void OnEnable()
@@ -34,6 +35,11 @@ public class EnemyHealthManager : MonoBehaviour
 
     void Die()
     {
+        GameObject _currency = ObjectPooler.SharedInstance.GetPooledObject("Currency");
+        _currency.transform.position = gameObject.transform.position;
+        _currency.transform.rotation = gameObject.transform.rotation;
+        _currency.SetActive(true);
         gameObject.SetActive(false);
+        WaveSpawner._enemyCount -= 1;
     }
 }
