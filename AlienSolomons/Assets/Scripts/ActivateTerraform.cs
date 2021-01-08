@@ -13,7 +13,7 @@ public class ActivateTerraform : MonoBehaviour
         _upgradeManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<UpgradeManager>();
     }
 
-    private void OnMouseDown()
+    private void OnMouseUpAsButton()
     {
         if (_areaAlreadyTerraformed || TerraformManager.terraformNoOptionSlected)
             return;
@@ -34,7 +34,6 @@ public class ActivateTerraform : MonoBehaviour
 
         _areaAlreadyTerraformed = true;
     }
-
 
 
     private void SetTerraformNoOptionSlectedTrue()
