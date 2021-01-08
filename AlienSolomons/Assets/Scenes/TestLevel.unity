@@ -353,6 +353,10 @@ MonoBehaviour:
     _objectToPool: {fileID: 4510174301315084257, guid: 587d0aef2b8323b43bd9e135a811eb86,
       type: 3}
     _shouldExpand: 1
+  - _amountToPool: 100
+    _objectToPool: {fileID: 3073873668182861164, guid: a22eb0a6e5e56de438db43e365627b6f,
+      type: 3}
+    _shouldExpand: 1
 --- !u!4 &118273098
 Transform:
   m_ObjectHideFlags: 0
@@ -8036,6 +8040,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _damage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653675418608558826, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4889651086076798179, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
