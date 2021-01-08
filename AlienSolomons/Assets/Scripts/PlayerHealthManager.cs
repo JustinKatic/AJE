@@ -12,6 +12,7 @@ public class PlayerHealthManager : MonoBehaviour
     public float currentHealth;
 
     public HealthBar healthBar;
+    public GameObject defeatScreen;
 
 
     void Start()
@@ -25,6 +26,7 @@ public class PlayerHealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
+            defeatScreen.SetActive(true);
         }
 
         if (currentHealth > maxHealth)

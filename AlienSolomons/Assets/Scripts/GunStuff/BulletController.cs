@@ -37,6 +37,12 @@ public class BulletController : MonoBehaviour
             _playerHealth.HurtPlayer(_damage);
         }
 
+        if (collision.gameObject.layer == 10)
+        {
+            SetUnActive();
+            collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(_damage);
+        }
+
         if (collision.gameObject.tag == "Wall")
         {
             SetUnActive();

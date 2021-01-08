@@ -49,6 +49,7 @@ public class WaveSpawner : MonoBehaviour
         get { return state; }
     }
 
+    public GameObject victoryScreen;
 
     void Start()
     {
@@ -98,6 +99,7 @@ public class WaveSpawner : MonoBehaviour
         if (nextWave + 1 > waves.Length - 1)
         {
             nextWave = 0;
+            victoryScreen.SetActive(true);
         }
         else
         {
