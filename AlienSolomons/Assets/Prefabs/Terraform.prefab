@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7158612986896830846}
   - component: {fileID: 1198577432277351787}
   m_Layer: 0
-  m_Name: TerraformSlow
+  m_Name: Terraform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageEveryX: 0.5
-  _damage: 1
+  _damage: 0.1
   _DOTMat: {fileID: 2100000, guid: 5a26de236ce89e94b963be8fa2b7ade6, type: 2}
 --- !u!114 &1198577432277351787
 MonoBehaviour:

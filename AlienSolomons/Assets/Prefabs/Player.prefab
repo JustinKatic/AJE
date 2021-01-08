@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 2527591339606114002}
   - component: {fileID: 8024430942955482010}
   - component: {fileID: 4653675418608558826}
-  - component: {fileID: 2454017657190475299}
+  - component: {fileID: 1459776078572764158}
   - component: {fileID: 5702156430824435240}
   - component: {fileID: 4406266903902202111}
   m_Layer: 0
@@ -314,14 +314,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3529250733269334337}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50a8385086c53b644a4373d7238be4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _damageEveryX: 0.2
   _damage: 1
---- !u!114 &2454017657190475299
+--- !u!114 &1459776078572764158
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -334,8 +334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFiring: 0
-  _timeBetweenShots: 0.5
-  _firePoint: {fileID: 650535956692251137}
+  _timeBetweenShots: 0
+  _firePoint: {fileID: 0}
 --- !u!136 &5702156430824435240
 CapsuleCollider:
   m_ObjectHideFlags: 0
