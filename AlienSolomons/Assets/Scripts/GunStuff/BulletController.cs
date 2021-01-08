@@ -13,8 +13,8 @@ public class BulletController : MonoBehaviour
     PlayerHealthManager _playerHealth;
 
 
-    private void Start()
-    {
+    private void Awake()
+    {       
         _playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealthManager>();
     }
 
