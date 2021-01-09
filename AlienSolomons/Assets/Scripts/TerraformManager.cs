@@ -8,8 +8,6 @@ public class TerraformManager : MonoBehaviour
     public static bool terraformSlowChosen = false;
     public static bool terraformDamageChosen = false;
 
-
-
     public void TerraformSlowChosen()
     {
         terraformSlowChosen = true;

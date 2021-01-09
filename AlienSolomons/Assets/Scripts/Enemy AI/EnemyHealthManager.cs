@@ -13,7 +13,7 @@ public class EnemyHealthManager : MonoBehaviour
     
     private void Start()
     {
-        _playerExp = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerExpManager>();
+        _playerExp = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PlayerExpManager>();
     }
 
     private void OnEnable()

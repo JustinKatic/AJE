@@ -10,13 +10,12 @@ public class PlayerExpManager : MonoBehaviour
     public ExpBar expBar;
     [SerializeField] float _expModifier;
 
-    private UpgradeManager _upgradeManager;
+    [SerializeField] GameObject _terraformCam;
+    [SerializeField] GameObject _playerUpgradePanel;
 
 
     void Start()
     {
-        _upgradeManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<UpgradeManager>();
-
         maxExp = GameStats.instance.level1ExpNeeded;
         expBar.SetMaxExp(maxExp);
         GameStats.instance._currentExpNeededForLevel = maxExp;
@@ -28,19 +27,26 @@ public class PlayerExpManager : MonoBehaviour
     {
         if (currentExp >= maxExp)
         {
-            _upgradeManager.DisplayUpgradeScreen();
+            DisplayUpgradeScreen();
             GameStats.instance._playerLevel++;
             currentExp = 0;
             maxExp = maxExp + (maxExp * _expModifier);
             GameStats.instance._currentExpNeededForLevel = maxExp;
             expBar.SetMaxExp(maxExp);
             expBar.SetExp(currentExp);
-        }        
+        }
     }
 
     public void AddExp(float Exp)
     {
         currentExp += Exp;
         expBar.SetExp(currentExp);
+    }
+
+    private void DisplayUpgradeScreen()
+    {
+        GameStateManager.PauseGame();
+        _terraformCam.SetActive(true);
+        _playerUpgradePanel.SetActive(true);
     }
 }

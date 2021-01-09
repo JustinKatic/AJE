@@ -22,7 +22,7 @@ public class GameStats : MonoBehaviour
     [Header("Player Bullet stats")]
     public float _playerBulletSpeed;
     public float _playerBulletDmg;
-    public float _GunTimeBetweenShots;
+    public float _playerFireRate;
 
     private void Awake()
     {

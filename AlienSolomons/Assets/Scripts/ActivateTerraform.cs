@@ -5,12 +5,10 @@ using UnityEngine;
 public class ActivateTerraform : MonoBehaviour
 {
     private bool _areaAlreadyTerraformed;
-
-    UpgradeManager _upgradeManager;
+    [SerializeField] GameObject terraformCam;
 
     private void Start()
     {
-        _upgradeManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<UpgradeManager>();
     }
 
     private void OnMouseUpAsButton()
@@ -22,16 +20,17 @@ public class ActivateTerraform : MonoBehaviour
         {
             gameObject.GetComponent<TerraformSlow>().enabled = true;
             SetTerraformNoOptionSlectedTrue();
-            _upgradeManager.DisplayUpgradeScreen();
+            terraformCam.SetActive(false);
+            GameStateManager.ResumeGame();
         }
 
         else if (TerraformManager.terraformDamageChosen)
         {
             gameObject.GetComponent<TerraformDamage>().enabled = true;
             SetTerraformNoOptionSlectedTrue();
-            _upgradeManager.DisplayUpgradeScreen();
+            terraformCam.SetActive(false);
+            GameStateManager.ResumeGame();
         }
-
         _areaAlreadyTerraformed = true;
     }
 
