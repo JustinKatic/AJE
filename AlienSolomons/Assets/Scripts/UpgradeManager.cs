@@ -7,6 +7,8 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] GameObject _upgradePanel;
     [SerializeField] GameObject _terraformCam;
 
+    public static float _currency = 0;
+
 
     GameStateManager gameStateManager;
 
@@ -27,4 +29,6 @@ public class UpgradeManager : MonoBehaviour
         gameStateManager.ResumeGame();
         _upgradePanel.SetActive(false);
     }
+
+
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class HealthBar : MonoBehaviour
+public class ExpBar : MonoBehaviour
 {
     public Slider slider;
 
@@ -12,18 +12,14 @@ public class HealthBar : MonoBehaviour
     public Image fill;
 
 
-    public void SetMaxHealth(float health)
+    public void SetMaxExp(float exp)
     {
-        slider.maxValue = health;
-        slider.value = health;
-
-        fill.color = gradient.Evaluate(1f);
+        slider.maxValue = exp;
     }
 
-    public void SetHealth(float health)
+    public void SetExp(float exp)
     {
-        slider.value = health;
-
+        slider.value = exp;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 }

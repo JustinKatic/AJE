@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 2558695775705105432}
   - component: {fileID: 2527591339606114002}
   - component: {fileID: 8024430942955482010}
-  - component: {fileID: 4653675418608558826}
+  - component: {fileID: 5889555424334456631}
   - component: {fileID: 1459776078572764158}
   - component: {fileID: 5702156430824435240}
   - component: {fileID: 4406266903902202111}
@@ -303,24 +303,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4298603815eac44294dfb6348579c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
   healthBar: {fileID: 0}
   defeatScreen: {fileID: 0}
---- !u!114 &4653675418608558826
+--- !u!114 &5889555424334456631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3529250733269334337}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50a8385086c53b644a4373d7238be4a3, type: 3}
+  m_Script: {fileID: 11500000, guid: c7cf92a1c733fea4ea3e52eb909bdd22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageEveryX: 0.2
-  _damage: 1
 --- !u!114 &1459776078572764158
 MonoBehaviour:
   m_ObjectHideFlags: 0

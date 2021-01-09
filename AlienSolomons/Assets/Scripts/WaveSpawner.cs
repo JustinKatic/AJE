@@ -20,7 +20,6 @@ public class WaveSpawner : MonoBehaviour
 
     public Wave[] waves;
     private int nextWave = 0;
-    private UpgradeManager _upgradeManager;
 
     public static int _enemyCount;
 
@@ -49,11 +48,9 @@ public class WaveSpawner : MonoBehaviour
         get { return state; }
     }
 
-    public GameObject victoryScreen;
 
     void Start()
     {
-        _upgradeManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<UpgradeManager>();
 
         if (spawnPoints.Length == 0)
         {
@@ -68,7 +65,6 @@ public class WaveSpawner : MonoBehaviour
         {
             if (StartNextWave())
             {
-                _upgradeManager.DisplayUpgradeScreen();
                 WaveCompleted();
             }
             else
@@ -99,7 +95,6 @@ public class WaveSpawner : MonoBehaviour
         if (nextWave + 1 > waves.Length - 1)
         {
             nextWave = 0;
-            victoryScreen.SetActive(true);
         }
         else
         {

@@ -8,10 +8,12 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField] float _maxHealth;
     private float _currentHealth;
     public HealthBar healthBar;
-
+    [SerializeField] float _enemyExpWorth;
+    PlayerExpManager _playerExp;
+    
     private void Start()
     {
-
+        _playerExp = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerExpManager>();
     }
 
     private void OnEnable()
@@ -40,6 +42,7 @@ public class EnemyHealthManager : MonoBehaviour
         _currency.transform.rotation = gameObject.transform.rotation;
         _currency.SetActive(true);
         gameObject.SetActive(false);
+        _playerExp.AddExp(_enemyExpWorth);
         WaveSpawner._enemyCount -= 1;
     }
 }

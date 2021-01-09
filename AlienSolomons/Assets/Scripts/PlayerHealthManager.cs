@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class PlayerHealthManager : MonoBehaviour
 {
-    public float maxHealth;
-    public float currentHealth;
+    private float maxHealth;
+    private float currentHealth;
 
     public HealthBar healthBar;
     public GameObject defeatScreen;
@@ -17,6 +17,7 @@ public class PlayerHealthManager : MonoBehaviour
 
     void Start()
     {
+        maxHealth = GameStats.instance._playerMaxHealth;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }

@@ -56,6 +56,16 @@ public class PlayerMove : MonoBehaviour
             _shooting = false;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Currency")
+        {
+            Debug.Log("CURRENCY");
+            GameStats.instance._currency += 1;
+            other.gameObject.SetActive(false);
+        }
+    }
+
     private void FixedUpdate()
     {
         //add velocity to player
