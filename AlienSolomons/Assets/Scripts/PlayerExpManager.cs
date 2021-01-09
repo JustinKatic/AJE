@@ -17,8 +17,9 @@ public class PlayerExpManager : MonoBehaviour
     {
         _upgradeManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<UpgradeManager>();
 
-        maxExp = GameStats.instance._maxExp;
+        maxExp = GameStats.instance.level1ExpNeeded;
         expBar.SetMaxExp(maxExp);
+        GameStats.instance._currentExpNeededForLevel = maxExp;
         currentExp = GameStats.instance._playerExp;
         expBar.SetExp(currentExp);
     }
@@ -31,6 +32,7 @@ public class PlayerExpManager : MonoBehaviour
             GameStats.instance._playerLevel++;
             currentExp = 0;
             maxExp = maxExp + (maxExp * _expModifier);
+            GameStats.instance._currentExpNeededForLevel = maxExp;
             expBar.SetMaxExp(maxExp);
             expBar.SetExp(currentExp);
         }        

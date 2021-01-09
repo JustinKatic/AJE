@@ -9,7 +9,6 @@ public class GunController : MonoBehaviour
 {
     public bool _isFiring;
 
-    [SerializeField] float _timeBetweenShots;
     private float _shotCounter;
     [SerializeField] Transform _firePoint;
     private PlayerMove _moveScript;
@@ -26,7 +25,7 @@ public class GunController : MonoBehaviour
             if (_shotCounter <= 0)
             {
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("PlayerBullet");
-                _shotCounter = _timeBetweenShots;
+                _shotCounter = GameStats.instance._GunTimeBetweenShots;
                 bullet.transform.position = _firePoint.position;
                 bullet.transform.rotation = _firePoint.transform.rotation;
                 bullet.SetActive(true);

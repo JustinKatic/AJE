@@ -43,6 +43,7 @@ public class EnemyHealthManager : MonoBehaviour
         _currency.SetActive(true);
         gameObject.SetActive(false);
         _playerExp.AddExp(_enemyExpWorth);
+        GameStats.instance._playerExp += _enemyExpWorth;
         WaveSpawner._enemyCount -= 1;
     }
 }

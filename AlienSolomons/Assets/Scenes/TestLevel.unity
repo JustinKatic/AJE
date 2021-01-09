@@ -5354,9 +5354,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currency: 0
   _playerExp: 0
-  _playerMaxHealth: 100
-  _maxExp: 10
   _playerLevel: 1
+  _currentExpNeededForLevel: 0
+  _playerMaxHealth: 100
+  level1ExpNeeded: 10
+  _playerBulletSpeed: 15
+  _playerBulletDmg: 1
+  _GunTimeBetweenShots: 0.2
 --- !u!4 &1577221963
 Transform:
   m_ObjectHideFlags: 0
@@ -8110,7 +8114,7 @@ PrefabInstance:
     - target: {fileID: 1459776078572764158, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
       propertyPath: _timeBetweenShots
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1459776078572764158, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
