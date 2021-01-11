@@ -6,7 +6,6 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] float _moveSpeed;
     [SerializeField] VirtualJoystick _moveJoystick;
-    [SerializeField] VirtualJoystick _shootJoystick;
 
     public bool _shooting;
 
@@ -37,23 +36,23 @@ public class PlayerMove : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(_playerDirection * Time.deltaTime, Vector3.up);
 
 
-        Vector3 rightStickRot = _shootJoystick.InputDirection;
-        _playerDirection = Vector3.right * rightStickRot.x + Vector3.forward * rightStickRot.z;
-        // returns 1 if any rotation is being inputed from right joystick
-        if (_playerDirection.sqrMagnitude > 0.0f)
-            transform.rotation = Quaternion.LookRotation(_playerDirection * Time.deltaTime, Vector3.up);
+        //Vector3 rightStickRot = _shootJoystick.InputDirection;
+        //_playerDirection = Vector3.right * rightStickRot.x + Vector3.forward * rightStickRot.z;
+        //// returns 1 if any rotation is being inputed from right joystick
+        //if (_playerDirection.sqrMagnitude > 0.0f)
+        //    transform.rotation = Quaternion.LookRotation(_playerDirection * Time.deltaTime, Vector3.up);
 
         if (_moveJoystick.InputDirection != Vector3.zero)
-            _anim.SetBool("IsRunning", true);
-        else
-            _anim.SetBool("IsRunning", false);
-
-        if (_shootJoystick.InputDirection != Vector3.zero)
         {
-            _shooting = true;
+            _anim.SetBool("IsRunning", true);
+            _shooting = false;
         }
         else
-            _shooting = false;
+        {
+            _anim.SetBool("IsRunning", false);
+            _shooting = true;
+            transform.LookAt(GetClosestEnemy(GameStats.instance._enemies));
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -68,8 +67,25 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //add velocity to player
         _rb.velocity = _moveVelocity;
+    }
+
+    public Transform GetClosestEnemy(List<Transform> enemies)
+    {
+        Transform bestTarget = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+        foreach (Transform potentialTarget in enemies)
+        {
+            Vector3 directionToTarget = potentialTarget.position - currentPosition;
+            float dSqrToTarget = directionToTarget.sqrMagnitude;
+            if (dSqrToTarget < closestDistanceSqr)
+            {
+                closestDistanceSqr = dSqrToTarget;
+                bestTarget = potentialTarget;
+            }
+        }
+        return bestTarget;
     }
 }
 

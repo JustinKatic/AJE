@@ -15,7 +15,7 @@ public class WaveSpawner : MonoBehaviour
         public Transform[] enemy;
         public int count;
         public float rate;
-        public float waveTimer;
+        public Transform[] spawnPoints;
     }
 
     public Wave[] waves;
@@ -23,13 +23,13 @@ public class WaveSpawner : MonoBehaviour
 
     public static int _enemyCount;
 
+    private int _currentEnemy = 0;
+
 
     public int NextWave
     {
         get { return nextWave + 1; }
     }
-
-    public Transform[] spawnPoints;
 
     public float timeBetweenWaves = 5f;
     private float waveCountdown;
@@ -40,8 +40,6 @@ public class WaveSpawner : MonoBehaviour
 
     private float searchCountdown = 1f;
 
-    [SerializeField] float waveLengthx;
-
     private SpawnState state = SpawnState.COUNTING;
     public SpawnState State
     {
@@ -51,11 +49,6 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
-
-        if (spawnPoints.Length == 0)
-        {
-            Debug.LogError("No spawn points referenced.");
-        }
         waveCountdown = timeBetweenWaves;
     }
 
@@ -65,6 +58,7 @@ public class WaveSpawner : MonoBehaviour
         {
             if (StartNextWave())
             {
+                _currentEnemy = 0;
                 WaveCompleted();
             }
             else
@@ -104,18 +98,12 @@ public class WaveSpawner : MonoBehaviour
 
     bool StartNextWave()
     {
-        waves[NextWave - 1].waveTimer -= Time.deltaTime;
         searchCountdown -= Time.deltaTime;
         if (searchCountdown <= 0f)
         {
             searchCountdown = 1f;
 
-            if (waves[NextWave - 1].waveTimer <= 0f)
-            {
-                return true;
-            }
-
-            if (_enemyCount <= 5)
+            if (_enemyCount <= 0)
             {
                 return true;
             }
@@ -129,7 +117,7 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < _wave.count; i++)
         {
-            SpawnEnemy(_wave.enemy[Random.Range(0, _wave.enemy.Length)]);
+            SpawnEnemy(_wave.enemy[i],_wave);
             yield return new WaitForSeconds(_wave.rate);
         }
 
@@ -137,10 +125,10 @@ public class WaveSpawner : MonoBehaviour
 
         yield break;
     }
-
-    void SpawnEnemy(Transform _enemy)
-    {
-        Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+    
+    void SpawnEnemy(Transform _enemy, Wave _wave)
+    {  
+        Transform _sp = _wave.spawnPoints[_currentEnemy];
 
         if (_enemy.tag == "Enemy1" || _enemy.tag == "Enemy2" || _enemy.tag == "Enemy3" || _enemy.tag == "EnemyRanged")
         {
@@ -148,7 +136,9 @@ public class WaveSpawner : MonoBehaviour
             enemy.transform.position = _sp.position;
             enemy.transform.rotation = _sp.rotation;
             enemy.SetActive(true);
+            GameStats.instance._enemies.Add(enemy.transform);
             _enemyCount += 1;
         }
+        _currentEnemy++;
     }
 }

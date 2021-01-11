@@ -24,6 +24,8 @@ public class GameStats : MonoBehaviour
     public float _playerBulletDmg;
     public float _playerFireRate;
 
+    public List<Transform> _enemies;
+
     private void Awake()
     {
         if (instance == null)

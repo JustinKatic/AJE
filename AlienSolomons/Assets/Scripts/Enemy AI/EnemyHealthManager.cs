@@ -44,6 +44,7 @@ public class EnemyHealthManager : MonoBehaviour
         gameObject.SetActive(false);
         _playerExp.AddExp(_enemyExpWorth);
         GameStats.instance._playerExp += _enemyExpWorth;
+        GameStats.instance._enemies.Remove(gameObject.transform);
         WaveSpawner._enemyCount -= 1;
     }
 }
