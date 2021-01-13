@@ -7,11 +7,11 @@ public class EnemyGunController : MonoBehaviour
     [SerializeField] float _timeBetweenShots;
     private float _shotCounter;
     [SerializeField] Transform _firePoint;
-    private EnemyMovement _moveScript;
+    private EnemyArcherMove _moveScript;
 
     private void Start()
     {
-        _moveScript = gameObject.GetComponent<EnemyMovement>();
+        _moveScript = gameObject.GetComponent<EnemyArcherMove>();
     }
     void Update()
     {
