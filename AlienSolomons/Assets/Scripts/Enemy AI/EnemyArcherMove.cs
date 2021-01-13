@@ -1,15 +1,18 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyMovement : MonoBehaviour
+
+public class EnemyArcherMove : MonoBehaviour
 {
     Transform destination;
     public NavMeshAgent navMeshAgent;
     GameObject player;
     public float _defaultMoveSpeed;
+
+    [SerializeField] float _range;
+    public bool _shooting;
 
 
 
@@ -33,7 +36,20 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        float dist = Vector3.Distance(transform.position, player.transform.position);
+        if (dist > _range)
+        {
+            navMeshAgent.isStopped = false;
+            _shooting = false;
             navMeshAgent.SetDestination(destination.position);
+        }
+        else
+        {
+            navMeshAgent.isStopped = true;
+            _shooting = true;
+            transform.LookAt(player.transform);
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
