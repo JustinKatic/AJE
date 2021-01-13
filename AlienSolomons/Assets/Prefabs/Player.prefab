@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455470881362352150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5717886408805289845}
@@ -232,7 +232,7 @@ Transform:
   m_GameObject: {fileID: 3120563591547005988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -42.93, y: 1, z: 37.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 2558695775705105432}
   m_Father: {fileID: 0}
@@ -249,10 +249,10 @@ GameObject:
   - component: {fileID: 2558695775705105432}
   - component: {fileID: 2527591339606114002}
   - component: {fileID: 8024430942955482010}
-  - component: {fileID: 5889555424334456631}
   - component: {fileID: 1459776078572764158}
   - component: {fileID: 5702156430824435240}
   - component: {fileID: 4406266903902202111}
+  - component: {fileID: 1312703991}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Player
@@ -268,7 +268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3529250733269334337}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8442734559109722451}
@@ -289,7 +289,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 10
   _moveJoystick: {fileID: 0}
-  _shootJoystick: {fileID: 0}
   _shooting: 0
 --- !u!114 &8024430942955482010
 MonoBehaviour:
@@ -305,18 +304,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   defeatScreen: {fileID: 0}
---- !u!114 &5889555424334456631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3529250733269334337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7cf92a1c733fea4ea3e52eb909bdd22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1459776078572764158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,8 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFiring: 0
-  _timeBetweenShots: 0
-  _firePoint: {fileID: 0}
+  _firePoint: {fileID: 650535956692251137}
 --- !u!136 &5702156430824435240
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -360,8 +346,20 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &1312703991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3529250733269334337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8129d4d547f4c643a54652bc19eee25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3686881841585692899
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7298253455930566485}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.316, z: 0.706}
+  m_LocalPosition: {x: 0, y: 1.316, z: 0.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8442734559109722451}
@@ -601,6 +599,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3282880781187637801, guid: 3ec2ad5d15923464cbfd56ce2f1089a1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ec2ad5d15923464cbfd56ce2f1089a1, type: 3}
