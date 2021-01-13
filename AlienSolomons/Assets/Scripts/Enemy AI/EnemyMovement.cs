@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (gameObject.tag == "Enemy1" || gameObject.tag == "Enemy2" || gameObject.tag == "Enemy3")
+        if (gameObject.tag == "EnemyBarbarian" || gameObject.tag == "Enemy2" || gameObject.tag == "Enemy3")
             navMeshAgent.SetDestination(destination.position);
         else if (gameObject.tag == "EnemyRanged")
         {

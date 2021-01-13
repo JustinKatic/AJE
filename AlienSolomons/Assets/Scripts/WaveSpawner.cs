@@ -117,7 +117,7 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < _wave.count; i++)
         {
-            SpawnEnemy(_wave.enemy[i],_wave);
+            SpawnEnemy(_wave.enemy[i], _wave);
             yield return new WaitForSeconds(_wave.rate);
         }
 
@@ -125,20 +125,18 @@ public class WaveSpawner : MonoBehaviour
 
         yield break;
     }
-    
+
     void SpawnEnemy(Transform _enemy, Wave _wave)
-    {  
+    {
         Transform _sp = _wave.spawnPoints[_currentEnemy];
 
-        if (_enemy.tag == "Enemy1" || _enemy.tag == "Enemy2" || _enemy.tag == "Enemy3" || _enemy.tag == "EnemyRanged")
-        {
-            GameObject enemy = ObjectPooler.SharedInstance.GetPooledObject(_enemy.name);
-            enemy.transform.position = _sp.position;
-            enemy.transform.rotation = _sp.rotation;
-            enemy.SetActive(true);
-            GameStats.instance._enemies.Add(enemy.transform);
-            _enemyCount += 1;
-        }
+        GameObject enemy = ObjectPooler.SharedInstance.GetPooledObject(_enemy.name);
+        enemy.transform.position = _sp.position;
+        enemy.transform.rotation = _sp.rotation;
+        enemy.SetActive(true);
+        GameStats.instance._enemies.Add(enemy.transform);
+        _enemyCount += 1;
+
         _currentEnemy++;
     }
 }
