@@ -134,7 +134,7 @@ public class WaveSpawner : MonoBehaviour
         enemy.transform.position = _sp.position;
         enemy.transform.rotation = _sp.rotation;
         enemy.SetActive(true);
-        GameStats.instance._enemies.Add(enemy.transform);
+        EnemyManager.instance._enemies.Add(enemy.transform);
         _enemyCount += 1;
 
         _currentEnemy++;

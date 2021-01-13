@@ -16,10 +16,10 @@ public class PlayerExpManager : MonoBehaviour
 
     void Start()
     {
-        maxExp = GameStats.instance.level1ExpNeeded;
+        maxExp = PlayerStats.instance.level1ExpNeeded;
         expBar.SetMaxExp(maxExp);
-        GameStats.instance._currentExpNeededForLevel = maxExp;
-        currentExp = GameStats.instance._playerExp;
+        PlayerStats.instance._currentExpNeededForLevel = maxExp;
+        currentExp = PlayerStats.instance._playerExp;
         expBar.SetExp(currentExp);
     }
 
@@ -28,10 +28,10 @@ public class PlayerExpManager : MonoBehaviour
         if (currentExp >= maxExp)
         {
             DisplayUpgradeScreen();
-            GameStats.instance._playerLevel++;
+            PlayerStats.instance._playerLevel++;
             currentExp = 0;
             maxExp = maxExp + (maxExp * _expModifier);
-            GameStats.instance._currentExpNeededForLevel = maxExp;
+            PlayerStats.instance._currentExpNeededForLevel = maxExp;
             expBar.SetMaxExp(maxExp);
             expBar.SetExp(currentExp);
         }

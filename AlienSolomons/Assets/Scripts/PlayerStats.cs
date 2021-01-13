@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class GameStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour
 {
-    public static GameStats instance;
+    public static PlayerStats instance;
 
 
     [Header("Player Current Stats")]
@@ -24,7 +24,6 @@ public class GameStats : MonoBehaviour
     public float _playerBulletDmg;
     public float _playerFireRate;
 
-    public List<Transform> _enemies;
 
     private void Awake()
     {

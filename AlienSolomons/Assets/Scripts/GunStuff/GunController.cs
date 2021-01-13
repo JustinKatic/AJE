@@ -25,7 +25,7 @@ public class GunController : MonoBehaviour
             if (_shotCounter <= 0)
             {
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("PlayerBullet");
-                _shotCounter = GameStats.instance._playerFireRate;
+                _shotCounter = PlayerStats.instance._playerFireRate;
                 bullet.transform.position = _firePoint.position;
                 bullet.transform.rotation = _firePoint.transform.rotation;
                 bullet.SetActive(true);

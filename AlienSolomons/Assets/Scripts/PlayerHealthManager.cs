@@ -17,7 +17,7 @@ public class PlayerHealthManager : MonoBehaviour
 
     void Start()
     {
-        maxHealth = GameStats.instance._playerMaxHealth;
+        maxHealth = PlayerStats.instance._playerMaxHealth;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
