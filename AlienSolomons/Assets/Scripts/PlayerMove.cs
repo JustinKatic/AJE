@@ -17,6 +17,8 @@ public class PlayerMove : MonoBehaviour
 
     Animator _anim;
 
+    Transform cloestTarget;
+
 
     void Start()
     {
@@ -35,17 +37,22 @@ public class PlayerMove : MonoBehaviour
         if (_playerDirection.sqrMagnitude > 0.0f)
             transform.rotation = Quaternion.LookRotation(_playerDirection * Time.deltaTime, Vector3.up);
 
+        if (cloestTarget == null || cloestTarget.gameObject.activeSelf == false)
+        {
+            cloestTarget = GetClosestEnemy(GameStats.instance._enemies);
+        }
 
         if (_moveJoystick.InputDirection != Vector3.zero)
         {
             _anim.SetBool("IsRunning", true);
             _shooting = false;
+            cloestTarget = GetClosestEnemy(GameStats.instance._enemies);
         }
         else
         {
             _anim.SetBool("IsRunning", false);
             _shooting = true;
-            transform.LookAt(GetClosestEnemy(GameStats.instance._enemies));
+            transform.LookAt(cloestTarget);
         }
     }
 
@@ -53,7 +60,6 @@ public class PlayerMove : MonoBehaviour
     {
         if (other.gameObject.tag == "Currency")
         {
-            Debug.Log("CURRENCY");
             GameStats.instance._currency += 1;
             other.gameObject.SetActive(false);
         }
