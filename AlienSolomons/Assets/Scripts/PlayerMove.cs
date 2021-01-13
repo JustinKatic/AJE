@@ -36,12 +36,6 @@ public class PlayerMove : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(_playerDirection * Time.deltaTime, Vector3.up);
 
 
-        //Vector3 rightStickRot = _shootJoystick.InputDirection;
-        //_playerDirection = Vector3.right * rightStickRot.x + Vector3.forward * rightStickRot.z;
-        //// returns 1 if any rotation is being inputed from right joystick
-        //if (_playerDirection.sqrMagnitude > 0.0f)
-        //    transform.rotation = Quaternion.LookRotation(_playerDirection * Time.deltaTime, Vector3.up);
-
         if (_moveJoystick.InputDirection != Vector3.zero)
         {
             _anim.SetBool("IsRunning", true);
