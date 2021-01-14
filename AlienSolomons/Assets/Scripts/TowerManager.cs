@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class TowerManager : MonoBehaviour
 {
+    [SerializeField] Material _towerTexture;
 
     public void PlaceTower()
     {
-        RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position, Vector3.down, out hitInfo))
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit))
         {
-            if (hitInfo.collider.tag == "Ground")
-            {
-                hitInfo.collider.gameObject.SetActive(false);
+            if (hit.collider.tag == "Ground")
+            {               
+                hit.collider.gameObject.GetComponent<MeshRenderer>().material = _towerTexture;
             }
         }
     }
