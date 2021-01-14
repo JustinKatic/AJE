@@ -5,18 +5,15 @@ using UnityEngine;
 public class TowerManager : MonoBehaviour
 {
 
-    RaycastHit hitInfo;
-    // Update is called once per frame
-    void Update()
+    public void PlaceTower()
     {
-        if (Physics.Raycast(transform.position, Vector3.down,out hitInfo))
+        RaycastHit hitInfo;
+        if (Physics.Raycast(transform.position, Vector3.down, out hitInfo))
         {
-            if(hitInfo.collider.tag == "Ground")
+            if (hitInfo.collider.tag == "Ground")
             {
-                Debug.Log("HitGround");
+                hitInfo.collider.gameObject.SetActive(false);
             }
         }
     }
-
-
 }
