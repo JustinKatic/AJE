@@ -3660,7 +3660,7 @@ PrefabInstance:
     - target: {fileID: 241939335940872681, guid: 03a95b3444f976c4e98e59b53df41a17,
         type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5584079619872530797, guid: 03a95b3444f976c4e98e59b53df41a17,
         type: 3}
@@ -56668,20 +56668,7 @@ MonoBehaviour:
     m_Bits: 1024
   _activateEveryX: 0.5
   _damage: 1
-  _enemies: []
---- !u!65 &1846018286
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846018283}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 1, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
+  _radius: 1
 --- !u!1001 &1852209960
 PrefabInstance:
   m_ObjectHideFlags: 0

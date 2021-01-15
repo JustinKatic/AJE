@@ -28,8 +28,5 @@ public class PlayerHurt : MonoBehaviour
             }
         }
     }
-    private void OnCollisionStay(Collision collision)
-    {
- 
-    }
+
 }

@@ -9,44 +9,35 @@ public class DamageTower : MonoBehaviour
     [SerializeField] float _activateEveryX = 1.0f;
     float _timer;
     [SerializeField] float _damage;
-
-    public List<GameObject> _enemies;
+    [SerializeField] float _radius;
 
     private void Update()
     {
         _timer += Time.deltaTime;
         if (_timer >= _activateEveryX)
         {
+            MyCollisions();
             _timer = 0;
-            DealDamageToEnemiesInList(_enemies);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        _enemies.Add(other.gameObject);
-    }
 
-    private void OnTriggerExit(Collider other)
+    void MyCollisions()
     {
-        _enemies.Remove(other.gameObject);
-    }
-
-    private void DealDamageToEnemiesInList(List<GameObject> listOfEnemies)
-    {
-        if (listOfEnemies.Count <= 0)
-            return;
-
-        for (int i = 0; i < listOfEnemies.Count; i++)
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, _radius, m_LayerMask);
+        int i = 0;
+        //Check when there is a new collider coming into contact with the box
+        while (i < hitColliders.Length)
         {
-            if (_enemies[i].activeSelf == false)
-            {
-                listOfEnemies.Remove(listOfEnemies[i]);
-            }
-            else
-            {
-                listOfEnemies[i].GetComponent<EnemyHealthManager>().HurtEnemy(_damage);
-            }
+            hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(_damage);
+            i++;
         }
     }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _radius);
+    }
+
 }

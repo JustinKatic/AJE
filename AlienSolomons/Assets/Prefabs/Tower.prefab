@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8059018389231339192}
   - component: {fileID: 1668938727973600691}
   - component: {fileID: 1501286918591986715}
-  - component: {fileID: 5584079619872530797}
+  - component: {fileID: 1846018284}
   m_Layer: 0
-  m_Name: Trap
+  m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,16 +80,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5584079619872530797
-BoxCollider:
+--- !u!114 &1846018284
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241939335940872681}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356ac1f8d99c2e5489b9769f01779ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  _activateEveryX: 0.5
+  _damage: 1
+  _radius: 1
