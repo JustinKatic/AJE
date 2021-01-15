@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class PurchaseTower : MonoBehaviour
 {
-    [SerializeField] Material _towerTexture;
+    public static PurchaseTower instance;
+
     [SerializeField] GameObject _purchaseableTower;
 
     private Transform _player;
 
     private void Start()
     {
+        if(GameObject.FindGameObjectWithTag("Player") != null)
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }
+        else
+            Destroy(gameObject);
+    }
 
     public void BuyTower()
     {

@@ -27,6 +27,7 @@ public class PlayerHealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
+            EnemyManager.instance._enemies.Clear();
             defeatScreen.SetActive(true);
         }
 

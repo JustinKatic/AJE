@@ -252,7 +252,6 @@ GameObject:
   - component: {fileID: 1459776078572764158}
   - component: {fileID: 5702156430824435240}
   - component: {fileID: 4406266903902202111}
-  - component: {fileID: 1312703991}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Player
@@ -349,18 +348,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &1312703991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3529250733269334337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8129d4d547f4c643a54652bc19eee25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3686881841585692899
 GameObject:
   m_ObjectHideFlags: 0

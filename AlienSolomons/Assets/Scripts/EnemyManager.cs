@@ -9,7 +9,6 @@ public class EnemyManager : MonoBehaviour
 
     public List<Transform> _enemies;
 
-
     private void Awake()
     {
         if (instance == null)
@@ -20,6 +19,4 @@ public class EnemyManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
-
-
 }
