@@ -2,11 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PurchaseTower : MonoBehaviour
+public class TowerManager : MonoBehaviour
 {
-    public static PurchaseTower instance;
+    public static TowerManager instance;
 
-    [SerializeField] GameObject _purchaseableTower;
+    public GameObject _damageTower;
+
+    [Header("All Towers")]
+    public LayerMask m_LayerMask;
+
+    [Header("Slow Tower Stats")]
+    public float _slowDebuffAmount = 3f;
+    public float _slowActivateEveryX = 1f;
+    public float _slowRadius;
+    public float _slowDamage;
+
+    [Header("Damage Tower Stats")]
+    public float _damageActivateEveryX = 1.0f;
+    public float _damageDamage;
+    public float _damageRadius;
+
+
 
     private Transform _player;
 
@@ -27,14 +43,14 @@ public class PurchaseTower : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void BuyTower()
+    public void BuyTower(GameObject TowerSelect)
     {
         RaycastHit hit;
         if (Physics.Raycast(_player.position, Vector3.down, out hit))
         {
             if (hit.collider.tag == "Ground")
             {
-                Instantiate(_purchaseableTower,
+                Instantiate(TowerSelect,
                     new Vector3(hit.collider.gameObject.transform.position.x,
                     hit.collider.gameObject.transform.transform.position.y + 0.65f,
                     hit.collider.gameObject.transform.position.z),

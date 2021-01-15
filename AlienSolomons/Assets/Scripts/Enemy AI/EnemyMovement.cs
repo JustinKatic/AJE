@@ -11,7 +11,9 @@ public class EnemyMovement : MonoBehaviour
     GameObject player;
     public float _defaultMoveSpeed;
 
-
+    public bool _slowDebuff;
+    [SerializeField] float _slowedDuration = 2.0f;
+    float _slowDurationTimer;
 
     void Start()
     {
@@ -25,16 +27,26 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-
     private void OnDisable()
     {
         SetEnemyMoveSpeed(_defaultMoveSpeed);
+        _slowDebuff = false;
     }
 
     private void Update()
     {
-            navMeshAgent.SetDestination(destination.position);
-        
+        navMeshAgent.SetDestination(destination.position);
+
+        if (_slowDebuff == true)
+        {
+            _slowDurationTimer += Time.deltaTime;
+            if (_slowDurationTimer > _slowedDuration)
+            {
+                SetEnemyMoveSpeed(_defaultMoveSpeed);
+                _slowDurationTimer = 0;
+                _slowDebuff = false;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -42,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
         if (collision.gameObject == player)
         {
             navMeshAgent.velocity = Vector3.zero;
-            navMeshAgent.isStopped = true;          
+            navMeshAgent.isStopped = true;
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -60,5 +72,12 @@ public class EnemyMovement : MonoBehaviour
     public float GetEnemyMoveSpeed()
     {
         return navMeshAgent.speed;
+    }
+
+    public void SetSlowDebuffTrue(float reduceSpeedByX)
+    {
+        SetEnemyMoveSpeed(_defaultMoveSpeed - reduceSpeedByX);
+        _slowDebuff = true;
+        _slowDurationTimer = 0;
     }
 }
