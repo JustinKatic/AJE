@@ -13,7 +13,6 @@ public class WaveSpawner : MonoBehaviour
     {
         public string name;
         public Transform[] enemy;
-        public int count;
         public float rate;
         public Transform[] spawnPoints;
     }
@@ -40,11 +39,7 @@ public class WaveSpawner : MonoBehaviour
 
     private float searchCountdown = 1f;
 
-    private SpawnState state = SpawnState.COUNTING;
-    public SpawnState State
-    {
-        get { return state; }
-    }
+    public SpawnState State { get; private set; } = SpawnState.COUNTING;
 
 
     void Start()
@@ -54,7 +49,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
-        if (state == SpawnState.WAITING)
+        if (State == SpawnState.WAITING)
         {
             if (StartNextWave())
             {
@@ -69,7 +64,7 @@ public class WaveSpawner : MonoBehaviour
 
         if (waveCountdown <= 0)
         {
-            if (state != SpawnState.SPAWNING)
+            if (State != SpawnState.SPAWNING)
             {
                 StartCoroutine(SpawnWave(waves[nextWave]));
             }
@@ -83,7 +78,7 @@ public class WaveSpawner : MonoBehaviour
 
     void WaveCompleted()
     {
-        state = SpawnState.COUNTING;
+        State = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
 
         if (nextWave + 1 > waves.Length - 1)
@@ -113,15 +108,15 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave(Wave _wave)
     {
-        state = SpawnState.SPAWNING;
+        State = SpawnState.SPAWNING;
 
-        for (int i = 0; i < _wave.count; i++)
+        for (int i = 0; i < _wave.enemy.Length; i++)
         {
             SpawnEnemy(_wave.enemy[i], _wave);
             yield return new WaitForSeconds(_wave.rate);
         }
 
-        state = SpawnState.WAITING;
+        State = SpawnState.WAITING;
 
         yield break;
     }

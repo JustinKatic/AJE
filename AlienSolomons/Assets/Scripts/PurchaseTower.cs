@@ -7,22 +7,18 @@ public class PurchaseTower : MonoBehaviour
     [SerializeField] Material _towerTexture;
     [SerializeField] GameObject _purchaseableTower;
 
-    public void BuyTrap()
+    private Transform _player;
+
+    private void Start()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit))
-        {
-            if (hit.collider.tag == "Ground")
-            {
-                hit.collider.gameObject.GetComponent<MeshRenderer>().material = _towerTexture;
-            }
-        }
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    public void BuyTrapRaised()
+
+    public void BuyTower()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit))
+        if (Physics.Raycast(_player.position, Vector3.down, out hit))
         {
             if (hit.collider.tag == "Ground")
             {
