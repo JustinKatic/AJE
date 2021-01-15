@@ -10,7 +10,6 @@ public class EnemyBulletController : MonoBehaviour
     [SerializeField] float _damage;
     PlayerHealthManager _playerHealth;
 
-
     private void Awake()
     {       
         _playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealthManager>();
@@ -26,21 +25,35 @@ public class EnemyBulletController : MonoBehaviour
         //Move bullet forward
         transform.Translate(Vector3.forward * _speed * Time.deltaTime);
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             SetUnActive();
             _playerHealth.HurtPlayer(_damage);
         }
 
-        if (collision.gameObject.tag == "Wall")
+        if (other.gameObject.tag == "Wall")
         {
             SetUnActive();
             gameObject.SetActive(false);
         }
-    }   
+    }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        SetUnActive();
+    //        _playerHealth.HurtPlayer(_damage);
+    //    }
+
+    //    if (collision.gameObject.tag == "Wall")
+    //    {
+    //        SetUnActive();
+    //        gameObject.SetActive(false);
+    //    }
+    //}   
 
     void SetUnActive()
     {

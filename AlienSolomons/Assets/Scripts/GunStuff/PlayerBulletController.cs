@@ -23,20 +23,35 @@ public class PlayerBulletController : MonoBehaviour
         transform.Translate(Vector3.forward * PlayerStats.instance._playerBulletSpeed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.layer == 10)
+        if (other.gameObject.layer == 10)
         {
             SetUnActive();
-            collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(PlayerStats.instance._playerBulletDmg);
+            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(PlayerStats.instance._playerBulletDmg);
         }
 
-        if (collision.gameObject.tag == "Wall")
+        if (other.gameObject.tag == "Wall")
         {
             SetUnActive();
             gameObject.SetActive(false);
         }
-    }   
+    }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.layer == 10)
+    //    {
+    //        SetUnActive();
+    //        collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(PlayerStats.instance._playerBulletDmg);
+    //    }
+
+    //    if (collision.gameObject.tag == "Wall")
+    //    {
+    //        SetUnActive();
+    //        gameObject.SetActive(false);
+    //    }
+    //}   
 
     void SetUnActive()
     {
