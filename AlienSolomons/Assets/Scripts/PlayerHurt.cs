@@ -16,9 +16,9 @@ public class PlayerHurt : MonoBehaviour
         _playerHealthManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealthManager>();
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             _timer += Time.deltaTime;
             if (_timer > _damageEveryX)
@@ -27,5 +27,9 @@ public class PlayerHurt : MonoBehaviour
                 _timer = 0.0f;
             }
         }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+ 
     }
 }
