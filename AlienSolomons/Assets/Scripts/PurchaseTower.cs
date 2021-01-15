@@ -19,7 +19,7 @@ public class PurchaseTower : MonoBehaviour
         }
     }
 
-    public void BuyTower()
+    public void BuyTrapRaised()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit))
@@ -28,7 +28,7 @@ public class PurchaseTower : MonoBehaviour
             {
                 Instantiate(_purchaseableTower,
                     new Vector3(hit.collider.gameObject.transform.position.x,
-                    hit.collider.gameObject.transform.transform.position.y + 1.2f,
+                    hit.collider.gameObject.transform.transform.position.y + 0.65f,
                     hit.collider.gameObject.transform.position.z),
                     hit.collider.gameObject.transform.rotation);
             }

@@ -34,12 +34,16 @@ public class EnemyMovement : MonoBehaviour
     private void Update()
     {
             navMeshAgent.SetDestination(destination.position);
+        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject == player)
-            navMeshAgent.isStopped = true;
+        {
+            navMeshAgent.velocity = Vector3.zero;
+            navMeshAgent.isStopped = true;          
+        }
     }
     private void OnCollisionExit(Collision collision)
     {
