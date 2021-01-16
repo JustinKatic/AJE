@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class EnemyHealthManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class EnemyHealthManager : MonoBehaviour
     public HealthBar healthBar;
     [SerializeField] float _enemyExpWorth;
     PlayerExpManager _playerExp;
+
+    [SerializeField] GameObject floatingDmg;
     
     private void Start()
     {
@@ -32,6 +35,8 @@ public class EnemyHealthManager : MonoBehaviour
     public void HurtEnemy(float damage)
     {
         _currentHealth -= damage;
+        GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
         healthBar.SetHealth(_currentHealth);
     }
 

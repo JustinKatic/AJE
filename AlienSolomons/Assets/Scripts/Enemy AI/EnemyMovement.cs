@@ -49,19 +49,35 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject == player)
+        if (other.gameObject == player)
         {
             navMeshAgent.velocity = Vector3.zero;
             navMeshAgent.isStopped = true;
         }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject == player)
-            navMeshAgent.isStopped = false;
+        {
+            if (other.gameObject == player)
+                navMeshAgent.isStopped = false;
+        }
     }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject == player)
+    //    {
+    //        navMeshAgent.velocity = Vector3.zero;
+    //        navMeshAgent.isStopped = true;
+    //    }
+    //}
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject == player)
+    //        navMeshAgent.isStopped = false;
+    //}
 
     public void SetEnemyMoveSpeed(float enemyMoveSpeed)
     {

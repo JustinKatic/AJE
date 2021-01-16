@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/// <summary>
-/// Handles player health.
-/// </summary>
+
 public class PlayerHealthManager : MonoBehaviour
 {
     private float maxHealth;
@@ -13,6 +12,8 @@ public class PlayerHealthManager : MonoBehaviour
 
     public HealthBar healthBar;
     public GameObject defeatScreen;
+
+    [SerializeField] GameObject floatingDmg;
 
 
     void Start()
@@ -37,6 +38,8 @@ public class PlayerHealthManager : MonoBehaviour
     public void HurtPlayer(float damage)
     {
         currentHealth -= damage;
+        GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
         healthBar.SetHealth(currentHealth);
     }
 
