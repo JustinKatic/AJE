@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class HealthBar : MonoBehaviour
@@ -10,6 +11,7 @@ public class HealthBar : MonoBehaviour
 
     public Gradient gradient;
     public Image fill;
+
 
 
     public void SetMaxHealth(float health)

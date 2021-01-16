@@ -14,12 +14,14 @@ public class PlayerHealthManager : MonoBehaviour
     public GameObject defeatScreen;
 
     [SerializeField] GameObject floatingDmg;
+    [SerializeField] TextMeshPro _healthTxt;
 
 
     void Start()
     {
         maxHealth = PlayerStats.instance._playerMaxHealth;
         currentHealth = maxHealth;
+        _healthTxt.text = currentHealth.ToString();
         healthBar.SetMaxHealth(maxHealth);
     }
 
@@ -41,11 +43,13 @@ public class PlayerHealthManager : MonoBehaviour
         GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
         healthBar.SetHealth(currentHealth);
+        _healthTxt.text = currentHealth.ToString();
     }
 
     public void HealPlayer(float heal)
     {
         currentHealth += heal;
         healthBar.SetHealth(currentHealth);
+        _healthTxt.text = currentHealth.ToString();
     }
 }
