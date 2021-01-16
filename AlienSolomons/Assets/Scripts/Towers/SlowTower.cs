@@ -23,7 +23,10 @@ public class SlowTower : MonoBehaviour
         while (i < hitColliders.Length)
         {
             hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerManager.instance._slowDamage);
-            hitColliders[i].GetComponent<EnemyMovement>().SetSlowDebuffTrue(TowerManager.instance._slowDebuffAmount);
+            if (hitColliders[i].tag == "EnemyBarbarian")
+                hitColliders[i].GetComponent<EnemyBarbarianMovement>().SetSlowDebuffTrue(TowerManager.instance._slowDebuffAmount);
+            else if ((hitColliders[i].tag == "EnemyArcher"))
+                hitColliders[i].GetComponent<EnemyArcherMove>().SetSlowDebuffTrue(TowerManager.instance._slowDebuffAmount);
             i++;
         }
     }

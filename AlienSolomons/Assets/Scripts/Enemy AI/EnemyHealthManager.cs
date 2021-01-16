@@ -6,14 +6,12 @@ using TMPro;
 
 public class EnemyHealthManager : MonoBehaviour
 {
-    [SerializeField] float _maxHealth;
     private float _currentHealth;
-    public HealthBar healthBar;
-    [SerializeField] float _enemyExpWorth;
-    PlayerExpManager _playerExp;
+    [SerializeField] private HealthBar healthBar;
+    [SerializeField] private GameObject floatingDmg;
+    private PlayerExpManager _playerExp;
 
-    [SerializeField] GameObject floatingDmg;
-    
+
     private void Start()
     {
         _playerExp = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PlayerExpManager>();
@@ -21,8 +19,17 @@ public class EnemyHealthManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _currentHealth = _maxHealth;
-        healthBar.SetMaxHealth(_maxHealth);
+        if (gameObject.tag == "EnemyBarbarian")
+        {
+            _currentHealth = EnemyManager.instance._barbarianMaxHealth;
+            healthBar.SetMaxHealth(EnemyManager.instance._barbarianMaxHealth);
+        }
+        else if (gameObject.tag == "EnemyArcher")
+        {
+            _currentHealth = EnemyManager.instance._archerMaxHealth;
+            healthBar.SetMaxHealth(EnemyManager.instance._archerMaxHealth);
+        }
+
     }
 
     private void Update()
@@ -30,7 +37,6 @@ public class EnemyHealthManager : MonoBehaviour
         if (_currentHealth <= 0)
             Die();
     }
-
 
     public void HurtEnemy(float damage)
     {
@@ -47,8 +53,8 @@ public class EnemyHealthManager : MonoBehaviour
         _currency.transform.rotation = gameObject.transform.rotation;
         _currency.SetActive(true);
         gameObject.SetActive(false);
-        _playerExp.AddExp(_enemyExpWorth);
-        PlayerStats.instance._playerExp += _enemyExpWorth;
+        _playerExp.AddExp(EnemyManager.instance._barbarianExpWorth);
+        PlayerStats.instance._playerExp += EnemyManager.instance._barbarianExpWorth;
         EnemyManager.instance._enemies.Remove(gameObject.transform);
         WaveSpawner._enemyCount -= 1;
     }

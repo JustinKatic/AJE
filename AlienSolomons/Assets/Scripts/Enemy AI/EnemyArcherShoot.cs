@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGunController : MonoBehaviour
+public class EnemyArcherShoot : MonoBehaviour
 {
-    [SerializeField] float _timeBetweenShots;
     private float _shotCounter;
     [SerializeField] Transform _firePoint;
     private EnemyArcherMove _moveScript;
@@ -21,7 +20,7 @@ public class EnemyGunController : MonoBehaviour
             if (_shotCounter <= 0)
             {
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("EnemyBullet");
-                _shotCounter = _timeBetweenShots;
+                _shotCounter = EnemyManager.instance._archerTimeBetweenShotsSpeed;
                 bullet.transform.position = _firePoint.position;
                 bullet.transform.rotation = _firePoint.transform.rotation;
                 bullet.SetActive(true);

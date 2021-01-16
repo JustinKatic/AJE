@@ -206,9 +206,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 3996099526758916043}
-  _defaultMoveSpeed: 4
-  _slowDebuff: 0
-  _slowedDuration: 3
 --- !u!114 &778474226353804513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 3
   healthBar: {fileID: 3790654423425056796}
-  _enemyExpWorth: 0
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
 --- !u!195 &3996099526758916043

@@ -4,16 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyBarbarianMovement : MonoBehaviour
 {
     Transform destination;
     public NavMeshAgent navMeshAgent;
     GameObject player;
-    public float _defaultMoveSpeed;
 
-    public bool _slowDebuff;
-    [SerializeField] float _slowedDuration = 2.0f;
-    float _slowDurationTimer;
+    private bool _slowDebuff;
+    private float _slowDurationTimer;
 
     void Start()
     {
@@ -29,24 +27,14 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnDisable()
     {
-        SetEnemyMoveSpeed(_defaultMoveSpeed);
+        SetEnemyMoveSpeed(EnemyManager.instance._barbarianDefaultMoveSpeed);
         _slowDebuff = false;
     }
 
     private void Update()
     {
         navMeshAgent.SetDestination(destination.position);
-
-        if (_slowDebuff == true)
-        {
-            _slowDurationTimer += Time.deltaTime;
-            if (_slowDurationTimer > _slowedDuration)
-            {
-                SetEnemyMoveSpeed(_defaultMoveSpeed);
-                _slowDurationTimer = 0;
-                _slowDebuff = false;
-            }
-        }
+        SlowDebuff(EnemyManager.instance._barbarianDefaultMoveSpeed);
     }
 
 
@@ -65,19 +53,6 @@ public class EnemyMovement : MonoBehaviour
                 navMeshAgent.isStopped = false;
         }
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject == player)
-    //    {
-    //        navMeshAgent.velocity = Vector3.zero;
-    //        navMeshAgent.isStopped = true;
-    //    }
-    //}
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject == player)
-    //        navMeshAgent.isStopped = false;
-    //}
 
     public void SetEnemyMoveSpeed(float enemyMoveSpeed)
     {
@@ -92,8 +67,22 @@ public class EnemyMovement : MonoBehaviour
 
     public void SetSlowDebuffTrue(float reduceSpeedByX)
     {
-        SetEnemyMoveSpeed(_defaultMoveSpeed - reduceSpeedByX);
+        SetEnemyMoveSpeed(EnemyManager.instance._barbarianDefaultMoveSpeed - reduceSpeedByX);
         _slowDebuff = true;
         _slowDurationTimer = 0;
+    }
+
+    public void SlowDebuff(float EnemyDefaultSpeed)
+    {
+        if (_slowDebuff == true)
+        {
+            _slowDurationTimer += Time.deltaTime;
+            if (_slowDurationTimer > TowerManager.instance._slowedDuration)
+            {
+                SetEnemyMoveSpeed(EnemyDefaultSpeed);
+                _slowDurationTimer = 0;
+                _slowDebuff = false;
+            }
+        }
     }
 }

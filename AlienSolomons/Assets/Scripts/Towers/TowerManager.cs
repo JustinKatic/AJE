@@ -16,6 +16,7 @@ public class TowerManager : MonoBehaviour
     public float _slowActivateEveryX = 1f;
     public float _slowRadius;
     public float _slowDamage;
+    public float _slowedDuration = 2.0f;
 
     [Header("Damage Tower Stats")]
     public float _damageActivateEveryX = 1.0f;

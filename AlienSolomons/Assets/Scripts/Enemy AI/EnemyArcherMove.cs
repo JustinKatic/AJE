@@ -9,11 +9,12 @@ public class EnemyArcherMove : MonoBehaviour
     Transform destination;
     public NavMeshAgent navMeshAgent;
     GameObject player;
-    public float _defaultMoveSpeed;
 
     [SerializeField] float _range;
     public bool _shooting;
 
+    private bool _slowDebuff;
+    private float _slowDurationTimer;
 
 
     void Start()
@@ -31,11 +32,14 @@ public class EnemyArcherMove : MonoBehaviour
 
     private void OnDisable()
     {
-        SetEnemyMoveSpeed(_defaultMoveSpeed);
+        _slowDebuff = false;
+        SetEnemyMoveSpeed(EnemyManager.instance._archerDefaultMoveSpeed);
     }
 
     private void Update()
     {
+        SlowDebuff(EnemyManager.instance._archerDefaultMoveSpeed);
+
         float dist = Vector3.Distance(transform.position, player.transform.position);
         if (dist > _range)
         {
@@ -49,17 +53,17 @@ public class EnemyArcherMove : MonoBehaviour
             _shooting = true;
             transform.LookAt(player.transform);
         }
-
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject == player)
+        if (other.gameObject == player)
             navMeshAgent.isStopped = true;
     }
-    private void OnCollisionExit(Collision collision)
+
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject == player)
+        if (other.gameObject == player)
             navMeshAgent.isStopped = false;
     }
 
@@ -72,5 +76,26 @@ public class EnemyArcherMove : MonoBehaviour
     public float GetEnemyMoveSpeed()
     {
         return navMeshAgent.speed;
+    }
+
+    public void SetSlowDebuffTrue(float reduceSpeedByX)
+    {
+        SetEnemyMoveSpeed(EnemyManager.instance._archerDefaultMoveSpeed - reduceSpeedByX);
+        _slowDebuff = true;
+        _slowDurationTimer = 0;
+    }
+
+    public void SlowDebuff(float EnemyDefaultSpeed)
+    {
+        if (_slowDebuff == true)
+        {
+            _slowDurationTimer += Time.deltaTime;
+            if (_slowDurationTimer > TowerManager.instance._slowedDuration)
+            {
+                SetEnemyMoveSpeed(EnemyDefaultSpeed);
+                _slowDurationTimer = 0;
+                _slowDebuff = false;
+            }
+        }
     }
 }
