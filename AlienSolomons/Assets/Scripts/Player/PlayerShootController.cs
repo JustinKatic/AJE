@@ -5,25 +5,21 @@ using UnityEngine;
 
 public class PlayerShootController : MonoBehaviour
 {
-    public bool _isFiring;
-
     private float _shotCounter;
     [SerializeField] Transform _firePoint;
-    private PlayerMove _moveScript;
+    [SerializeField] BoolVariable _shooting;
+    [SerializeField] FloatVariable _playerFireRate;
 
-    private void Start()
-    {
-        _moveScript = gameObject.GetComponent<PlayerMove>();
-    }
+
     void Update()
     {
-        if (_moveScript._shooting)
+        if (_shooting.Value)
         {
             _shotCounter -= Time.deltaTime;
             if (_shotCounter <= 0)
             {
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("PlayerBullet");
-                _shotCounter = PlayerStats.instance._playerFireRate;
+                _shotCounter = _playerFireRate.Value; 
                 bullet.transform.position = _firePoint.position;
                 bullet.transform.rotation = _firePoint.transform.rotation;
                 bullet.SetActive(true);

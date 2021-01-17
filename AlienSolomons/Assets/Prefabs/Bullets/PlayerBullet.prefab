@@ -94,7 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78603b1e3f0a27e4989d8f81079cfbb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletLife: 7
+  _bulletLife: {fileID: 11400000, guid: a23972efd57149f47bdbb6433f258a2b, type: 2}
+  _bulletDamage: {fileID: 11400000, guid: b44017ad6960e3e45b58c2ef421bde78, type: 2}
+  _bulletSpeed: {fileID: 11400000, guid: efd2ae25a82803147850c6fe749a6367, type: 2}
 --- !u!135 &3197552483523678787
 SphereCollider:
   m_ObjectHideFlags: 0

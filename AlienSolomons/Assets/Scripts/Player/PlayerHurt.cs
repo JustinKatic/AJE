@@ -7,7 +7,7 @@ public class PlayerHurt : MonoBehaviour
 
     [SerializeField] float _damageEveryX = 1.0f;
     float _timer;
-    [SerializeField] float _damage;
+    [SerializeField] FloatVariable _damage;
 
     PlayerHealthManager _playerHealthManager;
 
@@ -23,7 +23,7 @@ public class PlayerHurt : MonoBehaviour
             _timer += Time.deltaTime;
             if (_timer > _damageEveryX)
             {
-                _playerHealthManager.HurtPlayer(_damage);
+                _playerHealthManager.HurtPlayer(_damage.Value);
                 _timer = 0.0f;
             }
         }

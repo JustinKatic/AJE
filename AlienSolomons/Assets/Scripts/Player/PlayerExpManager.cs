@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerExpManager : MonoBehaviour
 {
-    private float maxExp;
     private float currentExp;
+    [SerializeField] FloatVariable[] _playerExpNeededToLvl;
+    [SerializeField] IntVariable _playerLvl;
+    private float _currentExpNeededForLevel;
+
 
     public ExpBar expBar;
     [SerializeField] float _expModifier;
@@ -16,23 +19,24 @@ public class PlayerExpManager : MonoBehaviour
 
     void Start()
     {
-        maxExp = PlayerStats.instance.level1ExpNeeded;
-        expBar.SetMaxExp(maxExp);
-        PlayerStats.instance._currentExpNeededForLevel = maxExp;
-        currentExp = PlayerStats.instance._playerExp;
+        expBar.SetMaxExp(_playerExpNeededToLvl[_playerLvl.Value].Value);
+        currentExp = 0f;
         expBar.SetExp(currentExp);
     }
 
     void Update()
     {
-        if (currentExp >= maxExp)
+        if (currentExp >= _playerExpNeededToLvl[_playerLvl.Value].Value)
         {
             DisplayUpgradeScreen();
-            PlayerStats.instance._playerLevel++;
+            _playerLvl.Value++;
             currentExp = 0;
-            maxExp = maxExp + (maxExp * _expModifier);
-            PlayerStats.instance._currentExpNeededForLevel = maxExp;
-            expBar.SetMaxExp(maxExp);
+
+            _playerExpNeededToLvl[_playerLvl.Value].Value =
+                _playerExpNeededToLvl[_playerLvl.Value].Value +
+                (_playerExpNeededToLvl[_playerLvl.Value].Value * _expModifier);
+
+            expBar.SetMaxExp(_playerExpNeededToLvl[_playerLvl.Value].Value);
             expBar.SetExp(currentExp);
         }
     }

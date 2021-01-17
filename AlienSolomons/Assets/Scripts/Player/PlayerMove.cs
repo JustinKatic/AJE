@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] float _moveSpeed;
     [SerializeField] VirtualJoystick _moveJoystick;
 
-    public bool _shooting;
+    public FloatVariable _moveSpeed;
+    public BoolVariable _shooting;
 
     private Vector3 _moveInput;
     Vector3 _playerDirection;
@@ -17,7 +17,7 @@ public class PlayerMove : MonoBehaviour
 
     Animator _anim;
 
-    Transform cloestTarget;
+    private Transform cloestTarget;
 
 
     void Start()
@@ -29,7 +29,7 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         _moveInput = _moveJoystick.InputDirection;
-        _moveVelocity = _moveInput * _moveSpeed;
+        _moveVelocity = _moveInput * _moveSpeed.Value;
 
         Vector3 leftStickRot = _moveJoystick.InputDirection;
         _playerDirection = Vector3.right * leftStickRot.x + Vector3.forward * leftStickRot.z;
@@ -46,19 +46,19 @@ public class PlayerMove : MonoBehaviour
         if (_moveJoystick.InputDirection != Vector3.zero)
         {
             _anim.SetBool("IsRunning", true);
-            _shooting = false;
+            _shooting.Value = false;
             cloestTarget = GetClosestEnemy(EnemyManager.instance._enemies);
         }
         else
         {
             _anim.SetBool("IsRunning", false);
-            _shooting = true;
+            _shooting.Value = true;
             transform.LookAt(cloestTarget);
         }
 
         if (EnemyManager.instance._enemies.Count == 0)
         {
-            _shooting = false;
+            _shooting.Value = false;
         }
     }
 

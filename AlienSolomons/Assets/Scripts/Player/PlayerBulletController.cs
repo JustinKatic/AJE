@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class PlayerBulletController : MonoBehaviour
 {
-    [SerializeField] float _bulletLife;
+    [SerializeField] FloatVariable _bulletLife;
+    [SerializeField] FloatVariable _bulletDamage;
+    [SerializeField] FloatVariable _bulletSpeed;
+
 
     private void Awake()
     {       
@@ -14,13 +17,13 @@ public class PlayerBulletController : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("SetUnActive", _bulletLife);
+        Invoke("SetUnActive", _bulletLife.Value);
     }
 
     void Update()
     {
         //Move bullet forward
-        transform.Translate(Vector3.forward * PlayerStats.instance._playerBulletSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * _bulletSpeed.Value * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,7 +31,7 @@ public class PlayerBulletController : MonoBehaviour
         if (other.gameObject.layer == 10)
         {
             SetUnActive();
-            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(PlayerStats.instance._playerBulletDmg);
+            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(_bulletDamage.Value);
         }
 
         if (other.gameObject.tag == "Wall")
@@ -38,20 +41,6 @@ public class PlayerBulletController : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.layer == 10)
-    //    {
-    //        SetUnActive();
-    //        collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(PlayerStats.instance._playerBulletDmg);
-    //    }
-
-    //    if (collision.gameObject.tag == "Wall")
-    //    {
-    //        SetUnActive();
-    //        gameObject.SetActive(false);
-    //    }
-    //}   
 
     void SetUnActive()
     {

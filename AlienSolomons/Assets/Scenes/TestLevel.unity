@@ -49452,7 +49452,6 @@ MonoBehaviour:
   _playerExp: 0
   _playerLevel: 1
   _currentExpNeededForLevel: 0
-  _playerMaxHealth: 100
   level1ExpNeeded: 10
   _playerBulletSpeed: 40
   _playerBulletDmg: 1
@@ -50125,6 +50124,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594046748}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1596296512 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 418036455, guid: d23263cb0bec14241938b115ad05a3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3529250732231392433}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc106547cc18b048a52ad2733f060c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1598573103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55326,6 +55337,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1809468586}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1810452327 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6284841860466408908, guid: d23263cb0bec14241938b115ad05a3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3529250732231392433}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1812680116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65111,11 +65134,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1459776078572764158, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _shooting
+      value: 
+      objectReference: {fileID: 11400000, guid: d4afad67ba2a15e44b8780f9a4775716,
+        type: 2}
+    - target: {fileID: 1459776078572764158, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _playerFireRate
+      value: 
+      objectReference: {fileID: 11400000, guid: dbae0a5eaa9b0cb40ab47937323e697c,
+        type: 2}
     - target: {fileID: 2527591339606114002, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
       propertyPath: _moveJoystick
       value: 
       objectReference: {fileID: 1699546190}
+    - target: {fileID: 2527591339606114002, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _moveSpeed
+      value: 
+      objectReference: {fileID: 11400000, guid: 83817a9ef5cebac4cb6420c575371342,
+        type: 2}
+    - target: {fileID: 2527591339606114002, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _shooting
+      value: 
+      objectReference: {fileID: 11400000, guid: d4afad67ba2a15e44b8780f9a4775716,
+        type: 2}
     - target: {fileID: 2639842005492533822, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
       propertyPath: m_Mesh
@@ -65186,6 +65233,56 @@ PrefabInstance:
       propertyPath: defeatScreen
       value: 
       objectReference: {fileID: 494680114}
+    - target: {fileID: 8024430942955482010, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: MaxHealth.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a61cacbe142d794ba08fa4c838e4d51,
+        type: 2}
+    - target: {fileID: 8024430942955482010, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: CurrentHealth.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d7b1cc8dd422994d9a43ef5e09b5796,
+        type: 2}
+    - target: {fileID: 8024430942955482010, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: MaxHealth.UseConstant
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8024430942955482010, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: CurrentHealth.UseConstant
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8024430942955482010, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1596296512}
+    - target: {fileID: 8024430942955482010, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: floatingDmg
+      value: 
+      objectReference: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
+        type: 3}
+    - target: {fileID: 8024430942955482010, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _healthTxt
+      value: 
+      objectReference: {fileID: 1810452327}
+    - target: {fileID: 8024430942955482010, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: currentHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d7b1cc8dd422994d9a43ef5e09b5796,
+        type: 2}
+    - target: {fileID: 8024430942955482010, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: maxHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a61cacbe142d794ba08fa4c838e4d51,
+        type: 2}
     - target: {fileID: 8922018628135602516, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
       propertyPath: m_AnchorMax.x

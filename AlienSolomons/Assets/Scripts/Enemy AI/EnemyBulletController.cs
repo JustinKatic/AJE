@@ -7,7 +7,7 @@ public class EnemyBulletController : MonoBehaviour
 {
     [SerializeField] float _speed;
     [SerializeField] float _bulletLife;
-    [SerializeField] float _damage;
+    [SerializeField] FloatVariable _damage;
     PlayerHealthManager _playerHealth;
 
     private void Awake()
@@ -30,7 +30,7 @@ public class EnemyBulletController : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             SetUnActive();
-            _playerHealth.HurtPlayer(_damage);
+            _playerHealth.HurtPlayer(_damage.Value);
         }
 
         if (other.gameObject.tag == "Wall")
@@ -40,20 +40,6 @@ public class EnemyBulletController : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        SetUnActive();
-    //        _playerHealth.HurtPlayer(_damage);
-    //    }
-
-    //    if (collision.gameObject.tag == "Wall")
-    //    {
-    //        SetUnActive();
-    //        gameObject.SetActive(false);
-    //    }
-    //}   
 
     void SetUnActive()
     {

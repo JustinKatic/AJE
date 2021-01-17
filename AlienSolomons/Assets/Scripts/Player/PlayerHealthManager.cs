@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : MonoBehaviour
 {
-    private float maxHealth;
-    private float currentHealth;
+    public FloatVariable maxHealth;
+    public FloatVariable currentHealth;
 
     public HealthBar healthBar;
     public GameObject defeatScreen;
@@ -18,38 +18,37 @@ public class PlayerHealthManager : MonoBehaviour
 
 
     void Start()
-    {
-        maxHealth = PlayerStats.instance._playerMaxHealth;
-        currentHealth = maxHealth;
-        _healthTxt.text = currentHealth.ToString();
-        healthBar.SetMaxHealth(maxHealth);
+    {       
+        currentHealth.Value = maxHealth.Value;
+        _healthTxt.text = currentHealth.Value.ToString();
+        healthBar.SetMaxHealth(maxHealth.Value);
     }
 
     void Update()
     {
-        if (currentHealth <= 0)
+        if (currentHealth.Value <= 0)
         {
             gameObject.SetActive(false);
             EnemyManager.instance._enemies.Clear();
             defeatScreen.SetActive(true);
         }
 
-        if (currentHealth > maxHealth)
-            currentHealth = maxHealth;
+        if (currentHealth.Value > maxHealth.Value)
+            currentHealth.Value = maxHealth.Value;
     }
     public void HurtPlayer(float damage)
     {
-        currentHealth -= damage;
+        currentHealth.Value -= damage;
         GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
-        healthBar.SetHealth(currentHealth);
-        _healthTxt.text = currentHealth.ToString();
+        healthBar.SetHealth(currentHealth.Value);
+        _healthTxt.text = currentHealth.Value.ToString();
     }
 
     public void HealPlayer(float heal)
     {
-        currentHealth += heal;
-        healthBar.SetHealth(currentHealth);
-        _healthTxt.text = currentHealth.ToString();
+        currentHealth.Value += heal;
+        healthBar.SetHealth(currentHealth.Value);
+        _healthTxt.text = currentHealth.Value.ToString();
     }
 }
