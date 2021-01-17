@@ -19,9 +19,6 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] ListOfTransforms ListOfEnemies;
 
 
-
-
-
     void Start()
     {       
         currentHealth.Value = maxHealth.Value;

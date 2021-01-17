@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class EnemyBulletController : MonoBehaviour
 {
-    [SerializeField] float _speed;
-    [SerializeField] float _bulletLife;
+    [SerializeField] FloatVariable _speed;
+    [SerializeField] FloatVariable _bulletLife;
     [SerializeField] FloatVariable _damage;
     PlayerHealthManager _playerHealth;
 
@@ -17,13 +17,13 @@ public class EnemyBulletController : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("SetUnActive", _bulletLife);
+        Invoke("SetUnActive", _bulletLife.Value);
     }
 
     void Update()
     {
         //Move bullet forward
-        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * _speed.Value * Time.deltaTime);
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -112,7 +112,7 @@ public class EnemyArcherMove : MonoBehaviour
         _shotCounter -= Time.deltaTime;
         if (_shotCounter <= 0)
         {
-            GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("EnemyBullet");
+            GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("ArcherProjectile");
             _shotCounter = _archerTimeBetweenShots.Value;
             bullet.transform.position = _firePoint.position;
             bullet.transform.rotation = _firePoint.transform.rotation;
