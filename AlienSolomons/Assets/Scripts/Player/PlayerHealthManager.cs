@@ -16,6 +16,11 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] GameObject floatingDmg;
     [SerializeField] TextMeshPro _healthTxt;
 
+    [SerializeField] ListOfTransforms ListOfEnemies;
+
+
+
+
 
     void Start()
     {       
@@ -29,7 +34,7 @@ public class PlayerHealthManager : MonoBehaviour
         if (currentHealth.Value <= 0)
         {
             gameObject.SetActive(false);
-            EnemyManager.instance._enemies.Clear();
+            ListOfEnemies.List.Clear();
             defeatScreen.SetActive(true);
         }
 

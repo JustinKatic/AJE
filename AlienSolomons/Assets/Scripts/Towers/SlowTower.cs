@@ -5,11 +5,18 @@ using UnityEngine;
 public class SlowTower : MonoBehaviour
 {
     private float _timer;
+    [SerializeField] LayerMaskVariable EnemyLayerMask;
+    [SerializeField] FloatVariable SlowTowerDebuffAmount;
+    [SerializeField] FloatVariable SlowTowerActivateEveryX;
+    [SerializeField] FloatVariable SlowTowerRadius;
+    [SerializeField] FloatVariable SlowTowerDamage;
+
+
 
     private void Update()
     {
         _timer += Time.deltaTime;
-        if (_timer >= TowerManager.instance._slowActivateEveryX)
+        if (_timer >= SlowTowerActivateEveryX.Value)
         {
             MyCollisions();
             _timer = 0;
@@ -18,15 +25,15 @@ public class SlowTower : MonoBehaviour
 
     void MyCollisions()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, TowerManager.instance._slowRadius, TowerManager.instance.m_LayerMask);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, SlowTowerRadius.Value, EnemyLayerMask.Value);
         int i = 0;
         while (i < hitColliders.Length)
         {
-            hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerManager.instance._slowDamage);
+            hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(SlowTowerDamage.Value);
             if (hitColliders[i].tag == "EnemyBarbarian")
-                hitColliders[i].GetComponent<EnemyBarbarianMovement>().SetSlowDebuffTrue(TowerManager.instance._slowDebuffAmount);
+                hitColliders[i].GetComponent<EnemyBarbarianMovement>().SetSlowDebuffTrue(SlowTowerDebuffAmount.Value);
             else if ((hitColliders[i].tag == "EnemyArcher"))
-                hitColliders[i].GetComponent<EnemyArcherMove>().SetSlowDebuffTrue(TowerManager.instance._slowDebuffAmount);
+                hitColliders[i].GetComponent<EnemyArcherMove>().SetSlowDebuffTrue(SlowTowerDebuffAmount.Value);
             i++;
         }
     }
@@ -34,6 +41,6 @@ public class SlowTower : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, TowerManager.instance._slowRadius);
+        Gizmos.DrawWireSphere(transform.position, SlowTowerRadius.Value);
     }
 }

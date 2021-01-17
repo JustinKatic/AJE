@@ -10,12 +10,18 @@ public class EnemyArcherMove : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     GameObject player;
 
-    [SerializeField] float _range;
-    public bool _shooting;
+    [SerializeField] FloatVariable _archerRange;
+    [SerializeField] FloatVariable _archerMoveSpeed;
+    [SerializeField] FloatVariable _archerTimeBetweenShots;
+    [SerializeField] FloatVariable SlowTowerDuration;
+
+
 
     private bool _slowDebuff;
     private float _slowDurationTimer;
 
+    private float _shotCounter;
+    [SerializeField] Transform _firePoint;
 
     void Start()
     {
@@ -33,24 +39,23 @@ public class EnemyArcherMove : MonoBehaviour
     private void OnDisable()
     {
         _slowDebuff = false;
-        SetEnemyMoveSpeed(EnemyManager.instance._archerDefaultMoveSpeed);
+        SetEnemyMoveSpeed(_archerMoveSpeed.Value);
     }
 
     private void Update()
     {
-        SlowDebuff(EnemyManager.instance._archerDefaultMoveSpeed);
+        SlowDebuff(_archerMoveSpeed.Value);
 
         float dist = Vector3.Distance(transform.position, player.transform.position);
-        if (dist > _range)
+        if (dist > _archerRange.Value)
         {
             navMeshAgent.isStopped = false;
-            _shooting = false;
             navMeshAgent.SetDestination(destination.position);
         }
         else
         {
             navMeshAgent.isStopped = true;
-            _shooting = true;
+            ArcherShoot();
             transform.LookAt(player.transform);
         }
     }
@@ -58,7 +63,10 @@ public class EnemyArcherMove : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
+        {
+            navMeshAgent.velocity = Vector3.zero;
             navMeshAgent.isStopped = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -80,7 +88,7 @@ public class EnemyArcherMove : MonoBehaviour
 
     public void SetSlowDebuffTrue(float reduceSpeedByX)
     {
-        SetEnemyMoveSpeed(EnemyManager.instance._archerDefaultMoveSpeed - reduceSpeedByX);
+        SetEnemyMoveSpeed(_archerMoveSpeed.Value - reduceSpeedByX);
         _slowDebuff = true;
         _slowDurationTimer = 0;
     }
@@ -90,12 +98,25 @@ public class EnemyArcherMove : MonoBehaviour
         if (_slowDebuff == true)
         {
             _slowDurationTimer += Time.deltaTime;
-            if (_slowDurationTimer > TowerManager.instance._slowedDuration)
+            if (_slowDurationTimer > SlowTowerDuration.Value)
             {
                 SetEnemyMoveSpeed(EnemyDefaultSpeed);
                 _slowDurationTimer = 0;
                 _slowDebuff = false;
             }
+        }
+    }
+
+    public void ArcherShoot()
+    {
+        _shotCounter -= Time.deltaTime;
+        if (_shotCounter <= 0)
+        {
+            GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("EnemyBullet");
+            _shotCounter = _archerTimeBetweenShots.Value;
+            bullet.transform.position = _firePoint.position;
+            bullet.transform.rotation = _firePoint.transform.rotation;
+            bullet.SetActive(true);
         }
     }
 }

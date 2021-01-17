@@ -10,6 +10,12 @@ public class EnemyBarbarianMovement : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     GameObject player;
 
+    [SerializeField] FloatVariable _barbarianMoveSpeed;
+    [SerializeField] FloatVariable SlowTowerDuration;
+
+
+
+
     private bool _slowDebuff;
     private float _slowDurationTimer;
 
@@ -27,16 +33,15 @@ public class EnemyBarbarianMovement : MonoBehaviour
 
     private void OnDisable()
     {
-        SetEnemyMoveSpeed(EnemyManager.instance._barbarianDefaultMoveSpeed);
+        SetEnemyMoveSpeed(_barbarianMoveSpeed.Value);
         _slowDebuff = false;
     }
 
     private void Update()
     {
         navMeshAgent.SetDestination(destination.position);
-        SlowDebuff(EnemyManager.instance._barbarianDefaultMoveSpeed);
+        SlowDebuff(_barbarianMoveSpeed.Value);
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -67,7 +72,7 @@ public class EnemyBarbarianMovement : MonoBehaviour
 
     public void SetSlowDebuffTrue(float reduceSpeedByX)
     {
-        SetEnemyMoveSpeed(EnemyManager.instance._barbarianDefaultMoveSpeed - reduceSpeedByX);
+        SetEnemyMoveSpeed(_barbarianMoveSpeed.Value - reduceSpeedByX);
         _slowDebuff = true;
         _slowDurationTimer = 0;
     }
@@ -77,7 +82,7 @@ public class EnemyBarbarianMovement : MonoBehaviour
         if (_slowDebuff == true)
         {
             _slowDurationTimer += Time.deltaTime;
-            if (_slowDurationTimer > TowerManager.instance._slowedDuration)
+            if (_slowDurationTimer > SlowTowerDuration.Value)
             {
                 SetEnemyMoveSpeed(EnemyDefaultSpeed);
                 _slowDurationTimer = 0;

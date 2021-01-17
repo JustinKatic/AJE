@@ -6,8 +6,13 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] VirtualJoystick _moveJoystick;
 
-    public FloatVariable _moveSpeed;
-    public BoolVariable _shooting;
+    [SerializeField] FloatVariable _moveSpeed;
+    [SerializeField] BoolVariable _shooting;
+    [SerializeField] FloatVariable _currency;
+
+    [SerializeField] ListOfTransforms ListOfEnemies;
+
+
 
     private Vector3 _moveInput;
     Vector3 _playerDirection;
@@ -19,6 +24,10 @@ public class PlayerMove : MonoBehaviour
 
     private Transform cloestTarget;
 
+    private void Awake()
+    {
+        ListOfEnemies.List.Clear();
+    }
 
     void Start()
     {
@@ -40,14 +49,14 @@ public class PlayerMove : MonoBehaviour
 
         if (cloestTarget == null || cloestTarget.gameObject.activeSelf == false)
         {
-            cloestTarget = GetClosestEnemy(EnemyManager.instance._enemies);
+            cloestTarget = GetClosestEnemy(ListOfEnemies.List);
         }
 
         if (_moveJoystick.InputDirection != Vector3.zero)
         {
             _anim.SetBool("IsRunning", true);
             _shooting.Value = false;
-            cloestTarget = GetClosestEnemy(EnemyManager.instance._enemies);
+            cloestTarget = GetClosestEnemy(ListOfEnemies.List);
         }
         else
         {
@@ -56,7 +65,7 @@ public class PlayerMove : MonoBehaviour
             transform.LookAt(cloestTarget);
         }
 
-        if (EnemyManager.instance._enemies.Count == 0)
+        if (ListOfEnemies.List.Count == 0)
         {
             _shooting.Value = false;
         }
@@ -66,7 +75,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (other.gameObject.tag == "Currency")
         {
-            PlayerStats.instance._currency += 1;
+            _currency.Value += 1;
             other.gameObject.SetActive(false);
         }
     }

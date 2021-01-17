@@ -10,26 +10,39 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameObject floatingDmg;
     private PlayerExpManager _playerExp;
+    [SerializeField] FloatVariable currentExp;
+    [SerializeField] FloatVariable _barbairanExpWorth;
+    [SerializeField] FloatVariable _archerExpWorth;
+
+    [SerializeField] FloatVariable _barbarianMaxHealth;
+
+
+    [SerializeField] FloatVariable _archerMaxHealth;
+
+    [SerializeField] ListOfTransforms _listOfEnemies;
+
+
+
+
 
 
     private void Start()
     {
-        _playerExp = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PlayerExpManager>();
+        _playerExp = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerExpManager>();
     }
 
     private void OnEnable()
     {
         if (gameObject.tag == "EnemyBarbarian")
         {
-            _currentHealth = EnemyManager.instance._barbarianMaxHealth;
-            healthBar.SetMaxHealth(EnemyManager.instance._barbarianMaxHealth);
+            _currentHealth = _barbarianMaxHealth.Value;
+            healthBar.SetMaxHealth(_barbarianMaxHealth.Value);
         }
         else if (gameObject.tag == "EnemyArcher")
         {
-            _currentHealth = EnemyManager.instance._archerMaxHealth;
-            healthBar.SetMaxHealth(EnemyManager.instance._archerMaxHealth);
+            _currentHealth = _archerMaxHealth.Value;
+            healthBar.SetMaxHealth(_archerMaxHealth.Value);
         }
-
     }
 
     private void Update()
@@ -53,9 +66,16 @@ public class EnemyHealthManager : MonoBehaviour
         _currency.transform.rotation = gameObject.transform.rotation;
         _currency.SetActive(true);
         gameObject.SetActive(false);
-        _playerExp.AddExp(EnemyManager.instance._barbarianExpWorth);
-        PlayerStats.instance._playerExp += EnemyManager.instance._barbarianExpWorth;
-        EnemyManager.instance._enemies.Remove(gameObject.transform);
-        WaveSpawner._enemyCount -= 1;
+
+        _listOfEnemies.List.Remove(gameObject.transform);
+
+        if (gameObject.tag == "EnemyBarbarian")
+        {
+            _playerExp.AddExp(_barbairanExpWorth.Value);
+        }
+        else if (gameObject.tag == "EnemyArcher")
+        {
+            _playerExp.AddExp(_archerExpWorth.Value);
+        }
     }
 }

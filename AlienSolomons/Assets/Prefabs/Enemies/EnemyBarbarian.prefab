@@ -206,6 +206,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 3996099526758916043}
+  _barbarianMoveSpeed: {fileID: 11400000, guid: 441e56da76632644bae433ce4123aaf3,
+    type: 2}
+  SlowTowerDuration: {fileID: 11400000, guid: 6f9a0865f7710414cb3fc03175d7f9e6, type: 2}
 --- !u!114 &778474226353804513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +224,13 @@ MonoBehaviour:
   healthBar: {fileID: 3790654423425056796}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
+  currentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
+  _barbairanExpWorth: {fileID: 11400000, guid: d8a49166a90c1f6479db8688a618b094, type: 2}
+  _archerExpWorth: {fileID: 11400000, guid: 45dd3070f54bc634a9d2fcb94dcf94df, type: 2}
+  _barbarianMaxHealth: {fileID: 11400000, guid: e8154aeb453004a4998ff8987a6b565f,
+    type: 2}
+  _archerMaxHealth: {fileID: 11400000, guid: 1fd73302c303600478650d8ebf609eee, type: 2}
+  _listOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
 --- !u!195 &3996099526758916043
 NavMeshAgent:
   m_ObjectHideFlags: 0

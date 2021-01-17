@@ -1583,7 +1583,7 @@ Transform:
   - {fileID: 1297188900}
   - {fileID: 167387850}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &34412904
 PrefabInstance:
@@ -1933,7 +1933,7 @@ Transform:
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &42641868
 MonoBehaviour:
@@ -4808,7 +4808,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &118273100
 MonoBehaviour:
@@ -4875,6 +4875,7 @@ MonoBehaviour:
     - {fileID: 2105542052}
     - {fileID: 1095553439}
     - {fileID: 334813637}
+  ListOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
   timeBetweenWaves: 3
 --- !u!114 &118273101
 MonoBehaviour:
@@ -4900,10 +4901,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cf92a1c733fea4ea3e52eb909bdd22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLevelDetails: []
+  currentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
+  _playerLvl: {fileID: 11400000, guid: 4b8a4340755f3b249bb33475979c4d0b, type: 2}
   expBar: {fileID: 8270151252216396816}
-  _expModifier: 0.33
-  _terraformCam: {fileID: 0}
-  _playerUpgradePanel: {fileID: 0}
 --- !u!1 &119717462
 GameObject:
   m_ObjectHideFlags: 0
@@ -20031,7 +20032,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BuyTower
+  m_Text: DMG Tower
 --- !u!222 &585512192
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23010,7 +23011,7 @@ Transform:
   - {fileID: 1095553439}
   - {fileID: 334813637}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &683235929
 GameObject:
@@ -25123,7 +25124,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BuyTower
+  m_Text: Slow Tower
 --- !u!222 &735430064
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33664,7 +33665,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1020020440
 GameObject:
@@ -41517,6 +41518,43 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3529250732231392433}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1312703991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312703984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cf92a1c733fea4ea3e52eb909bdd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLevelDetails:
+  - name: PlayerLevel1
+    _playerExpNeededToLvl: {fileID: 11400000, guid: fe5805ac9c8a7474599ba006c2efde05,
+      type: 2}
+  - name: PlayerLevel2
+    _playerExpNeededToLvl: {fileID: 11400000, guid: 148e5ac8fca951b469c85fdded71df63,
+      type: 2}
+  - name: PlayerLevel3
+    _playerExpNeededToLvl: {fileID: 11400000, guid: 245317a8763c0b641a734953fb359756,
+      type: 2}
+  currentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
+  _playerLvl: {fileID: 11400000, guid: 4b8a4340755f3b249bb33475979c4d0b, type: 2}
+  expBar: {fileID: 8270151252216396816}
+--- !u!114 &1312703992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312703984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604024ab31af14945815f858ac24f045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1317169891
 GameObject:
   m_ObjectHideFlags: 0
@@ -44828,61 +44866,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415909338}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1420610984
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1420610986}
-  - component: {fileID: 1420610985}
-  m_Layer: 0
-  m_Name: TowerManager(Singleton)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1420610985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420610984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604024ab31af14945815f858ac24f045, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damageTower: {fileID: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  _slowDebuffAmount: 2
-  _slowActivateEveryX: 0.5
-  _slowRadius: 1
-  _slowDamage: 0.5
-  _slowedDuration: 2
-  _damageActivateEveryX: 0.5
-  _damageDamage: 1
-  _damageRadius: 1
---- !u!4 &1420610986
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420610984}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.003356, y: 1.0259144, z: 2.3484933}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1420809150
 GameObject:
   m_ObjectHideFlags: 0
@@ -45940,7 +45923,7 @@ GameObject:
   - component: {fileID: 1449212995}
   - component: {fileID: 1449212994}
   m_Layer: 5
-  m_Name: BuyTowerButton
+  m_Name: BuyDmgTowerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46009,7 +45992,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1420610985}
+      - m_Target: {fileID: 1312703992}
         m_MethodName: BuyTower
         m_Mode: 2
         m_Arguments:
@@ -46833,7 +46816,7 @@ Transform:
   m_Children:
   - {fileID: 705507995}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1478317279
 GameObject:
@@ -49419,57 +49402,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1573911624}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1577221961
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1577221963}
-  - component: {fileID: 1577221962}
-  m_Layer: 0
-  m_Name: PlayerStats(Singleton)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1577221962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577221961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 895d4700c93489242853e3ad5c48f6ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currency: 0
-  _playerExp: 0
-  _playerLevel: 1
-  _currentExpNeededForLevel: 0
-  level1ExpNeeded: 10
-  _playerBulletSpeed: 40
-  _playerBulletDmg: 1
-  _playerFireRate: 0.5
---- !u!4 &1577221963
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577221961}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1579997178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57211,58 +57143,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1853517768}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1856140771
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1856140772}
-  - component: {fileID: 1856140773}
-  m_Layer: 0
-  m_Name: EnemyManager(Singleton)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1856140772
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856140771}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1856140773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856140771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d2961b212ab81f4db9a893f7530097a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemies: []
-  _barbarianMaxHealth: 3
-  _barbarianExpWorth: 0
-  _barbarianDefaultMoveSpeed: 4
-  _archerMaxHealth: 3
-  _archerExpWorth: 0
-  _archerDefaultMoveSpeed: 4
-  _archerTimeBetweenShotsSpeed: 1
-  _timeBetweenShots: 1
 --- !u!1001 &1857024120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57528,7 +57408,7 @@ RectTransform:
   - {fileID: 1449212993}
   - {fileID: 2091478605}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -63354,7 +63234,7 @@ GameObject:
   - component: {fileID: 2091478607}
   - component: {fileID: 2091478606}
   m_Layer: 5
-  m_Name: BuyTowerButton (1)
+  m_Name: BuySlowTowerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63423,7 +63303,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1420610985}
+      - m_Target: {fileID: 1312703992}
         m_MethodName: BuyTower
         m_Mode: 2
         m_Arguments:
@@ -65163,6 +65043,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d4afad67ba2a15e44b8780f9a4775716,
         type: 2}
+    - target: {fileID: 2527591339606114002, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _currency
+      value: 
+      objectReference: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
+        type: 2}
+    - target: {fileID: 2527591339606114002, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: ListOfEnemies
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934,
+        type: 2}
     - target: {fileID: 2639842005492533822, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
       propertyPath: m_Mesh
@@ -65211,7 +65103,7 @@ PrefabInstance:
     - target: {fileID: 3727287849068056887, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3727287849068056887, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
@@ -65282,6 +65174,12 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 
       objectReference: {fileID: 11400000, guid: 2a61cacbe142d794ba08fa4c838e4d51,
+        type: 2}
+    - target: {fileID: 8024430942955482010, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: ListOfEnemies
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934,
         type: 2}
     - target: {fileID: 8922018628135602516, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
@@ -65475,7 +65373,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1856140773}
+      objectReference: {fileID: 0}
     - target: {fileID: 3486638500511378885, guid: 8dff9eddc17cdaa468c7b7af9973788c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName

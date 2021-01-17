@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
-using TMPro;
+
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -20,9 +19,12 @@ public class WaveSpawner : MonoBehaviour
     public Wave[] waves;
     private int nextWave = 0;
 
-    public static int _enemyCount;
+    //public static int _enemyCount;
 
     private int _currentEnemy = 0;
+
+    [SerializeField] ListOfTransforms ListOfEnemies;
+
 
 
     public int NextWave
@@ -40,7 +42,6 @@ public class WaveSpawner : MonoBehaviour
     private float searchCountdown = 1f;
 
     public SpawnState State { get; private set; } = SpawnState.COUNTING;
-
 
     void Start()
     {
@@ -98,7 +99,7 @@ public class WaveSpawner : MonoBehaviour
         {
             searchCountdown = 1f;
 
-            if (_enemyCount <= 0)
+            if (ListOfEnemies.List.Count <= 0)
             {
                 return true;
             }
@@ -129,8 +130,7 @@ public class WaveSpawner : MonoBehaviour
         enemy.transform.position = _sp.position;
         enemy.transform.rotation = _sp.rotation;
         enemy.SetActive(true);
-        EnemyManager.instance._enemies.Add(enemy.transform);
-        _enemyCount += 1;
+        ListOfEnemies.List.Add(enemy.transform);
 
         _currentEnemy++;
     }

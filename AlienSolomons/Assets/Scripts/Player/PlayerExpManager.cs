@@ -4,53 +4,43 @@ using UnityEngine;
 
 public class PlayerExpManager : MonoBehaviour
 {
-    private float currentExp;
-    [SerializeField] FloatVariable[] _playerExpNeededToLvl;
-    [SerializeField] IntVariable _playerLvl;
-    private float _currentExpNeededForLevel;
+    [System.Serializable]
+    public class PlayerLevelDetails
+    {
+        public string name;
+        public FloatVariable _playerExpNeededToLvl;
+    }
 
+    public PlayerLevelDetails[] playerLevelDetails;
+
+    [SerializeField] FloatVariable currentExp;
+    [SerializeField] IntVariable _playerLvl;
 
     public ExpBar expBar;
-    [SerializeField] float _expModifier;
-
-    [SerializeField] GameObject _terraformCam;
-    [SerializeField] GameObject _playerUpgradePanel;
-
 
     void Start()
     {
-        expBar.SetMaxExp(_playerExpNeededToLvl[_playerLvl.Value].Value);
-        currentExp = 0f;
-        expBar.SetExp(currentExp);
+        _playerLvl.Value = 0;
+        expBar.SetMaxExp(playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value);
+        currentExp.Value = 0f;
+        expBar.SetExp(currentExp.Value);
     }
 
     void Update()
     {
-        if (currentExp >= _playerExpNeededToLvl[_playerLvl.Value].Value)
+        if (currentExp.Value >= playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value)
         {
-            DisplayUpgradeScreen();
+            Debug.Log("PlayerLeveled");
             _playerLvl.Value++;
-            currentExp = 0;
-
-            _playerExpNeededToLvl[_playerLvl.Value].Value =
-                _playerExpNeededToLvl[_playerLvl.Value].Value +
-                (_playerExpNeededToLvl[_playerLvl.Value].Value * _expModifier);
-
-            expBar.SetMaxExp(_playerExpNeededToLvl[_playerLvl.Value].Value);
-            expBar.SetExp(currentExp);
+            expBar.SetMaxExp(playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value);
+            currentExp.Value = 0;
+            expBar.SetExp(currentExp.Value);
         }
     }
 
     public void AddExp(float Exp)
     {
-        currentExp += Exp;
-        expBar.SetExp(currentExp);
-    }
-
-    private void DisplayUpgradeScreen()
-    {
-        GameStateManager.PauseGame();
-        _terraformCam.SetActive(true);
-        _playerUpgradePanel.SetActive(true);
+        currentExp.Value += Exp;
+        expBar.SetExp(currentExp.Value);
     }
 }

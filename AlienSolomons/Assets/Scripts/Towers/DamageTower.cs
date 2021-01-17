@@ -6,10 +6,17 @@ public class DamageTower : MonoBehaviour
 {
     private float _timer;
 
+    [SerializeField] FloatVariable DamageTowerActivateEveryX;
+    [SerializeField] FloatVariable DamageTowerDamage;
+    [SerializeField] FloatVariable DamageTowerRadius;
+    [SerializeField] LayerMaskVariable EnemyLayerMask;
+
+
+
     private void Update()
     {
         _timer += Time.deltaTime;
-        if (_timer >= TowerManager.instance._damageActivateEveryX)
+        if (_timer >= DamageTowerActivateEveryX.Value)
         {
             MyCollisions();
             _timer = 0;
@@ -19,12 +26,12 @@ public class DamageTower : MonoBehaviour
 
     void MyCollisions()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, TowerManager.instance._damageRadius, TowerManager.instance.m_LayerMask);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, DamageTowerRadius.Value, EnemyLayerMask.Value);
         int i = 0;
         //Check when there is a new collider coming into contact with the box
         while (i < hitColliders.Length)
         {
-            hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerManager.instance._damageDamage);
+            hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(DamageTowerDamage.Value);
             i++;
         }
     }
@@ -32,7 +39,7 @@ public class DamageTower : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, TowerManager.instance._damageRadius);
+        Gizmos.DrawWireSphere(transform.position, DamageTowerRadius.Value);
     }
 
 }
