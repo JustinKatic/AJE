@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] FloatVariable _moveSpeed;
     [SerializeField] BoolVariable _shooting;
-    [SerializeField] FloatVariable _currency;
+    [SerializeField] FloatVariable PlayerInGameCurrency;
 
     [SerializeField] ListOfTransforms ListOfEnemies;
 
@@ -26,8 +26,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Awake()
     {
-        ListOfEnemies.List.Clear();
-        _currency.Value = 0;
+       
     }
 
     void Start()
@@ -76,7 +75,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (other.gameObject.tag == "SmallCurrency" || other.gameObject.tag == "LargeCurrency")
         {
-            _currency.Value += other.GetComponent<SetCurrencyPickupValue>().CurrencySize.Value;
+            PlayerInGameCurrency.Value += other.GetComponent<SetCurrencyPickupValue>().CurrencySize.Value;
             other.gameObject.SetActive(false);
         }
     }

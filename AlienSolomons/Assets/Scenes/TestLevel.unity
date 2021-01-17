@@ -4755,6 +4755,7 @@ GameObject:
   - component: {fileID: 118273097}
   - component: {fileID: 118273100}
   - component: {fileID: 118273101}
+  - component: {fileID: 118273099}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -4813,6 +4814,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &118273099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118273096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94bf7d84a331e3f4f9bb2f4eec444ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
+    type: 2}
+  ListOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
 --- !u!114 &118273100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65041,6 +65057,12 @@ PrefabInstance:
       propertyPath: ListOfEnemies
       value: 
       objectReference: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934,
+        type: 2}
+    - target: {fileID: 2527591339606114002, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: PlayerInGameCurrency
+      value: 
+      objectReference: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
         type: 2}
     - target: {fileID: 2639842005492533822, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
