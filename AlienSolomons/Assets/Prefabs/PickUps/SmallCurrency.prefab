@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3748239245125176665}
   - component: {fileID: 1461879091829384459}
   - component: {fileID: 8232979916302206729}
+  - component: {fileID: -1863026373544565092}
   m_Layer: 0
-  m_Name: Currency
-  m_TagString: Currency
+  m_Name: SmallCurrency
+  m_TagString: SmallCurrency
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,3 +94,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1863026373544565092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6047960489799098282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce79046ea50b9fa44a933884caab95c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrencySize: {fileID: 11400000, guid: 3937d26b0190a6b4fb855c41df82cb0c, type: 2}

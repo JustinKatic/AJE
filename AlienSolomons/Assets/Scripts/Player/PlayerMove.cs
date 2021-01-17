@@ -27,6 +27,7 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         ListOfEnemies.List.Clear();
+        _currency.Value = 0;
     }
 
     void Start()
@@ -73,9 +74,9 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Currency")
+        if (other.gameObject.tag == "SmallCurrency" || other.gameObject.tag == "LargeCurrency")
         {
-            _currency.Value += 1;
+            _currency.Value += other.GetComponent<SetCurrencyPickupValue>().CurrencySize.Value;
             other.gameObject.SetActive(false);
         }
     }

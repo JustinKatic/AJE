@@ -21,7 +21,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     [SerializeField] ListOfTransforms _listOfEnemies;
 
-
+    private int randomNumber;
 
 
 
@@ -43,6 +43,8 @@ public class EnemyHealthManager : MonoBehaviour
             _currentHealth = _archerMaxHealth.Value;
             healthBar.SetMaxHealth(_archerMaxHealth.Value);
         }
+
+        randomNumber = Random.Range(0, 10);
     }
 
     private void Update()
@@ -61,12 +63,6 @@ public class EnemyHealthManager : MonoBehaviour
 
     void Die()
     {
-        GameObject _currency = ObjectPooler.SharedInstance.GetPooledObject("Currency");
-        _currency.transform.position = gameObject.transform.position;
-        _currency.transform.rotation = gameObject.transform.rotation;
-        _currency.SetActive(true);
-        gameObject.SetActive(false);
-
         _listOfEnemies.List.Remove(gameObject.transform);
 
         if (gameObject.tag == "EnemyBarbarian")
@@ -77,5 +73,28 @@ public class EnemyHealthManager : MonoBehaviour
         {
             _playerExp.AddExp(_archerExpWorth.Value);
         }
+        gameObject.SetActive(false);
+
+
+        if (randomNumber <= 5)
+        {
+            return;
+        }
+        else if (randomNumber > 5 && randomNumber <= 7)
+        {
+            GameObject _currency = ObjectPooler.SharedInstance.GetPooledObject("SmallCurrency");
+            _currency.transform.position = gameObject.transform.position;
+            _currency.transform.rotation = gameObject.transform.rotation;
+            _currency.SetActive(true);
+        }
+        else 
+        {
+            GameObject _currency = ObjectPooler.SharedInstance.GetPooledObject("LargeCurrency");
+            _currency.transform.position = gameObject.transform.position;
+            _currency.transform.rotation = gameObject.transform.rotation;
+            _currency.SetActive(true);
+        }
+
+
     }
 }
