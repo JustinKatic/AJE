@@ -21,8 +21,8 @@ public class PlayerExpManager : MonoBehaviour
     void Start()
     {
         _playerLvl.Value = 0;
-        expBar.SetMaxExp(playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value);
         currentExp.Value = 0f;
+        expBar.SetMaxExp(playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value);
         expBar.SetExp(currentExp.Value);
     }
 
