@@ -8,12 +8,11 @@ public class PlayerHurt : MonoBehaviour
     [SerializeField] float _damageEveryX = 1.0f;
     float _timer;
     [SerializeField] FloatVariable _damage;
-
-    PlayerHealthManager _playerHealthManager;
+    [SerializeField] GameEvent HurtPlayer;
+    
 
     private void Start()
     {
-        _playerHealthManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealthManager>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -23,7 +22,7 @@ public class PlayerHurt : MonoBehaviour
             _timer += Time.deltaTime;
             if (_timer > _damageEveryX)
             {
-                _playerHealthManager.HurtPlayer(_damage.Value);
+                HurtPlayer.Raise();
                 _timer = 0.0f;
             }
         }

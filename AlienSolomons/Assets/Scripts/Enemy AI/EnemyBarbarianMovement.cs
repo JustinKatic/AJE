@@ -13,9 +13,6 @@ public class EnemyBarbarianMovement : MonoBehaviour
     [SerializeField] FloatVariable _barbarianMoveSpeed;
     [SerializeField] FloatVariable SlowTowerDuration;
 
-
-
-
     private bool _slowDebuff;
     private float _slowDurationTimer;
 

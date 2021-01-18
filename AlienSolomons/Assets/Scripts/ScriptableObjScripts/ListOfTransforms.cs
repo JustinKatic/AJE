@@ -13,4 +13,9 @@ public class ListOfTransforms : ScriptableObject
 
     public List<Transform> List;
   
+
+    public void ClearList()
+    {
+        List.Clear();
+    }
 }

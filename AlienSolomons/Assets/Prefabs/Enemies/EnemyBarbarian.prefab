@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damageEveryX: 0.3
   _damage: {fileID: 11400000, guid: 939f3d944a191ce4d93f1a0f05c8dbfb, type: 2}
+  HurtPlayer: {fileID: 11400000, guid: 8134f26d2cf667d48a0df30bb9cde651, type: 2}
 --- !u!1 &5041428422490557819
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,13 +225,14 @@ MonoBehaviour:
   healthBar: {fileID: 3790654423425056796}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
-  currentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
+  PlayerInGameExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
   _barbairanExpWorth: {fileID: 11400000, guid: d8a49166a90c1f6479db8688a618b094, type: 2}
   _archerExpWorth: {fileID: 11400000, guid: 45dd3070f54bc634a9d2fcb94dcf94df, type: 2}
   _barbarianMaxHealth: {fileID: 11400000, guid: e8154aeb453004a4998ff8987a6b565f,
     type: 2}
   _archerMaxHealth: {fileID: 11400000, guid: 1fd73302c303600478650d8ebf609eee, type: 2}
   _listOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
+  PlayerGainedExp: {fileID: 11400000, guid: ae95a37e4c9f72b45a5188771aaf95e5, type: 2}
 --- !u!195 &3996099526758916043
 NavMeshAgent:
   m_ObjectHideFlags: 0

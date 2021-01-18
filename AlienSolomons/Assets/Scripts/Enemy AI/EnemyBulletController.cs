@@ -8,11 +8,12 @@ public class EnemyBulletController : MonoBehaviour
     [SerializeField] FloatVariable _speed;
     [SerializeField] FloatVariable _bulletLife;
     [SerializeField] FloatVariable _damage;
-    PlayerHealthManager _playerHealth;
+    [SerializeField] GameEvent HurtPlayer;
+
 
     private void Awake()
     {       
-        _playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealthManager>();
+        
     }
 
     private void OnEnable()
@@ -30,7 +31,7 @@ public class EnemyBulletController : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             SetUnActive();
-            _playerHealth.HurtPlayer(_damage.Value);
+            HurtPlayer.Raise();
         }
 
         if (other.gameObject.tag == "Wall")

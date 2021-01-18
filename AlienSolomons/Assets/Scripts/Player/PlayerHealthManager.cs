@@ -8,49 +8,52 @@ using UnityEngine.SceneManagement;
 public class PlayerHealthManager : MonoBehaviour
 {
     public FloatVariable maxHealth;
-    public FloatVariable currentHealth;
+    public float currentHealth;
 
     public HealthBar healthBar;
-    public GameObject defeatScreen;
-
     [SerializeField] GameObject floatingDmg;
     [SerializeField] TextMeshPro _healthTxt;
+    [SerializeField] GameEvent PlayerDeath;
 
-    [SerializeField] ListOfTransforms ListOfEnemies;
 
 
     void Start()
-    {       
-        currentHealth.Value = maxHealth.Value;
-        _healthTxt.text = currentHealth.Value.ToString();
+    {
+        currentHealth = maxHealth.Value;
+        _healthTxt.text = currentHealth.ToString();
         healthBar.SetMaxHealth(maxHealth.Value);
     }
 
     void Update()
     {
-        if (currentHealth.Value <= 0)
+        if (currentHealth <= 0)
         {
-            gameObject.SetActive(false);
-            ListOfEnemies.List.Clear();
-            defeatScreen.SetActive(true);
+            if (gameObject.tag == "Player")
+                PlayerDeath.Raise();
         }
 
-        if (currentHealth.Value > maxHealth.Value)
-            currentHealth.Value = maxHealth.Value;
+        if (currentHealth > maxHealth.Value)
+            currentHealth = maxHealth.Value;
     }
-    public void HurtPlayer(float damage)
+
+    public void HurtPlayer(FloatVariable damage)
     {
-        currentHealth.Value -= damage;
+        currentHealth -= damage.Value;
         GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
-        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
-        healthBar.SetHealth(currentHealth.Value);
-        _healthTxt.text = currentHealth.Value.ToString();
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.Value.ToString();
+    }
+
+
+    public void UpdateHealthBarAndText()
+    {
+        healthBar.SetHealth(currentHealth);
+        _healthTxt.text = currentHealth.ToString();
     }
 
     public void HealPlayer(float heal)
     {
-        currentHealth.Value += heal;
-        healthBar.SetHealth(currentHealth.Value);
-        _healthTxt.text = currentHealth.Value.ToString();
+        currentHealth += heal;
+        healthBar.SetHealth(currentHealth);
+        _healthTxt.text = currentHealth.ToString();
     }
 }
