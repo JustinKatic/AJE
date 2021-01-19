@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class EnemyBulletController : MonoBehaviour
+public class EnemyArcherProjectile : MonoBehaviour
 {
     [SerializeField] FloatVariable _speed;
     [SerializeField] FloatVariable _bulletLife;
     [SerializeField] FloatVariable _damage;
-    [SerializeField] GameEvent HurtPlayer;
+    [SerializeField] GameEvent PlayerShotByArcher;
 
 
     private void Awake()
@@ -31,7 +31,7 @@ public class EnemyBulletController : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             SetUnActive();
-            HurtPlayer.Raise();
+            PlayerShotByArcher.Raise();
         }
 
         if (other.gameObject.tag == "Wall")

@@ -15,8 +15,6 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] TextMeshPro _healthTxt;
     [SerializeField] GameEvent PlayerDeath;
 
-
-
     void Start()
     {
         currentHealth = maxHealth.Value;
@@ -39,6 +37,10 @@ public class PlayerHealthManager : MonoBehaviour
     public void HurtPlayer(FloatVariable damage)
     {
         currentHealth -= damage.Value;
+    }
+
+    public void FloatingText(FloatVariable damage)
+    {
         GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.Value.ToString();
     }
