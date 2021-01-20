@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3303650783771829219}
   - component: {fileID: 1180402241885366473}
   - component: {fileID: 5510411123064573165}
+  - component: {fileID: 436658243494218563}
   m_Layer: 10
   m_Name: EnemyArcher
   m_TagString: EnemyArcher
@@ -97,12 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 1180402241885366473}
-  _archerRange: {fileID: 11400000, guid: c47015d4c8b4c864ba6a4cc87237762e, type: 2}
-  _archerMoveSpeed: {fileID: 11400000, guid: 3a9b9afab40074d41afd583a9948b4ca, type: 2}
-  _archerTimeBetweenShots: {fileID: 11400000, guid: 5c80c85c6efddad42ac5b3399f7fdfd3,
-    type: 2}
+  MyMoveSpeed: {fileID: 11400000, guid: 3a9b9afab40074d41afd583a9948b4ca, type: 2}
   SlowTowerDuration: {fileID: 11400000, guid: 6f9a0865f7710414cb3fc03175d7f9e6, type: 2}
-  _firePoint: {fileID: 1545925258281464644}
+  MyAttackRange: {fileID: 11400000, guid: c47015d4c8b4c864ba6a4cc87237762e, type: 2}
+  TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
+    type: 2}
 --- !u!114 &3303650783771829219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,13 +119,11 @@ MonoBehaviour:
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
   PlayerInGameExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
-  _barbairanExpWorth: {fileID: 11400000, guid: d8a49166a90c1f6479db8688a618b094, type: 2}
-  _archerExpWorth: {fileID: 11400000, guid: 45dd3070f54bc634a9d2fcb94dcf94df, type: 2}
-  _barbarianMaxHealth: {fileID: 11400000, guid: e8154aeb453004a4998ff8987a6b565f,
-    type: 2}
-  _archerMaxHealth: {fileID: 11400000, guid: 1fd73302c303600478650d8ebf609eee, type: 2}
+  MyExpWorth: {fileID: 11400000, guid: 45dd3070f54bc634a9d2fcb94dcf94df, type: 2}
+  MyMaxHealth: {fileID: 11400000, guid: 1fd73302c303600478650d8ebf609eee, type: 2}
   _listOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
-  PlayerGainedExp: {fileID: 11400000, guid: ae95a37e4c9f72b45a5188771aaf95e5, type: 2}
+  MyDeathEvent: {fileID: 11400000, guid: 4b647167dcce7a245853988dca329f0f, type: 2}
+  IHaveAHealthBar: 1
 --- !u!195 &1180402241885366473
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -162,6 +160,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &436658243494218563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125713572530112799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed022a5ed74131449fd983fd22eb37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeBetweenShots: {fileID: 11400000, guid: 5c80c85c6efddad42ac5b3399f7fdfd3, type: 2}
+  _firePoint: {fileID: 1545925258281464644}
+  AttackRange: {fileID: 11400000, guid: c47015d4c8b4c864ba6a4cc87237762e, type: 2}
+  TagOfTarget: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21, type: 2}
 --- !u!1 &7125713573760678521
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +316,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damageEveryX: 0.3
   _damage: {fileID: 11400000, guid: 939f3d944a191ce4d93f1a0f05c8dbfb, type: 2}
-  HurtPlayer: {fileID: 11400000, guid: 8134f26d2cf667d48a0df30bb9cde651, type: 2}
+  PlayersCurrentHealth: {fileID: 11400000, guid: 4d7b1cc8dd422994d9a43ef5e09b5796,
+    type: 2}
+  floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
+    type: 3}
 --- !u!1001 &7125713573613154412
 PrefabInstance:
   m_ObjectHideFlags: 0

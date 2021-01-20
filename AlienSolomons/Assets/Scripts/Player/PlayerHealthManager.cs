@@ -2,41 +2,30 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 
 public class PlayerHealthManager : MonoBehaviour
 {
     public FloatVariable maxHealth;
-    public float currentHealth;
+    public FloatVariable currentHealth;
 
-    public HealthBar healthBar;
     [SerializeField] GameObject floatingDmg;
     [SerializeField] TextMeshPro _healthTxt;
     [SerializeField] GameEvent PlayerDeath;
 
     void Start()
     {
-        currentHealth = maxHealth.Value;
-        _healthTxt.text = currentHealth.ToString();
-        healthBar.SetMaxHealth(maxHealth.Value);
+        currentHealth.Value = maxHealth.Value;
+        _healthTxt.text = currentHealth.Value.ToString();
     }
 
     void Update()
     {
-        if (currentHealth <= 0)
+        if (currentHealth.Value <= 0)
         {
-            if (gameObject.tag == "Player")
-                PlayerDeath.Raise();
+            PlayerDeath.Raise();
         }
-
-        if (currentHealth > maxHealth.Value)
-            currentHealth = maxHealth.Value;
-    }
-
-    public void HurtPlayer(FloatVariable damage)
-    {
-        currentHealth -= damage.Value;
+        if (currentHealth.Value > maxHealth.Value)
+            currentHealth.Value = maxHealth.Value;
     }
 
     public void FloatingText(FloatVariable damage)
@@ -45,17 +34,9 @@ public class PlayerHealthManager : MonoBehaviour
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.Value.ToString();
     }
 
-
-    public void UpdateHealthBarAndText()
-    {
-        healthBar.SetHealth(currentHealth);
-        _healthTxt.text = currentHealth.ToString();
-    }
-
     public void HealPlayer(float heal)
     {
-        currentHealth += heal;
-        healthBar.SetHealth(currentHealth);
+        currentHealth.Value += heal;
         _healthTxt.text = currentHealth.ToString();
     }
 }

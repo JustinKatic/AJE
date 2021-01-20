@@ -12,8 +12,12 @@ public class ListOfTransforms : ScriptableObject
 #endif
 
     public List<Transform> List;
-  
 
+    private void OnEnable()
+    {
+        ClearList();
+    }
+  
     public void ClearList()
     {
         List.Clear();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-    [CreateAssetMenu]
+[CreateAssetMenu]
 public class GameEvent : ScriptableObject
 {
     /// <summary>
@@ -15,7 +15,9 @@ public class GameEvent : ScriptableObject
     public void Raise()
     {
         for (int i = eventListeners.Count - 1; i >= 0; i--)
+        {
             eventListeners[i].OnEventRaised();
+        }
     }
 
     public void RegisterListener(GameEventListener listener)

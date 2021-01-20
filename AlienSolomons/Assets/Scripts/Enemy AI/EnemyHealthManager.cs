@@ -7,43 +7,38 @@ using TMPro;
 public class EnemyHealthManager : MonoBehaviour
 {
     private float _currentHealth;
+
     [SerializeField] private HealthBar healthBar;
+
     [SerializeField] private GameObject floatingDmg;
+
     [SerializeField] FloatVariable PlayerInGameExp;
-    [SerializeField] FloatVariable _barbairanExpWorth;
-    [SerializeField] FloatVariable _archerExpWorth;
 
-    [SerializeField] FloatVariable _barbarianMaxHealth;
+    [SerializeField] FloatVariable MyExpWorth;
 
-    [SerializeField] FloatVariable _archerMaxHealth;
+    [SerializeField] FloatVariable MyMaxHealth;
 
     [SerializeField] ListOfTransforms _listOfEnemies;
 
-    [SerializeField] GameEvent PlayerGainedExp;
+    [SerializeField] GameEvent MyDeathEvent;
 
-
+    [SerializeField] bool IHaveAHealthBar;
 
 
     private void Start()
     {
+
     }
 
     private void OnEnable()
     {
-        if (gameObject.tag == "EnemyBarbarian")
-        {
-            _currentHealth = _barbarianMaxHealth.Value;
-            healthBar.SetMaxHealth(_barbarianMaxHealth.Value);
-        }
-        else if (gameObject.tag == "EnemyArcher")
-        {
-            _currentHealth = _archerMaxHealth.Value;
-            healthBar.SetMaxHealth(_archerMaxHealth.Value);
-        }
+        _currentHealth = MyMaxHealth.Value;
+        if (IHaveAHealthBar)
+            healthBar.SetMaxHealth(MyMaxHealth.Value);
     }
 
     private void Update()
-    {       
+    {
         if (_currentHealth <= 0)
             Die();
     }
@@ -51,24 +46,21 @@ public class EnemyHealthManager : MonoBehaviour
     public void HurtEnemy(float damage)
     {
         _currentHealth -= damage;
+        FloatingTxt(damage);
+        if (IHaveAHealthBar)
+            healthBar.SetHealth(_currentHealth);
+    }
+
+    public void FloatingTxt(float damage)
+    {
         GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
-        healthBar.SetHealth(_currentHealth);
     }
 
     void Die()
     {
         _listOfEnemies.List.Remove(gameObject.transform);
-
-        if (gameObject.tag == "EnemyBarbarian")
-        {
-            PlayerInGameExp.Value += _barbairanExpWorth.Value;
-        }
-        else if (gameObject.tag == "EnemyArcher")
-        {
-            PlayerInGameExp.Value += _archerExpWorth.Value;
-        }
-        PlayerGainedExp.Raise();
+        MyDeathEvent.Raise();
         gameObject.SetActive(false);
     }
 }

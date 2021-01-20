@@ -36,7 +36,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     void Update()
-    {
+    {            
         _moveInput = _moveJoystick.InputDirection;
         _moveVelocity = _moveInput * _moveSpeed.Value;
 
@@ -68,15 +68,6 @@ public class PlayerMove : MonoBehaviour
         if (ListOfEnemies.List.Count == 0)
         {
             _shooting.Value = false;
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "SmallCurrency" || other.gameObject.tag == "LargeCurrency")
-        {
-            PlayerInGameCurrency.Value += other.GetComponent<SetCurrencyPickupValue>().CurrencySize.Value;
-            other.gameObject.SetActive(false);
         }
     }
 
