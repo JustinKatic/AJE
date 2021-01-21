@@ -36,7 +36,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {            
-        _moveInput = _moveJoystick.InputDirection;
+        _moveInput = _moveJoystick.InputDirection.normalized;
         _moveVelocity = _moveInput * _moveSpeed.Value;
         controller.Move(_moveVelocity * Time.deltaTime);
 
