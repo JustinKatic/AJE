@@ -39,7 +39,6 @@ public class PlayerMove : MonoBehaviour
         _playerDirection = Vector3.forward * _moveJoystick.Vertical + Vector3.right * _moveJoystick.Horizontal;
         _moveInput = _playerDirection.normalized;
         _moveVelocity = _moveInput * _moveSpeed.Value;
-        controller.Move(_moveVelocity * Time.deltaTime);
 
         if (_playerDirection.sqrMagnitude > 0.0f)
             transform.rotation = Quaternion.LookRotation(_playerDirection * Time.deltaTime, Vector3.up);
@@ -69,7 +68,10 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-
+    private void FixedUpdate()
+    {
+        controller.Move(_moveVelocity * Time.deltaTime);
+    }
     public Transform GetClosestEnemy(List<Transform> enemies)
     {
         Transform bestTarget = null;
