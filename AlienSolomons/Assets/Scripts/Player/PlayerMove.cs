@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] VirtualJoystick _moveJoystick;
+    [SerializeField] FloatingJoystick _moveJoystick;
 
     [SerializeField] FloatVariable _moveSpeed;
     [SerializeField] BoolVariable _shooting;
@@ -35,14 +35,12 @@ public class PlayerMove : MonoBehaviour
     }
 
     void Update()
-    {            
-        _moveInput = _moveJoystick.InputDirection.normalized;
+    {
+        _playerDirection = Vector3.forward * _moveJoystick.Vertical + Vector3.right * _moveJoystick.Horizontal;
+        _moveInput = _playerDirection.normalized;
         _moveVelocity = _moveInput * _moveSpeed.Value;
         controller.Move(_moveVelocity * Time.deltaTime);
 
-        Vector3 leftStickRot = _moveJoystick.InputDirection;
-        _playerDirection = Vector3.right * leftStickRot.x + Vector3.forward * leftStickRot.z;
-        // returns 1 if any rotation is being inputed from right joystick
         if (_playerDirection.sqrMagnitude > 0.0f)
             transform.rotation = Quaternion.LookRotation(_playerDirection * Time.deltaTime, Vector3.up);
 
@@ -52,7 +50,7 @@ public class PlayerMove : MonoBehaviour
             cloestTarget = GetClosestEnemy(ListOfEnemies.List);
         }
 
-        if (_moveJoystick.InputDirection != Vector3.zero)
+        if (_playerDirection != Vector3.zero)
         {
             _anim.SetBool("IsRunning", true);
             _shooting.Value = false;
