@@ -62843,51 +62843,6 @@ Transform:
   m_Father: {fileID: 1015820226}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &2057501851 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 284077346115700946, guid: d23263cb0bec14241938b115ad05a3f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 284077345400468553}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2057501855 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 284077346115700950, guid: d23263cb0bec14241938b115ad05a3f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 284077345400468553}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2057501851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12bbd0ce6d1001f4c8437f469f4da5c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2057501857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2057501851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: f087dd65dcd1a944ba993fad9e9bf69b, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2057501855}
-        m_MethodName: UpdateHealthBar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &2061738429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65718,18 +65673,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 284077346307895728, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: PlayerHealthDecreased
-      value: 
-      objectReference: {fileID: 11400000, guid: f087dd65dcd1a944ba993fad9e9bf69b,
-        type: 2}
-    - target: {fileID: 284077346307895728, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: PlayerHealthIncreased
-      value: 
-      objectReference: {fileID: 11400000, guid: f0afcdad7b2c6fd47933b97add38a320,
-        type: 2}
     - target: {fileID: 284077346307895729, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
       propertyPath: _moveJoystick

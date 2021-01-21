@@ -12,13 +12,13 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] ListOfTransforms ListOfEnemies;
 
+    [SerializeField] CharacterController controller;
 
 
     private Vector3 _moveInput;
     Vector3 _playerDirection;
 
     private Vector3 _moveVelocity;
-    private Rigidbody _rb;
 
     Animator _anim;
 
@@ -31,7 +31,6 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
         _anim = GetComponentInChildren<Animator>();
     }
 
@@ -39,6 +38,7 @@ public class PlayerMove : MonoBehaviour
     {            
         _moveInput = _moveJoystick.InputDirection;
         _moveVelocity = _moveInput * _moveSpeed.Value;
+        controller.Move(_moveVelocity * Time.deltaTime);
 
         Vector3 leftStickRot = _moveJoystick.InputDirection;
         _playerDirection = Vector3.right * leftStickRot.x + Vector3.forward * leftStickRot.z;
@@ -71,10 +71,6 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        _rb.velocity = _moveVelocity;
-    }
 
     public Transform GetClosestEnemy(List<Transform> enemies)
     {
