@@ -8,12 +8,14 @@ public class BuyTowerButton : MonoBehaviour
     [SerializeField] FloatVariable TowerCost;
     [SerializeField] FloatVariable PlayerInGameCurrency;
     [SerializeField] Text ButtonText;
-    [SerializeField] string ButtonString;
-
-
+    [SerializeField] string TowerName;
 
     [SerializeField] StringVariable TagOfObjectPurchasingTower;
     private GameObject ObjPurchasingTower;
+
+    [SerializeField] GameEvent UpdateInGameCurrencyTxt;
+
+
 
     private Button BuyButton;
 
@@ -22,7 +24,7 @@ public class BuyTowerButton : MonoBehaviour
         ObjPurchasingTower = GameObject.FindGameObjectWithTag(TagOfObjectPurchasingTower.Value);
         BuyButton = gameObject.GetComponent<Button>();
         BuyButton.interactable = false;
-        ButtonText.text = ButtonString + "($" + TowerCost.Value + ")";
+        ButtonText.text = TowerName + "($" + TowerCost.Value + ")";
     }
 
     void Update()
@@ -56,6 +58,7 @@ public class BuyTowerButton : MonoBehaviour
                         hit.collider.gameObject.transform.rotation);
                     buildable._hasAreaBeenBuiltOn = true;
                     PlayerInGameCurrency.Value -= TowerCost.Value;
+                    UpdateInGameCurrencyTxt.Raise();
                 }
             }
         }

@@ -13,6 +13,10 @@ public class PlayerHealthBar : MonoBehaviour
     [SerializeField] FloatVariable MyCurrentHealth;
     [SerializeField] FloatVariable MyMaxHealth;
     [SerializeField] TextMeshPro _healthTxt;
+    private void Start()
+    {
+        UpdateHealthBar();
+    }
 
     public void UpdateHealthBar()
     {

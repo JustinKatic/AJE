@@ -64,6 +64,8 @@ MonoBehaviour:
     type: 2}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
+  EnemyCollidingWithPlayer: {fileID: 11400000, guid: 8134f26d2cf667d48a0df30bb9cde651,
+    type: 2}
 --- !u!1 &5041428422490557819
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +154,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5041428423409597982}
-  - component: {fileID: 6776879073915342154}
   - component: {fileID: 778474226353804513}
   - component: {fileID: 3996099526758916043}
   - component: {fileID: 7741045050889780207}
@@ -181,22 +182,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6776879073915342154
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5041428423409597981}
-  serializedVersion: 2
-  m_Mass: 70
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
 --- !u!114 &778474226353804513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,8 +197,6 @@ MonoBehaviour:
   healthBar: {fileID: 3790654423425056796}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
-  PlayerInGameExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
-  MyExpWorth: {fileID: 11400000, guid: d8a49166a90c1f6479db8688a618b094, type: 2}
   MyMaxHealth: {fileID: 11400000, guid: e8154aeb453004a4998ff8987a6b565f, type: 2}
   _listOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
   MyDeathEvent: {fileID: 11400000, guid: e16e748fd6780aa488017b77866f6b23, type: 2}

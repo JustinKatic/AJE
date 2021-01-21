@@ -38,7 +38,6 @@ public class PlayerProjectileController : MonoBehaviour
         if (other.gameObject.tag == "Wall")
         {
             SetUnActive();
-            gameObject.SetActive(false);
         }
     }
 

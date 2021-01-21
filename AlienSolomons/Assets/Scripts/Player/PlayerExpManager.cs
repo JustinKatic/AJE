@@ -14,24 +14,18 @@ public class PlayerExpManager : MonoBehaviour
     public PlayerLevelDetails[] playerLevelDetails;
 
     [SerializeField] FloatVariable currentExp;
+    [SerializeField] FloatVariable MaxExp;
+
     [SerializeField] IntVariable _playerLvl;
-
     [SerializeField] GameEvent PlayerLeveldUp;
-
-    [SerializeField] bool IHaveExpBar;
-    [SerializeField] ExpBar expBar;
+    [SerializeField] GameEvent ExpAddedToPlayer;
 
 
 
-    void Start()
+    void Awake()
     {
-        _playerLvl.Value = 0;
-        currentExp.Value = 0f;
-        if (IHaveExpBar)
-        {
-            expBar.SetMaxExp(playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value);
-            expBar.SetExp(currentExp.Value);
-        }
+        currentExp.Value = 0;
+        MaxExp.Value = playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value;
     }
 
     void Update()
@@ -45,19 +39,13 @@ public class PlayerExpManager : MonoBehaviour
     public void AddPlayerExp(FloatVariable ExpToBeAdded)
     {
         currentExp.Value += ExpToBeAdded.Value;
+        ExpAddedToPlayer.Raise();
     }
 
     public void LevelPlayerUp()
     {
         _playerLvl.Value++;
-        if (IHaveExpBar)
-            expBar.SetMaxExp(playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value);
         currentExp.Value = 0;
-    }
-
-    public void UpdateExpBar()
-    {
-        if (IHaveExpBar)
-            expBar.SetExp(currentExp.Value);
+        MaxExp.Value = playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value;
     }
 }

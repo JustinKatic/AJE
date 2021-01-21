@@ -12,10 +12,6 @@ public class EnemyHealthManager : MonoBehaviour
 
     [SerializeField] private GameObject floatingDmg;
 
-    [SerializeField] FloatVariable PlayerInGameExp;
-
-    [SerializeField] FloatVariable MyExpWorth;
-
     [SerializeField] FloatVariable MyMaxHealth;
 
     [SerializeField] ListOfTransforms _listOfEnemies;
@@ -40,7 +36,7 @@ public class EnemyHealthManager : MonoBehaviour
     private void Update()
     {
         if (_currentHealth <= 0)
-            Die();
+            Death();
     }
 
     public void HurtEnemy(float damage)
@@ -57,7 +53,7 @@ public class EnemyHealthManager : MonoBehaviour
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
     }
 
-    void Die()
+    void Death()
     {
         _listOfEnemies.List.Remove(gameObject.transform);
         MyDeathEvent.Raise();

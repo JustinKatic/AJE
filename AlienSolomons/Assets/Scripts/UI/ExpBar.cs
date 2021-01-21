@@ -11,15 +11,19 @@ public class ExpBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
+    [SerializeField] FloatVariable MyCurrentExp;
+    [SerializeField] FloatVariable MyMaxExp;
 
-    public void SetMaxExp(float exp)
+
+    private void Start()
     {
-        slider.maxValue = exp;
+        UpdateExpBar();
     }
 
-    public void SetExp(float exp)
+    public void UpdateExpBar()
     {
-        slider.value = exp;
+        slider.maxValue = MyMaxExp.Value;
+        slider.value = MyCurrentExp.Value;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 }

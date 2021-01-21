@@ -10,6 +10,8 @@ public class DamagePlayerWhileColliding : MonoBehaviour
     [SerializeField] FloatVariable _damage;
     [SerializeField] FloatVariable PlayersCurrentHealth;
     [SerializeField] GameObject floatingDmg;
+    [SerializeField] GameEvent EnemyCollidingWithPlayer;
+
 
 
     private void Start()
@@ -29,8 +31,9 @@ public class DamagePlayerWhileColliding : MonoBehaviour
             _timer += Time.deltaTime;
             if (_timer > _damageEveryX)
             {
-                PlayersCurrentHealth.Value -= _damage.Value;
-                FloatingText(_damage.Value);
+                EnemyCollidingWithPlayer.Raise();
+                //PlayersCurrentHealth.Value -= _damage.Value;
+                //FloatingText(_damage.Value);
                 _timer = 0.0f;
             }
         }
