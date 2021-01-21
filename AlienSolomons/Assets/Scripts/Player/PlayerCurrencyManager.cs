@@ -8,8 +8,12 @@ public class PlayerCurrencyManager : MonoBehaviour
     [SerializeField] FloatVariable PlayerTakeBackToMenuCurrency;
     [SerializeField] FloatVariable PlayerMenuCurrency;
 
-    [SerializeField] GameEvent UpdateInGameCurrencyTxt;
-    [SerializeField] GameEvent UpdateTakeBackToMenuCurrencyTxt;
+    [SerializeField] GameEvent InGameCurrencyIncreased;
+    [SerializeField] GameEvent TakeBackToMenuCurrencyIncreased;
+
+    [SerializeField] GameEvent TakeBackToMenuCurrencyDecreased;
+    [SerializeField] GameEvent InGameCurrencyDecreased;
+
 
 
 
@@ -23,22 +27,22 @@ public class PlayerCurrencyManager : MonoBehaviour
     public void IncreaseInGameCurrency(FloatVariable valueToIncreaseBy)
     {
         playerInGameCurrency.Value += valueToIncreaseBy.Value;
-        UpdateInGameCurrencyTxt.Raise();
+        InGameCurrencyIncreased.Raise();
     }
     public void IncreasePlayerTakeBackToMenuCurrency(FloatVariable valueToIncreaseBy)
     {
         PlayerTakeBackToMenuCurrency.Value += valueToIncreaseBy.Value;
-        UpdateTakeBackToMenuCurrencyTxt.Raise();
+        TakeBackToMenuCurrencyIncreased.Raise();
     }
     public void DecreaseInGameCurrency(FloatVariable valueToDecreaseBy)
     {
         playerInGameCurrency.Value -= valueToDecreaseBy.Value;
-        UpdateTakeBackToMenuCurrencyTxt.Raise();
+        InGameCurrencyDecreased.Raise();
     }
 
     public void DecreasePlayerTakeBackToMenuCurrency(FloatVariable valueToDecreaseBy)
     {
         PlayerTakeBackToMenuCurrency.Value -= valueToDecreaseBy.Value;
-        UpdateTakeBackToMenuCurrencyTxt.Raise();
+        TakeBackToMenuCurrencyDecreased.Raise();
     }
 }

@@ -1136,9 +1136,13 @@ MonoBehaviour:
   PlayerTakeBackToMenuCurrency: {fileID: 11400000, guid: a762691ace17e344f8bb18f5b7b04fba,
     type: 2}
   PlayerMenuCurrency: {fileID: 11400000, guid: b3baa54d022492f479c3717269c381b9, type: 2}
-  UpdateInGameCurrencyTxt: {fileID: 11400000, guid: 28df7a9d9982fb24aab8e77e6063f7f4,
+  InGameCurrencyIncreased: {fileID: 11400000, guid: 28df7a9d9982fb24aab8e77e6063f7f4,
     type: 2}
-  UpdateTakeBackToMenuCurrencyTxt: {fileID: 11400000, guid: 510d45d437de8e94886c7bf5669aefdd,
+  TakeBackToMenuCurrencyIncreased: {fileID: 11400000, guid: 510d45d437de8e94886c7bf5669aefdd,
+    type: 2}
+  TakeBackToMenuCurrencyDecreased: {fileID: 11400000, guid: cad3209771436004196038b92ecb4722,
+    type: 2}
+  InGameCurrencyDecreased: {fileID: 11400000, guid: 21b3cc68884049c40971b1ad5677f0c5,
     type: 2}
 --- !u!1 &29587197
 GameObject:
@@ -11802,6 +11806,7 @@ GameObject:
   - component: {fileID: 348302184}
   - component: {fileID: 348302187}
   - component: {fileID: 348302186}
+  - component: {fileID: 348302188}
   m_Layer: 5
   m_Name: InGameCurrencyTxt
   m_TagString: Untagged
@@ -11911,6 +11916,34 @@ MonoBehaviour:
   TextToUpdate: {fileID: 348302184}
   FloatNeedingUpdated: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
     type: 2}
+--- !u!114 &348302188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348302182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 21b3cc68884049c40971b1ad5677f0c5, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 348302187}
+        m_MethodName: UpdateText
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: FloatVariable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &348800132
 GameObject:
   m_ObjectHideFlags: 0
@@ -46363,7 +46396,7 @@ MonoBehaviour:
   TowerName: Damage Tower
   TagOfObjectPurchasingTower: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
-  UpdateInGameCurrencyTxt: {fileID: 11400000, guid: 28df7a9d9982fb24aab8e77e6063f7f4,
+  InGameCurrencyDecreased: {fileID: 11400000, guid: 21b3cc68884049c40971b1ad5677f0c5,
     type: 2}
 --- !u!1001 &1449429368
 PrefabInstance:
@@ -49740,6 +49773,7 @@ GameObject:
   - component: {fileID: 1576669271}
   - component: {fileID: 1576669274}
   - component: {fileID: 1576669273}
+  - component: {fileID: 1576669275}
   m_Layer: 5
   m_Name: TakeBackToMenuCurrencyTxt
   m_TagString: Untagged
@@ -49849,6 +49883,34 @@ MonoBehaviour:
   TextToUpdate: {fileID: 1576669271}
   FloatNeedingUpdated: {fileID: 11400000, guid: a762691ace17e344f8bb18f5b7b04fba,
     type: 2}
+--- !u!114 &1576669275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576669269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: cad3209771436004196038b92ecb4722, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1576669274}
+        m_MethodName: UpdateText
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: a762691ace17e344f8bb18f5b7b04fba,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: FloatVariable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1579997178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61771,7 +61833,7 @@ MonoBehaviour:
   MaxExp: {fileID: 11400000, guid: 4eaca911255e843479f942db982c3bc6, type: 2}
   _playerLvl: {fileID: 11400000, guid: 4b8a4340755f3b249bb33475979c4d0b, type: 2}
   PlayerLeveldUp: {fileID: 11400000, guid: 21bd7898e8f4fb34faf86bcbf67f3024, type: 2}
-  ExpAddedToPlayer: {fileID: 11400000, guid: cd328e7dc6031ca4fab21d52d603c1ff, type: 2}
+  ExpIncreased: {fileID: 11400000, guid: cd328e7dc6031ca4fab21d52d603c1ff, type: 2}
 --- !u!1 &2029910682
 GameObject:
   m_ObjectHideFlags: 0
@@ -62781,6 +62843,51 @@ Transform:
   m_Father: {fileID: 1015820226}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &2057501851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 284077346115700946, guid: d23263cb0bec14241938b115ad05a3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 284077345400468553}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2057501855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 284077346115700950, guid: d23263cb0bec14241938b115ad05a3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 284077345400468553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057501851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12bbd0ce6d1001f4c8437f469f4da5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2057501857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057501851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: f087dd65dcd1a944ba993fad9e9bf69b, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2057501855}
+        m_MethodName: UpdateHealthBar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2061738429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64050,7 +64157,7 @@ MonoBehaviour:
   TowerName: Slow Tower
   TagOfObjectPurchasingTower: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
-  UpdateInGameCurrencyTxt: {fileID: 11400000, guid: 28df7a9d9982fb24aab8e77e6063f7f4,
+  InGameCurrencyDecreased: {fileID: 11400000, guid: 21b3cc68884049c40971b1ad5677f0c5,
     type: 2}
 --- !u!1001 &2094681769
 PrefabInstance:
@@ -65611,6 +65718,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 284077346307895728, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: PlayerHealthDecreased
+      value: 
+      objectReference: {fileID: 11400000, guid: f087dd65dcd1a944ba993fad9e9bf69b,
+        type: 2}
+    - target: {fileID: 284077346307895728, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: PlayerHealthIncreased
+      value: 
+      objectReference: {fileID: 11400000, guid: f0afcdad7b2c6fd47933b97add38a320,
+        type: 2}
     - target: {fileID: 284077346307895729, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
       propertyPath: _moveJoystick
