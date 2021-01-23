@@ -14,6 +14,10 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] CharacterController controller;
 
+    [SerializeField] Transform CloestTargetObj;
+
+
+
 
     private Vector3 _moveInput;
     Vector3 _playerDirection;
@@ -26,10 +30,6 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] FloatVariable PlayerLookTowardsSpeed;
 
 
-    private void Awake()
-    {
-
-    }
 
     void Start()
     {
@@ -56,6 +56,19 @@ public class PlayerMove : MonoBehaviour
             _anim.SetBool("IsRunning", true);
             _shooting.Value = false;
             cloestTarget = GetClosestEnemy(ListOfEnemies.List);
+
+            if (cloestTarget != null)
+            {
+                Vector3 targetPos = cloestTarget.position;
+                targetPos.y = 3;
+                CloestTargetObj.transform.position = targetPos;
+
+                CloestTargetObj.transform.SetParent(cloestTarget);
+            }
+
+
+
+
         }
         else
         {
@@ -77,7 +90,7 @@ public class PlayerMove : MonoBehaviour
             Vector3 lookPos = cloestTarget.position - transform.position;
             lookPos.y = 0;
             var rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * PlayerLookTowardsSpeed.Value);            
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * PlayerLookTowardsSpeed.Value);
         }
     }
 
