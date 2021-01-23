@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1180402241885366473}
   - component: {fileID: 5510411123064573165}
   - component: {fileID: 436658243494218563}
+  - component: {fileID: 623779442920598245}
   m_Layer: 10
   m_Name: EnemyArcher
   m_TagString: EnemyArcher
@@ -75,7 +76,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7125713572530112799}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eee0b18c6524b874d8b25744559d6081, type: 3}
   m_Name: 
@@ -83,9 +84,9 @@ MonoBehaviour:
   navMeshAgent: {fileID: 1180402241885366473}
   MyMoveSpeed: {fileID: 11400000, guid: 3a9b9afab40074d41afd583a9948b4ca, type: 2}
   SlowTowerDuration: {fileID: 11400000, guid: 6f9a0865f7710414cb3fc03175d7f9e6, type: 2}
-  MyAttackRange: {fileID: 11400000, guid: c47015d4c8b4c864ba6a4cc87237762e, type: 2}
   TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
+  LookTowardsSpeed: {fileID: 11400000, guid: 340eb2bd922f15345aeeb4a2729c72b9, type: 2}
 --- !u!114 &3303650783771829219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +158,25 @@ MonoBehaviour:
   _firePoint: {fileID: 1545925258281464644}
   AttackRange: {fileID: 11400000, guid: c47015d4c8b4c864ba6a4cc87237762e, type: 2}
   TagOfTarget: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21, type: 2}
+--- !u!114 &623779442920598245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125713572530112799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc734539d2d2dae4394d4614c0856733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 1180402241885366473}
+  MyMoveSpeed: {fileID: 11400000, guid: 3a9b9afab40074d41afd583a9948b4ca, type: 2}
+  SlowTowerDuration: {fileID: 11400000, guid: 6f9a0865f7710414cb3fc03175d7f9e6, type: 2}
+  TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
+    type: 2}
+  LookTowardsSpeed: {fileID: 11400000, guid: 340eb2bd922f15345aeeb4a2729c72b9, type: 2}
+  MyAttackRange: {fileID: 11400000, guid: c47015d4c8b4c864ba6a4cc87237762e, type: 2}
 --- !u!1 &7125713573760678521
 GameObject:
   m_ObjectHideFlags: 0

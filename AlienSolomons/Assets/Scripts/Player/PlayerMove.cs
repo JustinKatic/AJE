@@ -61,7 +61,6 @@ public class PlayerMove : MonoBehaviour
         {
             _anim.SetBool("IsRunning", false);
             _shooting.Value = true;
-            //transform.LookAt(cloestTarget);
             LookTowards();
         }
 

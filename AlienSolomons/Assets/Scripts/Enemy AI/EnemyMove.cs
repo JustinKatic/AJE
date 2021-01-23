@@ -7,11 +7,10 @@ using UnityEngine.AI;
 public class EnemyMove : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
-    private Transform targetDestination;
+    protected Transform targetDestination;
 
     [SerializeField] FloatVariable MyMoveSpeed;
     [SerializeField] FloatVariable SlowTowerDuration;
-    [SerializeField] FloatVariable MyAttackRange;
     [SerializeField] StringVariable TagOfTargetDestination;
     [SerializeField] FloatVariable LookTowardsSpeed;
 
@@ -19,11 +18,27 @@ public class EnemyMove : MonoBehaviour
     private bool _slowDebuff;
     private float _slowDurationTimer;
 
-
     void Start()
     {
-        targetDestination = GameObject.FindGameObjectWithTag(TagOfTargetDestination.Value).transform;
+        GetTargetPos();
+        GetNavComponent();
+    }
+    private void Update()
+    {
+        SlowDebuff(MyMoveSpeed.Value);
+        Move();
+    }
 
+
+
+
+    public void GetTargetPos()
+    {
+        targetDestination = GameObject.FindGameObjectWithTag(TagOfTargetDestination.Value).transform;
+    }
+
+    public void GetNavComponent()
+    {
         navMeshAgent = GetComponent<NavMeshAgent>();
         if (navMeshAgent == null)
         {
@@ -31,29 +46,16 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-
     private void OnDisable()
     {
         _slowDebuff = false;
         SetEnemyMoveSpeed(MyMoveSpeed.Value);
     }
-
-    private void Update()
+    public virtual void Move()
     {
-        SlowDebuff(MyMoveSpeed.Value);
-
-        float dist = Vector3.Distance(transform.position, targetDestination.position);
-        if (dist > MyAttackRange.Value)
-        {
-            navMeshAgent.isStopped = false;
-            navMeshAgent.SetDestination(targetDestination.position);
-        }
-        else
-        {
-            navMeshAgent.isStopped = true;
-            transform.LookAt(targetDestination);
-        }
+        navMeshAgent.SetDestination(targetDestination.position);
     }
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -102,7 +104,7 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-    void LookTowards()
+    public void LookTowards()
     {
         if (targetDestination != null)
         {

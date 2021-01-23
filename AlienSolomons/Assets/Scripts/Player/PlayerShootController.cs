@@ -11,15 +11,19 @@ public class PlayerShootController : MonoBehaviour
     [SerializeField] FloatVariable _playerFireRate;
 
 
+
     void Update()
     {
+        if (!_shooting.Value)
+            _shotCounter = _playerFireRate.Value;
+
         if (_shooting.Value)
         {
             _shotCounter -= Time.deltaTime;
             if (_shotCounter <= 0)
             {
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("PlayerBullet");
-                _shotCounter = _playerFireRate.Value; 
+                _shotCounter = _playerFireRate.Value;
                 bullet.transform.position = _firePoint.position;
                 bullet.transform.rotation = _firePoint.transform.rotation;
                 bullet.SetActive(true);

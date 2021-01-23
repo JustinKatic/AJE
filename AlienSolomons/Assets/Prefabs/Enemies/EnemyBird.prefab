@@ -247,7 +247,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.7
+  m_Radius: 0.91
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -466,9 +466,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3641292200666733529}
   - component: {fileID: 3641292200666733348}
-  - component: {fileID: -926329367730097267}
   - component: {fileID: -5052990006190902947}
   - component: {fileID: 788444877}
+  - component: {fileID: 5707559634795515609}
   m_Layer: 10
   m_Name: EnemyBird
   m_TagString: EnemyBird
@@ -508,30 +508,10 @@ MonoBehaviour:
   healthBar: {fileID: 3641292200666733392}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
-  MyMaxHealth: {fileID: 11400000, guid: e8154aeb453004a4998ff8987a6b565f, type: 2}
+  MyMaxHealth: {fileID: 11400000, guid: 91c67882befb35c41b5660f7164798ab, type: 2}
   _listOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
   MyDeathEvent: {fileID: 11400000, guid: e16e748fd6780aa488017b77866f6b23, type: 2}
   IHaveAHealthBar: 1
---- !u!114 &-926329367730097267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641292200666733486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eee0b18c6524b874d8b25744559d6081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 3996099526758916043, guid: 80691824c86c5ec49916a9c4eef7f4fa,
-    type: 3}
-  MyMoveSpeed: {fileID: 11400000, guid: 441e56da76632644bae433ce4123aaf3, type: 2}
-  SlowTowerDuration: {fileID: 11400000, guid: 6f9a0865f7710414cb3fc03175d7f9e6, type: 2}
-  MyAttackRange: {fileID: 11400000, guid: 97bc4826733866244a4cda04844845c4, type: 2}
-  TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
-    type: 2}
-  LookTowardsSpeed: {fileID: 11400000, guid: 11516841740880c4a9f4e66bb7574fc2, type: 2}
 --- !u!195 &-5052990006190902947
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -541,7 +521,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3641292200666733486}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -564,10 +544,28 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.88
-  m_Height: 1
+  m_Radius: 0.6
+  m_Height: 12
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -2.2, z: 0}
+--- !u!114 &5707559634795515609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641292200666733486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a3bc2e2e03c448a9b1bfed52ffdde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: -5052990006190902947}
+  MyMoveSpeed: {fileID: 11400000, guid: 97d0bb320b2803d46936133fe3f43dcb, type: 2}
+  SlowTowerDuration: {fileID: 11400000, guid: 6f9a0865f7710414cb3fc03175d7f9e6, type: 2}
+  TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
+    type: 2}
+  LookTowardsSpeed: {fileID: 11400000, guid: 11516841740880c4a9f4e66bb7574fc2, type: 2}
 --- !u!1 &3641292200666733487
 GameObject:
   m_ObjectHideFlags: 0
