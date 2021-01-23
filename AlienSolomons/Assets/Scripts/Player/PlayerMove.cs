@@ -23,10 +23,12 @@ public class PlayerMove : MonoBehaviour
     Animator _anim;
 
     private Transform cloestTarget;
+    [SerializeField] FloatVariable PlayerLookTowardsSpeed;
+
 
     private void Awake()
     {
-       
+
     }
 
     void Start()
@@ -59,12 +61,24 @@ public class PlayerMove : MonoBehaviour
         {
             _anim.SetBool("IsRunning", false);
             _shooting.Value = true;
-            transform.LookAt(cloestTarget);
+            //transform.LookAt(cloestTarget);
+            LookTowards();
         }
 
         if (ListOfEnemies.List.Count == 0)
         {
             _shooting.Value = false;
+        }
+    }
+
+    void LookTowards()
+    {
+        if (cloestTarget != null)
+        {
+            Vector3 lookPos = cloestTarget.position - transform.position;
+            lookPos.y = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * PlayerLookTowardsSpeed.Value);            
         }
     }
 

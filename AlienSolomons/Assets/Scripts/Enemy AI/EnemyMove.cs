@@ -13,6 +13,8 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] FloatVariable SlowTowerDuration;
     [SerializeField] FloatVariable MyAttackRange;
     [SerializeField] StringVariable TagOfTargetDestination;
+    [SerializeField] FloatVariable LookTowardsSpeed;
+
 
     private bool _slowDebuff;
     private float _slowDurationTimer;
@@ -97,6 +99,17 @@ public class EnemyMove : MonoBehaviour
                 _slowDurationTimer = 0;
                 _slowDebuff = false;
             }
+        }
+    }
+
+    void LookTowards()
+    {
+        if (targetDestination != null)
+        {
+            Vector3 lookPos = targetDestination.position - transform.position;
+            lookPos.y = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * LookTowardsSpeed.Value);
         }
     }
 }
