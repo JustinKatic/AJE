@@ -20,6 +20,16 @@ public class EnemyHealthManager : MonoBehaviour
 
     [SerializeField] bool IHaveAHealthBar;
 
+    private bool plagueDebuff;
+    private float plagueDurationTimer;
+    [SerializeField] FloatVariable plagueDebuffDuration;
+    [SerializeField] FloatVariable plagueTickDamage;
+
+    [SerializeField] FloatVariable plagueTickRate;
+    private float plagueTickTimer;
+
+
+
 
     private void Start()
     {
@@ -32,9 +42,14 @@ public class EnemyHealthManager : MonoBehaviour
         if (IHaveAHealthBar)
             healthBar.SetMaxHealth(MyMaxHealth.Value);
     }
+    private void OnDisable()
+    {
+        plagueDebuff = false;
+    }
 
     private void Update()
     {
+        PlagueDebuff();
         if (_currentHealth <= 0)
             Death();
     }
@@ -58,5 +73,33 @@ public class EnemyHealthManager : MonoBehaviour
         _listOfEnemies.List.Remove(gameObject.transform);
         MyDeathEvent.Raise();
         gameObject.SetActive(false);
+    }
+
+    public void PlagueDebuff()
+    {
+        if (plagueDebuff == true)
+        {
+            plagueTickTimer += Time.deltaTime;
+            plagueDurationTimer += Time.deltaTime;
+
+            if (plagueTickTimer > plagueTickRate.Value)
+            {
+                HurtEnemy(plagueTickDamage.Value);
+                plagueTickTimer = 0;
+            }
+
+            if (plagueDurationTimer > plagueDebuffDuration.Value)
+            {
+                plagueDurationTimer = 0;
+                plagueDebuff = false;
+            }
+        }
+    }
+
+    public void SetPlagueDebuffTrue()
+    {
+        plagueDebuff = true;
+        plagueDurationTimer = 0;
+        plagueTickTimer = 0;
     }
 }
