@@ -29,7 +29,10 @@ public class PlayerHealthManager : MonoBehaviour
             PlayerDeath.Raise();
         }
         if (currentHealth.Value > maxHealth.Value)
+        {
             currentHealth.Value = maxHealth.Value;
+            PlayerHealthIncreased.Raise();
+        }
     }
 
     public void FloatingText(FloatVariable damage)
