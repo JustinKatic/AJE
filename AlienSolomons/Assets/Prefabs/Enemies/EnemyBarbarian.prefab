@@ -157,7 +157,6 @@ GameObject:
   - component: {fileID: 778474226353804513}
   - component: {fileID: 3996099526758916043}
   - component: {fileID: 7741045050889780207}
-  - component: {fileID: 6332625106714362950}
   - component: {fileID: -3102430191797913901}
   m_Layer: 10
   m_Name: EnemyBarbarian
@@ -238,24 +237,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6332625106714362950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5041428423409597981}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eee0b18c6524b874d8b25744559d6081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 3996099526758916043}
-  MyMoveSpeed: {fileID: 11400000, guid: 441e56da76632644bae433ce4123aaf3, type: 2}
-  SlowTowerDuration: {fileID: 11400000, guid: 6f9a0865f7710414cb3fc03175d7f9e6, type: 2}
-  TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
-    type: 2}
-  LookTowardsSpeed: {fileID: 11400000, guid: d6cbfe75c1bc8194c84b56f3e8ca684e, type: 2}
 --- !u!114 &-3102430191797913901
 MonoBehaviour:
   m_ObjectHideFlags: 0

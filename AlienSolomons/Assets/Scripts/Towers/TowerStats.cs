@@ -6,15 +6,12 @@ public class TowerStats : MonoBehaviour
 {
     private float _timer;
     [SerializeField] LayerMaskVariable EnemyLayerMask;
-    [SerializeField] FloatVariable SlowValue;
     [SerializeField] FloatVariable ActivateEveryX;
     [SerializeField] FloatVariable TowerRadius;
     [SerializeField] FloatVariable TowerDamage;
 
     [SerializeField] bool CanDamage;
     [SerializeField] bool CanSlow;
-
-
 
 
     private void Update()
@@ -36,7 +33,7 @@ public class TowerStats : MonoBehaviour
             if(CanDamage)
             hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerDamage.Value);
             if(CanSlow)
-            hitColliders[i].GetComponent<EnemyMove>().SetSlowDebuffTrue(SlowValue.Value);
+            hitColliders[i].GetComponent<EnemyMove>().SetSlowDebuffTrue();
             i++;
         }
     }

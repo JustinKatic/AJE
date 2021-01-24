@@ -25,7 +25,7 @@ public class EnemyMove : MonoBehaviour
     }
     private void Update()
     {
-        SlowDebuff(MyMoveSpeed.Value);
+        SlowDebuff();
         Move();
     }
 
@@ -83,21 +83,21 @@ public class EnemyMove : MonoBehaviour
         return navMeshAgent.speed;
     }
 
-    public void SetSlowDebuffTrue(float reduceSpeedByX)
+    public void SetSlowDebuffTrue()
     {
-        SetEnemyMoveSpeed(MyMoveSpeed.Value - reduceSpeedByX);
+        SetEnemyMoveSpeed(MyMoveSpeed.Value / 2);
         _slowDebuff = true;
         _slowDurationTimer = 0;
     }
 
-    public void SlowDebuff(float EnemyDefaultSpeed)
+    public void SlowDebuff()
     {
         if (_slowDebuff == true)
         {
             _slowDurationTimer += Time.deltaTime;
             if (_slowDurationTimer > SlowTowerDuration.Value)
             {
-                SetEnemyMoveSpeed(EnemyDefaultSpeed);
+                SetEnemyMoveSpeed(MyMoveSpeed.Value);
                 _slowDurationTimer = 0;
                 _slowDebuff = false;
             }
