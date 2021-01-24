@@ -42076,6 +42076,46 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 284077345400468553}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1312703991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 284077346307895728, guid: d23263cb0bec14241938b115ad05a3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 284077345400468553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312703984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4298603815eac44294dfb6348579c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1312703993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312703984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 92d84c362bb84af4783ef6f03db2e9bd, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1312703991}
+        m_MethodName: FloatingTextPlus
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: cda727450983e7c449e20e1f2ec7d7f2,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: FloatVariable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1317169891
 GameObject:
   m_ObjectHideFlags: 0

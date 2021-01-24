@@ -41,6 +41,12 @@ public class PlayerHealthManager : MonoBehaviour
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.Value.ToString();
     }
 
+    public void FloatingTextPlus(FloatVariable heal)
+    {
+        GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "+" + heal.Value.ToString();
+    }
+
     public void DamagePlayer(FloatVariable damage)
     {
         currentHealth.Value -= damage.Value;

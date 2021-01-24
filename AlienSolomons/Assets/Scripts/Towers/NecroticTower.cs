@@ -6,6 +6,10 @@ public class NecroticTower : TowersDefault
 {
     [SerializeField] FloatVariable PlayerCurrentHealth;
     [SerializeField] GameEvent PlayerHealthIncreased;
+    [SerializeField] GameEvent PlayerHealedFromNecrotic;
+    [SerializeField] FloatVariable NecroticTowerHealAmount;
+
+
     protected override void MyCollisions()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, TowerRadius.Value, EnemyLayerMask.Value);
@@ -13,7 +17,8 @@ public class NecroticTower : TowersDefault
         while (i < hitColliders.Length)
         {
             hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerDamage.Value);
-            PlayerCurrentHealth.Value += TowerDamage.Value / 2;
+            PlayerCurrentHealth.Value += NecroticTowerHealAmount.Value;
+            PlayerHealedFromNecrotic.Raise();
             PlayerHealthIncreased.Raise();
             i++;
         }
