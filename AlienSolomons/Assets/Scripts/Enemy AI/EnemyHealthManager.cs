@@ -20,7 +20,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     [SerializeField] bool IHaveAHealthBar;
 
-    private bool plagueDebuff;
+    public bool plagueDebuff;
     private float plagueDurationTimer;
     [SerializeField] FloatVariable plagueDebuffDuration;
     [SerializeField] FloatVariable plagueTickDamage;
@@ -101,5 +101,26 @@ public class EnemyHealthManager : MonoBehaviour
         plagueDebuff = true;
         plagueDurationTimer = 0;
         plagueTickTimer = 0;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.layer == 10)
+        {
+            if (plagueDebuff == false)
+            {
+                return;
+            }
+            EnemyHealthManager enemyHealthManager = other.gameObject.GetComponent<EnemyHealthManager>();
+            if (enemyHealthManager.plagueDebuff == true)
+            {
+                return;
+            }
+            else if (enemyHealthManager.plagueDebuff == false)
+            {
+                enemyHealthManager.SetPlagueDebuffTrue();
+                Debug.Log("Plagued nearby enemy");
+            }
+        }
     }
 }
