@@ -30,8 +30,10 @@ public class EnemyProjectileController : MonoBehaviour
             projectileHitEvent.Raise();
         }
 
-        SetUnActive();
-
+        if (other.gameObject.tag == "Wall")
+        {
+            SetUnActive();
+        }
     }
 
 

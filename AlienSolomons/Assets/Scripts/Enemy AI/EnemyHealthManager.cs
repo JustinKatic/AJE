@@ -20,7 +20,8 @@ public class EnemyHealthManager : MonoBehaviour
 
     [SerializeField] bool IHaveAHealthBar;
 
-    public bool plagueDebuff;
+
+    [HideInInspector] public bool plagueDebuff;
     private float plagueDurationTimer;
     [SerializeField] FloatVariable plagueDebuffDuration;
     [SerializeField] FloatVariable plagueTickDamage;
@@ -119,7 +120,6 @@ public class EnemyHealthManager : MonoBehaviour
             else if (enemyHealthManager.plagueDebuff == false)
             {
                 enemyHealthManager.SetPlagueDebuffTrue();
-                Debug.Log("Plagued nearby enemy");
             }
         }
     }
