@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public class EnemyProjectileController : MonoBehaviour
@@ -10,8 +11,10 @@ public class EnemyProjectileController : MonoBehaviour
     [SerializeField] protected FloatVariable _damage;
 
     [SerializeField] protected StringVariable TagOfObjectCanHit;
-    [SerializeField] protected GameEvent projectileHitEvent;
+    [SerializeField] protected GameEvent UpdatePlayerHealthEvent;
+    [SerializeField] protected FloatVariable PlayerCurrentHp;
 
+    [SerializeField] GameObject floatingDmg;
 
     private void OnEnable()
     {
@@ -27,7 +30,6 @@ public class EnemyProjectileController : MonoBehaviour
     virtual protected void MoveBullet()
     {
         transform.Translate(Vector3.forward * _speed.Value * Time.deltaTime);
-
     }
 
     protected void SetUnActive()
@@ -36,5 +38,10 @@ public class EnemyProjectileController : MonoBehaviour
         CancelInvoke();
     }
 
+    virtual protected void FloatingText(float damage, Vector3 ObjPos)
+    {
+        GameObject points = Instantiate(floatingDmg, ObjPos, Quaternion.identity);
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
+    }
 
 }

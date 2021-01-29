@@ -10,7 +10,8 @@ public class DamagePlayerWhileColliding : MonoBehaviour
     [SerializeField] FloatVariable _damage;
     [SerializeField] FloatVariable PlayersCurrentHealth;
     [SerializeField] GameObject floatingDmg;
-    [SerializeField] GameEvent EnemyCollidingWithPlayer;
+    [SerializeField] GameEvent PlayerHealthUpdated;
+
 
 
 
@@ -18,9 +19,9 @@ public class DamagePlayerWhileColliding : MonoBehaviour
     {
 
     }
-    public void FloatingText(float damage)
+    public void FloatingText(float damage, Vector3 ObjPos)
     {
-        GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
+        GameObject points = Instantiate(floatingDmg, ObjPos, Quaternion.identity);
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
     }
 
@@ -31,9 +32,9 @@ public class DamagePlayerWhileColliding : MonoBehaviour
             _timer += Time.deltaTime;
             if (_timer > _damageEveryX)
             {
-                EnemyCollidingWithPlayer.Raise();
-                //PlayersCurrentHealth.Value -= _damage.Value;
-                //FloatingText(_damage.Value);
+                PlayerHealthUpdated.Raise();
+                PlayersCurrentHealth.Value -= _damage.Value;
+                FloatingText(_damage.Value, other.transform.position);
                 _timer = 0.0f;
             }
         }

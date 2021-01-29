@@ -8,7 +8,7 @@ public class DwarfCannoneerMove : EnemyMove
     DwarfCannoneerShoot dwarfCannoneerShoot;
     [HideInInspector] public bool rePositioned;
     private GameObject randomPos;
-    public LayerMask Waypoints;
+    [SerializeField] LayerMask Waypoints;
 
     bool posFound = false;
 

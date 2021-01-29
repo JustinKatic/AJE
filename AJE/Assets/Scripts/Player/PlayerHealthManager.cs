@@ -11,7 +11,6 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] GameObject floatingDmg;
     [SerializeField] TextMeshPro _healthTxt;
     [SerializeField] GameEvent PlayerDeath;
-    [SerializeField] GameEvent PlayerHealthDecreased;
     [SerializeField] GameEvent PlayerHealthIncreased;
 
 
@@ -50,7 +49,6 @@ public class PlayerHealthManager : MonoBehaviour
     public void DamagePlayer(FloatVariable damage)
     {
         currentHealth.Value -= damage.Value;
-        PlayerHealthDecreased.Raise();
     }
 
     public void HealPlayer(FloatVariable heal)

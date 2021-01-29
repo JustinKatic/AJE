@@ -6,7 +6,6 @@ public class NecroticTower : TowersDefault
 {
     [SerializeField] FloatVariable PlayerCurrentHealth;
     [SerializeField] GameEvent PlayerHealthIncreased;
-    [SerializeField] GameEvent PlayerHealedFromNecrotic;
     [SerializeField] FloatVariable NecroticTowerHealAmount;
 
 
@@ -18,7 +17,6 @@ public class NecroticTower : TowersDefault
         {
             hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerDamage.Value);
             PlayerCurrentHealth.Value += NecroticTowerHealAmount.Value;
-            PlayerHealedFromNecrotic.Raise();
             PlayerHealthIncreased.Raise();
             i++;
         }

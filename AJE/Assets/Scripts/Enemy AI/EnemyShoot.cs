@@ -11,6 +11,7 @@ public class EnemyShoot : MonoBehaviour
     protected Transform Target;
     [SerializeField] StringVariable TagOfTarget;
 
+
     private void Start()
     {
         Target = GameObject.FindGameObjectWithTag(TagOfTarget.Value).transform;

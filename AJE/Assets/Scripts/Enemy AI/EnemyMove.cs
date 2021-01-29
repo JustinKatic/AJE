@@ -9,7 +9,7 @@ public class EnemyMove : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     protected Transform targetDestination;
 
-    [SerializeField] FloatVariable MyMoveSpeed;
+    [SerializeField] protected FloatVariable MyMoveSpeed;
     [SerializeField] FloatVariable SlowTowerDuration;
     [SerializeField] StringVariable TagOfTargetDestination;
     [SerializeField] FloatVariable LookTowardsSpeed;

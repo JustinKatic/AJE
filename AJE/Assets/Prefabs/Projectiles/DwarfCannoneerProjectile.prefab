@@ -127,7 +127,12 @@ MonoBehaviour:
   _bulletLife: {fileID: 11400000, guid: d4dbb8f8b743c7f4395b2d7940095293, type: 2}
   _damage: {fileID: 11400000, guid: 1a685321e397e45438ca9b5aa0b0e0bc, type: 2}
   TagOfObjectCanHit: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21, type: 2}
-  projectileHitEvent: {fileID: 11400000, guid: d5f322cfd7a841347b4d3a2fb53ca805, type: 2}
+  UpdatePlayerHealthEvent: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee,
+    type: 2}
+  PlayerCurrentHp: {fileID: 11400000, guid: 4d7b1cc8dd422994d9a43ef5e09b5796, type: 2}
+  floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
+    type: 3}
+  _healthTxt: {fileID: 0}
   ExplosionRadius: {fileID: 11400000, guid: 0bbee5beeb9fba74d9c0716e8e3a27b3, type: 2}
   ObjAffectsByExplosion: {fileID: 11400000, guid: 18b34321b11fb0248b953cf187cd84f8,
     type: 2}

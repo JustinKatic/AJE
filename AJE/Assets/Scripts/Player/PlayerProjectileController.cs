@@ -10,7 +10,6 @@ public class PlayerProjectileController : MonoBehaviour
     [SerializeField] FloatVariable _bulletSpeed;
 
 
-
     private void Awake()
     {       
 
