@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
-    [SerializeField] FloatVariable TimeBetweenShots;
-    private float _shotCounter;
-    [SerializeField] Transform _firePoint;
+    [SerializeField] protected FloatVariable TimeBetweenShots;
+    protected float _shotCounter;
+    [SerializeField] protected Transform _firePoint;
     [SerializeField] FloatVariable AttackRange;
-    private Transform Target;
+    protected Transform Target;
     [SerializeField] StringVariable TagOfTarget;
 
     private void Start()
@@ -25,21 +25,17 @@ public class EnemyShoot : MonoBehaviour
         float dist = Vector3.Distance(transform.position, Target.transform.position);
         if (dist < AttackRange.Value)
         {
-            ArcherShoot();
+            Shoot();
         }
     }
 
 
-    public void ArcherShoot()
+    public virtual void Shoot()
     {
         _shotCounter -= Time.deltaTime;
         if (_shotCounter <= 0)
         {
-            GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("ArcherProjectile");
-            _shotCounter = TimeBetweenShots.Value;
-            bullet.transform.position = _firePoint.position;
-            bullet.transform.rotation = _firePoint.transform.rotation;
-            bullet.SetActive(true);
+            Debug.Log("noShootLogicInDefaultClass");
         }
     }
 }

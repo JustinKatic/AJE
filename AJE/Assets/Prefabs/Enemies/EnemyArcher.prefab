@@ -42,9 +42,9 @@ GameObject:
   - component: {fileID: 3303650783771829219}
   - component: {fileID: 1180402241885366473}
   - component: {fileID: 5510411123064573165}
-  - component: {fileID: 436658243494218563}
   - component: {fileID: 623779442920598245}
   - component: {fileID: 6458907234160784348}
+  - component: {fileID: 8845727028991709389}
   m_Layer: 10
   m_Name: EnemyArcher
   m_TagString: EnemyArcher
@@ -129,22 +129,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &436658243494218563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7125713572530112799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ed022a5ed74131449fd983fd22eb37c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimeBetweenShots: {fileID: 11400000, guid: 5c80c85c6efddad42ac5b3399f7fdfd3, type: 2}
-  _firePoint: {fileID: 1545925258281464644}
-  AttackRange: {fileID: 11400000, guid: c47015d4c8b4c864ba6a4cc87237762e, type: 2}
-  TagOfTarget: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21, type: 2}
 --- !u!114 &623779442920598245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +164,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8845727028991709389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125713572530112799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbcde9b527adb74897d837e05592f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeBetweenShots: {fileID: 11400000, guid: 5c80c85c6efddad42ac5b3399f7fdfd3, type: 2}
+  _firePoint: {fileID: 1545925258281464644}
+  AttackRange: {fileID: 11400000, guid: c47015d4c8b4c864ba6a4cc87237762e, type: 2}
+  TagOfTarget: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21, type: 2}
 --- !u!1 &7125713573760678521
 GameObject:
   m_ObjectHideFlags: 0

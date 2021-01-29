@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class EnemyProjectileController : MonoBehaviour
 {
-    [SerializeField] FloatVariable _speed;
-    [SerializeField] FloatVariable _bulletLife;
-    [SerializeField] FloatVariable _damage;
+    [SerializeField] protected FloatVariable _speed;
+    [SerializeField] protected FloatVariable _bulletLife;
+    [SerializeField] protected FloatVariable _damage;
 
-    [SerializeField] StringVariable TagOfObjectCanHit;
-    [SerializeField] GameEvent projectileHitEvent;
+    [SerializeField] protected StringVariable TagOfObjectCanHit;
+    [SerializeField] protected GameEvent projectileHitEvent;
 
 
     private void OnEnable()
@@ -21,23 +21,16 @@ public class EnemyProjectileController : MonoBehaviour
     void Update()
     {
         //Move bullet forward
-        transform.Translate(Vector3.forward * _speed.Value * Time.deltaTime);
+        MoveBullet();
     }
-    private void OnTriggerEnter(Collider other)
+
+    virtual protected void MoveBullet()
     {
-        if (other.gameObject.tag == TagOfObjectCanHit.Value)
-        {
-            projectileHitEvent.Raise();
-        }
+        transform.Translate(Vector3.forward * _speed.Value * Time.deltaTime);
 
-        if (other.gameObject.tag == "Wall")
-        {
-            SetUnActive();
-        }
     }
 
-
-    void SetUnActive()
+    protected void SetUnActive()
     {
         gameObject.SetActive(false);
         CancelInvoke();
