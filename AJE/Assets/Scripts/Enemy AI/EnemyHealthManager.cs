@@ -73,7 +73,16 @@ public class EnemyHealthManager : MonoBehaviour
     {
         _listOfEnemies.List.Remove(gameObject.transform);
         MyDeathEvent.Raise();
+        InstantiateCurrency();
         gameObject.SetActive(false);
+    }
+
+    public void InstantiateCurrency()
+    {
+        GameObject currency = ObjectPooler.SharedInstance.GetPooledObject("Currency");
+        currency.transform.position = gameObject.transform.position;
+        currency.transform.rotation = gameObject.transform.rotation;
+        currency.SetActive(true);
     }
 
     public void PlagueDebuff()

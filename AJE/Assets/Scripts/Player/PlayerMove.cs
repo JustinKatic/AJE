@@ -38,10 +38,11 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        //Move Input
         _playerDirection = Vector3.forward * _moveJoystick.Vertical + Vector3.right * _moveJoystick.Horizontal;
         _moveInput = _playerDirection.normalized;
         _moveVelocity = _moveInput * _moveSpeed.Value;
-
+        //Player Rotation
         if (_playerDirection.sqrMagnitude > 0.0f)
             transform.rotation = Quaternion.LookRotation(_playerDirection * Time.deltaTime, Vector3.up);
 
@@ -49,6 +50,10 @@ public class PlayerMove : MonoBehaviour
         if (cloestTarget == null || cloestTarget.gameObject.activeSelf == false)
         {
             cloestTarget = GetClosestEnemy(ListOfEnemies.List);
+            if (cloestTarget != null)
+            {
+                SetIconAboveClosestTarget();
+            }
         }
 
         if (_playerDirection != Vector3.zero)
@@ -59,16 +64,8 @@ public class PlayerMove : MonoBehaviour
 
             if (cloestTarget != null)
             {
-                Vector3 targetPos = cloestTarget.position;
-                targetPos.y = 3;
-                CloestTargetObj.transform.position = targetPos;
-
-                CloestTargetObj.transform.SetParent(cloestTarget);
+                SetIconAboveClosestTarget();
             }
-
-
-
-
         }
         else
         {
@@ -76,6 +73,7 @@ public class PlayerMove : MonoBehaviour
             _shooting.Value = true;
             LookTowards();
         }
+
 
         if (ListOfEnemies.List.Count == 0)
         {
@@ -96,6 +94,7 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //movePlayer
         controller.Move(_moveVelocity * Time.deltaTime);
     }
     public Transform GetClosestEnemy(List<Transform> enemies)
@@ -114,6 +113,14 @@ public class PlayerMove : MonoBehaviour
             }
         }
         return bestTarget;
+    }
+
+    public void SetIconAboveClosestTarget()
+    {
+        Vector3 targetPos = cloestTarget.position;
+        targetPos.y = 3;
+        CloestTargetObj.transform.position = targetPos;
+        CloestTargetObj.transform.SetParent(cloestTarget);
     }
 }
 
