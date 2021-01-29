@@ -6,8 +6,8 @@ public class DwarfCannoneerMove : EnemyMove
 {
     [SerializeField] FloatVariable MyAttackRange;
     DwarfCannoneerShoot dwarfCannoneerShoot;
-    public bool rePositioned;
-    [SerializeField] GameObject randomPos;
+    [HideInInspector] public bool rePositioned;
+    private GameObject randomPos;
     public LayerMask Waypoints;
 
     bool posFound = false;

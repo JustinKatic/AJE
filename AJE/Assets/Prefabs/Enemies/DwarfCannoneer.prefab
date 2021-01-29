@@ -323,6 +323,7 @@ MonoBehaviour:
   _firePoint: {fileID: 6692378744834334460}
   AttackRange: {fileID: 11400000, guid: 349bc422af10f2d4dba1d2c99e33d40f, type: 2}
   TagOfTarget: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21, type: 2}
+  canShoot: 0
 --- !u!114 &202354538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +343,11 @@ MonoBehaviour:
     type: 2}
   LookTowardsSpeed: {fileID: 11400000, guid: 8b4a2f976e8e0c340b1dc631b5e14c8d, type: 2}
   MyAttackRange: {fileID: 11400000, guid: 349bc422af10f2d4dba1d2c99e33d40f, type: 2}
+  rePositioned: 0
+  randomPos: {fileID: 0}
+  Waypoints:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!1 &3588966338464058864
 GameObject:
   m_ObjectHideFlags: 0
