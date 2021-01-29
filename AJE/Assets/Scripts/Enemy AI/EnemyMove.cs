@@ -30,8 +30,6 @@ public class EnemyMove : MonoBehaviour
     }
 
 
-
-
     public void GetTargetPos()
     {
         targetDestination = GameObject.FindGameObjectWithTag(TagOfTargetDestination.Value).transform;

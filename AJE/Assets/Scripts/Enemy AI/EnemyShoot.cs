@@ -22,11 +22,7 @@ public class EnemyShoot : MonoBehaviour
 
     private void Update()
     {
-        float dist = Vector3.Distance(transform.position, Target.transform.position);
-        if (dist < AttackRange.Value)
-        {
-            Shoot();
-        }
+        Shoot();
     }
 
 
