@@ -11,7 +11,8 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] GameObject floatingDmg;
     [SerializeField] TextMeshPro _healthTxt;
     [SerializeField] GameEvent PlayerDeath;
-    [SerializeField] GameEvent PlayerHealthIncreased;
+    [SerializeField] GameEvent UpdatePlayerHealth;
+
 
 
 
@@ -30,7 +31,7 @@ public class PlayerHealthManager : MonoBehaviour
         if (currentHealth.Value > maxHealth.Value)
         {
             currentHealth.Value = maxHealth.Value;
-            PlayerHealthIncreased.Raise();
+            UpdatePlayerHealth.Raise();
         }
     }
 
@@ -44,16 +45,5 @@ public class PlayerHealthManager : MonoBehaviour
     {
         GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "+" + heal.Value.ToString();
-    }
-
-    public void DamagePlayer(FloatVariable damage)
-    {
-        currentHealth.Value -= damage.Value;
-    }
-
-    public void HealPlayer(FloatVariable heal)
-    {
-        currentHealth.Value += heal.Value;
-        PlayerHealthIncreased.Raise();
     }
 }

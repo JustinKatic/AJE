@@ -23,6 +23,7 @@ public class PlayerExpManager : MonoBehaviour
     void Awake()
     {
         currentExp.Value = 0;
+        _playerLvl.Value = 0;
         MaxExp.Value = playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value;
     }
 
