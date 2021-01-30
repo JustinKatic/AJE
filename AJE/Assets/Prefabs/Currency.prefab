@@ -109,7 +109,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TagOfObjectsAbleToPickMeUp: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
-  MyEvent: {fileID: 11400000, guid: 6a16af38ff0fcb2469c3b094d9962104, type: 2}
+  PlayerInGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
+    type: 2}
+  PlayerTakeBackToMenuCurrency: {fileID: 11400000, guid: a762691ace17e344f8bb18f5b7b04fba,
+    type: 2}
+  CurrencyPickUpValue: {fileID: 11400000, guid: 372b74b4152206a4b80ba1faa4f56913,
+    type: 2}
+  UpdateCurrencyTextEvent: {fileID: 11400000, guid: 2f71996132135704393c935fa3e11c94,
+    type: 2}
 --- !u!114 &669046667064256841
 MonoBehaviour:
   m_ObjectHideFlags: 0

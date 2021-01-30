@@ -5,7 +5,7 @@ using UnityEngine;
 public class NecroticTower : TowersDefault
 {
     [SerializeField] FloatVariable PlayerCurrentHealth;
-    [SerializeField] GameEvent PlayerHealthIncreased;
+    [SerializeField] GameEvent UpdatePlayerHealth;
     [SerializeField] FloatVariable NecroticTowerHealAmount;
 
 
@@ -17,7 +17,7 @@ public class NecroticTower : TowersDefault
         {
             hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerDamage.Value);
             PlayerCurrentHealth.Value += NecroticTowerHealAmount.Value;
-            PlayerHealthIncreased.Raise();
+            UpdatePlayerHealth.Raise();
             i++;
         }
     }

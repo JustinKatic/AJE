@@ -9,16 +9,16 @@ public class EnemyHealthManager : MonoBehaviour
     private float _currentHealth;
 
     [SerializeField] private HealthBar healthBar;
-
     [SerializeField] private GameObject floatingDmg;
-
     [SerializeField] FloatVariable MyMaxHealth;
-
     [SerializeField] ListOfTransforms _listOfEnemies;
-
     [SerializeField] GameEvent MyDeathEvent;
-
+    [SerializeField] GameEvent ExperienceIncreasedEvent;
     [SerializeField] bool IHaveAHealthBar;
+    [SerializeField] FloatVariable PlayerCurrentExp;
+    [SerializeField] FloatVariable MyExpWorth;
+
+
 
 
     [HideInInspector] public bool plagueDebuff;
@@ -72,9 +72,11 @@ public class EnemyHealthManager : MonoBehaviour
     void Death()
     {
         _listOfEnemies.List.Remove(gameObject.transform);
-        MyDeathEvent.Raise();
+        PlayerCurrentExp.Value += MyExpWorth.Value;
+        ExperienceIncreasedEvent.Raise();
         InstantiateCurrency();
         gameObject.SetActive(false);
+        MyDeathEvent.Raise();
     }
 
     public void InstantiateCurrency()

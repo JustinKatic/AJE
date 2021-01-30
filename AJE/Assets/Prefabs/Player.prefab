@@ -1987,7 +1987,6 @@ GameObject:
   - component: {fileID: 284077346115700948}
   - component: {fileID: 284077346115700950}
   - component: {fileID: 284077346115700969}
-  - component: {fileID: 2057501857}
   m_Layer: 8
   m_Name: PlayerHealthBar
   m_TagString: Untagged
@@ -2137,34 +2136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: f0afcdad7b2c6fd47933b97add38a320, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 284077346115700950}
-        m_MethodName: UpdateHealthBar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2057501857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284077346115700946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: f087dd65dcd1a944ba993fad9e9bf69b, type: 2}
+  Event: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -2347,6 +2319,7 @@ GameObject:
   - component: {fileID: 284077346307895729}
   - component: {fileID: 284077346307895728}
   - component: {fileID: 284077346307895742}
+  - component: {fileID: 2909604892573926125}
   - component: {fileID: 284077346307895743}
   - component: {fileID: 1312703987}
   m_Layer: 8
@@ -2413,8 +2386,7 @@ MonoBehaviour:
     type: 3}
   _healthTxt: {fileID: 284077345067718911}
   PlayerDeath: {fileID: 11400000, guid: 1c8582d143a69fc4390da3ec23920a5f, type: 2}
-  PlayerHealthIncreased: {fileID: 11400000, guid: f0afcdad7b2c6fd47933b97add38a320,
-    type: 2}
+  PlayerHealthIncreased: {fileID: 0}
 --- !u!114 &284077346307895742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2430,6 +2402,33 @@ MonoBehaviour:
   _firePoint: {fileID: 284077346635292984}
   _shooting: {fileID: 11400000, guid: d4afad67ba2a15e44b8780f9a4775716, type: 2}
   _playerFireRate: {fileID: 11400000, guid: dbae0a5eaa9b0cb40ab47937323e697c, type: 2}
+--- !u!114 &2909604892573926125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284077346307895737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cf92a1c733fea4ea3e52eb909bdd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLevelDetails:
+  - name: PlayerLevel1
+    _playerExpNeededToLvl: {fileID: 11400000, guid: fe5805ac9c8a7474599ba006c2efde05,
+      type: 2}
+  - name: PlayerLevel2
+    _playerExpNeededToLvl: {fileID: 11400000, guid: 148e5ac8fca951b469c85fdded71df63,
+      type: 2}
+  - name: PlayerLevel3
+    _playerExpNeededToLvl: {fileID: 11400000, guid: 245317a8763c0b641a734953fb359756,
+      type: 2}
+  currentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
+  MaxExp: {fileID: 11400000, guid: 4eaca911255e843479f942db982c3bc6, type: 2}
+  _playerLvl: {fileID: 11400000, guid: 4b8a4340755f3b249bb33475979c4d0b, type: 2}
+  PlayerLeveldUp: {fileID: 11400000, guid: 21bd7898e8f4fb34faf86bcbf67f3024, type: 2}
+  ExpIncreased: {fileID: 11400000, guid: cd328e7dc6031ca4fab21d52d603c1ff, type: 2}
 --- !u!136 &284077346307895743
 CapsuleCollider:
   m_ObjectHideFlags: 0

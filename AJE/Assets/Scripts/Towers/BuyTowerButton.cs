@@ -13,7 +13,7 @@ public class BuyTowerButton : MonoBehaviour
     [SerializeField] StringVariable TagOfObjectPurchasingTower;
     private GameObject ObjPurchasingTower;
 
-    [SerializeField] GameEvent InGameCurrencyDecreased;
+    [SerializeField] GameEvent UpdateCurrency;
 
 
 
@@ -58,7 +58,7 @@ public class BuyTowerButton : MonoBehaviour
                         hit.collider.gameObject.transform.rotation);
                     buildable._hasAreaBeenBuiltOn = true;
                     PlayerInGameCurrency.Value -= TowerCost.Value;
-                    InGameCurrencyDecreased.Raise();
+                    UpdateCurrency.Raise();
                 }
             }
         }

@@ -20,29 +20,26 @@ public class PlayerExpManager : MonoBehaviour
     [SerializeField] GameEvent PlayerLeveldUp;
     [SerializeField] GameEvent ExpIncreased;
 
-
-
     void Awake()
     {
         currentExp.Value = 0;
         MaxExp.Value = playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value;
     }
 
-    public void AddPlayerExp(FloatVariable ExpToBeAdded)
+    private void Update()
     {
-        currentExp.Value += ExpToBeAdded.Value;
         if (currentExp.Value >= playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value)
         {
             PlayerLeveldUp.Raise();
             LevelPlayerUp();
+            ExpIncreased.Raise();
         }
-        ExpIncreased.Raise();
     }
 
     public void LevelPlayerUp()
     {
         _playerLvl.Value++;
-        currentExp.Value = 0;
+        currentExp.Value = 0;  
         MaxExp.Value = playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value;
     }
 }
