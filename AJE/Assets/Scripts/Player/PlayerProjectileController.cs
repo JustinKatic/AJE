@@ -12,7 +12,7 @@ public class PlayerProjectileController : MonoBehaviour
 
     private void Awake()
     {       
-
+        
     }
 
     private void OnEnable()

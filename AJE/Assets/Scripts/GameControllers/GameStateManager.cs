@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
-    public static void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0;
     }
-    public static void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1;
     }
