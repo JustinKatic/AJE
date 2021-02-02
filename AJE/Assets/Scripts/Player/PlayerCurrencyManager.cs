@@ -9,7 +9,7 @@ public class PlayerCurrencyManager : MonoBehaviour
 
     private void Awake()
     {
-        playerInGameCurrency.Value = 0;
-        PlayerTakeBackToMenuCurrency.Value = 0;
+        playerInGameCurrency.RuntimeValue = 0;
+        PlayerTakeBackToMenuCurrency.RuntimeValue = 0;
     }
 }

@@ -20,8 +20,8 @@ public class PickUpCurrency : MonoBehaviour
     {
         if (other.gameObject.tag == TagOfObjectsAbleToPickMeUp.Value)
         {
-            PlayerInGameCurrency.Value += CurrencyPickUpValue.Value;
-            PlayerTakeBackToMenuCurrency.Value += CurrencyPickUpValue.Value;
+            PlayerInGameCurrency.RuntimeValue += CurrencyPickUpValue.RuntimeValue;
+            PlayerTakeBackToMenuCurrency.RuntimeValue += CurrencyPickUpValue.RuntimeValue;
             UpdateCurrencyTextEvent.Raise();
             gameObject.SetActive(false);
         }

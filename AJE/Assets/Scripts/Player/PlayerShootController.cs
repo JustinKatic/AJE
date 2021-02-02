@@ -15,7 +15,7 @@ public class PlayerShootController : MonoBehaviour
     void Update()
     {
         if (!_shooting.Value)
-            _shotCounter = _playerFireRate.Value;
+            _shotCounter = _playerFireRate.RuntimeValue;
 
         if (_shooting.Value)
         {
@@ -23,7 +23,7 @@ public class PlayerShootController : MonoBehaviour
             if (_shotCounter <= 0)
             {
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("PlayerBullet");
-                _shotCounter = _playerFireRate.Value;
+                _shotCounter = _playerFireRate.RuntimeValue;
                 bullet.transform.position = _firePoint.position;
                 bullet.transform.rotation = _firePoint.transform.rotation;
                 bullet.SetActive(true);

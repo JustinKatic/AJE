@@ -9,7 +9,7 @@ public class ArcherMove : EnemyMove
     public override void Move()
     {
         float dist = Vector3.Distance(transform.position, targetDestination.position);
-        if (dist > MyAttackRange.Value)
+        if (dist > MyAttackRange.RuntimeValue)
         {
             navMeshAgent.isStopped = false;
             navMeshAgent.SetDestination(targetDestination.position);

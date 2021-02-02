@@ -18,7 +18,7 @@ public class EnemyShoot : MonoBehaviour
     }
     private void OnEnable()
     {
-        _shotCounter = TimeBetweenShots.Value;
+        _shotCounter = TimeBetweenShots.RuntimeValue;
     }
 
     private void Update()

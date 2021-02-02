@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu]
-public class ListOfTransforms : ScriptableObject
+public class ListOfTransforms : ScriptableObject, ISerializationCallbackReceiver
 {
 #if UNITY_EDITOR
     [Multiline]
@@ -13,13 +13,19 @@ public class ListOfTransforms : ScriptableObject
 
     public List<Transform> List;
 
-    private void OnEnable()
+    [System.NonSerialized]
+    public List<Transform> RuntimeList;
+
+
+    public void OnAfterDeserialize()
     {
-        ClearList();
+        RuntimeList = List;
+        RuntimeList.Clear();
+        RuntimeList.AddRange(List);
     }
-  
-    public void ClearList()
+
+    public void OnBeforeSerialize()
     {
-        List.Clear();
+
     }
 }

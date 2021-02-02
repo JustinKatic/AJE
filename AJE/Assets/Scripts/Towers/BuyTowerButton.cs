@@ -24,12 +24,12 @@ public class BuyTowerButton : MonoBehaviour
         ObjPurchasingTower = GameObject.FindGameObjectWithTag(TagOfObjectPurchasingTower.Value);
         BuyButton = gameObject.GetComponent<Button>();
         BuyButton.interactable = false;
-        ButtonText.text = TowerName + "($" + TowerCost.Value + ")";
+        ButtonText.text = TowerName + "($" + TowerCost.RuntimeValue + ")";
     }
 
     void Update()
     {
-        if (PlayerInGameCurrency.Value >= TowerCost.Value)
+        if (PlayerInGameCurrency.RuntimeValue >= TowerCost.RuntimeValue)
         {
             BuyButton.interactable = true;
         }
@@ -57,7 +57,7 @@ public class BuyTowerButton : MonoBehaviour
                         hit.collider.gameObject.transform.position.z),
                         hit.collider.gameObject.transform.rotation);
                     buildable._hasAreaBeenBuiltOn = true;
-                    PlayerInGameCurrency.Value -= TowerCost.Value;
+                    PlayerInGameCurrency.RuntimeValue -= TowerCost.RuntimeValue;
                     UpdateCurrency.Raise();
                 }
             }

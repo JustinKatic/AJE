@@ -99,7 +99,7 @@ public class WaveSpawner : MonoBehaviour
         {
             searchCountdown = 1f;
 
-            if (ListOfEnemies.List.Count <= 0)
+            if (ListOfEnemies.RuntimeList.Count <= 0)
             {
                 return true;
             }
@@ -130,7 +130,7 @@ public class WaveSpawner : MonoBehaviour
         enemy.transform.position = _sp.position;
         enemy.transform.rotation = _sp.rotation;
         enemy.SetActive(true);
-        ListOfEnemies.List.Add(enemy.transform);
+        ListOfEnemies.RuntimeList.Add(enemy.transform);
 
         _currentEnemy++;
     }

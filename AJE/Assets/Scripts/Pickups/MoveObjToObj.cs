@@ -16,6 +16,6 @@ public class MoveObjToObj : MonoBehaviour
     void Update()
     {
         if (target != null)
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed.Value * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed.RuntimeValue * Time.deltaTime);
     }
 }

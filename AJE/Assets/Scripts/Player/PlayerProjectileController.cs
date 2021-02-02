@@ -17,13 +17,13 @@ public class PlayerProjectileController : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("SetUnActive", _bulletLife.Value);
+        Invoke("SetUnActive", _bulletLife.RuntimeValue);
     }
 
     void Update()
     {
         //Move bullet forward
-        transform.Translate(Vector3.forward * _bulletSpeed.Value * Time.deltaTime);
+        transform.Translate(Vector3.forward * _bulletSpeed.RuntimeValue * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,7 +31,7 @@ public class PlayerProjectileController : MonoBehaviour
         if (other.gameObject.layer == 10)
         {
             SetUnActive();
-            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(_bulletDamage.Value);
+            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(_bulletDamage.RuntimeValue);
         }
 
         if (other.gameObject.tag == "Wall")

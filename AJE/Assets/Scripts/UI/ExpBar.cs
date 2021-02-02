@@ -22,8 +22,8 @@ public class ExpBar : MonoBehaviour
 
     public void UpdateExpBar()
     {
-        slider.maxValue = MyMaxExp.Value;
-        slider.value = MyCurrentExp.Value;
+        slider.maxValue = MyMaxExp.RuntimeValue;
+        slider.value = MyCurrentExp.RuntimeValue;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 }

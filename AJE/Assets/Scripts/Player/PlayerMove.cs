@@ -41,7 +41,7 @@ public class PlayerMove : MonoBehaviour
         //Move Input
         _playerDirection = Vector3.forward * _moveJoystick.Vertical + Vector3.right * _moveJoystick.Horizontal;
         _moveInput = _playerDirection.normalized;
-        _moveVelocity = _moveInput * _moveSpeed.Value;
+        _moveVelocity = _moveInput * _moveSpeed.RuntimeValue;
         //Player Rotation
         if (_playerDirection.sqrMagnitude > 0.0f)
             transform.rotation = Quaternion.LookRotation(_playerDirection * Time.deltaTime, Vector3.up);
@@ -49,7 +49,7 @@ public class PlayerMove : MonoBehaviour
 
         if (cloestTarget == null || cloestTarget.gameObject.activeSelf == false)
         {
-            cloestTarget = GetClosestEnemy(ListOfEnemies.List);
+            cloestTarget = GetClosestEnemy(ListOfEnemies.RuntimeList);
             if (cloestTarget != null)
             {
                 SetIconAboveClosestTarget();
@@ -60,7 +60,7 @@ public class PlayerMove : MonoBehaviour
         {
             _anim.SetBool("IsRunning", true);
             _shooting.Value = false;
-            cloestTarget = GetClosestEnemy(ListOfEnemies.List);
+            cloestTarget = GetClosestEnemy(ListOfEnemies.RuntimeList);
 
             if (cloestTarget != null)
             {
@@ -75,7 +75,7 @@ public class PlayerMove : MonoBehaviour
         }
 
 
-        if (ListOfEnemies.List.Count == 0)
+        if (ListOfEnemies.RuntimeList.Count == 0)
         {
             _shooting.Value = false;
         }
@@ -88,7 +88,7 @@ public class PlayerMove : MonoBehaviour
             Vector3 lookPos = cloestTarget.position - transform.position;
             lookPos.y = 0;
             var rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * PlayerLookTowardsSpeed.Value);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * PlayerLookTowardsSpeed.RuntimeValue);
         }
     }
 

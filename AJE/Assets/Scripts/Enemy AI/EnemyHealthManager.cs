@@ -39,9 +39,9 @@ public class EnemyHealthManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _currentHealth = MyMaxHealth.Value;
+        _currentHealth = MyMaxHealth.RuntimeValue;
         if (IHaveAHealthBar)
-            healthBar.SetMaxHealth(MyMaxHealth.Value);
+            healthBar.SetMaxHealth(MyMaxHealth.RuntimeValue);
     }
     private void OnDisable()
     {
@@ -71,8 +71,8 @@ public class EnemyHealthManager : MonoBehaviour
 
     void Death()
     {
-        _listOfEnemies.List.Remove(gameObject.transform);
-        PlayerCurrentExp.Value += MyExpWorth.Value;
+        _listOfEnemies.RuntimeList.Remove(gameObject.transform);
+        PlayerCurrentExp.RuntimeValue += MyExpWorth.RuntimeValue;
         ExperienceIncreasedEvent.Raise();
         InstantiateCurrency();
         gameObject.SetActive(false);
@@ -94,13 +94,13 @@ public class EnemyHealthManager : MonoBehaviour
             plagueTickTimer += Time.deltaTime;
             plagueDurationTimer += Time.deltaTime;
 
-            if (plagueTickTimer > plagueTickRate.Value)
+            if (plagueTickTimer > plagueTickRate.RuntimeValue)
             {
-                HurtEnemy(plagueTickDamage.Value);
+                HurtEnemy(plagueTickDamage.RuntimeValue);
                 plagueTickTimer = 0;
             }
 
-            if (plagueDurationTimer > plagueDebuffDuration.Value)
+            if (plagueDurationTimer > plagueDebuffDuration.RuntimeValue)
             {
                 plagueDurationTimer = 0;
                 plagueDebuff = false;

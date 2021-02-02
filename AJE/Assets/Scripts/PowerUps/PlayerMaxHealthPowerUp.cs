@@ -10,7 +10,7 @@ public class PlayerMaxHealthPowerUp : PowerUpButton
 
     protected override void ApplyPowerUp()
     {
-        PlayerMaxHealth.Value += IncreasePlayerMaxHealthBy.Value;
+        PlayerMaxHealth.RuntimeValue += IncreasePlayerMaxHealthBy.RuntimeValue;
         playerHealthUpdatedEvent.Raise();
     }
 }

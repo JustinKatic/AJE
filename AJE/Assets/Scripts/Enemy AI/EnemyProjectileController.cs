@@ -18,7 +18,7 @@ public class EnemyProjectileController : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("SetUnActive", _bulletLife.Value);
+        Invoke("SetUnActive", _bulletLife.RuntimeValue);
     }
 
     void Update()
@@ -29,7 +29,7 @@ public class EnemyProjectileController : MonoBehaviour
 
     virtual protected void MoveBullet()
     {
-        transform.Translate(Vector3.forward * _speed.Value * Time.deltaTime);
+        transform.Translate(Vector3.forward * _speed.RuntimeValue * Time.deltaTime);
     }
 
     protected void SetUnActive()

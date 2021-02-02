@@ -7,6 +7,8 @@ public class PowerUpButton : MonoBehaviour
 {
     private Button button;
     private GameObject UpgradePanel;
+    [SerializeField] ListOfButtons PowerUpButtons;
+
 
     private void Awake()
     {
@@ -20,10 +22,18 @@ public class PowerUpButton : MonoBehaviour
         button.onClick.AddListener(ResumeGame);
         button.onClick.AddListener(SetUpgradePanelFalse);
         button.onClick.AddListener(ApplyPowerUp);
+        button.onClick.AddListener(RemoveButtonFromList);
+
     }
 
     virtual protected void ApplyPowerUp()
     {
+        
+    }
+
+    private void RemoveButtonFromList()
+    {
+         
     }
 
     private void ResumeGame()

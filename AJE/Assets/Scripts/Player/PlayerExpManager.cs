@@ -22,14 +22,14 @@ public class PlayerExpManager : MonoBehaviour
 
     void Awake()
     {
-        currentExp.Value = 0;
+        currentExp.RuntimeValue = 0;
         _playerLvl.Value = 0;
-        MaxExp.Value = playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value;
+        MaxExp.RuntimeValue = playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.RuntimeValue;
     }
 
     private void Update()
     {
-        if (currentExp.Value >= playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value)
+        if (currentExp.RuntimeValue >= playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.RuntimeValue)
         {
             PlayerLeveldUp.Raise();
             LevelPlayerUp();
@@ -40,7 +40,7 @@ public class PlayerExpManager : MonoBehaviour
     public void LevelPlayerUp()
     {
         _playerLvl.Value++;
-        currentExp.Value = 0;  
-        MaxExp.Value = playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.Value;
+        currentExp.RuntimeValue = 0;  
+        MaxExp.RuntimeValue = playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.RuntimeValue;
     }
 }

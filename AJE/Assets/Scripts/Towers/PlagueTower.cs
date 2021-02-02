@@ -6,7 +6,7 @@ public class PlagueTower : TowersDefault
 {
     protected override void MyCollisions()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, TowerRadius.Value, EnemyLayerMask.Value);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, TowerRadius.RuntimeValue, EnemyLayerMask.Value);
         int i = 0;
         while (i < hitColliders.Length)
         {

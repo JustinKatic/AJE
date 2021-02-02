@@ -10,6 +10,6 @@ public class DamagePowerUp : PowerUpButton
 
     protected override void ApplyPowerUp()
     {
-        PlayerDamage.Value += IncreasePlayerDamageBy.Value;
+        PlayerDamage.RuntimeValue += IncreasePlayerDamageBy.RuntimeValue;
     }
 }

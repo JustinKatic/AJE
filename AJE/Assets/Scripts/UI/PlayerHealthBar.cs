@@ -20,9 +20,9 @@ public class PlayerHealthBar : MonoBehaviour
 
     public void UpdateHealthBar()
     {
-        slider.maxValue = MyMaxHealth.Value;
-        slider.value = MyCurrentHealth.Value;
+        slider.maxValue = MyMaxHealth.RuntimeValue;
+        slider.value = MyCurrentHealth.RuntimeValue;
         fill.color = gradient.Evaluate(slider.normalizedValue);
-        _healthTxt.text = MyCurrentHealth.Value.ToString();
+        _healthTxt.text = MyCurrentHealth.RuntimeValue.ToString();
     }
 }

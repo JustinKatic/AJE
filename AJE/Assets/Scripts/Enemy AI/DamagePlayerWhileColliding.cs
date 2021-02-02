@@ -33,8 +33,8 @@ public class DamagePlayerWhileColliding : MonoBehaviour
             if (_timer > _damageEveryX)
             {
                 PlayerHealthUpdated.Raise();
-                PlayersCurrentHealth.Value -= _damage.Value;
-                FloatingText(_damage.Value, other.transform.position);
+                PlayersCurrentHealth.RuntimeValue -= _damage.RuntimeValue;
+                FloatingText(_damage.RuntimeValue, other.transform.position);
                 _timer = 0.0f;
             }
         }

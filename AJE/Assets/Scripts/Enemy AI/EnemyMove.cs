@@ -47,7 +47,7 @@ public class EnemyMove : MonoBehaviour
     private void OnDisable()
     {
         _slowDebuff = false;
-        SetEnemyMoveSpeed(MyMoveSpeed.Value);
+        SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue);
     }
     public virtual void Move()
     {
@@ -83,7 +83,7 @@ public class EnemyMove : MonoBehaviour
 
     public void SetSlowDebuffTrue()
     {
-        SetEnemyMoveSpeed(MyMoveSpeed.Value / 2);
+        SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue / 2);
         _slowDebuff = true;
         _slowDurationTimer = 0;
     }
@@ -93,9 +93,9 @@ public class EnemyMove : MonoBehaviour
         if (_slowDebuff == true)
         {
             _slowDurationTimer += Time.deltaTime;
-            if (_slowDurationTimer > SlowTowerDuration.Value)
+            if (_slowDurationTimer > SlowTowerDuration.RuntimeValue)
             {
-                SetEnemyMoveSpeed(MyMoveSpeed.Value);
+                SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue);
                 _slowDurationTimer = 0;
                 _slowDebuff = false;
             }
@@ -109,7 +109,7 @@ public class EnemyMove : MonoBehaviour
             Vector3 lookPos = targetDestination.position - transform.position;
             lookPos.y = 0;
             var rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * LookTowardsSpeed.Value);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * LookTowardsSpeed.RuntimeValue);
         }
     }
 }

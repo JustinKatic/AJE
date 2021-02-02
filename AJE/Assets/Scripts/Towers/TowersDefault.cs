@@ -14,7 +14,7 @@ public class TowersDefault : MonoBehaviour
     private void Update()
     {
         _timer += Time.deltaTime;
-        if (_timer >= ActivateEveryX.Value)
+        if (_timer >= ActivateEveryX.RuntimeValue)
         {
             MyCollisions();
             _timer = 0;
@@ -29,6 +29,6 @@ public class TowersDefault : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, TowerRadius.Value);
+        Gizmos.DrawWireSphere(transform.position, TowerRadius.RuntimeValue);
     }
 }

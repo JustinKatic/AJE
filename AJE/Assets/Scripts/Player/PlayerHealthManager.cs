@@ -18,19 +18,19 @@ public class PlayerHealthManager : MonoBehaviour
 
     void Awake()
     {
-        currentHealth.Value = maxHealth.Value;
-        _healthTxt.text = currentHealth.Value.ToString();
+        currentHealth.RuntimeValue = maxHealth.RuntimeValue;
+        _healthTxt.text = currentHealth.RuntimeValue.ToString();
     }
 
     void Update()
     {
-        if (currentHealth.Value <= 0)
+        if (currentHealth.RuntimeValue <= 0)
         {
             PlayerDeath.Raise();
         }
-        if (currentHealth.Value > maxHealth.Value)
+        if (currentHealth.RuntimeValue > maxHealth.RuntimeValue)
         {
-            currentHealth.Value = maxHealth.Value;
+            currentHealth.RuntimeValue = maxHealth.RuntimeValue;
             UpdatePlayerHealth.Raise();
         }
     }
@@ -38,12 +38,12 @@ public class PlayerHealthManager : MonoBehaviour
     public void FloatingText(FloatVariable damage)
     {
         GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
-        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.Value.ToString();
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.RuntimeValue.ToString();
     }
 
     public void FloatingTextPlus(FloatVariable heal)
     {
         GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
-        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "+" + heal.Value.ToString();
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "+" + heal.RuntimeValue.ToString();
     }
 }

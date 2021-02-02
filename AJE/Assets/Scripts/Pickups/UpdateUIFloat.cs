@@ -17,6 +17,6 @@ public class UpdateUIFloat : MonoBehaviour
 
     public void UpdateText(FloatVariable floatVariable)
     {
-        TextToUpdate.text = floatVariable.Value.ToString();
+        TextToUpdate.text = floatVariable.RuntimeValue.ToString();
     }
 }

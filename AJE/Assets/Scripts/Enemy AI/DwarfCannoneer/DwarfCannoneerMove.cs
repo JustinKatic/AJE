@@ -20,14 +20,14 @@ public class DwarfCannoneerMove : EnemyMove
     {
         //move towards player
         float dist = Vector3.Distance(transform.position, targetDestination.position);
-        if (rePositioned == true && dist > MyAttackRange.Value)
+        if (rePositioned == true && dist > MyAttackRange.RuntimeValue)
         {
             dwarfCannoneerShoot.canShoot = false;
             navMeshAgent.isStopped = false;
             navMeshAgent.SetDestination(targetDestination.position);
         }
         //stop and shoot at player
-        else if (rePositioned == true && dist < MyAttackRange.Value)
+        else if (rePositioned == true && dist < MyAttackRange.RuntimeValue)
         {
             dwarfCannoneerShoot.canShoot = true;
             navMeshAgent.isStopped = true;

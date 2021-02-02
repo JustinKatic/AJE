@@ -19,13 +19,13 @@ public class KnightMove : EnemyMove
     {
         //move towards player
         float dist = Vector3.Distance(transform.position, targetDestination.position);
-        if (charging == false && dist > MyChargeRange.Value)
+        if (charging == false && dist > MyChargeRange.RuntimeValue)
         {
             navMeshAgent.isStopped = false;
             navMeshAgent.SetDestination(targetDestination.position);
         }
 
-        else if (charging == false && dist < MyChargeRange.Value)
+        else if (charging == false && dist < MyChargeRange.RuntimeValue)
         {
             charging = true;
             navMeshAgent.isStopped = true;
@@ -39,15 +39,15 @@ public class KnightMove : EnemyMove
                 chargePos = targetDestination.position;
                 posFound = true;
             }
-            if (timer >= chargeUpTime.Value)
+            if (timer >= chargeUpTime.RuntimeValue)
             {
                 float distToChargePos = Vector3.Distance(transform.position, chargePos);
                 navMeshAgent.isStopped = false;
                 navMeshAgent.SetDestination(chargePos);
-                navMeshAgent.speed = ChargeSpeed.Value;
+                navMeshAgent.speed = ChargeSpeed.RuntimeValue;
                 if (distToChargePos <= 1f)
                 {
-                    navMeshAgent.speed = MyMoveSpeed.Value;
+                    navMeshAgent.speed = MyMoveSpeed.RuntimeValue;
                     posFound = false;
                     charging = false;
                     timer = 0;
