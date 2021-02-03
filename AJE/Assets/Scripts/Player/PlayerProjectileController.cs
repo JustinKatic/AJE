@@ -19,11 +19,6 @@ public class PlayerProjectileController : MonoBehaviour
     [SerializeField] Color _normDmgColor;
 
 
-
-
-
-
-
     private void Awake()
     {
 
