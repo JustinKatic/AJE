@@ -15,6 +15,10 @@ public class PlayerProjectileController : MonoBehaviour
 
     [SerializeField] GameObject floatingDmg;
 
+    [SerializeField] Color _critDamageColor;
+    [SerializeField] Color _normDmgColor;
+
+
 
 
 
@@ -44,12 +48,12 @@ public class PlayerProjectileController : MonoBehaviour
             if (randValue < _critChance.RuntimeValue)
             {
                 other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(_bulletDamage.RuntimeValue * _critDamage.RuntimeValue);
-                FloatingTxt(_bulletDamage.RuntimeValue * _critDamage.RuntimeValue, other.transform);
+                FloatingTxt(_bulletDamage.RuntimeValue * _critDamage.RuntimeValue, other.transform,_critDamageColor);
             }
             else
             {
                 other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(_bulletDamage.RuntimeValue);
-                FloatingTxt(_bulletDamage.RuntimeValue, other.transform);
+                FloatingTxt(_bulletDamage.RuntimeValue, other.transform,_normDmgColor);
             }
             SetUnActive();
         }
@@ -60,10 +64,12 @@ public class PlayerProjectileController : MonoBehaviour
         }
     }
 
-    public void FloatingTxt(float damage, Transform transformToSpawnTxtAt)
+    public void FloatingTxt(float damage, Transform transformToSpawnTxtAt,Color color)
     {
         GameObject points = Instantiate(floatingDmg, transformToSpawnTxtAt.position, Quaternion.identity);
-        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
+        TextMeshPro textmeshPro = points.transform.GetChild(0).GetComponent<TextMeshPro>();
+        textmeshPro.text = "-" + damage.ToString();
+        textmeshPro.color = color;
     }
 
 
