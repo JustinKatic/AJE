@@ -33,6 +33,9 @@ public class PlayerHealthManager : MonoBehaviour
             currentHealth.RuntimeValue = maxHealth.RuntimeValue;
             UpdatePlayerHealth.Raise();
         }
+
+
+
     }
 
     public void FloatingText(FloatVariable damage)

@@ -21,7 +21,6 @@ public class ListOfTransforms : ScriptableObject, ISerializationCallbackReceiver
     {
         RuntimeList = List;
         RuntimeList.Clear();
-        RuntimeList.AddRange(List);
     }
 
     public void OnBeforeSerialize()

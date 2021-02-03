@@ -10,6 +10,9 @@ public class TowersDefault : MonoBehaviour
     [SerializeField] protected FloatVariable TowerRadius;
     [SerializeField] protected FloatVariable TowerDamage;
 
+    [SerializeField] protected GameObject floatingDmg;
+
+
 
     private void Update()
     {

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 
 public class PlayerProjectileController : MonoBehaviour
@@ -8,11 +10,23 @@ public class PlayerProjectileController : MonoBehaviour
     [SerializeField] FloatVariable _bulletLife;
     [SerializeField] FloatVariable _bulletDamage;
     [SerializeField] FloatVariable _bulletSpeed;
+    [SerializeField] FloatVariable _critChance;
+    [SerializeField] FloatVariable _critDamage;
+
+    [SerializeField] GameObject floatingDmg;
+
+    [SerializeField] Color _critDamageColor;
+    [SerializeField] Color _normDmgColor;
+
+
+
+
+
 
 
     private void Awake()
-    {       
-        
+    {
+
     }
 
     private void OnEnable()
@@ -30,8 +44,18 @@ public class PlayerProjectileController : MonoBehaviour
     {
         if (other.gameObject.layer == 10)
         {
+            float randValue = Random.value;
+            if (randValue < _critChance.RuntimeValue)
+            {
+                other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(_bulletDamage.RuntimeValue * _critDamage.RuntimeValue);
+                FloatingTxt(_bulletDamage.RuntimeValue * _critDamage.RuntimeValue, other.transform,_critDamageColor);
+            }
+            else
+            {
+                other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(_bulletDamage.RuntimeValue);
+                FloatingTxt(_bulletDamage.RuntimeValue, other.transform,_normDmgColor);
+            }
             SetUnActive();
-            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(_bulletDamage.RuntimeValue);
         }
 
         if (other.gameObject.tag == "Wall")
@@ -40,10 +64,18 @@ public class PlayerProjectileController : MonoBehaviour
         }
     }
 
+    public void FloatingTxt(float damage, Transform transformToSpawnTxtAt,Color color)
+    {
+        GameObject points = Instantiate(floatingDmg, transformToSpawnTxtAt.position, Quaternion.identity);
+        TextMeshPro textmeshPro = points.transform.GetChild(0).GetComponent<TextMeshPro>();
+        textmeshPro.text = "-" + damage.ToString();
+        textmeshPro.color = color;
+    }
+
 
     void SetUnActive()
     {
         gameObject.SetActive(false);
         CancelInvoke();
-    }    
+    }
 }

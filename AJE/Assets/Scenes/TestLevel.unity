@@ -4832,8 +4832,6 @@ GameObject:
   - component: {fileID: 118273098}
   - component: {fileID: 118273097}
   - component: {fileID: 118273100}
-  - component: {fileID: 118273099}
-  - component: {fileID: 118273101}
   m_Layer: 0
   m_Name: GameSystems
   m_TagString: GameManager
@@ -4905,33 +4903,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &118273099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118273096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 1c8582d143a69fc4390da3ec23920a5f, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
-        m_MethodName: ClearList
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &118273100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4997,23 +4968,6 @@ MonoBehaviour:
     - {fileID: 1965269645}
   ListOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
   timeBetweenWaves: 3
---- !u!114 &118273101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118273096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fa53bd4b6173ca498dd2cdc428eae18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RefplayerProjectileDmg: {fileID: 11400000, guid: b44017ad6960e3e45b58c2ef421bde78,
-    type: 2}
-  RefPlayerMaxHealth: {fileID: 11400000, guid: 2a61cacbe142d794ba08fa4c838e4d51, type: 2}
-  RefPlayerMoveSpeed: {fileID: 11400000, guid: 83817a9ef5cebac4cb6420c575371342, type: 2}
-  RefPowerUpButtons: {fileID: 11400000, guid: e43f45873a88fa04d954bfdd11eb4497, type: 2}
 --- !u!1 &119717462
 GameObject:
   m_ObjectHideFlags: 0
@@ -14915,7 +14869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414526079}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: ButtonPos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17008,7 +16962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 476713158}
   m_Layer: 5
-  m_Name: GameObject (2)
+  m_Name: ButtonPos3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56002,7 +55956,13 @@ MonoBehaviour:
   - {fileID: 414526078}
   - {fileID: 1714198251}
   - {fileID: 476713157}
-  PowerUpButtons: {fileID: 11400000, guid: e43f45873a88fa04d954bfdd11eb4497, type: 2}
+  PowerUpButtons:
+  - {fileID: 8190392736075086940, guid: 6681b81522505164bad49f058d99f56f, type: 3}
+  - {fileID: 8190392736075086940, guid: 6681b81522505164bad49f058d99f56f, type: 3}
+  - {fileID: 3136856247425557191, guid: 4a3e21b2385bc3048aededcefc21c1c7, type: 3}
+  - {fileID: 3136856247425557191, guid: 4a3e21b2385bc3048aededcefc21c1c7, type: 3}
+  - {fileID: 4644162268406086784, guid: 3091093bf46ea8443be2d6c91b30cd05, type: 3}
+  - {fileID: 4644162268406086784, guid: 3091093bf46ea8443be2d6c91b30cd05, type: 3}
   Parent: {fileID: 1663607237}
 --- !u!1001 &1663655035
 PrefabInstance:
@@ -57137,7 +57097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1714198252}
   m_Layer: 5
-  m_Name: GameObject (1)
+  m_Name: ButtonPos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69704,6 +69664,53 @@ PrefabInstance:
       propertyPath: CloestTargetObj
       value: 
       objectReference: {fileID: 1458649014}
+    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _playerExpNeededToLvl.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _playerExpNeededToLvl.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: fe5805ac9c8a7474599ba006c2efde05,
+        type: 2}
+    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _playerExpNeededToLvl.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 148e5ac8fca951b469c85fdded71df63,
+        type: 2}
+    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _playerExpNeededToLvl.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 245317a8763c0b641a734953fb359756,
+        type: 2}
+    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _playerExpNeededToLvl.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: e314f3baecb3ab143a032474d9b43494,
+        type: 2}
+    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _playerExpNeededToLvl.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2839f8a458da82e479460f1f7ecf7961,
+        type: 2}
+    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _playerExpNeededToLvl.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: b0f84ece6d69ce048a6a5a514a5b6cf0,
+        type: 2}
+    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
+        type: 3}
+      propertyPath: _playerExpNeededToLvl.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 26b02eaa6d5afdc4182ccde6b67aa949,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d23263cb0bec14241938b115ad05a3f9, type: 3}
 --- !u!1001 &439413484464464538

@@ -79,6 +79,8 @@ public class PlayerMove : MonoBehaviour
         {
             _shooting.Value = false;
         }
+
+
     }
 
     void LookTowards()
