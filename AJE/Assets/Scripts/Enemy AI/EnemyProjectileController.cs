@@ -32,7 +32,7 @@ public class EnemyProjectileController : MonoBehaviour
         transform.Translate(Vector3.forward * _speed.RuntimeValue * Time.deltaTime);
     }
 
-    protected void SetUnActive()
+    virtual protected void SetUnActive()
     {
         gameObject.SetActive(false);
         CancelInvoke();

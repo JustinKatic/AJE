@@ -7,6 +7,8 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
     Vector3 targetPos;
     [SerializeField] FloatVariable ExplosionRadius;
     [SerializeField] LayerMaskVariable ObjAffectsByExplosion;
+    [SerializeField] GameObject Explosion;
+
     private void OnEnable()
     {
         targetPos = GameObject.FindGameObjectWithTag(TagOfObjectCanHit.Value).transform.position;
@@ -29,6 +31,11 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
             }
             SetUnActive();
         }
+    }
+    protected override void SetUnActive()
+    {
+        Instantiate(Explosion, transform.position, Quaternion.Euler(-90, transform.rotation.y, transform.rotation.z));       
+        base.SetUnActive();
     }
 
     void OnDrawGizmos()
