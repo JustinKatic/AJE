@@ -7,7 +7,6 @@ public class PowerUpButton : MonoBehaviour
 {
     private Button button;
     private GameObject UpgradePanel;
-    [SerializeField] ListOfButtons PowerUpButtons;
 
 
     private void Awake()

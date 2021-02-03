@@ -76,7 +76,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Increase Proj Dmg
+  m_Text: Increase PlayerMove Speed
 --- !u!1 &1423429620595548676
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 369787493823021862}
   - component: {fileID: 4969948673005186714}
   - component: {fileID: 3136856247425557191}
-  - component: {fileID: 8425291868489753833}
+  - component: {fileID: 4150132355123224001}
   m_Layer: 5
   m_Name: IncreasePlayerMoveSpeedButton
   m_TagString: Untagged
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8425291868489753833
+--- !u!114 &4150132355123224001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,10 +205,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1423429620595548676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df966c90103843945b5586911db82298, type: 3}
+  m_Script: {fileID: 11500000, guid: 00ee592df3fdbc14d950a96954bfafb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowerUpButtons: {fileID: 11400000, guid: e43f45873a88fa04d954bfdd11eb4497, type: 2}
-  PlayerDamage: {fileID: 11400000, guid: b44017ad6960e3e45b58c2ef421bde78, type: 2}
-  IncreasePlayerDamageBy: {fileID: 11400000, guid: 5ae34db7751a7f649a2502ad840b2ce2,
+  PlayerMoveSpeed: {fileID: 11400000, guid: 83817a9ef5cebac4cb6420c575371342, type: 2}
+  IncreasePlayerMoveSpeedBy: {fileID: 11400000, guid: 355a0e0e17e5b414fa534be64f9998a1,
     type: 2}

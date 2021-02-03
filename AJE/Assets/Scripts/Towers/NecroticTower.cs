@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class NecroticTower : TowersDefault
@@ -16,9 +17,16 @@ public class NecroticTower : TowersDefault
         while (i < hitColliders.Length)
         {
             hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerDamage.RuntimeValue);
+            FloatingTxt(TowerDamage.RuntimeValue, hitColliders[i].transform);
             PlayerCurrentHealth.RuntimeValue += TowerDamage.RuntimeValue / 2;
             UpdatePlayerHealth.Raise();
             i++;
         }
+    }
+
+    public void FloatingTxt(float value, Transform transformToSpawnTxtAt)
+    {
+        GameObject points = Instantiate(floatingDmg, transformToSpawnTxtAt.position, Quaternion.identity);
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + value.ToString();
     }
 }

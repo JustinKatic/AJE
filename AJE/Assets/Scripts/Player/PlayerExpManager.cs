@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class PlayerExpManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class PlayerLevelDetails
-    {
-        public string name;
-        public FloatVariable _playerExpNeededToLvl;
-    }
 
-    public PlayerLevelDetails[] playerLevelDetails;
+    [SerializeField] FloatVariable[] _playerExpNeededToLvl;
+
+
 
     [SerializeField] FloatVariable currentExp;
     [SerializeField] FloatVariable MaxExp;
@@ -24,12 +20,12 @@ public class PlayerExpManager : MonoBehaviour
     {
         currentExp.RuntimeValue = 0;
         _playerLvl.Value = 0;
-        MaxExp.RuntimeValue = playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.RuntimeValue;
+        MaxExp.RuntimeValue = _playerExpNeededToLvl[_playerLvl.Value].RuntimeValue;
     }
 
     private void Update()
     {
-        if (currentExp.RuntimeValue >= playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.RuntimeValue)
+        if (currentExp.RuntimeValue >= _playerExpNeededToLvl[_playerLvl.Value].RuntimeValue)
         {
             PlayerLeveldUp.Raise();
             LevelPlayerUp();
@@ -40,7 +36,7 @@ public class PlayerExpManager : MonoBehaviour
     public void LevelPlayerUp()
     {
         _playerLvl.Value++;
-        currentExp.RuntimeValue = 0;  
-        MaxExp.RuntimeValue = playerLevelDetails[_playerLvl.Value]._playerExpNeededToLvl.RuntimeValue;
+        currentExp.RuntimeValue = 0;
+        MaxExp.RuntimeValue = _playerExpNeededToLvl[_playerLvl.Value].RuntimeValue;
     }
 }

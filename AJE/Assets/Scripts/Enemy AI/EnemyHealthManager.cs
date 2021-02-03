@@ -58,15 +58,9 @@ public class EnemyHealthManager : MonoBehaviour
     public void HurtEnemy(float damage)
     {
         _currentHealth -= damage;
-        FloatingTxt(damage);
+      //  FloatingTxt(damage);
         if (IHaveAHealthBar)
             healthBar.SetHealth(_currentHealth);
-    }
-
-    public void FloatingTxt(float damage)
-    {
-        GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
-        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
     }
 
     void Death()
@@ -97,6 +91,7 @@ public class EnemyHealthManager : MonoBehaviour
             if (plagueTickTimer > plagueTickRate.RuntimeValue)
             {
                 HurtEnemy(plagueTickDamage.RuntimeValue);
+                FloatingTxt(plagueTickDamage.RuntimeValue, transform);
                 plagueTickTimer = 0;
             }
 
@@ -133,5 +128,10 @@ public class EnemyHealthManager : MonoBehaviour
                 enemyHealthManager.SetPlagueDebuffTrue();
             }
         }
+    }
+    public void FloatingTxt(float damage, Transform transformToSpawnTxtAt)
+    {
+        GameObject points = Instantiate(floatingDmg, transformToSpawnTxtAt.position, Quaternion.identity);
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
     }
 }

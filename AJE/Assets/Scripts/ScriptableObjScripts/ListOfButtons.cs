@@ -5,15 +5,28 @@ using UnityEngine.UI;
 
 
 [CreateAssetMenu]
-public class ListOfButtons : ScriptableObject
+public class ListOfButtons : ScriptableObject, ISerializationCallbackReceiver
 {
 #if UNITY_EDITOR
     [Multiline]
     public string DeveloperDescription = "";
 #endif
 
-    public List<Button> List;
+    public List<GameObject> List;
 
+    [System.NonSerialized]
+    public List<GameObject> RuntimeList;
+
+
+    public void OnAfterDeserialize()
+    {
+        RuntimeList = List;
+    }
+
+    public void OnBeforeSerialize()
+    {
+
+    }
     public void ClearList()
     {
         List.Clear();
