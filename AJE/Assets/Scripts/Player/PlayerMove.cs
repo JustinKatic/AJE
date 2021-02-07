@@ -30,6 +30,10 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] FloatVariable PlayerLookTowardsSpeed;
 
 
+    private void Awake()
+    {
+        ListOfEnemies.List.Clear();
+    }
 
     void Start()
     {
