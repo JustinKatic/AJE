@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 3132182535443080359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.72, y: 0.22, z: 0}
-  m_LocalScale: {x: 1, y: 0.9, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 3132182534528243662}
   - {fileID: 1016289648762629038}
@@ -351,6 +351,7 @@ MonoBehaviour:
   Waypoints:
     serializedVersion: 2
     m_Bits: 8192
+  TimeSpentWandering: {fileID: 11400000, guid: 04e09efec15162544bb66016c4b4909c, type: 2}
 --- !u!1 &3588966338464058864
 GameObject:
   m_ObjectHideFlags: 0

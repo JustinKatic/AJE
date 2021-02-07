@@ -53,7 +53,7 @@ public class BuyTowerButton : MonoBehaviour
                 {
                     Instantiate(TowerSelect,
                         new Vector3(hit.collider.gameObject.transform.position.x,
-                        hit.collider.gameObject.transform.transform.position.y + 0.65f,
+                        hit.collider.gameObject.transform.transform.position.y + 1.05f,
                         hit.collider.gameObject.transform.position.z),
                         hit.collider.gameObject.transform.rotation);
                     buildable._hasAreaBeenBuiltOn = true;

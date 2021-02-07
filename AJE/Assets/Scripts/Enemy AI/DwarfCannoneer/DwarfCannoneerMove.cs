@@ -10,6 +10,10 @@ public class DwarfCannoneerMove : EnemyMove
     private GameObject randomPos;
     [SerializeField] LayerMask Waypoints;
 
+    private float _timer;
+    [SerializeField] protected FloatVariable TimeSpentWandering;
+
+
     bool posFound = false;
 
     private void Awake()
@@ -34,21 +38,25 @@ public class DwarfCannoneerMove : EnemyMove
             LookTowards();
         }
         else if (rePositioned == false)
-        {                 
+        {
             if (posFound == false)
             {
                 Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4, Waypoints);
-                randomPos = hitColliders[Random.Range(0,hitColliders.Length)].gameObject;
+                randomPos = hitColliders[Random.Range(0, hitColliders.Length)].gameObject;
                 posFound = true;
             }
             navMeshAgent.isStopped = false;
             dwarfCannoneerShoot.canShoot = false;
             navMeshAgent.SetDestination(randomPos.transform.position);
+
+            _timer += Time.deltaTime;
+
             float distToRand = Vector3.Distance(transform.position, randomPos.transform.position);
-            if (distToRand <= 0.6f)
+            if (distToRand <= 0.6f || _timer >= TimeSpentWandering.RuntimeValue)
             {
                 rePositioned = true;
                 posFound = false;
+                _timer = 0;
             }
         }
     }

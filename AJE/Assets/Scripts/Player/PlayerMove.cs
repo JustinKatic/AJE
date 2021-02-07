@@ -120,7 +120,7 @@ public class PlayerMove : MonoBehaviour
     public void SetIconAboveClosestTarget()
     {
         Vector3 targetPos = cloestTarget.position;
-        targetPos.y = 3;
+        targetPos.y = 6;
         CloestTargetObj.transform.position = targetPos;
         CloestTargetObj.transform.SetParent(cloestTarget);
     }
