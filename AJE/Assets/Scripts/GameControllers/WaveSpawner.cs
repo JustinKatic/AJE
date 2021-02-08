@@ -21,17 +21,31 @@ public class WaveSpawner : MonoBehaviour
 
     private int _currentEnemy = 0;
 
+    public float timeBetweenWaves = 5f;
+    private float waveCountdown;
+
     [SerializeField] ListOfTransforms ListOfEnemies;
 
-    [SerializeField] GameObject fog1;
-    [SerializeField] GameObject fog2;
-    [SerializeField] GameObject fog3;
-    [SerializeField] GameObject fog4;
 
-    [SerializeField] int fog1Activation;
-    [SerializeField] int fog2Activation;
-    [SerializeField] int fog3Activation;
-    [SerializeField] int fog4Activation;
+    [Header("Fog1")]
+    [SerializeField] GameObject fog1;
+    [SerializeField] int RemoveFog1AtWaveX;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog1;
+    [Header("Fog2")]
+    [SerializeField] GameObject fog2;
+    [SerializeField] int RemoveFog2AtWaveX;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog2;
+    [Header("Fog3")]
+    [SerializeField] GameObject fog3;
+    [SerializeField] int RemoveFog3AtWaveX;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog3;
+    [Header("Fog4")]
+    [SerializeField] GameObject fog4;
+    [SerializeField] int RemoveFog4AtWaveX;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog4;
+
+
+
 
 
 
@@ -39,9 +53,6 @@ public class WaveSpawner : MonoBehaviour
     {
         get { return nextWave + 1; }
     }
-
-    public float timeBetweenWaves = 5f;
-    private float waveCountdown;
     public float WaveCountdown
     {
         get { return waveCountdown; }
@@ -98,21 +109,49 @@ public class WaveSpawner : MonoBehaviour
         {
             nextWave++;
         }
-        if(nextWave == fog1Activation)
+        if (nextWave == RemoveFog1AtWaveX)
         {
             fog1.SetActive(false);
+            if (SpawnPointsToActivateWithFog1.Length > 1)
+            {
+                for (int i = 0; i < SpawnPointsToActivateWithFog1.Length; i++)
+                {
+                    SpawnPointsToActivateWithFog1[i].gameObject.SetActive(true);
+                }
+            }
         }
-        if (nextWave == fog2Activation)
+        if (nextWave == RemoveFog2AtWaveX)
         {
             fog2.SetActive(false);
+            if (SpawnPointsToActivateWithFog2.Length > 1)
+            {
+                for (int i = 0; i < SpawnPointsToActivateWithFog2.Length; i++)
+                {
+                    SpawnPointsToActivateWithFog2[i].gameObject.SetActive(true);
+                }
+            }
         }
-        if (nextWave == fog3Activation)
+        if (nextWave == RemoveFog3AtWaveX)
         {
             fog3.SetActive(false);
+            if (SpawnPointsToActivateWithFog3.Length > 1)
+            {
+                for (int i = 0; i < SpawnPointsToActivateWithFog3.Length; i++)
+                {
+                    SpawnPointsToActivateWithFog3[i].gameObject.SetActive(true);
+                }
+            }
         }
-        if (nextWave == fog4Activation)
+        if (nextWave == RemoveFog4AtWaveX)
         {
             fog4.SetActive(false);
+            if (SpawnPointsToActivateWithFog4.Length > 1)
+            {
+                for (int i = 0; i < SpawnPointsToActivateWithFog4.Length; i++)
+                {
+                    SpawnPointsToActivateWithFog4[i].gameObject.SetActive(true);
+                }
+            }
         }
     }
 
