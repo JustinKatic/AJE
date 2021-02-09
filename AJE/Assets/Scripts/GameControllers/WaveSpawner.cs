@@ -17,6 +17,7 @@ public class WaveSpawner : MonoBehaviour
 
     public Wave[] waves;
     private int nextWave = 0;
+    [SerializeField] GameEvent WaveCompletedEvent;
 
 
     private int _currentEnemy = 0;
@@ -100,6 +101,7 @@ public class WaveSpawner : MonoBehaviour
     {
         State = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
+        WaveCompletedEvent.Raise();
 
         if (nextWave + 1 > waves.Length - 1)
         {

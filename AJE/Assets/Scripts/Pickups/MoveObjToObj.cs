@@ -7,15 +7,25 @@ public class MoveObjToObj : MonoBehaviour
     [SerializeField] StringVariable TagOfObjToMoveTowards;
     private GameObject target;
     [SerializeField] FloatVariable speed;
+    private bool shouldObjMoveToPlayer;
 
     private void OnEnable()
     {
         target = GameObject.FindGameObjectWithTag(TagOfObjToMoveTowards.Value);
+        shouldObjMoveToPlayer = false;
     }
 
-    void Update()
+    private void Update()
     {
-        if (target != null)
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed.RuntimeValue * Time.deltaTime);
+        if (shouldObjMoveToPlayer)
+        {
+            if (target != null)
+                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed.RuntimeValue * Time.deltaTime);
+        }
+    }
+
+    public void MoveObjToPlayer()
+    {
+        shouldObjMoveToPlayer = true;
     }
 }

@@ -35,8 +35,8 @@ public class PlayerExpManager : MonoBehaviour
 
     public void LevelPlayerUp()
     {
+        currentExp.RuntimeValue = currentExp.RuntimeValue -= MaxExp.RuntimeValue;
         _playerLvl.Value++;
-        currentExp.RuntimeValue = 0;
         MaxExp.RuntimeValue = _playerExpNeededToLvl[_playerLvl.Value].RuntimeValue;
     }
 }

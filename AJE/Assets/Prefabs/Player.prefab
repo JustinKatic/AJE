@@ -1282,7 +1282,7 @@ Transform:
   m_GameObject: {fileID: 284077345587212279}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.33, y: 0, z: 8.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 284077346307895739}
   m_Father: {fileID: 0}
@@ -2322,7 +2322,6 @@ GameObject:
   - component: {fileID: 2909604892573926125}
   - component: {fileID: 284077346307895743}
   - component: {fileID: 1312703987}
-  - component: {fileID: 4573920093702631863}
   m_Layer: 8
   m_Name: Logic
   m_TagString: Player
@@ -2387,7 +2386,7 @@ MonoBehaviour:
     type: 3}
   _healthTxt: {fileID: 284077345067718911}
   PlayerDeath: {fileID: 11400000, guid: 1c8582d143a69fc4390da3ec23920a5f, type: 2}
-  UpdatePlayerHealth: {fileID: 0}
+  UpdatePlayerHealth: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee, type: 2}
 --- !u!114 &284077346307895742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2415,7 +2414,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cf92a1c733fea4ea3e52eb909bdd22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerExpNeededToLvl: []
+  _playerExpNeededToLvl:
+  - {fileID: 11400000, guid: fe5805ac9c8a7474599ba006c2efde05, type: 2}
+  - {fileID: 11400000, guid: 148e5ac8fca951b469c85fdded71df63, type: 2}
+  - {fileID: 11400000, guid: 245317a8763c0b641a734953fb359756, type: 2}
+  - {fileID: 11400000, guid: e314f3baecb3ab143a032474d9b43494, type: 2}
+  - {fileID: 11400000, guid: 2839f8a458da82e479460f1f7ecf7961, type: 2}
+  - {fileID: 11400000, guid: b0f84ece6d69ce048a6a5a514a5b6cf0, type: 2}
+  - {fileID: 11400000, guid: 26b02eaa6d5afdc4182ccde6b67aa949, type: 2}
   currentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
   MaxExp: {fileID: 11400000, guid: 4eaca911255e843479f942db982c3bc6, type: 2}
   _playerLvl: {fileID: 11400000, guid: 4b8a4340755f3b249bb33475979c4d0b, type: 2}
@@ -2453,22 +2459,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4573920093702631863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284077346307895737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84ef096bcc27c6249b16b5e980aedc36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
-    type: 2}
-  PlayerTakeBackToMenuCurrency: {fileID: 11400000, guid: a762691ace17e344f8bb18f5b7b04fba,
-    type: 2}
 --- !u!1 &284077346327465047
 GameObject:
   m_ObjectHideFlags: 0

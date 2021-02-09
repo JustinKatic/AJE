@@ -39,13 +39,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7125713572530112796}
-  - component: {fileID: 3303650783771829219}
   - component: {fileID: 1180402241885366473}
   - component: {fileID: 5510411123064573165}
   - component: {fileID: 623779442920598245}
   - component: {fileID: 6458907234160784348}
   - component: {fileID: 8845727028991709389}
   - component: {fileID: 1511542109}
+  - component: {fileID: 4431415939692937055}
   m_Layer: 10
   m_Name: EnemyArcher
   m_TagString: EnemyArcher
@@ -70,34 +70,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3303650783771829219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7125713572530112799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d294f23f1d993459b9002f6ab876a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 1409137194848171806}
-  floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
-    type: 3}
-  MyMaxHealth: {fileID: 11400000, guid: 1fd73302c303600478650d8ebf609eee, type: 2}
-  _listOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
-  MyDeathEvent: {fileID: 11400000, guid: 4b647167dcce7a245853988dca329f0f, type: 2}
-  ExperienceIncreasedEvent: {fileID: 11400000, guid: cd328e7dc6031ca4fab21d52d603c1ff,
-    type: 2}
-  IHaveAHealthBar: 1
-  PlayerCurrentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
-  MyExpWorth: {fileID: 11400000, guid: 45dd3070f54bc634a9d2fcb94dcf94df, type: 2}
-  plagueDebuff: 0
-  plagueDebuffDuration: {fileID: 11400000, guid: a70d6907d3e43c84a9ca2ae70f2ee69c,
-    type: 2}
-  plagueTickDamage: {fileID: 11400000, guid: 2a34622bbb2ac824f959beea13d29b9f, type: 2}
-  plagueTickRate: {fileID: 11400000, guid: f07bae603a0a087478c262ec24af9d5f, type: 2}
 --- !u!195 &1180402241885366473
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -285,6 +257,34 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &4431415939692937055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125713572530112799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8f1397ff889d34ca4d950acee09195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 1409137194848171806}
+  floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
+    type: 3}
+  MyMaxHealth: {fileID: 11400000, guid: 1fd73302c303600478650d8ebf609eee, type: 2}
+  _listOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
+  MyDeathEvent: {fileID: 11400000, guid: 4b647167dcce7a245853988dca329f0f, type: 2}
+  ExperienceIncreasedEvent: {fileID: 11400000, guid: cd328e7dc6031ca4fab21d52d603c1ff,
+    type: 2}
+  IHaveAHealthBar: 1
+  PlayerCurrentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
+  plagueDebuff: 0
+  plagueDebuffDuration: {fileID: 11400000, guid: a70d6907d3e43c84a9ca2ae70f2ee69c,
+    type: 2}
+  plagueTickDamage: {fileID: 11400000, guid: 2a34622bbb2ac824f959beea13d29b9f, type: 2}
+  plagueTickRate: {fileID: 11400000, guid: f07bae603a0a087478c262ec24af9d5f, type: 2}
+  ExpObj: {fileID: 5731125133357009072, guid: a6f9e9d03b39a2449a9f3645220ebd92, type: 3}
 --- !u!1 &7125713573760678521
 GameObject:
   m_ObjectHideFlags: 0

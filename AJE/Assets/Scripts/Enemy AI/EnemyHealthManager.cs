@@ -16,7 +16,6 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField] GameEvent ExperienceIncreasedEvent;
     [SerializeField] bool IHaveAHealthBar;
     [SerializeField] FloatVariable PlayerCurrentExp;
-    [SerializeField] FloatVariable MyExpWorth;
 
 
 
@@ -58,7 +57,6 @@ public class EnemyHealthManager : MonoBehaviour
     public void HurtEnemy(float damage)
     {
         _currentHealth -= damage;
-      //  FloatingTxt(damage);
         if (IHaveAHealthBar)
             healthBar.SetHealth(_currentHealth);
     }
@@ -66,11 +64,9 @@ public class EnemyHealthManager : MonoBehaviour
     void Death()
     {
         _listOfEnemies.RuntimeList.Remove(gameObject.transform);
-        PlayerCurrentExp.RuntimeValue += MyExpWorth.RuntimeValue;
-        ExperienceIncreasedEvent.Raise();
         InstantiateCurrency();
+        InstantiateExpDrop();
         gameObject.SetActive(false);
-        MyDeathEvent.Raise();
     }
 
     public void InstantiateCurrency()
@@ -79,6 +75,11 @@ public class EnemyHealthManager : MonoBehaviour
         currency.transform.position = gameObject.transform.position;
         currency.transform.rotation = gameObject.transform.rotation;
         currency.SetActive(true);
+    }
+
+    virtual public void InstantiateExpDrop()
+    {
+
     }
 
     public void PlagueDebuff()

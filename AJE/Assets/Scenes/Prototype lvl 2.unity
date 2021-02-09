@@ -5334,7 +5334,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118273096}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36775e30cd8a09843a16e7fd2bf686bc, type: 3}
   m_Name: 
@@ -5370,6 +5370,7 @@ MonoBehaviour:
     - {fileID: 1220814645532278433, guid: 513a412997e839849a4be62ef6b189a8, type: 3}
     - {fileID: 1220814645532278433, guid: 513a412997e839849a4be62ef6b189a8, type: 3}
     rate: 0
+  WaveCompletedEvent: {fileID: 11400000, guid: c442acfed93cc8e4f8ac2b2a6e5d4c69, type: 2}
   timeBetweenWaves: 3
   ListOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
   fog1: {fileID: 1150515699}
@@ -73804,21 +73805,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 284077345587212278, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 284077345587212278, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 284077345587212278, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 284077345587212279, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
       propertyPath: m_Name
@@ -73829,12 +73815,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 284077346307895728, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: UpdatePlayerHealth
-      value: 
-      objectReference: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee,
-        type: 2}
     - target: {fileID: 284077346307895729, guid: d23263cb0bec14241938b115ad05a3f9,
         type: 3}
       propertyPath: _moveJoystick
@@ -73845,53 +73825,6 @@ PrefabInstance:
       propertyPath: CloestTargetObj
       value: 
       objectReference: {fileID: 1458649014}
-    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: _playerExpNeededToLvl.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: _playerExpNeededToLvl.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: fe5805ac9c8a7474599ba006c2efde05,
-        type: 2}
-    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: _playerExpNeededToLvl.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 148e5ac8fca951b469c85fdded71df63,
-        type: 2}
-    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: _playerExpNeededToLvl.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 245317a8763c0b641a734953fb359756,
-        type: 2}
-    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: _playerExpNeededToLvl.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: e314f3baecb3ab143a032474d9b43494,
-        type: 2}
-    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: _playerExpNeededToLvl.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2839f8a458da82e479460f1f7ecf7961,
-        type: 2}
-    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: _playerExpNeededToLvl.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: b0f84ece6d69ce048a6a5a514a5b6cf0,
-        type: 2}
-    - target: {fileID: 2909604892573926125, guid: d23263cb0bec14241938b115ad05a3f9,
-        type: 3}
-      propertyPath: _playerExpNeededToLvl.Array.data[6]
-      value: 
-      objectReference: {fileID: 11400000, guid: 26b02eaa6d5afdc4182ccde6b67aa949,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d23263cb0bec14241938b115ad05a3f9, type: 3}
 --- !u!1001 &439413484464464538

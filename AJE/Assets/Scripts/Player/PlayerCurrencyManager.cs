@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerCurrencyManager : MonoBehaviour
 {
-    [SerializeField] FloatVariable playerInGameCurrency;
-    [SerializeField] FloatVariable PlayerTakeBackToMenuCurrency;
+    //[SerializeField] FloatVariable playerInGameCurrency;
+    //[SerializeField] FloatVariable PlayerTakeBackToMenuCurrency;
 
-    private void Awake()
-    {
-        playerInGameCurrency.RuntimeValue = 0;
-        PlayerTakeBackToMenuCurrency.RuntimeValue = 0;
-    }
+    //private void Awake()
+    //{
+    //    playerInGameCurrency.RuntimeValue = 0;
+    //    PlayerTakeBackToMenuCurrency.RuntimeValue = 0;
+    //}
 }
