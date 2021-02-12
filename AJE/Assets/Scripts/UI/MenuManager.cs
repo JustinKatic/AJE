@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] GameObject mainMenu;
-    [SerializeField] GameObject settingsMenu;
-    [SerializeField] GameObject credits;
-    [SerializeField] GameObject controls;
+    [SerializeField] GameObject mainMenuScreen;
+    [SerializeField] GameObject settingsScreen;
+    [SerializeField] GameObject creditsScreen;
+    [SerializeField] GameObject shopScreen;
+    [SerializeField] GameObject equipmentScreen;
+    [SerializeField] GameObject generalsScreen;
+    [SerializeField] GameObject mapScreen;
 
     public void GoToScene(string level)
     {
@@ -24,36 +27,76 @@ public class MenuManager : MonoBehaviour
 #endif
     }
 
-    public void MainMenu()
+    public void GoToMainMenu()
     {
-        mainMenu.SetActive(true);
-        settingsMenu.SetActive(false);
-        credits.SetActive(false);
-        controls.SetActive(false);
+        mainMenuScreen.SetActive(true);
+        settingsScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+        shopScreen.SetActive(false);
+        equipmentScreen.SetActive(false);
+        generalsScreen.SetActive(false);
+        mapScreen.SetActive(false);
     }
 
-    public void SettingsMenu()
+    public void GoToSettings()
     {
-        settingsMenu.SetActive(true);
-        credits.SetActive(false);
-        controls.SetActive(false);
-        mainMenu.SetActive(false);
+        settingsScreen.SetActive(true);
+        creditsScreen.SetActive(false);
+        mainMenuScreen.SetActive(false);
+        shopScreen.SetActive(false);
+        equipmentScreen.SetActive(false);
+        generalsScreen.SetActive(false);
+        mapScreen.SetActive(false);
     }
 
-    public void ShowCredits()
+    public void GoToCredits()
     {
-        credits.SetActive(true);
-        settingsMenu.SetActive(false);
-        controls.SetActive(false);
-        mainMenu.SetActive(false);
+        creditsScreen.SetActive(true);
+        settingsScreen.SetActive(false);
+        mainMenuScreen.SetActive(false);
+        shopScreen.SetActive(false);
+        equipmentScreen.SetActive(false);
+        generalsScreen.SetActive(false);
+        mapScreen.SetActive(false);
     }
-
-    public void ShowControls()
+    public void GoToShop()
     {
-        controls.SetActive(true);
-        credits.SetActive(false);
-        settingsMenu.SetActive(false);
-        mainMenu.SetActive(false);
+        shopScreen.SetActive(true);
+        creditsScreen.SetActive(false);
+        settingsScreen.SetActive(false);
+        mainMenuScreen.SetActive(false);
+        equipmentScreen.SetActive(false);
+        generalsScreen.SetActive(false);
+        mapScreen.SetActive(false);
     }
-
+    public void GoToEquipment()
+    {
+        equipmentScreen.SetActive(true);
+        shopScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+        settingsScreen.SetActive(false);
+        mainMenuScreen.SetActive(false);
+        generalsScreen.SetActive(false);
+        mapScreen.SetActive(false);
+    }
+    public void GoToGenerals()
+    {
+        generalsScreen.SetActive(true);
+        equipmentScreen.SetActive(false);
+        shopScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+        settingsScreen.SetActive(false);
+        mainMenuScreen.SetActive(false);
+        mapScreen.SetActive(false);
+    }
+    public void GoToMap()
+    {
+        mapScreen.SetActive(true);
+        generalsScreen.SetActive(false);
+        equipmentScreen.SetActive(false);
+        shopScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+        settingsScreen.SetActive(false);
+        mainMenuScreen.SetActive(false);
+    }
 }
