@@ -333,7 +333,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3132182535443080359}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19109e1c692a12a41abaedbf4eeb0dd7, type: 3}
+  m_Script: {fileID: 11500000, guid: 54d294f23f1d993459b9002f6ab876a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 6492610691363838630}
@@ -346,12 +346,15 @@ MonoBehaviour:
     type: 2}
   IHaveAHealthBar: 1
   PlayerCurrentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
+  ExpObj: {fileID: 5731125133357009072, guid: a6f9e9d03b39a2449a9f3645220ebd92, type: 3}
   plagueDebuff: 0
   plagueDebuffDuration: {fileID: 11400000, guid: a70d6907d3e43c84a9ca2ae70f2ee69c,
     type: 2}
   plagueTickDamage: {fileID: 11400000, guid: 2a34622bbb2ac824f959beea13d29b9f, type: 2}
   plagueTickRate: {fileID: 11400000, guid: f07bae603a0a087478c262ec24af9d5f, type: 2}
-  ExpObj: {fileID: 5731125133357009072, guid: a6f9e9d03b39a2449a9f3645220ebd92, type: 3}
+  PlayOneShot: {fileID: 11400000, guid: 055b7613d4a69cf4295c2161377adedb, type: 2}
+  DeathClips: []
+  ClipVar: {fileID: 11400000, guid: 36f820100ba54de43be44a879e599b09, type: 2}
 --- !u!1 &3588966338464058864
 GameObject:
   m_ObjectHideFlags: 0

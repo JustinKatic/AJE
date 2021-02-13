@@ -14,6 +14,7 @@ public class BuyTowerButton : MonoBehaviour
     private GameObject ObjPurchasingTower;
 
     [SerializeField] GameEvent UpdateCurrency;
+    [SerializeField] LayerMask notBuildable;
 
 
 
@@ -42,7 +43,7 @@ public class BuyTowerButton : MonoBehaviour
     public void BuyTower(GameObject TowerSelect)
     {
         RaycastHit hit;
-        if (Physics.Raycast(ObjPurchasingTower.transform.position, Vector3.down, out hit))
+        if (Physics.Raycast(ObjPurchasingTower.transform.position, Vector3.down, out hit, 100f, ~notBuildable))
         {
             if (hit.collider.tag == "Ground")
             {

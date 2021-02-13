@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class RotateObject : MonoBehaviour
 {
-    public float rotateSpeed;
+    public FloatVariable OrbRotateSpeed;
     GameObject player;
+    [SerializeField] StringVariable TagOfObjectsToRotateAround;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag(TagOfObjectsToRotateAround.Value);
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.position = player.transform.position;
-        transform.RotateAround(player.transform.position, Vector3.up, rotateSpeed * Time.deltaTime);
+        transform.RotateAround(player.transform.position, Vector3.up, OrbRotateSpeed.RuntimeValue * Time.deltaTime);
     }
 }

@@ -17,7 +17,7 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField] bool IHaveAHealthBar;
     [SerializeField] FloatVariable PlayerCurrentExp;
 
-
+    [SerializeField] GameObject ExpObj;
 
 
     [HideInInspector] public bool plagueDebuff;
@@ -28,6 +28,9 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField] FloatVariable plagueTickRate;
     private float plagueTickTimer;
 
+    [SerializeField] ScriptableSoundObj DeathSound;
+
+    [SerializeField] GameObject deathParticle;
 
 
 
@@ -61,11 +64,19 @@ public class EnemyHealthManager : MonoBehaviour
             healthBar.SetHealth(_currentHealth);
     }
 
-    void Death()
+    public void Death()
     {
         _listOfEnemies.RuntimeList.Remove(gameObject.transform);
         InstantiateCurrency();
-        InstantiateExpDrop();
+        InstantiateExpDrop(ExpObj);
+
+        if (DeathSound)
+            DeathSound.Play();
+        else
+            Debug.Log("no death sound added" + gameObject.name);
+
+        InstantiateDeathParticle(deathParticle);
+
         gameObject.SetActive(false);
     }
 
@@ -77,9 +88,20 @@ public class EnemyHealthManager : MonoBehaviour
         currency.SetActive(true);
     }
 
-    virtual public void InstantiateExpDrop()
+    public void InstantiateExpDrop(GameObject expObj)
     {
+        if (expObj)
+            Instantiate(expObj, transform.position, transform.rotation);
+        else
+            Debug.Log("no Exp Obj added" + gameObject.name);
+    }
 
+    public void InstantiateDeathParticle(GameObject deathParticle)
+    {
+        if (deathParticle)
+            Instantiate(deathParticle, transform.position, transform.rotation);
+        else
+            Debug.Log("no deathParticle Obj added" + gameObject.name);
     }
 
     public void PlagueDebuff()
