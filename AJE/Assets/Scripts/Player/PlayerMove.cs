@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] FloatingJoystick _moveJoystick;
+    FloatingJoystick _moveJoystick;
 
     [SerializeField] FloatVariable _moveSpeed;
     //[SerializeField] BoolVariable _shooting;
@@ -38,6 +38,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         _anim = GetComponentInChildren<Animator>();
+        _moveJoystick = FindObjectOfType<FloatingJoystick>();
     }
 
     void Update()
