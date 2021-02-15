@@ -40,8 +40,8 @@ TrailRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4136948199458766005}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 0
   m_LightProbeUsage: 0
@@ -50,7 +50,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c118fba057e5b5a4793284c4677303a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,7 +74,7 @@ TrailRenderer:
   m_Time: 0.15
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.4
+    widthMultiplier: 0.7
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -101,7 +101,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.31468964, b: 1, a: 0.34509805}
+      key0: {r: 0, g: 0.31468964, b: 1, a: 0.6901961}
       key1: {r: 0, g: 0.3137255, b: 1, a: 0.20784314}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -182,7 +182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97a0643a8268f1409c75c205807c146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 300
+  OrbRotateSpeed: {fileID: 11400000, guid: ec2870712e8e4264a9fa52c067686790, type: 2}
+  TagOfObjectsToRotateAround: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
+    type: 2}
 --- !u!1 &4136948200436267481
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,8 +198,9 @@ GameObject:
   - component: {fileID: 4136948200436267460}
   - component: {fileID: 4136948200436267463}
   - component: {fileID: 4136948200436267458}
+  - component: {fileID: 1620990540}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Orb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,8 +237,8 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4136948200436267481}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -244,7 +247,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -3202471067768430179, guid: 548be7f7f08a7fc4daedde0c1d1b7cd6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -276,7 +279,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!96 &4136948200436267458
 TrailRenderer:
@@ -287,8 +290,8 @@ TrailRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4136948200436267481}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 0
   m_LightProbeUsage: 0
@@ -297,7 +300,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c118fba057e5b5a4793284c4677303a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -321,34 +324,34 @@ TrailRenderer:
   m_Time: 0.3
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.8
+    widthMultiplier: 1.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
         value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: -1.1913255
+        outSlope: -1.1913255
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.24271844
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -0.19855419
+        outSlope: -0.19855419
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.24271846
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.54770017, b: 1, a: 0.12156863}
+      key0: {r: 0, g: 0.79689026, b: 1, a: 0.7607843}
       key1: {r: 0, g: 0.54901963, b: 1, a: 0.32941177}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -384,6 +387,25 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &1620990540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4136948200436267481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc091a2150a3350439f2f03b667a0404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _critChance: {fileID: 11400000, guid: 8ebf4ea95db8d084a96d654af7a06783, type: 2}
+  _critDamage: {fileID: 11400000, guid: d992b5d7f49ae834eb6933188949cd13, type: 2}
+  _orbDamage: {fileID: 11400000, guid: 4cd5c42b25c11554994628ea9e14553a, type: 2}
+  _critDamageColor: {r: 1, g: 0, b: 0, a: 1}
+  _normDmgColor: {r: 1, g: 1, b: 1, a: 1}
+  floatingTxtPrefab: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
+    type: 3}
 --- !u!1 &4136948200439505717
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,8 +419,9 @@ GameObject:
   - component: {fileID: 4136948200439505713}
   - component: {fileID: 4136948200439505712}
   - component: {fileID: 4136948200439505715}
+  - component: {fileID: 134453096}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: Orb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,8 +458,8 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4136948200439505717}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -445,7 +468,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -3202471067768430179, guid: 548be7f7f08a7fc4daedde0c1d1b7cd6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -477,7 +500,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!96 &4136948200439505715
 TrailRenderer:
@@ -488,8 +511,8 @@ TrailRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4136948200439505717}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 0
   m_LightProbeUsage: 0
@@ -498,7 +521,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c118fba057e5b5a4793284c4677303a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -522,34 +545,34 @@ TrailRenderer:
   m_Time: 0.3
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.8
+    widthMultiplier: 1.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
         value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: -1.1913255
+        outSlope: -1.1913255
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.24271844
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -0.19855419
+        outSlope: -0.19855419
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.24271846
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.54770017, b: 1, a: 0.12156863}
+      key0: {r: 0, g: 0.79689026, b: 1, a: 0.7607843}
       key1: {r: 0, g: 0.54901963, b: 1, a: 0.32941177}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -585,6 +608,25 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &134453096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4136948200439505717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc091a2150a3350439f2f03b667a0404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _critChance: {fileID: 11400000, guid: 8ebf4ea95db8d084a96d654af7a06783, type: 2}
+  _critDamage: {fileID: 11400000, guid: d992b5d7f49ae834eb6933188949cd13, type: 2}
+  _orbDamage: {fileID: 11400000, guid: 4cd5c42b25c11554994628ea9e14553a, type: 2}
+  _critDamageColor: {r: 1, g: 0, b: 0, a: 1}
+  _normDmgColor: {r: 1, g: 1, b: 1, a: 1}
+  floatingTxtPrefab: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
+    type: 3}
 --- !u!1 &4136948201198200096
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,8 +667,8 @@ TrailRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4136948201198200096}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 0
   m_LightProbeUsage: 0
@@ -635,7 +677,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c118fba057e5b5a4793284c4677303a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -659,7 +701,7 @@ TrailRenderer:
   m_Time: 0.15
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.4
+    widthMultiplier: 0.7
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -686,7 +728,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.31468964, b: 1, a: 0.34509805}
+      key0: {r: 0, g: 0.31468964, b: 1, a: 0.6901961}
       key1: {r: 0, g: 0.3137255, b: 1, a: 0.20784314}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
