@@ -5387,6 +5387,7 @@ MonoBehaviour:
     - {fileID: 1220814645532278433, guid: 513a412997e839849a4be62ef6b189a8, type: 3}
     rate: 0
   WaveCompletedEvent: {fileID: 11400000, guid: c442acfed93cc8e4f8ac2b2a6e5d4c69, type: 2}
+  AllWavesCompleted: {fileID: 11400000, guid: 98f0cd4936af84c4faffeb633aa3c415, type: 2}
   timeBetweenWaves: 3
   ListOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
   fog1: {fileID: 564296745}
@@ -27168,6 +27169,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692121637}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &692239992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3078931756519445783, guid: 210c54b3ac5fc1d41a3551a8c54c2eb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3558875559767376667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &693270077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1289911531533620289, guid: ff89e12844b29b7439800f158f799089,
@@ -44885,6 +44892,7 @@ GameObject:
   - component: {fileID: 1245501224}
   - component: {fileID: 1245501223}
   - component: {fileID: 1245501222}
+  - component: {fileID: 1245501226}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -44899,7 +44907,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245501221}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
   m_Name: 
@@ -44995,6 +45003,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1245501226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245501221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 98f0cd4936af84c4faffeb633aa3c415, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 692239992}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &1245946066
 PrefabInstance:
   m_ObjectHideFlags: 0
