@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1010019689228104446
 Transform:
   m_ObjectHideFlags: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 652107f36a28e44479c0b827dee5852a, type: 2}
+  - {fileID: 2100000, guid: 8d530ffe6c4968843806085897955b9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,7 +137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 652107f36a28e44479c0b827dee5852a, type: 2}
+  - {fileID: 2100000, guid: 58194dd02c86c34408ab165a97ade4f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -188,6 +188,7 @@ Transform:
   m_Children:
   - {fileID: 1010019689228104446}
   - {fileID: 7645388378724384395}
+  - {fileID: 4870334914478673769}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -214,3 +215,78 @@ MonoBehaviour:
   UpdatePlayerHealth: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee, type: 2}
   NecroticTowerHealAmount: {fileID: 11400000, guid: cda727450983e7c449e20e1f2ec7d7f2,
     type: 2}
+--- !u!1001 &4912745323991294520
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4323044539357816406}
+    m_Modifications:
+    - target: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045862394212482337, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+        type: 3}
+      propertyPath: m_Name
+      value: FX_Particle_NecroticTower
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e06377f7bab38a4f8f8f141b842ce87, type: 3}
+--- !u!4 &4870334914478673769 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+    type: 3}
+  m_PrefabInstance: {fileID: 4912745323991294520}
+  m_PrefabAsset: {fileID: 0}
