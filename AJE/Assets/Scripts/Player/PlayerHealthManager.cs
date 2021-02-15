@@ -14,8 +14,6 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] GameEvent UpdatePlayerHealth;
 
 
-
-
     void Awake()
     {
         currentHealth.RuntimeValue = maxHealth.RuntimeValue;
@@ -33,9 +31,6 @@ public class PlayerHealthManager : MonoBehaviour
             currentHealth.RuntimeValue = maxHealth.RuntimeValue;
             UpdatePlayerHealth.Raise();
         }
-
-
-
     }
 
     public void FloatingText(FloatVariable damage)

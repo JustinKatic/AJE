@@ -347,14 +347,15 @@ MonoBehaviour:
   IHaveAHealthBar: 1
   PlayerCurrentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
   ExpObj: {fileID: 5731125133357009072, guid: a6f9e9d03b39a2449a9f3645220ebd92, type: 3}
+  CurrencyObj: {fileID: 669046667064256851, guid: 60509befd15f6604a92ccc0fb51241ff,
+    type: 3}
   plagueDebuff: 0
   plagueDebuffDuration: {fileID: 11400000, guid: a70d6907d3e43c84a9ca2ae70f2ee69c,
     type: 2}
   plagueTickDamage: {fileID: 11400000, guid: 2a34622bbb2ac824f959beea13d29b9f, type: 2}
   plagueTickRate: {fileID: 11400000, guid: f07bae603a0a087478c262ec24af9d5f, type: 2}
-  PlayOneShot: {fileID: 11400000, guid: 055b7613d4a69cf4295c2161377adedb, type: 2}
-  DeathClips: []
-  ClipVar: {fileID: 11400000, guid: 36f820100ba54de43be44a879e599b09, type: 2}
+  DeathSound: {fileID: 0}
+  deathParticle: {fileID: 0}
 --- !u!1 &3588966338464058864
 GameObject:
   m_ObjectHideFlags: 0

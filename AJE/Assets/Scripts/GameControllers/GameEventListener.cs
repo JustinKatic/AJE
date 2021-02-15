@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class GameEventListener : MonoBehaviour
 {
+
     [Tooltip("Event to register with.")]
     public GameEvent Event;
 

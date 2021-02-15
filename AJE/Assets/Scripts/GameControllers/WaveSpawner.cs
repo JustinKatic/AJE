@@ -19,6 +19,9 @@ public class WaveSpawner : MonoBehaviour
     private int nextWave = 0;
     [SerializeField] GameEvent WaveCompletedEvent;
 
+    [SerializeField] GameEvent AllWavesCompleted;
+
+
 
     private int _currentEnemy = 0;
 
@@ -44,11 +47,6 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] GameObject fog4;
     [SerializeField] int RemoveFog4AtWaveX;
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog4;
-
-
-
-
-
 
     public int NextWave
     {
@@ -105,7 +103,8 @@ public class WaveSpawner : MonoBehaviour
 
         if (nextWave + 1 > waves.Length - 1)
         {
-            nextWave = 0;
+            AllWavesCompleted.Raise();
+            //nextWave = 0;
         }
         else
         {
