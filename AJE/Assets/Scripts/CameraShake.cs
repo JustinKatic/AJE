@@ -6,9 +6,15 @@ public class CameraShake : MonoBehaviour
 {
     public float duration = 0.11f;
     public float magnitude = 0.15f;
+    GameObject cam;
+
+    private void Awake()
+    {
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
+    }
     public IEnumerator Shake (float duration, float magnitude)
     {
-        Vector3 originalPos = transform.localPosition;
+        Vector3 originalPos = cam.transform.localPosition;
 
         float elapsed = 0.0f;
 
@@ -17,21 +23,18 @@ public class CameraShake : MonoBehaviour
             float x = Random.Range(-1f, 1f) * magnitude;
             float y = Random.Range(-1f, 1f) * magnitude;
 
-            transform.localPosition = new Vector3(x, y, originalPos.z);
+            cam.transform.localPosition = new Vector3(x, y, originalPos.z);
 
             elapsed += Time.deltaTime;
 
             yield return null;
         }
 
-        transform.localPosition = originalPos;
+        cam.transform.localPosition = originalPos;
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetMouseButtonDown(0))
-    //    {
-    //        StartCoroutine(Shake(duration, magnitude));
-    //    }
-    //}
+    public void DoShake()
+    {
+        StartCoroutine(Shake(duration, magnitude));
+    }
 }

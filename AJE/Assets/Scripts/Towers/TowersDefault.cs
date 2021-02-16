@@ -12,8 +12,12 @@ public class TowersDefault : MonoBehaviour
 
     [SerializeField] protected GameObject floatingDmg;
 
-
-
+    [SerializeField] protected GameObject pulseFX;
+    private void Start()
+    {
+        //pulseFX.transform.localScale = new Vector3(TowerRadius.Value, TowerRadius.Value, TowerRadius.Value);
+        //pulseFX.GetComponent<ParticleSystem>().emissionRate = ActivateEveryX.Value * 
+    }
     private void Update()
     {
         _timer += Time.deltaTime;
