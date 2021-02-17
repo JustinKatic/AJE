@@ -12,7 +12,7 @@ public class FloatVariable : ScriptableObject, ISerializationCallbackReceiver
 #endif
     public float Value;
 
-    [System.NonSerialized]
+   // [System.NonSerialized]
     public float RuntimeValue;
 
 public void OnAfterDeserialize()
