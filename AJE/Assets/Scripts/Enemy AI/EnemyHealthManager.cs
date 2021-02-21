@@ -12,7 +12,6 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField] private GameObject floatingDmg;
     [SerializeField] FloatVariable MyMaxHealth;
     [SerializeField] ListOfTransforms _listOfEnemies;
-    [SerializeField] GameEvent MyDeathEvent;
     [SerializeField] GameEvent ExperienceIncreasedEvent;
     [SerializeField] bool IHaveAHealthBar;
     [SerializeField] FloatVariable PlayerCurrentExp;
@@ -70,6 +69,7 @@ public class EnemyHealthManager : MonoBehaviour
         _listOfEnemies.RuntimeList.Remove(gameObject.transform);
         InstantiateCurrency(CurrencyObj);
         InstantiateExpDrop(ExpObj);
+
 
         if (DeathSound)
             DeathSound.Play();

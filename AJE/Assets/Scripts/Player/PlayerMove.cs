@@ -63,7 +63,7 @@ public class PlayerMove : MonoBehaviour
 
         if (_playerDirection != Vector3.zero)
         {
-            _anim.SetBool("IsRunning", true);
+           // _anim.SetBool("IsRunning", true);
             //_shooting.Value = false;
             //cloestTarget = GetClosestEnemy(ListOfEnemies.RuntimeList);
 
@@ -74,7 +74,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            _anim.SetBool("IsRunning", false);
+           // _anim.SetBool("IsRunning", false);
             //    _shooting.Value = true;
             //    LookTowards();
             //}
