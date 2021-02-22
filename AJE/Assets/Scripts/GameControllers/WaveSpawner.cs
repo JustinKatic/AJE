@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using TMPro;
 
 
 public class WaveSpawner : MonoBehaviour
@@ -26,9 +28,12 @@ public class WaveSpawner : MonoBehaviour
     private int _currentEnemy = 0;
 
     public float timeBetweenWaves = 5f;
+    [SerializeField] float timeBeforeFirstWave = 10f;
     private float waveCountdown;
 
     [SerializeField] ListOfTransforms ListOfEnemies;
+
+    [SerializeField] TextMeshProUGUI waveCounterTxt;
 
 
     [Header("Fog1")]
@@ -48,14 +53,6 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] int RemoveFog4AtWaveX;
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog4;
 
-    public int NextWave
-    {
-        get { return nextWave + 1; }
-    }
-    public float WaveCountdown
-    {
-        get { return waveCountdown; }
-    }
 
     private float searchCountdown = 1f;
 
@@ -63,7 +60,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
-        waveCountdown = timeBetweenWaves;
+        waveCountdown = timeBeforeFirstWave;
     }
 
     void Update()
@@ -77,6 +74,7 @@ public class WaveSpawner : MonoBehaviour
             }
             else
             {
+                waveCounterTxt.text = string.Empty;
                 return;
             }
         }
@@ -88,9 +86,11 @@ public class WaveSpawner : MonoBehaviour
                 StartCoroutine(SpawnWave(waves[nextWave]));
             }
         }
+
         else
         {
             waveCountdown -= Time.deltaTime;
+            waveCounterTxt.text = Mathf.Round(waveCountdown).ToString();
         }
     }
 
@@ -103,8 +103,7 @@ public class WaveSpawner : MonoBehaviour
 
         if (nextWave + 1 > waves.Length - 1)
         {
-            AllWavesCompleted.Raise();
-            //nextWave = 0;
+            AllWavesCompleted.Raise();           
         }
         else
         {
