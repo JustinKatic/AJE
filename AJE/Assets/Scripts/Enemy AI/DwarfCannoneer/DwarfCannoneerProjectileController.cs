@@ -8,6 +8,12 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
     [SerializeField] FloatVariable ExplosionRadius;
     [SerializeField] LayerMaskVariable ObjAffectsByExplosion;
     [SerializeField] GameObject Explosion;
+    CameraShake camShake;
+
+    private void Start()
+    {
+        camShake = GameObject.FindObjectOfType<CameraShake>();
+    }
 
     private void OnEnable()
     {
@@ -34,6 +40,7 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
     }
     protected override void SetUnActive()
     {
+        camShake.CamShake();
         Instantiate(Explosion, transform.position, Quaternion.Euler(-90, transform.rotation.y, transform.rotation.z));       
         base.SetUnActive();
     }
