@@ -66,7 +66,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     public void Death()
     {
-        _listOfEnemies.RuntimeList.Remove(gameObject.transform);
+        _listOfEnemies.RuntimeList.Remove(gameObject.transform.parent.transform);
         InstantiateCurrency(CurrencyObj);
         InstantiateExpDrop(ExpObj);
 
