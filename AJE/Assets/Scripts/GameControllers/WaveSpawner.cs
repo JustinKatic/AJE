@@ -193,7 +193,6 @@ public class WaveSpawner : MonoBehaviour
 
         GameObject enemy = ObjectPooler.SharedInstance.GetPooledObject(_enemy.name);
         enemy.transform.position = _sp.position;
-        enemy.transform.rotation = _sp.rotation;
         enemy.SetActive(true);
         ListOfEnemies.RuntimeList.Add(enemy.transform);
 
