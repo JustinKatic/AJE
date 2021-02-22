@@ -47957,6 +47957,44 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1008116459}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1487122062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7353605353969887078, guid: e072a5065ec5b9441bdcc7c84211cae4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7353605353010891287}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1487122064
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487122062}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df5533077004a2a4e9428c15d775d160, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1487122065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487122062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f873831cfea90ee4cbb1befa0aa4fafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camAnim: {fileID: 1487122064}
 --- !u!1001 &1495373921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49857,18 +49895,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7353605353010891287}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1562385195 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7353605353036751834, guid: e072a5065ec5b9441bdcc7c84211cae4,
-    type: 3}
-  m_PrefabInstance: {fileID: 7353605353010891287}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562385194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f873831cfea90ee4cbb1befa0aa4fafe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1562385199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49885,7 +49911,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562385195}
+      - m_Target: {fileID: 0}
         m_MethodName: DoShake
         m_Mode: 1
         m_Arguments:
@@ -49912,7 +49938,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562385195}
+      - m_Target: {fileID: 0}
         m_MethodName: DoShake
         m_Mode: 1
         m_Arguments:
@@ -49939,7 +49965,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562385195}
+      - m_Target: {fileID: 0}
         m_MethodName: DoShake
         m_Mode: 1
         m_Arguments:
@@ -49966,7 +49992,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562385195}
+      - m_Target: {fileID: 0}
         m_MethodName: DoShake
         m_Mode: 1
         m_Arguments:
@@ -50163,6 +50189,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563656180}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1564505050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 284077345587212279, guid: d23263cb0bec14241938b115ad05a3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 284077345400468553}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564505052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564505050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbaa8094297ce70489640b7ad4def2a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1568527709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66205,5 +66249,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7353605353036751834, guid: e072a5065ec5b9441bdcc7c84211cae4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e072a5065ec5b9441bdcc7c84211cae4, type: 3}
