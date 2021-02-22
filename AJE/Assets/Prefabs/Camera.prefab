@@ -58,8 +58,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7353605353969887075}
   - component: {fileID: 7353605353969887076}
-  - component: {fileID: 1487122064}
   - component: {fileID: 1487122065}
+  - component: {fileID: 1487122064}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -124,6 +124,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1487122065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353605353969887078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f873831cfea90ee4cbb1befa0aa4fafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camAnim: {fileID: 1487122064}
 --- !u!95 &1487122064
 Animator:
   serializedVersion: 3
@@ -143,16 +156,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1487122065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7353605353969887078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f873831cfea90ee4cbb1befa0aa4fafe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camAnim: {fileID: 1487122064}
