@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7353605353036751836}
   - component: {fileID: 7353605353036751835}
-  - component: {fileID: 7353605353036751834}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -45,25 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82c05776b6067e4e89cd655f74dd512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   posXminClamp: -12.3
   posXmaxClamp: 10.3
   posZminClamp: 6.3
   posZMaxClamp: 9.25
---- !u!114 &7353605353036751834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7353605353036751837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f873831cfea90ee4cbb1befa0aa4fafe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 0.11
-  magnitude: 0.15
 --- !u!1 &7353605353969887078
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,6 +58,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7353605353969887075}
   - component: {fileID: 7353605353969887076}
+  - component: {fileID: 1487122064}
+  - component: {fileID: 1487122065}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -138,3 +124,35 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &1487122064
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353605353969887078}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df5533077004a2a4e9428c15d775d160, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1487122065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353605353969887078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f873831cfea90ee4cbb1befa0aa4fafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camAnim: {fileID: 1487122064}
