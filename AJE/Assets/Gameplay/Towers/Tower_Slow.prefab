@@ -52,6 +52,7 @@ MonoBehaviour:
   TowerDamage: {fileID: 11400000, guid: 25a37d9ba16737f4eaac0cb1ea932fbe, type: 2}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
+  pulseFX: {fileID: 4855825740246180063}
 --- !u!1 &4526849061614627688
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +283,12 @@ PrefabInstance:
 --- !u!4 &2377099253140753568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 557166638606675281, guid: d3e0ad5eb2b102144baeb66b6e70f282,
+    type: 3}
+  m_PrefabInstance: {fileID: 2830040908141191665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4855825740246180063 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7216183867747991854, guid: d3e0ad5eb2b102144baeb66b6e70f282,
     type: 3}
   m_PrefabInstance: {fileID: 2830040908141191665}
   m_PrefabAsset: {fileID: 0}

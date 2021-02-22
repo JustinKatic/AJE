@@ -210,6 +210,7 @@ MonoBehaviour:
   TowerDamage: {fileID: 11400000, guid: 59a03a1a947080044bb88411b760f04e, type: 2}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
+  pulseFX: {fileID: 2308265410554782486}
   PlayerCurrentHealth: {fileID: 11400000, guid: 4d7b1cc8dd422994d9a43ef5e09b5796,
     type: 2}
   UpdatePlayerHealth: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee, type: 2}
@@ -287,6 +288,12 @@ PrefabInstance:
 --- !u!4 &4870334914478673769 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 557166638606675281, guid: 5e06377f7bab38a4f8f8f141b842ce87,
+    type: 3}
+  m_PrefabInstance: {fileID: 4912745323991294520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2308265410554782486 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7216183867747991854, guid: 5e06377f7bab38a4f8f8f141b842ce87,
     type: 3}
   m_PrefabInstance: {fileID: 4912745323991294520}
   m_PrefabAsset: {fileID: 0}
