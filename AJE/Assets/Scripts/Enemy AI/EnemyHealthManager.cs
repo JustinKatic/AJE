@@ -32,17 +32,16 @@ public class EnemyHealthManager : MonoBehaviour
 
     [SerializeField] GameObject deathParticle;
     [SerializeField] GameObject model;
-    private Renderer mat;
+    private Renderer renderer;
     private Material newMat;
 
 
 
     private void Start()
     {
-        mat = model.GetComponent<Renderer>();
-
-        newMat = new Material(mat.material);
-        mat.material = newMat;
+        renderer = model.GetComponent<Renderer>();
+        newMat = new Material(renderer.material);
+        renderer.material = newMat;
     }
 
     private void OnEnable()
@@ -50,7 +49,6 @@ public class EnemyHealthManager : MonoBehaviour
         _currentHealth = MyMaxHealth.RuntimeValue;
         if (IHaveAHealthBar)
             healthBar.SetMaxHealth(MyMaxHealth.RuntimeValue);
-
     }
     private void OnDisable()
     {
@@ -66,12 +64,10 @@ public class EnemyHealthManager : MonoBehaviour
 
     public void HurtEnemy(float damage)
     {
+        StartCoroutine(OnHurtEffect());
         _currentHealth -= damage;
         if (IHaveAHealthBar)
             healthBar.SetHealth(_currentHealth);
-
-        mat.material.EnableKeyword("_EMISSION");
-
     }
 
     public void Death()
@@ -168,5 +164,11 @@ public class EnemyHealthManager : MonoBehaviour
     {
         GameObject points = Instantiate(floatingDmg, transformToSpawnTxtAt.position, Quaternion.identity);
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
+    }
+    IEnumerator OnHurtEffect()
+    {
+        renderer.material.EnableKeyword("_EMISSION");
+        yield return new WaitForSeconds(0.1f);
+        renderer.material.DisableKeyword("_EMISSION");
     }
 }
