@@ -31,11 +31,18 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField] ScriptableSoundObj DeathSound;
 
     [SerializeField] GameObject deathParticle;
+    [SerializeField] GameObject model;
+    Material mat;
+    Material newMat;
 
 
 
     private void Start()
     {
+        mat = model.GetComponent<MeshRenderer>().material;
+        newMat = new Material(mat);
+        mat = newMat;
+        mat.EnableKeyword("_EMISSION");
 
     }
 
