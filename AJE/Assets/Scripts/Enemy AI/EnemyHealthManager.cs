@@ -32,18 +32,17 @@ public class EnemyHealthManager : MonoBehaviour
 
     [SerializeField] GameObject deathParticle;
     [SerializeField] GameObject model;
-    Material mat;
-    Material newMat;
+    private Renderer mat;
+    private Material newMat;
 
 
 
     private void Start()
     {
-        mat = model.GetComponent<MeshRenderer>().material;
-        newMat = new Material(mat);
-        mat = newMat;
-        mat.EnableKeyword("_EMISSION");
+        mat = model.GetComponent<Renderer>();
 
+        newMat = new Material(mat.material);
+        mat.material = newMat;
     }
 
     private void OnEnable()
@@ -51,6 +50,7 @@ public class EnemyHealthManager : MonoBehaviour
         _currentHealth = MyMaxHealth.RuntimeValue;
         if (IHaveAHealthBar)
             healthBar.SetMaxHealth(MyMaxHealth.RuntimeValue);
+
     }
     private void OnDisable()
     {
@@ -69,6 +69,9 @@ public class EnemyHealthManager : MonoBehaviour
         _currentHealth -= damage;
         if (IHaveAHealthBar)
             healthBar.SetHealth(_currentHealth);
+
+        mat.material.EnableKeyword("_EMISSION");
+
     }
 
     public void Death()
