@@ -21,7 +21,7 @@ public class TowersDefault : MonoBehaviour
     private void OnEnable()
     {
         var emission = pulseFX.emission;
-        emission.rateOverTime = ActivateEveryX.RuntimeValue;        
+        emission.rateOverTime = ActivateEveryX.RuntimeValue;
     }
     private void Update()
     {
