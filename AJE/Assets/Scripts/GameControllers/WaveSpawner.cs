@@ -52,6 +52,10 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] GameObject fog4;
     [SerializeField] int RemoveFog4AtWaveX;
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog4;
+    [Header("Fog5")]
+    [SerializeField] GameObject fog5;
+    [SerializeField] int RemoveFog5AtWaveX;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog5;
 
 
     private float searchCountdown = 1f;
@@ -150,6 +154,17 @@ public class WaveSpawner : MonoBehaviour
                 for (int i = 0; i < SpawnPointsToActivateWithFog4.Length; i++)
                 {
                     SpawnPointsToActivateWithFog4[i].gameObject.SetActive(true);
+                }
+            }
+        }
+        if (nextWave == RemoveFog5AtWaveX)
+        {
+            fog5.SetActive(false);
+            if (SpawnPointsToActivateWithFog5.Length > 1)
+            {
+                for (int i = 0; i < SpawnPointsToActivateWithFog5.Length; i++)
+                {
+                    SpawnPointsToActivateWithFog5[i].gameObject.SetActive(true);
                 }
             }
         }
