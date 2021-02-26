@@ -35,6 +35,8 @@ public class WaveSpawner : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI waveCounterTxt;
 
+    [SerializeField] GameObject buildPromptTxt;
+
 
     [Header("Fog1")]
     [SerializeField] GameObject fog1;
@@ -65,6 +67,7 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         waveCountdown = timeBeforeFirstWave;
+        ShowBuildPromptText();
     }
 
     void Update()
@@ -214,5 +217,16 @@ public class WaveSpawner : MonoBehaviour
         _currentEnemy++;
         if (_currentEnemy >= spawnPoints.Length)
             _currentEnemy = 0;
+    }
+
+    void ShowBuildPromptText()
+    {
+        StartCoroutine(ShowTextForX());
+        IEnumerator ShowTextForX()
+        {
+            buildPromptTxt.SetActive(true);
+            yield return new WaitForSeconds(timeBeforeFirstWave);
+            buildPromptTxt.SetActive(false);
+        }
     }
 }
