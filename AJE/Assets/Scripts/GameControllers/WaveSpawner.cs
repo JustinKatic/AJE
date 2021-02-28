@@ -35,6 +35,8 @@ public class WaveSpawner : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI waveCounterTxt;
 
+    [SerializeField] TextMeshProUGUI currentWaveTxt;
+
     [SerializeField] GameObject buildPromptTxt;
 
 
@@ -66,6 +68,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
+        currentWaveTxt.text = waves[nextWave].name;
         waveCountdown = timeBeforeFirstWave;
         ShowBuildPromptText();
     }
@@ -106,11 +109,13 @@ public class WaveSpawner : MonoBehaviour
     {
         State = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
+        currentWaveTxt.text = waves[nextWave + 1].name;
+
         WaveCompletedEvent.Raise();
 
         if (nextWave + 1 > waves.Length - 1)
         {
-            AllWavesCompleted.Raise();           
+            AllWavesCompleted.Raise();
         }
         else
         {
