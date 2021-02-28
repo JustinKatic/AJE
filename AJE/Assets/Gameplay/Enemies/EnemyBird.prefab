@@ -247,7 +247,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.91
+  m_Radius: 0.9
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -627,6 +627,7 @@ MonoBehaviour:
   TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
   LookTowardsSpeed: {fileID: 11400000, guid: 11516841740880c4a9f4e66bb7574fc2, type: 2}
+  SlowAmount: {fileID: 0}
 --- !u!54 &5018141613806528629
 Rigidbody:
   m_ObjectHideFlags: 0
