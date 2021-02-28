@@ -23,6 +23,6 @@ public class PlayerHealthBar : MonoBehaviour
         slider.maxValue = MyMaxHealth.RuntimeValue;
         slider.value = MyCurrentHealth.RuntimeValue;
         fill.color = gradient.Evaluate(slider.normalizedValue);
-        _healthTxt.text = MyCurrentHealth.RuntimeValue.ToString();
+        _healthTxt.text = Mathf.Round(MyCurrentHealth.RuntimeValue).ToString();
     }
 }
