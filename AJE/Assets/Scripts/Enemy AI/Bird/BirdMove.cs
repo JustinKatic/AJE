@@ -15,12 +15,15 @@ public class BirdMove : EnemyMove
     bool posFound = false;
     bool charging;
 
+    [SerializeField] GameObject trail;
+
     public override void Move()
     {
         //move towards player
         float dist = Vector3.Distance(transform.position, targetDestination.position);
         if (charging == false && dist > MyChargeRange.RuntimeValue)
         {
+            trail.SetActive(false);
             navMeshAgent.isStopped = false;
             navMeshAgent.SetDestination(targetDestination.position);
         }
@@ -33,6 +36,7 @@ public class BirdMove : EnemyMove
         }
         else if (charging == true)
         {
+            trail.SetActive(true);
             timer += Time.deltaTime;
             if (posFound == false)
             {
