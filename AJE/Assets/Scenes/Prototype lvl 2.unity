@@ -17560,6 +17560,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 307728533}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &309527735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5987865968312646924, guid: 36d4966411abe9d4d8f0e04e481f5735,
+    type: 3}
+  m_PrefabInstance: {fileID: 5987865969485163049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &309527736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309527735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9c09811428ca640971a6ca921e5996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &309625750
 GameObject:
   m_ObjectHideFlags: 0
@@ -101301,6 +101319,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987865968312646915, guid: 36d4966411abe9d4d8f0e04e481f5735,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987865968312646915, guid: 36d4966411abe9d4d8f0e04e481f5735,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987865968312646915, guid: 36d4966411abe9d4d8f0e04e481f5735,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987865968312646915, guid: 36d4966411abe9d4d8f0e04e481f5735,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 309527736}
+    - target: {fileID: 5987865968312646915, guid: 36d4966411abe9d4d8f0e04e481f5735,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987865968312646915, guid: 36d4966411abe9d4d8f0e04e481f5735,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5987865968312646924, guid: 36d4966411abe9d4d8f0e04e481f5735,
         type: 3}
