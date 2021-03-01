@@ -109,7 +109,9 @@ public class WaveSpawner : MonoBehaviour
     {
         State = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
-        currentWaveTxt.text = waves[nextWave + 1].name;
+
+        if (nextWave + 1 < waves.Length)
+            currentWaveTxt.text = waves[nextWave + 1].name;
 
         WaveCompletedEvent.Raise();
 
