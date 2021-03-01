@@ -15,12 +15,15 @@ public class KnightMove : EnemyMove
     bool posFound = false;
     bool charging;
 
+    [SerializeField] TrailRenderer trail;
+
     public override void Move()
     {
         //move towards player
         float dist = Vector3.Distance(transform.position, targetDestination.position);
         if (charging == false && dist > MyChargeRange.RuntimeValue)
         {
+            trail.enabled = false;
             navMeshAgent.isStopped = false;
             navMeshAgent.SetDestination(targetDestination.position);
         }
@@ -33,6 +36,7 @@ public class KnightMove : EnemyMove
         }
         else if (charging == true)
         {
+            trail.enabled = true;
             timer += Time.deltaTime;
             if (posFound == false)
             {
