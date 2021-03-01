@@ -84,7 +84,6 @@ public class WaveSpawner : MonoBehaviour
             }
             else
             {
-                waveCounterTxt.text = string.Empty;
                 return;
             }
         }
@@ -93,6 +92,7 @@ public class WaveSpawner : MonoBehaviour
         {
             if (State != SpawnState.SPAWNING)
             {
+                waveCounterTxt.text = string.Empty;
                 StartCoroutine(SpawnWave(waves[nextWave]));
             }
         }
