@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 669046667064256852}
   - component: {fileID: 669046667064256841}
   - component: {fileID: 5053955735945579614}
+  - component: {fileID: 5348788894711254279}
   m_Layer: 0
   m_Name: SmallCurrency
   m_TagString: Currency
@@ -98,7 +99,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8610775527706956173}
+      - m_Target: {fileID: 5348788894711254279}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -109,6 +110,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!65 &5348788894711254279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669046667064256851}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4476001081976947854
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +134,6 @@ GameObject:
   - component: {fileID: 6299631444981379060}
   - component: {fileID: 5487839403758150051}
   - component: {fileID: 1509827149372602351}
-  - component: {fileID: 8610775527706956173}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -189,16 +202,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &8610775527706956173
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4476001081976947854}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
