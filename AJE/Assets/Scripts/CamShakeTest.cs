@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class CamShakeTest : MonoBehaviour
 {
-	private CameraShake shake;
+	private FogShake shake;
 
 	private void Start()
 	{
-		shake = GameObject.FindObjectOfType<CameraShake>().GetComponent<CameraShake>();
+		shake = GameObject.FindObjectOfType<FogShake>().GetComponent<FogShake>();
 	}
 
 
@@ -17,7 +17,7 @@ public class CamShakeTest : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			shake.CamShake();
+			shake.ShakeFog();
 		}
 	}
 }

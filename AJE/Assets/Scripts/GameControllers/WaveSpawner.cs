@@ -64,6 +64,12 @@ public class WaveSpawner : MonoBehaviour
 
     private float searchCountdown = 1f;
 
+    FogShake fog1Shake;
+    FogShake fog2Shake;
+    FogShake fog3Shake;
+    FogShake fog4Shake;
+    FogShake fog5Shake;
+
     public SpawnState State { get; private set; } = SpawnState.COUNTING;
 
     void Start()
@@ -71,6 +77,12 @@ public class WaveSpawner : MonoBehaviour
         currentWaveTxt.text = waves[nextWave].name;
         waveCountdown = timeBeforeFirstWave;
         ShowBuildPromptText();
+        fog1Shake = fog1.GetComponent<FogShake>();
+        fog2Shake = fog2.GetComponent<FogShake>();
+        fog3Shake = fog3.GetComponent<FogShake>();
+        fog4Shake = fog4.GetComponent<FogShake>();
+        fog5Shake = fog5.GetComponent<FogShake>();
+
     }
 
     void Update()
@@ -125,7 +137,7 @@ public class WaveSpawner : MonoBehaviour
         }
         if (nextWave == RemoveFog1AtWaveX)
         {
-            fog1.SetActive(false);
+            StartCoroutine(FogShake(fog1Shake, fog1));
             if (SpawnPointsToActivateWithFog1.Length > 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog1.Length; i++)
@@ -136,7 +148,7 @@ public class WaveSpawner : MonoBehaviour
         }
         if (nextWave == RemoveFog2AtWaveX)
         {
-            fog2.SetActive(false);
+            StartCoroutine(FogShake(fog2Shake, fog2));
             if (SpawnPointsToActivateWithFog2.Length > 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog2.Length; i++)
@@ -147,7 +159,7 @@ public class WaveSpawner : MonoBehaviour
         }
         if (nextWave == RemoveFog3AtWaveX)
         {
-            fog3.SetActive(false);
+            StartCoroutine(FogShake(fog3Shake, fog3));
             if (SpawnPointsToActivateWithFog3.Length > 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog3.Length; i++)
@@ -158,7 +170,7 @@ public class WaveSpawner : MonoBehaviour
         }
         if (nextWave == RemoveFog4AtWaveX)
         {
-            fog4.SetActive(false);
+            StartCoroutine(FogShake(fog4Shake, fog4));
             if (SpawnPointsToActivateWithFog4.Length > 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog4.Length; i++)
@@ -169,7 +181,7 @@ public class WaveSpawner : MonoBehaviour
         }
         if (nextWave == RemoveFog5AtWaveX)
         {
-            fog5.SetActive(false);
+            StartCoroutine(FogShake(fog5Shake, fog5));
             if (SpawnPointsToActivateWithFog5.Length > 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog5.Length; i++)
@@ -235,5 +247,12 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(timeBeforeFirstWave);
             buildPromptTxt.SetActive(false);
         }
+    }
+
+    IEnumerator FogShake(FogShake shake, GameObject fogOb)
+    {
+        shake.ShakeFog();
+        yield return new WaitForSeconds(1.4f);
+        fogOb.SetActive(false);
     }
 }
