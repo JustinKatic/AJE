@@ -5,8 +5,8 @@ using TMPro;
 
 public class DamagePlayerWhileColliding : MonoBehaviour
 {
-    [SerializeField] float _damageEveryX = 1.0f;
-    float _timer;
+    [SerializeField] FloatVariable _CollidingDamageEveryX;
+    public float _timer;
     [SerializeField] FloatVariable _damage;
     [SerializeField] FloatVariable PlayersCurrentHealth;
     [SerializeField] GameObject floatingDmg;
@@ -14,11 +14,11 @@ public class DamagePlayerWhileColliding : MonoBehaviour
 
 
 
-
     private void Start()
     {
-
+        _timer = _CollidingDamageEveryX.RuntimeValue;
     }
+
     public void FloatingText(float damage, Vector3 ObjPos)
     {
         GameObject points = Instantiate(floatingDmg, ObjPos, Quaternion.identity);
@@ -30,13 +30,21 @@ public class DamagePlayerWhileColliding : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             _timer += Time.deltaTime;
-            if (_timer > _damageEveryX)
+            if (_timer > _CollidingDamageEveryX.RuntimeValue)
             {
                 PlayerHealthUpdated.Raise();
                 PlayersCurrentHealth.RuntimeValue -= _damage.RuntimeValue;
                 FloatingText(_damage.RuntimeValue, other.transform.position);
                 _timer = 0.0f;
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            _timer = _CollidingDamageEveryX.RuntimeValue;
         }
     }
 }
