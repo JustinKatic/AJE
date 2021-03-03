@@ -17,7 +17,13 @@ public class BirdMove : EnemyMove
 
     [SerializeField] GameObject trail;
 
-    public GameObject test;
+    public GameObject fleeTest;
+    public GameObject chargeTest;
+
+    public float fleeMultipler;
+    public float ChargeMultipler;
+
+
     public override void Move()
     {
         //move away from player if dist is less then charge distance
@@ -28,9 +34,9 @@ public class BirdMove : EnemyMove
             trail.SetActive(false);
             navMeshAgent.isStopped = false;
 
-            Vector3 fleePos = transform.position + ((transform.position - targetDestination.transform.position) * 2f);
+            Vector3 fleePos = transform.position + ((transform.position - targetDestination.transform.position) * fleeMultipler);
             fleePos.y = 1;
-            //Instantiate(test, fleePos, Quaternion.identity);
+            Instantiate(fleeTest, fleePos, Quaternion.identity);
 
             navMeshAgent.SetDestination(fleePos);
             
@@ -52,9 +58,9 @@ public class BirdMove : EnemyMove
             timer += Time.deltaTime;
             if (posFound == false)
             {
-                chargePos = targetDestination.transform.position + ((targetDestination.transform.position - transform.position) * .5f);
+                chargePos = targetDestination.transform.position + ((targetDestination.transform.position - transform.position) * ChargeMultipler);
                 chargePos.y += 4;
-                //Instantiate(test, chargePos, Quaternion.identity);
+                Instantiate(chargeTest, chargePos, Quaternion.identity);
                 posFound = true;
             }
 
