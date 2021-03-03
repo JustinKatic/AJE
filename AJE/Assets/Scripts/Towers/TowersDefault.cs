@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ParticleSystemJobs;
 
 public class TowersDefault : MonoBehaviour
 {
@@ -21,7 +22,9 @@ public class TowersDefault : MonoBehaviour
     private void OnEnable()
     {
         var emission = pulseFX.emission;
-        emission.rateOverTime = ActivateEveryX.RuntimeValue;
+        emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0f, 1, 1000, ActivateEveryX.RuntimeValue) });
+        var main = pulseFX.main;
+        main.startLifetime = ActivateEveryX.RuntimeValue;
     }
     private void Update()
     {
