@@ -53032,17 +53032,17 @@ PrefabInstance:
     - target: {fileID: 1394203705811979455, guid: 7a4999d7a8bee2c4d9e11681e6e0d550,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1394203705811979504, guid: 7a4999d7a8bee2c4d9e11681e6e0d550,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1394203705811979504, guid: 7a4999d7a8bee2c4d9e11681e6e0d550,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550,
         type: 3}
@@ -53107,7 +53107,32 @@ PrefabInstance:
     - target: {fileID: 2025066152840980406, guid: 7a4999d7a8bee2c4d9e11681e6e0d550,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406469233581122174, guid: 7a4999d7a8bee2c4d9e11681e6e0d550,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990529418198555080, guid: 7a4999d7a8bee2c4d9e11681e6e0d550,
+        type: 3}
+      propertyPath: fleeMultipler
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990529418198555080, guid: 7a4999d7a8bee2c4d9e11681e6e0d550,
+        type: 3}
+      propertyPath: chargeCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990529418198555080, guid: 7a4999d7a8bee2c4d9e11681e6e0d550,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990529418198555080, guid: 7a4999d7a8bee2c4d9e11681e6e0d550,
+        type: 3}
+      propertyPath: fleeForX
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}

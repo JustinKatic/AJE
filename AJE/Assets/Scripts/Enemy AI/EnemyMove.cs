@@ -12,7 +12,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] protected FloatVariable MyMoveSpeed;
     [SerializeField] FloatVariable SlowTowerDuration;
     [SerializeField] StringVariable TagOfTargetDestination;
-    [SerializeField] FloatVariable LookTowardsSpeed;
+    [SerializeField] protected FloatVariable LookTowardsSpeed;
     [SerializeField] FloatVariable SlowAmount;
 
 
