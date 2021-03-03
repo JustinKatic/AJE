@@ -35,6 +35,8 @@ public class EnemyHealthManager : MonoBehaviour
     private Renderer renderer;
     private Material newMat;
 
+    [SerializeField] GameObject plagueParticle;
+
 
 
     private void Start()
@@ -116,6 +118,7 @@ public class EnemyHealthManager : MonoBehaviour
     {
         if (plagueDebuff == true)
         {
+            plagueParticle.SetActive(true);
             plagueTickTimer += Time.deltaTime;
             plagueDurationTimer += Time.deltaTime;
 
@@ -130,6 +133,7 @@ public class EnemyHealthManager : MonoBehaviour
             {
                 plagueDurationTimer = 0;
                 plagueDebuff = false;
+                plagueParticle.SetActive(false);
             }
         }
     }
