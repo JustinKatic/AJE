@@ -14,6 +14,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] StringVariable TagOfTargetDestination;
     [SerializeField] protected FloatVariable LookTowardsSpeed;
     [SerializeField] FloatVariable SlowAmount;
+    [SerializeField] GameObject slowEffect;
 
 
 
@@ -94,12 +95,14 @@ public class EnemyMove : MonoBehaviour
     {
         if (_slowDebuff == true)
         {
+            slowEffect.SetActive(true);
             _slowDurationTimer += Time.deltaTime;
             if (_slowDurationTimer > SlowTowerDuration.RuntimeValue)
             {
                 SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue);
                 _slowDurationTimer = 0;
                 _slowDebuff = false;
+                slowEffect.SetActive(false);
             }
         }
     }
