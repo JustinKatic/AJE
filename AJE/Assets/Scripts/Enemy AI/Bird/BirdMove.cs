@@ -20,19 +20,27 @@ public class BirdMove : EnemyMove
     public GameObject test;
     public override void Move()
     {
-        //move towards player if dist is greater then charge distance
+        //move away from player if dist is less then charge distance
         float dist = Vector3.Distance(transform.position, targetDestination.position);
-        if (charging == false && dist > MyChargeRange.RuntimeValue)
+        if (charging == false && dist < MyChargeRange.RuntimeValue)
         {
+            
             trail.SetActive(false);
             navMeshAgent.isStopped = false;
-            navMeshAgent.SetDestination(targetDestination.position);
+
+            Vector3 fleePos = transform.position + ((transform.position - targetDestination.transform.position) * 2f);
+            fleePos.y = 1;
+            //Instantiate(test, fleePos, Quaternion.identity);
+
+            navMeshAgent.SetDestination(fleePos);
+            
         }
 
-        //If dist is within charge distance and not already charging stop agent and set charging to true
-        else if (charging == false && dist < MyChargeRange.RuntimeValue)
+        //If dist is greater then charge distance and not already charging stop agent and set charging to true
+        else if (charging == false && dist > MyChargeRange.RuntimeValue)
         {
             charging = true;
+            navMeshAgent.velocity = Vector3.zero;
             navMeshAgent.isStopped = true;
             LookTowards();
         }
@@ -44,19 +52,19 @@ public class BirdMove : EnemyMove
             timer += Time.deltaTime;
             if (posFound == false)
             {
-                chargePos = targetDestination.transform.position + (targetDestination.transform.position - transform.position) * 1.2f;
+                chargePos = targetDestination.transform.position + ((targetDestination.transform.position - transform.position) * .5f);
                 chargePos.y += 4;
-                Instantiate(test, chargePos, Quaternion.identity);
+                //Instantiate(test, chargePos, Quaternion.identity);
                 posFound = true;
             }
 
-            // if timer is greater then charge up timeset destination to target and allow bird to move again at faster speed.        
+            // if timer is greater then charge up time set destination to target and allow bird to move again at faster speed.        
             if (timer >= chargeUpTime.RuntimeValue)
             {
                 float distToChargePos = Vector3.Distance(transform.position, chargePos);
                 navMeshAgent.isStopped = false;
                 navMeshAgent.SetDestination(chargePos);
-                navMeshAgent.speed = ChargeSpeed.RuntimeValue;
+                SetEnemyMoveSpeed(ChargeSpeed.RuntimeValue);
                 //if object reached charge position reset speed back to normal and restart ai loop from start.
                 if (distToChargePos <= 3f)
                 {
