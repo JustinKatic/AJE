@@ -57,22 +57,6 @@ public class EnemyMove : MonoBehaviour
         navMeshAgent.SetDestination(targetDestination.position);
     }
 
-
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (other.gameObject.tag == TagOfTargetDestination.Value)
-    //    {
-    //        navMeshAgent.velocity = Vector3.zero;
-    //        navMeshAgent.isStopped = true;
-    //    }
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.tag == TagOfTargetDestination.Value)
-    //        navMeshAgent.isStopped = false;
-    //}
-
     public void SetEnemyMoveSpeed(float enemyMoveSpeed)
     {
         if (navMeshAgent != null)
