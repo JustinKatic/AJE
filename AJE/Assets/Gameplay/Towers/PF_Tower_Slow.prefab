@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1083839064653945646}
   - component: {fileID: 2828962231899752738}
   m_Layer: 0
-  m_Name: Tower_Slow
+  m_Name: PF_Tower_Slow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyLayerMask: {fileID: 11400000, guid: a1072c8963c21a048926d33b9a340a86, type: 2}
-  ActivateEveryX: {fileID: 11400000, guid: b1e9b399253b0754f8fe2a87feafadf1, type: 2}
-  TowerRadius: {fileID: 11400000, guid: a8a2a5de2b643b74bb80ab56250c6cd0, type: 2}
-  TowerDamage: {fileID: 11400000, guid: 25a37d9ba16737f4eaac0cb1ea932fbe, type: 2}
+  ActivateEveryX: 0.5
+  TowerRadius: 1
+  TowerDamage: 3
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
   pulseFX: {fileID: 4855825740246180063}

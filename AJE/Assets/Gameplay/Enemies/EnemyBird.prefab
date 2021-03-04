@@ -548,22 +548,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 1743296888451671628}
-  MyMoveSpeed: {fileID: 11400000, guid: 97d0bb320b2803d46936133fe3f43dcb, type: 2}
-  SlowTowerDuration: {fileID: 11400000, guid: 6f9a0865f7710414cb3fc03175d7f9e6, type: 2}
+  MyMoveSpeed: 3
+  SlowTowerDuration: 5
   TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
-  LookTowardsSpeed: {fileID: 11400000, guid: 11516841740880c4a9f4e66bb7574fc2, type: 2}
-  SlowAmount: {fileID: 11400000, guid: f4dd62eb9f40a8c4c8696e93d3bf26fb, type: 2}
+  LookTowardsSpeed: 10
+  SlowAmount: 2
   slowEffect: {fileID: 6217657519593583842}
-  ChargeSpeed: {fileID: 11400000, guid: a4ddbd2aae9879744b75f83d2192f158, type: 2}
-  MyChargeRange: {fileID: 11400000, guid: 605b34b5cea23454db69fdfeafe25467, type: 2}
-  walkSpeed: 3
-  chargeUpTime: {fileID: 11400000, guid: 632c0233b5e1ee748bcd9c455797a1b5, type: 2}
+  ChargeSpeed: 15
+  MyChargeRange: 5
+  chargeUpTime: 1
   fleeForX: 2
-  fleeTest: {fileID: 6252696859377460216, guid: 340e0615819c14843aa9c9480bca4d7c,
-    type: 3}
-  chargeTest: {fileID: 6252696859377460216, guid: 948ab766dc54e34489ce671c8c206061,
-    type: 3}
   trail: {fileID: 7406469233581122174}
   fleeMultipler: 0.3
   ChargeMultipler: 0.8
@@ -598,20 +593,18 @@ MonoBehaviour:
   healthBar: {fileID: 1394203705811979329}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
-  MyMaxHealth: {fileID: 11400000, guid: 91c67882befb35c41b5660f7164798ab, type: 2}
+  MyMaxHealth: 20
   _listOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
   ExperienceIncreasedEvent: {fileID: 11400000, guid: cd328e7dc6031ca4fab21d52d603c1ff,
     type: 2}
   IHaveAHealthBar: 1
-  PlayerCurrentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
   ExpObj: {fileID: 5731125133357009072, guid: a6f9e9d03b39a2449a9f3645220ebd92, type: 3}
   CurrencyObj: {fileID: 669046667064256851, guid: 60509befd15f6604a92ccc0fb51241ff,
     type: 3}
   plagueDebuff: 0
-  plagueDebuffDuration: {fileID: 11400000, guid: a70d6907d3e43c84a9ca2ae70f2ee69c,
-    type: 2}
-  plagueTickDamage: {fileID: 11400000, guid: 2a34622bbb2ac824f959beea13d29b9f, type: 2}
-  plagueTickRate: {fileID: 11400000, guid: f07bae603a0a087478c262ec24af9d5f, type: 2}
+  plagueDebuffDuration: 5
+  plagueTickDamage: 1
+  plagueTickRate: 0.5
   DeathSound: {fileID: 0}
   deathParticle: {fileID: 0}
   model: {fileID: 523551582369671119}

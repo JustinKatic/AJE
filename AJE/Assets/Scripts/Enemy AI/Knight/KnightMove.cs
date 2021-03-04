@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class KnightMove : EnemyMove
 {
-    [SerializeField] FloatVariable ChargeSpeed;
-    [SerializeField] FloatVariable MyChargeRange;
+    [SerializeField] float ChargeSpeed;
+    [SerializeField] float MyChargeRange;
 
     Vector3 chargePos;
 
@@ -21,14 +21,14 @@ public class KnightMove : EnemyMove
     {
         //move towards player
         float dist = Vector3.Distance(transform.position, targetDestination.position);
-        if (charging == false && dist > MyChargeRange.RuntimeValue)
+        if (charging == false && dist > MyChargeRange)
         {
             trail.enabled = false;
             navMeshAgent.isStopped = false;
             navMeshAgent.SetDestination(targetDestination.position);
         }
 
-        else if (charging == false && dist < MyChargeRange.RuntimeValue)
+        else if (charging == false && dist < MyChargeRange)
         {
             charging = true;
             navMeshAgent.isStopped = true;
@@ -50,16 +50,16 @@ public class KnightMove : EnemyMove
                 navMeshAgent.SetDestination(chargePos);
 
                 if (!_slowDebuff)
-                    SetEnemyMoveSpeed(ChargeSpeed.RuntimeValue);
+                    SetEnemyMoveSpeed(ChargeSpeed);
                 else
-                    SetEnemyMoveSpeed(ChargeSpeed.RuntimeValue / SlowAmount.RuntimeValue);
+                    SetEnemyMoveSpeed(ChargeSpeed / SlowAmount);
 
                 if (distToChargePos <= 1f)
                 {
                     if (!_slowDebuff)
-                        SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue);
+                        SetEnemyMoveSpeed(MyMoveSpeed);
                     else
-                        SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue / SlowAmount.RuntimeValue);
+                        SetEnemyMoveSpeed(MyMoveSpeed / SlowAmount);
 
                     posFound = false;
                     charging = false;
