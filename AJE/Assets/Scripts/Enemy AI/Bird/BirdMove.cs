@@ -6,7 +6,6 @@ public class BirdMove : EnemyMove
 {
     [SerializeField] FloatVariable ChargeSpeed;
     [SerializeField] FloatVariable MyChargeRange;
-    public float walkSpeed;
 
     Vector3 chargePos;
 
@@ -23,8 +22,6 @@ public class BirdMove : EnemyMove
     bool fleeing;
     bool hoverToPlayer;
 
-    public GameObject fleeTest;
-    public GameObject chargeTest;
     [SerializeField] GameObject trail;
 
     public float fleeMultipler;
@@ -70,7 +67,11 @@ public class BirdMove : EnemyMove
     private void HoverTowardsPlayerState()
     {
         navMeshAgent.SetDestination(targetDestination.position);
-        SetEnemyMoveSpeed(walkSpeed);
+
+        if (!_slowDebuff)
+            SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue);
+        else
+            SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue / SlowAmount.RuntimeValue);
     }
     private void FleeState()
     {
@@ -98,7 +99,6 @@ public class BirdMove : EnemyMove
             trail.SetActive(true);
             chargePos = targetDestination.transform.position + ((targetDestination.transform.position - transform.position) * ChargeMultipler);
             chargePos.y += 4;
-            Instantiate(chargeTest, chargePos, Quaternion.identity);
             posFound = true;
         }
 
@@ -121,11 +121,19 @@ public class BirdMove : EnemyMove
         float distToChargePos = Vector3.Distance(transform.position, chargePos);
         navMeshAgent.isStopped = false;
         navMeshAgent.SetDestination(chargePos);
-        SetEnemyMoveSpeed(ChargeSpeed.RuntimeValue);
+        if (!_slowDebuff)
+            SetEnemyMoveSpeed(ChargeSpeed.RuntimeValue);
+        else
+            SetEnemyMoveSpeed(ChargeSpeed.RuntimeValue / SlowAmount.RuntimeValue);
+
         //if object reached charge position reset speed back to normal and restart ai loop from start.
         if (distToChargePos <= 3f)
         {
-            navMeshAgent.speed = MyMoveSpeed.RuntimeValue;
+            if (!_slowDebuff)
+                SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue);
+            else
+                SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue / SlowAmount.RuntimeValue);
+
             chargeUptimer = 0;
             charge = false;
             fleeing = true;

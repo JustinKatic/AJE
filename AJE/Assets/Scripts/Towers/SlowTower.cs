@@ -15,7 +15,6 @@ public class SlowTower : TowersDefault
             FloatingTxt(TowerDamage.RuntimeValue, hitColliders[i].transform);
             hitColliders[i].GetComponent<EnemyMove>().SetSlowDebuffTrue();
             i++;
-
         }
     }
     public void FloatingTxt(float damage, Transform transformToSpawnTxtAt)

@@ -48,10 +48,19 @@ public class KnightMove : EnemyMove
                 float distToChargePos = Vector3.Distance(transform.position, chargePos);
                 navMeshAgent.isStopped = false;
                 navMeshAgent.SetDestination(chargePos);
-                navMeshAgent.speed = ChargeSpeed.RuntimeValue;
+
+                if (!_slowDebuff)
+                    SetEnemyMoveSpeed(ChargeSpeed.RuntimeValue);
+                else
+                    SetEnemyMoveSpeed(ChargeSpeed.RuntimeValue / SlowAmount.RuntimeValue);
+
                 if (distToChargePos <= 1f)
                 {
-                    navMeshAgent.speed = MyMoveSpeed.RuntimeValue;
+                    if (!_slowDebuff)
+                        SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue);
+                    else
+                        SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue / SlowAmount.RuntimeValue);
+
                     posFound = false;
                     charging = false;
                     timer = 0;
