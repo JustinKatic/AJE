@@ -12,8 +12,9 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] protected FloatVariable MyMoveSpeed;
     [SerializeField] FloatVariable SlowTowerDuration;
     [SerializeField] StringVariable TagOfTargetDestination;
-    [SerializeField] FloatVariable LookTowardsSpeed;
+    [SerializeField] protected FloatVariable LookTowardsSpeed;
     [SerializeField] FloatVariable SlowAmount;
+    [SerializeField] GameObject slowEffect;
 
 
 
@@ -56,22 +57,6 @@ public class EnemyMove : MonoBehaviour
         navMeshAgent.SetDestination(targetDestination.position);
     }
 
-
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (other.gameObject.tag == TagOfTargetDestination.Value)
-    //    {
-    //        navMeshAgent.velocity = Vector3.zero;
-    //        navMeshAgent.isStopped = true;
-    //    }
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.tag == TagOfTargetDestination.Value)
-    //        navMeshAgent.isStopped = false;
-    //}
-
     public void SetEnemyMoveSpeed(float enemyMoveSpeed)
     {
         if (navMeshAgent != null)
@@ -94,12 +79,14 @@ public class EnemyMove : MonoBehaviour
     {
         if (_slowDebuff == true)
         {
+            slowEffect.SetActive(true);
             _slowDurationTimer += Time.deltaTime;
             if (_slowDurationTimer > SlowTowerDuration.RuntimeValue)
             {
                 SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue);
                 _slowDurationTimer = 0;
                 _slowDebuff = false;
+                slowEffect.SetActive(false);
             }
         }
     }
