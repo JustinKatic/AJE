@@ -7,7 +7,6 @@ public class ArcherMove : EnemyMove
     [SerializeField] float MyAttackRange;
     private ArcherShoot archerShoot;
 
-
     private void Awake()
     {
         archerShoot = gameObject.GetComponent<ArcherShoot>();

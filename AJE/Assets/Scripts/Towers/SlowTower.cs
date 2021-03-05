@@ -5,6 +5,11 @@ using TMPro;
 
 public class SlowTower : TowersDefault
 {
+
+    public float slowTowerAmount;
+    public float slowTowerDuration;
+
+
     protected override void MyCollisions()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, TowerRadius, EnemyLayerMask.Value);
@@ -13,7 +18,7 @@ public class SlowTower : TowersDefault
         {
             hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerDamage);
             FloatingTxt(TowerDamage, hitColliders[i].transform);
-            hitColliders[i].GetComponent<EnemyMove>().SetSlowDebuffTrue();
+            hitColliders[i].GetComponent<EnemyMove>().SetSlowDebuffTrue(slowTowerAmount, slowTowerDuration);
             i++;
         }
     }

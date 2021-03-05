@@ -71,7 +71,7 @@ public class BirdMove : EnemyMove
         if (!_slowDebuff)
             SetEnemyMoveSpeed(MyMoveSpeed);
         else
-            SetEnemyMoveSpeed(MyMoveSpeed / SlowAmount);
+            SetEnemyMoveSpeed(MyMoveSpeed / _slowAmount);
     }
     private void FleeState()
     {
@@ -124,7 +124,7 @@ public class BirdMove : EnemyMove
         if (!_slowDebuff)
             SetEnemyMoveSpeed(ChargeSpeed);
         else
-            SetEnemyMoveSpeed(ChargeSpeed / SlowAmount);
+            SetEnemyMoveSpeed(ChargeSpeed / _slowAmount);
 
         //if object reached charge position reset speed back to normal and restart ai loop from start.
         if (distToChargePos <= 3f)
@@ -132,7 +132,7 @@ public class BirdMove : EnemyMove
             if (!_slowDebuff)
                 SetEnemyMoveSpeed(MyMoveSpeed);
             else
-                SetEnemyMoveSpeed(MyMoveSpeed / SlowAmount);
+                SetEnemyMoveSpeed(MyMoveSpeed / _slowAmount);
 
             chargeUptimer = 0;
             charge = false;

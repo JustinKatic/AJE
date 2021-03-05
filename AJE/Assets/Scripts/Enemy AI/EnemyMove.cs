@@ -10,10 +10,10 @@ public class EnemyMove : MonoBehaviour
     protected Transform targetDestination;
 
     [SerializeField] protected float MyMoveSpeed;
-    [SerializeField] float SlowTowerDuration;
     [SerializeField] StringVariable TagOfTargetDestination;
     [SerializeField] protected float LookTowardsSpeed;
-    [SerializeField] protected float SlowAmount;
+    protected float _slowTowerDuration;
+    protected float _slowAmount;
     [SerializeField] GameObject slowEffect;
 
 
@@ -68,9 +68,11 @@ public class EnemyMove : MonoBehaviour
         return navMeshAgent.speed;
     }
 
-    public void SetSlowDebuffTrue()
+    public void SetSlowDebuffTrue(float slowAmount, float slowDuration)
     {
-        SetEnemyMoveSpeed(MyMoveSpeed / SlowAmount);
+        _slowAmount = slowAmount;
+        _slowTowerDuration = slowDuration;
+        SetEnemyMoveSpeed(MyMoveSpeed / _slowAmount);
         _slowDebuff = true;
         _slowDurationTimer = 0;
     }
@@ -81,7 +83,7 @@ public class EnemyMove : MonoBehaviour
         {
             slowEffect.SetActive(true);
             _slowDurationTimer += Time.deltaTime;
-            if (_slowDurationTimer > SlowTowerDuration)
+            if (_slowDurationTimer > _slowTowerDuration)
             {
                 SetEnemyMoveSpeed(MyMoveSpeed);
                 _slowDurationTimer = 0;
