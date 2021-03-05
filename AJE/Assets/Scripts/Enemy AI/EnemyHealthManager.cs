@@ -149,8 +149,9 @@ public class EnemyHealthManager : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer == 10 && !plagueDebuff)
-            SetPlagueDebuffTrue(plagueTickDamage, plagueTickRate, plagueDebuffDuration);
+        if (plagueDebuff && other.gameObject.layer == 10)
+            other.gameObject.GetComponent<EnemyHealthManager>().SetPlagueDebuffTrue(plagueTickDamage, plagueTickRate, plagueDebuffDuration);
+
     }
     public void FloatingTxt(float damage, Transform transformToSpawnTxtAt)
     {
