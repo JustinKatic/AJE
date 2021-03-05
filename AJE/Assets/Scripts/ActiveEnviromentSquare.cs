@@ -28,7 +28,7 @@ public class ActiveEnviromentSquare : MonoBehaviour
             Instantiate(speedEnviromentFx, transform.position, damageEnviromentFx.transform.rotation);
 
         if (activateRangeEnviroment)
-            Instantiate(damageEnviromentFx, transform.position, damageEnviromentFx.transform.rotation);
+            Instantiate(rangeEnviromentFx, transform.position, damageEnviromentFx.transform.rotation);
     }
 
 }

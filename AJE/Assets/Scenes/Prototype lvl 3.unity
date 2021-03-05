@@ -15866,6 +15866,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 402180638}
     m_Modifications:
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: activateRangeEnviroment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: rangeEnviromentMultiplier
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1208155663231589020, guid: 2a2db9b688fcc4d449b2135727f8e035,
         type: 3}
       propertyPath: m_Name
@@ -41782,6 +41792,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1794140697}
     m_Modifications:
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: activateDamageEnviroment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1208155663231589020, guid: 2a2db9b688fcc4d449b2135727f8e035,
         type: 3}
       propertyPath: m_Name
@@ -80104,6 +80119,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundBlack5
       objectReference: {fileID: 0}
+    - target: {fileID: 8569092956426990158, guid: 1f19ee28ae4381942ab47f661d4ad5e4,
+        type: 3}
+      propertyPath: activateSpeedEnviroment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569092956426990158, guid: 1f19ee28ae4381942ab47f661d4ad5e4,
+        type: 3}
+      propertyPath: speedEnviromentMultiplier
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f19ee28ae4381942ab47f661d4ad5e4, type: 3}
 --- !u!4 &1303101774 stripped
@@ -91949,6 +91974,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 402180638}
     m_Modifications:
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: rangeEnviromentMultiplier
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: activateRangeEnviroment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: speedEnviromentMultiplier
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: damageEnviromentMultiplier
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: activateSpeedEnviroment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: activateDamageEnviroment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1208155663231589020, guid: 2a2db9b688fcc4d449b2135727f8e035,
         type: 3}
       propertyPath: m_Name
@@ -126067,6 +126122,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 135576623, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135576623, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 135576623, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 135576623, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_padding
+      value: 8.5625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183403937, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183403937, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183403937, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183403937, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_padding
+      value: 8.5625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495572398, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495572398, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495572398, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_padding
+      value: 8.5625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676343871, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676343871, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676343871, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676343871, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_padding
+      value: 8.5625
+      objectReference: {fileID: 0}
     - target: {fileID: 5987865968312646912, guid: 36d4966411abe9d4d8f0e04e481f5735,
         type: 3}
       propertyPath: m_LocalPosition.x
