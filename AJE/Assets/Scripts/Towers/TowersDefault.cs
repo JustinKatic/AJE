@@ -14,16 +14,13 @@ public class TowersDefault : MonoBehaviour
     [SerializeField] protected GameObject floatingDmg;
 
     [SerializeField] protected ParticleSystem pulseFX;
-    private void Start()
-    {
 
-    }
     private void OnEnable()
     {
-        var emission = pulseFX.emission;
+        ParticleSystem.EmissionModule emission = pulseFX.emission;
         emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0f, 1, 1000, ActivateEveryX) });
-        pulseFX.startSize = TowerRadius * 2;
-        var main = pulseFX.main;
+        ParticleSystem.MainModule main = pulseFX.main;
+        main.startSize = TowerRadius * 2;
         main.startLifetime = ActivateEveryX;
     }
     private void Update()
