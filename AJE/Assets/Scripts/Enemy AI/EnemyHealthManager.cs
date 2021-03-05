@@ -16,7 +16,7 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField] bool IHaveAHealthBar;
     // [SerializeField] float PlayerCurrentExp;
 
-   // [SerializeField] GameObject ExpObj;
+    // [SerializeField] GameObject ExpObj;
     [SerializeField] GameObject CurrencyObj;
 
 
@@ -76,7 +76,7 @@ public class EnemyHealthManager : MonoBehaviour
     {
         _listOfEnemies.RuntimeList.Remove(gameObject.transform.parent.transform);
         InstantiateCurrency(CurrencyObj);
-       // InstantiateExpDrop(ExpObj);
+        // InstantiateExpDrop(ExpObj);
 
 
         if (DeathSound)
@@ -149,21 +149,8 @@ public class EnemyHealthManager : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer == 10)
-        {
-            if (plagueDebuff == false)
-            {
-                return;
-            }
-            if (plagueDebuff == true)
-            {
-                return;
-            }
-            else if (plagueDebuff == false)
-            {
-                SetPlagueDebuffTrue(plagueTickDamage, plagueTickRate, plagueDebuffDuration);
-            }
-        }
+        if (other.gameObject.layer == 10 && !plagueDebuff)
+            SetPlagueDebuffTrue(plagueTickDamage, plagueTickRate, plagueDebuffDuration);
     }
     public void FloatingTxt(float damage, Transform transformToSpawnTxtAt)
     {
