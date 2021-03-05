@@ -17,6 +17,15 @@ public class TowersDefault : MonoBehaviour
 
     private void OnEnable()
     {
+        //ParticleSystem.EmissionModule emission = pulseFX.emission;
+        //emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0f, 1, 1000, ActivateEveryX) });
+        //ParticleSystem.MainModule main = pulseFX.main;
+        //main.startSize = TowerRadius * 2;
+        //main.startLifetime = ActivateEveryX;
+    }
+
+    public void SetTowerEffects()
+    {
         ParticleSystem.EmissionModule emission = pulseFX.emission;
         emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0f, 1, 1000, ActivateEveryX) });
         ParticleSystem.MainModule main = pulseFX.main;

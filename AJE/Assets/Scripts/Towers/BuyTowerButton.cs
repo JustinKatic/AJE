@@ -53,27 +53,27 @@ public class BuyTowerButton : MonoBehaviour
                     return;
                 else
                 {
-                   GameObject towerSpawned = Instantiate(TowerSelect,
-                        new Vector3(hit.collider.gameObject.transform.position.x,
-                        hit.collider.gameObject.transform.transform.position.y + 1.05f,
-                        hit.collider.gameObject.transform.position.z),
-                        hit.collider.gameObject.transform.rotation);
+                    GameObject towerSpawned = Instantiate(TowerSelect,
+                         new Vector3(hit.collider.gameObject.transform.position.x,
+                         hit.collider.gameObject.transform.transform.position.y + 1.05f,
+                         hit.collider.gameObject.transform.position.z),
+                         hit.collider.gameObject.transform.rotation);
 
-                    if (hit.collider.gameObject.GetComponent<ActiveEnviromentSquare>())
+                    TowersDefault tower = towerSpawned.GetComponent<TowersDefault>();
+                    ActiveEnviromentSquare enviromentSquare = hit.collider.gameObject.GetComponent<ActiveEnviromentSquare>();
+
+                    if (enviromentSquare.activateDamageEnviroment == true)
                     {
-                        ActiveEnviromentSquare enviromentSquare = hit.collider.gameObject.GetComponent<ActiveEnviromentSquare>();
-                        TowersDefault tower = towerSpawned.GetComponent<TowersDefault>();
-                        if (enviromentSquare.activateDamageEnviroment == true)
-                        {
-                            tower.TowerDamage = tower.TowerDamage + enviromentSquare.damageEnviromentMultiplier * tower.TowerDamage / 100;
-                        }
-                        if (enviromentSquare.activateSpeedEnviroment)
-                        {
-                            tower.ActivateEveryX = tower.ActivateEveryX - enviromentSquare.speedEnviromentMultiplier * tower.ActivateEveryX / 100;
-                        }
-                        if (enviromentSquare.activateRangeEnviroment)
-                            tower.TowerRadius = tower.TowerRadius + enviromentSquare.rangeEnviromentMultiplier * tower.TowerRadius / 100;
+                        tower.TowerDamage = tower.TowerDamage + enviromentSquare.damageEnviromentMultiplier * tower.TowerDamage / 100;
                     }
+                    if (enviromentSquare.activateSpeedEnviroment)
+                    {
+                        tower.ActivateEveryX = tower.ActivateEveryX - enviromentSquare.speedEnviromentMultiplier * tower.ActivateEveryX / 100;
+                    }
+                    if (enviromentSquare.activateRangeEnviroment)
+                        tower.TowerRadius = tower.TowerRadius + enviromentSquare.rangeEnviromentMultiplier * tower.TowerRadius / 100;
+
+                    tower.SetTowerEffects();
                     buildable._hasAreaBeenBuiltOn = true;
                     PlayerInGameCurrency.RuntimeValue -= TowerCost.RuntimeValue;
                     UpdateCurrency.Raise();
