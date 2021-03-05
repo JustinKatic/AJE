@@ -60,7 +60,18 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] GameObject fog5;
     [SerializeField] int RemoveFog5AtWaveX;
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog5;
-
+    [Header("Fog6")]
+    [SerializeField] GameObject fog6;
+    [SerializeField] int RemoveFog6AtWaveX;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog6;
+    [Header("Fog7")]
+    [SerializeField] GameObject fog7;
+    [SerializeField] int RemoveFog7AtWaveX;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog7;
+    [Header("Fog8")]
+    [SerializeField] GameObject fog8;
+    [SerializeField] int RemoveFog8AtWaveX;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog;
 
     private float searchCountdown = 1f;
 
@@ -138,7 +149,7 @@ public class WaveSpawner : MonoBehaviour
         if (nextWave == RemoveFog1AtWaveX)
         {
             StartCoroutine(FogShake(fog1Shake, fog1));
-            if (SpawnPointsToActivateWithFog1.Length > 1)
+            if (SpawnPointsToActivateWithFog1.Length >= 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog1.Length; i++)
                 {
@@ -149,7 +160,7 @@ public class WaveSpawner : MonoBehaviour
         if (nextWave == RemoveFog2AtWaveX)
         {
             StartCoroutine(FogShake(fog2Shake, fog2));
-            if (SpawnPointsToActivateWithFog2.Length > 1)
+            if (SpawnPointsToActivateWithFog2.Length >= 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog2.Length; i++)
                 {
@@ -160,7 +171,7 @@ public class WaveSpawner : MonoBehaviour
         if (nextWave == RemoveFog3AtWaveX)
         {
             StartCoroutine(FogShake(fog3Shake, fog3));
-            if (SpawnPointsToActivateWithFog3.Length > 1)
+            if (SpawnPointsToActivateWithFog3.Length >= 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog3.Length; i++)
                 {
@@ -171,7 +182,7 @@ public class WaveSpawner : MonoBehaviour
         if (nextWave == RemoveFog4AtWaveX)
         {
             StartCoroutine(FogShake(fog4Shake, fog4));
-            if (SpawnPointsToActivateWithFog4.Length > 1)
+            if (SpawnPointsToActivateWithFog4.Length >= 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog4.Length; i++)
                 {
@@ -182,7 +193,7 @@ public class WaveSpawner : MonoBehaviour
         if (nextWave == RemoveFog5AtWaveX)
         {
             StartCoroutine(FogShake(fog5Shake, fog5));
-            if (SpawnPointsToActivateWithFog5.Length > 1)
+            if (SpawnPointsToActivateWithFog5.Length >= 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog5.Length; i++)
                 {
@@ -251,7 +262,7 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator FogShake(FogShake shake, GameObject fogOb)
     {
-        shake.ShakeFog();
+        //shake.ShakeFog();
         yield return new WaitForSeconds(1.4f);
         fogOb.SetActive(false);
     }
