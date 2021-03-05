@@ -14,8 +14,7 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] GameEvent UpdatePlayerHealth;
     [SerializeField] GameObject modelGeo;
     [SerializeField] GameObject model;
-
-    Renderer renderer;
+    new Renderer renderer;
     Material newMat;
 
 
