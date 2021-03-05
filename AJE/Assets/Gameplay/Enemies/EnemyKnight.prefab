@@ -5471,11 +5471,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 2704921008006999289}
   MyMoveSpeed: 5.5
-  SlowTowerDuration: 5
   TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
   LookTowardsSpeed: 10
-  SlowAmount: 2
   slowEffect: {fileID: 627702398710847025}
   ChargeSpeed: 20
   MyChargeRange: 5
@@ -5496,7 +5494,7 @@ MonoBehaviour:
   healthBar: {fileID: 2766947498339496750}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
-  MyMaxHealth: 70
+  MyMaxHealth: 90
   _listOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
   ExperienceIncreasedEvent: {fileID: 11400000, guid: cd328e7dc6031ca4fab21d52d603c1ff,
     type: 2}
@@ -5505,9 +5503,6 @@ MonoBehaviour:
   CurrencyObj: {fileID: 669046667064256851, guid: 6e2a3b81f6f5a364d99459ce9ea48b8a,
     type: 3}
   plagueDebuff: 0
-  plagueDebuffDuration: 5
-  plagueTickDamage: 1
-  plagueTickRate: 0.5
   DeathSound: {fileID: 0}
   deathParticle: {fileID: 0}
   model: {fileID: 6272371317974400585}

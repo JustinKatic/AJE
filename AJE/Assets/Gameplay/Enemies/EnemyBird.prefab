@@ -548,14 +548,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 1743296888451671628}
-  MyMoveSpeed: 3
-  SlowTowerDuration: 5
+  MyMoveSpeed: 4.5
   TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
   LookTowardsSpeed: 10
-  SlowAmount: 2
   slowEffect: {fileID: 6217657519593583842}
-  ChargeSpeed: 15
+  ChargeSpeed: 20
   MyChargeRange: 5
   chargeUpTime: 1
   fleeForX: 2
@@ -602,9 +600,6 @@ MonoBehaviour:
   CurrencyObj: {fileID: 669046667064256851, guid: 60509befd15f6604a92ccc0fb51241ff,
     type: 3}
   plagueDebuff: 0
-  plagueDebuffDuration: 5
-  plagueTickDamage: 1
-  plagueTickRate: 0.5
   DeathSound: {fileID: 0}
   deathParticle: {fileID: 0}
   model: {fileID: 523551582369671119}

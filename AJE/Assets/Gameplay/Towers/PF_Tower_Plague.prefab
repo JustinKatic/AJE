@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyLayerMask: {fileID: 11400000, guid: a1072c8963c21a048926d33b9a340a86, type: 2}
-  ActivateEveryX: 0.8
-  TowerRadius: 1
+  ActivateEveryX: 1.2
+  TowerRadius: 1.1
   TowerDamage: 1
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
@@ -197,6 +197,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5d27a56797a926b4fb92abb20932ddf7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5d27a56797a926b4fb92abb20932ddf7,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 5d27a56797a926b4fb92abb20932ddf7,
         type: 3}

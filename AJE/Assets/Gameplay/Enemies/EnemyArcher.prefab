@@ -5025,12 +5025,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 7650035559107353574}
-  MyMoveSpeed: 4
-  SlowTowerDuration: 5
+  MyMoveSpeed: 5
   TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
   LookTowardsSpeed: 15
-  SlowAmount: 2
   slowEffect: {fileID: 8699856903649980464}
   MyAttackRange: 5
 --- !u!54 &2587712376351424755
@@ -5189,9 +5187,6 @@ MonoBehaviour:
   CurrencyObj: {fileID: 669046667064256851, guid: a7e8e786fe58ff347af5aa478bd05504,
     type: 3}
   plagueDebuff: 0
-  plagueDebuffDuration: 5
-  plagueTickDamage: 1
-  plagueTickRate: 0.5
   DeathSound: {fileID: 0}
   deathParticle: {fileID: 0}
   model: {fileID: 1776773301112834390}
