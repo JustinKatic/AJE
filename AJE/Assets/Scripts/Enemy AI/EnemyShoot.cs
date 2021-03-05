@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
-    [SerializeField] protected FloatVariable TimeBetweenShots;
+    [SerializeField] protected float TimeBetweenShots;
     protected float _shotCounter;
     [SerializeField] protected Transform _firePoint;
-    [SerializeField] FloatVariable AttackRange;
+    [SerializeField] float AttackRange;
     protected Transform Target;
     [SerializeField] StringVariable TagOfTarget;
 
@@ -18,7 +18,7 @@ public class EnemyShoot : MonoBehaviour
     }
     private void OnEnable()
     {
-        _shotCounter = TimeBetweenShots.RuntimeValue;
+        _shotCounter = TimeBetweenShots;
     }
 
     private void Update()

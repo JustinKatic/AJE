@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class BirdMove : EnemyMove
 {
-    [SerializeField] FloatVariable ChargeSpeed;
-    [SerializeField] FloatVariable MyChargeRange;
+    [SerializeField] float ChargeSpeed;
+    [SerializeField] float MyChargeRange;
 
     Vector3 chargePos;
 
     private float chargeUptimer;
-    [SerializeField] FloatVariable chargeUpTime;
+    [SerializeField] float chargeUpTime;
 
     private float fleeTimer;
     public float fleeForX;
@@ -40,7 +40,7 @@ public class BirdMove : EnemyMove
         if (hoverToPlayer)
         {
             HoverTowardsPlayerState();
-            if (dist < MyChargeRange.RuntimeValue)
+            if (dist < MyChargeRange)
             {
                 hoverToPlayer = false;
                 canCharge = true;
@@ -69,9 +69,9 @@ public class BirdMove : EnemyMove
         navMeshAgent.SetDestination(targetDestination.position);
 
         if (!_slowDebuff)
-            SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue);
+            SetEnemyMoveSpeed(MyMoveSpeed);
         else
-            SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue / SlowAmount.RuntimeValue);
+            SetEnemyMoveSpeed(MyMoveSpeed / SlowAmount);
     }
     private void FleeState()
     {
@@ -105,10 +105,10 @@ public class BirdMove : EnemyMove
         Vector3 lookPos = chargePos - transform.position;
         lookPos.y = 0;
         var rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * LookTowardsSpeed.RuntimeValue);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * LookTowardsSpeed);
 
         chargeUptimer += Time.deltaTime;
-        if (chargeUptimer >= chargeUpTime.RuntimeValue)
+        if (chargeUptimer >= chargeUpTime)
         {
             charge = true;
             canCharge = false;
@@ -122,17 +122,17 @@ public class BirdMove : EnemyMove
         navMeshAgent.isStopped = false;
         navMeshAgent.SetDestination(chargePos);
         if (!_slowDebuff)
-            SetEnemyMoveSpeed(ChargeSpeed.RuntimeValue);
+            SetEnemyMoveSpeed(ChargeSpeed);
         else
-            SetEnemyMoveSpeed(ChargeSpeed.RuntimeValue / SlowAmount.RuntimeValue);
+            SetEnemyMoveSpeed(ChargeSpeed / SlowAmount);
 
         //if object reached charge position reset speed back to normal and restart ai loop from start.
         if (distToChargePos <= 3f)
         {
             if (!_slowDebuff)
-                SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue);
+                SetEnemyMoveSpeed(MyMoveSpeed);
             else
-                SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue / SlowAmount.RuntimeValue);
+                SetEnemyMoveSpeed(MyMoveSpeed / SlowAmount);
 
             chargeUptimer = 0;
             charge = false;

@@ -9,11 +9,11 @@ public class EnemyMove : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     protected Transform targetDestination;
 
-    [SerializeField] protected FloatVariable MyMoveSpeed;
-    [SerializeField] FloatVariable SlowTowerDuration;
+    [SerializeField] protected float MyMoveSpeed;
+    [SerializeField] float SlowTowerDuration;
     [SerializeField] StringVariable TagOfTargetDestination;
-    [SerializeField] protected FloatVariable LookTowardsSpeed;
-    [SerializeField] protected FloatVariable SlowAmount;
+    [SerializeField] protected float LookTowardsSpeed;
+    [SerializeField] protected float SlowAmount;
     [SerializeField] GameObject slowEffect;
 
 
@@ -50,7 +50,7 @@ public class EnemyMove : MonoBehaviour
     private void OnDisable()
     {
         _slowDebuff = false;
-        SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue);
+        SetEnemyMoveSpeed(MyMoveSpeed);
     }
     public virtual void Move()
     {
@@ -70,7 +70,7 @@ public class EnemyMove : MonoBehaviour
 
     public void SetSlowDebuffTrue()
     {
-        SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue / SlowAmount.RuntimeValue);
+        SetEnemyMoveSpeed(MyMoveSpeed / SlowAmount);
         _slowDebuff = true;
         _slowDurationTimer = 0;
     }
@@ -81,9 +81,9 @@ public class EnemyMove : MonoBehaviour
         {
             slowEffect.SetActive(true);
             _slowDurationTimer += Time.deltaTime;
-            if (_slowDurationTimer > SlowTowerDuration.RuntimeValue)
+            if (_slowDurationTimer > SlowTowerDuration)
             {
-                SetEnemyMoveSpeed(MyMoveSpeed.RuntimeValue);
+                SetEnemyMoveSpeed(MyMoveSpeed);
                 _slowDurationTimer = 0;
                 _slowDebuff = false;
                 slowEffect.SetActive(false);
@@ -98,7 +98,7 @@ public class EnemyMove : MonoBehaviour
             Vector3 lookPos = targetDestination.position - transform.position;
             lookPos.y = 0;
             var rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * LookTowardsSpeed.RuntimeValue);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * LookTowardsSpeed);
         }
     }
 }

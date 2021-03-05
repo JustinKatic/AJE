@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArcherMove : EnemyMove
 {
-    [SerializeField] FloatVariable MyAttackRange;
+    [SerializeField] float MyAttackRange;
     private ArcherShoot archerShoot;
 
 
@@ -17,7 +17,7 @@ public class ArcherMove : EnemyMove
     {
         float dist = Vector3.Distance(transform.position, targetDestination.position);
 
-        if (dist > MyAttackRange.RuntimeValue && archerShoot.shotTaken == true)
+        if (dist > MyAttackRange && archerShoot.shotTaken == true)
         {
             archerShoot.CanShoot = false;
             navMeshAgent.isStopped = false;

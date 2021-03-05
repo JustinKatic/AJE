@@ -13,7 +13,7 @@ public class DwarfCannoneerShoot : EnemyShoot
             if (_shotCounter <= 0)
             {
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("DwarfCannoneerProjectile");
-                _shotCounter = TimeBetweenShots.RuntimeValue;
+                _shotCounter = TimeBetweenShots;
                 bullet.transform.position = _firePoint.position;
                 bullet.transform.rotation = _firePoint.transform.rotation;
                 bullet.SetActive(true);

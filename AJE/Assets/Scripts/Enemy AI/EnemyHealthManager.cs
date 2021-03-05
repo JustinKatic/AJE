@@ -10,11 +10,11 @@ public class EnemyHealthManager : MonoBehaviour
 
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameObject floatingDmg;
-    [SerializeField] FloatVariable MyMaxHealth;
+    [SerializeField] float MyMaxHealth;
     [SerializeField] ListOfTransforms _listOfEnemies;
     [SerializeField] GameEvent ExperienceIncreasedEvent;
     [SerializeField] bool IHaveAHealthBar;
-    [SerializeField] FloatVariable PlayerCurrentExp;
+   // [SerializeField] float PlayerCurrentExp;
 
     [SerializeField] GameObject ExpObj;
     [SerializeField] GameObject CurrencyObj;
@@ -22,10 +22,10 @@ public class EnemyHealthManager : MonoBehaviour
 
     [HideInInspector] public bool plagueDebuff;
     private float plagueDurationTimer;
-    [SerializeField] FloatVariable plagueDebuffDuration;
-    [SerializeField] FloatVariable plagueTickDamage;
+    [SerializeField] float plagueDebuffDuration;
+    [SerializeField] float plagueTickDamage;
 
-    [SerializeField] FloatVariable plagueTickRate;
+    [SerializeField] float plagueTickRate;
     private float plagueTickTimer;
 
     [SerializeField] ScriptableSoundObj DeathSound;
@@ -48,9 +48,9 @@ public class EnemyHealthManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _currentHealth = MyMaxHealth.RuntimeValue;
+        _currentHealth = MyMaxHealth;
         if (IHaveAHealthBar)
-            healthBar.SetMaxHealth(MyMaxHealth.RuntimeValue);
+            healthBar.SetMaxHealth(MyMaxHealth);
     }
     private void OnDisable()
     {
@@ -122,14 +122,14 @@ public class EnemyHealthManager : MonoBehaviour
             plagueTickTimer += Time.deltaTime;
             plagueDurationTimer += Time.deltaTime;
 
-            if (plagueTickTimer > plagueTickRate.RuntimeValue)
+            if (plagueTickTimer > plagueTickRate)
             {
-                HurtEnemy(plagueTickDamage.RuntimeValue);
-                FloatingTxt(plagueTickDamage.RuntimeValue, transform);
+                HurtEnemy(plagueTickDamage);
+                FloatingTxt(plagueTickDamage, transform);
                 plagueTickTimer = 0;
             }
 
-            if (plagueDurationTimer > plagueDebuffDuration.RuntimeValue)
+            if (plagueDurationTimer > plagueDebuffDuration)
             {
                 plagueDurationTimer = 0;
                 plagueDebuff = false;
