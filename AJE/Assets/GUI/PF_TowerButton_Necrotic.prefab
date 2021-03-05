@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3461388895138363319
+--- !u!1 &7399517398431673037
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,61 +8,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3461388895138363320}
-  - component: {fileID: 3461388895138363324}
-  - component: {fileID: 3461388895138363323}
-  - component: {fileID: 3461388895138363322}
-  - component: {fileID: 3461388895138363321}
-  - component: {fileID: 7138344512971587738}
+  - component: {fileID: 7399517398431673036}
+  - component: {fileID: 7399517398431673032}
+  - component: {fileID: 7399517398431673033}
+  - component: {fileID: 7399517398431673038}
+  - component: {fileID: 7399517398431673039}
+  - component: {fileID: 3866746555535244195}
   m_Layer: 5
-  m_Name: PlagueTowerButton
+  m_Name: NecroticTowerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &3461388895138363320
+--- !u!224 &7399517398431673036
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3461388895138363319}
+  m_GameObject: {fileID: 7399517398431673037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3517485661065760282}
+  - {fileID: 3178154265242206476}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -50, y: 40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 40}
   m_SizeDelta: {x: 120, y: 120}
-  m_Pivot: {x: 1, y: 0}
---- !u!222 &3461388895138363324
+  m_Pivot: {x: 0, y: 0}
+--- !u!222 &7399517398431673032
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3461388895138363319}
+  m_GameObject: {fileID: 7399517398431673037}
   m_CullTransparentMesh: 0
---- !u!114 &3461388895138363323
+--- !u!114 &7399517398431673033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3461388895138363319}
+  m_GameObject: {fileID: 7399517398431673037}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.14509805, g: 0.63529414, b: 0.5058824, a: 1}
+  m_Color: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -77,13 +77,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.3
---- !u!114 &3461388895138363322
+--- !u!114 &7399517398431673038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3461388895138363319}
+  m_GameObject: {fileID: 7399517398431673037}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -116,15 +116,15 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 3461388895138363323}
+  m_TargetGraphic: {fileID: 7399517398431673033}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3461388895138363321}
+      - m_Target: {fileID: 7399517398431673039}
         m_MethodName: BuyTower
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 5875444475641572519, guid: 3025d03b3fad60b4095c577e9182d3f1,
+          m_ObjectArgument: {fileID: 5457877589435299045, guid: fbe08fad885844440851dfd14c01d984,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -132,36 +132,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3461388895138363321
+--- !u!114 &7399517398431673039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3461388895138363319}
+  m_GameObject: {fileID: 7399517398431673037}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c3dd519455c80b4a9892f622e2d35d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerCost: {fileID: 11400000, guid: 8dd78a34c76843c4b8e1bc6b4c83fd0b, type: 2}
+  TowerCost: {fileID: 11400000, guid: b4f75778569d51843b9147fcb95be745, type: 2}
   PlayerInGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
     type: 2}
-  ButtonText: {fileID: 3517485661065760281}
-  TowerName: PLAGUE
+  ButtonText: {fileID: 3178154265242206479}
+  TowerName: VAMPIRIC
   TagOfObjectPurchasingTower: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
   UpdateCurrency: {fileID: 11400000, guid: 2f71996132135704393c935fa3e11c94, type: 2}
   notBuildable:
     serializedVersion: 2
     m_Bits: 8192
---- !u!114 &7138344512971587738
+--- !u!114 &3866746555535244195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3461388895138363319}
+  m_GameObject: {fileID: 7399517398431673037}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
@@ -170,12 +170,12 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.50980395}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
---- !u!1001 &8017847934722348089
+--- !u!1001 &8326754195642571567
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3461388895138363320}
+    m_TransformParent: {fileID: 7399517398431673036}
     m_Modifications:
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
@@ -196,7 +196,7 @@ PrefabInstance:
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
@@ -216,11 +216,11 @@ PrefabInstance:
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
       propertyPath: m_text
-      value: 'Three
+      value: 'Necrotic
 
-        Lines
+        Tower
 
-        Here'
+        $$'
       objectReference: {fileID: 0}
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
@@ -240,7 +240,7 @@ PrefabInstance:
     - target: {fileID: 6887552655022053922, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
       propertyPath: m_Name
-      value: PlagueTowerTxt
+      value: NecroticTowerTxt
       objectReference: {fileID: 0}
     - target: {fileID: 6887552655022053923, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
@@ -300,7 +300,7 @@ PrefabInstance:
     - target: {fileID: 6887552655022053923, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6887552655022053923, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
@@ -349,17 +349,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09d16204ba35cca4cb87066a59b2c203, type: 3}
---- !u!224 &3517485661065760282 stripped
+--- !u!224 &3178154265242206476 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6887552655022053923, guid: 09d16204ba35cca4cb87066a59b2c203,
     type: 3}
-  m_PrefabInstance: {fileID: 8017847934722348089}
+  m_PrefabInstance: {fileID: 8326754195642571567}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3517485661065760281 stripped
+--- !u!114 &3178154265242206479 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
     type: 3}
-  m_PrefabInstance: {fileID: 8017847934722348089}
+  m_PrefabInstance: {fileID: 8326754195642571567}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

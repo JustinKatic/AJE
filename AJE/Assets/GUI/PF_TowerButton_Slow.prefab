@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7138501563585709382}
   - component: {fileID: 3461052625260851815}
   m_Layer: 5
-  m_Name: SlowTowerButton
+  m_Name: PF_TowerButton_Slow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 16
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
@@ -196,7 +196,7 @@ PrefabInstance:
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
@@ -216,11 +216,11 @@ PrefabInstance:
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
       propertyPath: m_text
-      value: 'Three
+      value: 'Slow
 
-        Lines
+        Tower
 
-        Here'
+        $$'
       objectReference: {fileID: 0}
     - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
