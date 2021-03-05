@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class UpdateUIFloat : MonoBehaviour
 {
-    [SerializeField] Text TextToUpdate;
+    [SerializeField] TextMeshProUGUI TextToUpdate;
     [SerializeField] FloatVariable FloatNeedingUpdated;
 
     private void Start()
