@@ -17,7 +17,7 @@ public class EnemyHealthManager : MonoBehaviour
     // [SerializeField] float PlayerCurrentExp;
 
     [SerializeField] GameObject ExpObj;
-    [SerializeField] GameObject CurrencyObj;
+   // [SerializeField] GameObject CurrencyObj;
 
 
     [HideInInspector] public bool plagueDebuff;
@@ -75,7 +75,7 @@ public class EnemyHealthManager : MonoBehaviour
     public void Death()
     {
         _listOfEnemies.RuntimeList.Remove(gameObject.transform.parent.transform);
-        InstantiateCurrency(CurrencyObj);
+        // InstantiateCurrency(CurrencyObj);
         InstantiateExpDrop(ExpObj);
 
 
@@ -162,7 +162,7 @@ public class EnemyHealthManager : MonoBehaviour
             }
             else if (plagueDebuff == false)
             {
-                SetPlagueDebuffTrue(plagueTickDamage,plagueTickRate,plagueDebuffDuration);
+                SetPlagueDebuffTrue(plagueTickDamage, plagueTickRate, plagueDebuffDuration);
             }
         }
     }
