@@ -225,7 +225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5801546813797004450
 Transform:
   m_ObjectHideFlags: 0
@@ -295,11 +295,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 1255698181775768719}
   MyMoveSpeed: 6.5
-  SlowTowerDuration: 5
   TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
   LookTowardsSpeed: 10
-  SlowAmount: 2
   slowEffect: {fileID: 8066706111301445689}
 --- !u!54 &5282890710993299776
 Rigidbody:
@@ -341,9 +339,6 @@ MonoBehaviour:
   CurrencyObj: {fileID: 669046667064256851, guid: 6e2a3b81f6f5a364d99459ce9ea48b8a,
     type: 3}
   plagueDebuff: 0
-  plagueDebuffDuration: 5
-  plagueTickDamage: 1
-  plagueTickRate: 0.5
   DeathSound: {fileID: 0}
   deathParticle: {fileID: 0}
   model: {fileID: 9047101518768769405}
@@ -449,7 +444,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

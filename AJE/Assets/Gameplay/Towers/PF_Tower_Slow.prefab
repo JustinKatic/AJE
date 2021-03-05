@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyLayerMask: {fileID: 11400000, guid: a1072c8963c21a048926d33b9a340a86, type: 2}
-  ActivateEveryX: 0.5
+  ActivateEveryX: 1
   TowerRadius: 2
   TowerDamage: 2
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
@@ -196,30 +196,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 557166638606675281, guid: d3e0ad5eb2b102144baeb66b6e70f282,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 557166638606675281, guid: d3e0ad5eb2b102144baeb66b6e70f282,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 557166638606675281, guid: d3e0ad5eb2b102144baeb66b6e70f282,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5045862394212482337, guid: d3e0ad5eb2b102144baeb66b6e70f282,
         type: 3}
       propertyPath: m_Name
       value: FX_Particle_SlowTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 7216183867747991854, guid: d3e0ad5eb2b102144baeb66b6e70f282,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3e0ad5eb2b102144baeb66b6e70f282, type: 3}
@@ -296,6 +276,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ea813ae05dc82bd47b2ee53c3596f6a6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ea813ae05dc82bd47b2ee53c3596f6a6,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: ea813ae05dc82bd47b2ee53c3596f6a6,
         type: 3}
