@@ -12,12 +12,21 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] TextMeshPro _healthTxt;
     [SerializeField] GameEvent PlayerDeath;
     [SerializeField] GameEvent UpdatePlayerHealth;
+    [SerializeField] GameObject modelGeo;
+    [SerializeField] GameObject model;
+
+    Renderer renderer;
+    Material newMat;
 
 
     void Awake()
     {
         currentHealth.RuntimeValue = maxHealth.RuntimeValue;
         _healthTxt.text = currentHealth.RuntimeValue.ToString();
+
+        renderer = modelGeo.GetComponent<Renderer>();
+        newMat = new Material(renderer.material);
+        renderer.material = newMat;
     }
 
     void Update()
@@ -43,5 +52,19 @@ public class PlayerHealthManager : MonoBehaviour
     {
         GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "+" + heal.RuntimeValue.ToString();
+    }
+
+    public void PlayerDmgFX()
+    {
+        StartCoroutine(TakeDamageVFX());
+    }
+
+    IEnumerator TakeDamageVFX()
+    {
+        model.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+        renderer.material.EnableKeyword("_EMISSION");
+        yield return new WaitForSeconds(0.1f);
+        renderer.material.DisableKeyword("_EMISSION");
+        model.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 }

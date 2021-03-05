@@ -13,6 +13,7 @@ public class PlayerHealthBar : MonoBehaviour
     [SerializeField] FloatVariable MyCurrentHealth;
     [SerializeField] FloatVariable MyMaxHealth;
     [SerializeField] TextMeshPro _healthTxt;
+
     private void Start()
     {
         UpdateHealthBar();
@@ -24,5 +25,17 @@ public class PlayerHealthBar : MonoBehaviour
         slider.value = MyCurrentHealth.RuntimeValue;
         fill.color = gradient.Evaluate(slider.normalizedValue);
         _healthTxt.text = Mathf.Round(MyCurrentHealth.RuntimeValue).ToString();
+    }
+
+    public void HealthBarVFX()
+    {
+        StartCoroutine(ScaleHealthBarFX());
+    }
+
+    IEnumerator ScaleHealthBarFX()
+    {
+        gameObject.transform.localScale = new Vector3 (1.3f, 1.3f, 1.3f);
+        yield return new WaitForSeconds(0.1f);
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
     }
 }

@@ -336,10 +336,9 @@ Transform:
   m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 284077345716302014}
+  - {fileID: 6742323224250919337}
   - {fileID: 284077346635292984}
   - {fileID: 697445294}
-  - {fileID: 6742323224250919337}
   m_Father: {fileID: 284077346307895739}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,56 +373,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &284077345716302015
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 284077345716302014}
-  - component: {fileID: 284077345716302001}
-  m_Layer: 8
-  m_Name: PlayerModel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &284077345716302014
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284077345716302015}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 284077345297668087}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &284077345716302001
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284077345716302015}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 79b13669ccda9354fbc02c4e1423b98e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &284077346109875568
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +755,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 284077346115700950}
+        m_MethodName: HealthBarVFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &284077346307895737
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +780,7 @@ GameObject:
   - component: {fileID: 2909604892573926125}
   - component: {fileID: 284077346307895743}
   - component: {fileID: 1312703987}
+  - component: {fileID: 4784434350246230983}
   m_Layer: 8
   m_Name: Logic
   m_TagString: Player
@@ -879,6 +840,8 @@ MonoBehaviour:
   _healthTxt: {fileID: 284077345067718911}
   PlayerDeath: {fileID: 11400000, guid: 1c8582d143a69fc4390da3ec23920a5f, type: 2}
   UpdatePlayerHealth: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee, type: 2}
+  modelGeo: {fileID: 5157071546877137204}
+  model: {fileID: 7767252061552466874}
 --- !u!114 &2909604892573926125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,6 +912,33 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4784434350246230983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284077346307895737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 284077346307895728}
+        m_MethodName: PlayerDmgFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &284077346451477942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,17 +1071,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e7bd3f86fde05874590e58715b3d5f56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e7bd3f86fde05874590e58715b3d5f56,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000000009536743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e7bd3f86fde05874590e58715b3d5f56,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.03603731
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e7bd3f86fde05874590e58715b3d5f56,
         type: 3}
@@ -1116,7 +1106,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e7bd3f86fde05874590e58715b3d5f56,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e7bd3f86fde05874590e58715b3d5f56,
         type: 3}
@@ -1155,6 +1145,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7bd3f86fde05874590e58715b3d5f56, type: 3}
+--- !u!1 &5157071546877137204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6879994660558525319, guid: e7bd3f86fde05874590e58715b3d5f56,
+    type: 3}
+  m_PrefabInstance: {fileID: 1795598757833605811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6742323224250919337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e7bd3f86fde05874590e58715b3d5f56,
