@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BuyTowerButton : MonoBehaviour
 {
     [SerializeField] FloatVariable TowerCost;
     [SerializeField] FloatVariable PlayerInGameCurrency;
-    [SerializeField] Text ButtonText;
+    [SerializeField] TextMeshProUGUI ButtonText;
     [SerializeField] string TowerName;
 
     [SerializeField] StringVariable TagOfObjectPurchasingTower;
@@ -25,7 +26,7 @@ public class BuyTowerButton : MonoBehaviour
         ObjPurchasingTower = GameObject.FindGameObjectWithTag(TagOfObjectPurchasingTower.Value);
         BuyButton = gameObject.GetComponent<Button>();
         BuyButton.interactable = false;
-        ButtonText.text = TowerName + "\n\n$" + TowerCost.RuntimeValue;
+        ButtonText.text = TowerName + "\nTower" + "\n$" + TowerCost.RuntimeValue;
     }
 
     void Update()
