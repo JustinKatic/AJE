@@ -11,7 +11,7 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] GameObject floatingDmg;
     [SerializeField] TextMeshPro _healthTxt;
     [SerializeField] GameEvent PlayerDeath;
-    [SerializeField] GameEvent UpdatePlayerHealth;
+    [SerializeField] PlayerHealthBar PlayerHealthBar;
     [SerializeField] GameObject modelGeo;
     [SerializeField] GameObject model;
     new Renderer renderer;
@@ -26,6 +26,7 @@ public class PlayerHealthManager : MonoBehaviour
         renderer = modelGeo.GetComponent<Renderer>();
         newMat = new Material(renderer.material);
         renderer.material = newMat;
+        PlayerHealthBar = gameObject.GetComponentInChildren<PlayerHealthBar>();
     }
 
     void Update()
@@ -37,7 +38,7 @@ public class PlayerHealthManager : MonoBehaviour
         if (currentHealth.RuntimeValue > maxHealth.RuntimeValue)
         {
             currentHealth.RuntimeValue = maxHealth.RuntimeValue;
-            UpdatePlayerHealth.Raise();
+            PlayerHealthBar.UpdateHealthBar();
         }
     }
 

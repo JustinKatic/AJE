@@ -271,7 +271,7 @@ MonoBehaviour:
     type: 2}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
-  PlayerHealthUpdated: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee,
+  PlayerHealthDecreased: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee,
     type: 2}
 --- !u!1 &1394203705811979450
 GameObject:
@@ -596,7 +596,6 @@ MonoBehaviour:
   ExperienceIncreasedEvent: {fileID: 11400000, guid: cd328e7dc6031ca4fab21d52d603c1ff,
     type: 2}
   IHaveAHealthBar: 1
-  ExpObj: {fileID: 5731125133357009072, guid: a6f9e9d03b39a2449a9f3645220ebd92, type: 3}
   CurrencyObj: {fileID: 669046667064256851, guid: 60509befd15f6604a92ccc0fb51241ff,
     type: 3}
   plagueDebuff: 0

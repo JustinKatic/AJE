@@ -9938,7 +9938,7 @@ MonoBehaviour:
     type: 2}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
-  PlayerHealthUpdated: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee,
+  PlayerHealthDecreased: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee,
     type: 2}
 --- !u!1 &8631603836730710351
 GameObject:
@@ -10064,11 +10064,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 381577664458864793}
   MyMoveSpeed: 4
-  SlowTowerDuration: 5
   TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
   LookTowardsSpeed: 10
-  SlowAmount: 2
   slowEffect: {fileID: 758377104848720590}
   MyAttackRange: {fileID: 11400000, guid: 349bc422af10f2d4dba1d2c99e33d40f, type: 2}
   rePositioned: 0
@@ -10096,13 +10094,9 @@ MonoBehaviour:
   ExperienceIncreasedEvent: {fileID: 11400000, guid: cd328e7dc6031ca4fab21d52d603c1ff,
     type: 2}
   IHaveAHealthBar: 1
-  ExpObj: {fileID: 5731125133357009072, guid: a6f9e9d03b39a2449a9f3645220ebd92, type: 3}
   CurrencyObj: {fileID: 669046667064256851, guid: a7e8e786fe58ff347af5aa478bd05504,
     type: 3}
   plagueDebuff: 0
-  plagueDebuffDuration: 5
-  plagueTickDamage: 1
-  plagueTickRate: 0.5
   DeathSound: {fileID: 0}
   deathParticle: {fileID: 0}
   model: {fileID: 8631603837913983529}

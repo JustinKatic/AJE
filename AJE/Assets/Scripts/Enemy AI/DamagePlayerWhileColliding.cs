@@ -10,9 +10,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
     [SerializeField] FloatVariable _damage;
     [SerializeField] FloatVariable PlayersCurrentHealth;
     [SerializeField] GameObject floatingDmg;
-    [SerializeField] GameEvent PlayerHealthUpdated;
-
-
+    [SerializeField] GameEvent PlayerHealthDecreased;
 
     private void Start()
     {
@@ -34,7 +32,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
             {
                 PlayersCurrentHealth.RuntimeValue -= _damage.RuntimeValue;
                 FloatingText(_damage.RuntimeValue, other.transform.position);
-                PlayerHealthUpdated.Raise();
+                PlayerHealthDecreased.Raise();
                 _timer = 0.0f;
             }
         }

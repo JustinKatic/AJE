@@ -22,7 +22,7 @@ public class TowersDefault : MonoBehaviour
     {
         var emission = pulseFX.emission;
         emission.SetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0f, 1, 1000, ActivateEveryX) });
-        pulseFX.startSize = TowerRadius * 2;
+        //pulseFX.startSize = TowerRadius * 2;
         var main = pulseFX.main;
         main.startLifetime = ActivateEveryX;
     }
