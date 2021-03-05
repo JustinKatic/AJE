@@ -14,7 +14,7 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField] ListOfTransforms _listOfEnemies;
     [SerializeField] GameEvent ExperienceIncreasedEvent;
     [SerializeField] bool IHaveAHealthBar;
-   // [SerializeField] float PlayerCurrentExp;
+    // [SerializeField] float PlayerCurrentExp;
 
     [SerializeField] GameObject ExpObj;
     [SerializeField] GameObject CurrencyObj;
@@ -22,17 +22,17 @@ public class EnemyHealthManager : MonoBehaviour
 
     [HideInInspector] public bool plagueDebuff;
     private float plagueDurationTimer;
-    [SerializeField] float plagueDebuffDuration;
-    [SerializeField] float plagueTickDamage;
 
-    [SerializeField] float plagueTickRate;
+    float plagueDebuffDuration;
+    float plagueTickDamage;
+    float plagueTickRate;
     private float plagueTickTimer;
 
     [SerializeField] ScriptableSoundObj DeathSound;
 
     [SerializeField] GameObject deathParticle;
     [SerializeField] GameObject model;
-    private Renderer renderer;
+    private new Renderer renderer;
     private Material newMat;
 
     [SerializeField] GameObject plagueParticle;
@@ -138,11 +138,14 @@ public class EnemyHealthManager : MonoBehaviour
         }
     }
 
-    public void SetPlagueDebuffTrue()
+    public void SetPlagueDebuffTrue(float tickDmg, float tickrate, float duration)
     {
         plagueDebuff = true;
         plagueDurationTimer = 0;
         plagueTickTimer = 0;
+        plagueTickDamage = tickDmg;
+        plagueTickRate = tickrate;
+        plagueDebuffDuration = duration;
     }
 
     private void OnTriggerStay(Collider other)
@@ -153,14 +156,13 @@ public class EnemyHealthManager : MonoBehaviour
             {
                 return;
             }
-            EnemyHealthManager enemyHealthManager = other.gameObject.GetComponent<EnemyHealthManager>();
-            if (enemyHealthManager.plagueDebuff == true)
+            if (plagueDebuff == true)
             {
                 return;
             }
-            else if (enemyHealthManager.plagueDebuff == false)
+            else if (plagueDebuff == false)
             {
-                enemyHealthManager.SetPlagueDebuffTrue();
+                SetPlagueDebuffTrue(plagueTickDamage,plagueTickRate,plagueDebuffDuration);
             }
         }
     }

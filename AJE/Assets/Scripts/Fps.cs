@@ -8,7 +8,10 @@ public class Fps : MonoBehaviour
 
     public Text fpsText;
     private float deltaTime;
-
+    private void Awake()
+    {
+        Application.targetFrameRate = 30;
+    }
     void Update()
     {
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;

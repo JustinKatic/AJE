@@ -52,14 +52,14 @@ public class KnightMove : EnemyMove
                 if (!_slowDebuff)
                     SetEnemyMoveSpeed(ChargeSpeed);
                 else
-                    SetEnemyMoveSpeed(ChargeSpeed / SlowAmount);
+                    SetEnemyMoveSpeed(ChargeSpeed / _slowAmount);
 
                 if (distToChargePos <= 1f)
                 {
                     if (!_slowDebuff)
                         SetEnemyMoveSpeed(MyMoveSpeed);
                     else
-                        SetEnemyMoveSpeed(MyMoveSpeed / SlowAmount);
+                        SetEnemyMoveSpeed(MyMoveSpeed / _slowAmount);
 
                     posFound = false;
                     charging = false;
