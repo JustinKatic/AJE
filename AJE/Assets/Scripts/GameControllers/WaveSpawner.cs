@@ -201,6 +201,17 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
         }
+        if (nextWave == RemoveFog6AtWaveX)
+        {
+            StartCoroutine(FogShake(fog5Shake, fog5));
+            if (SpawnPointsToActivateWithFog5.Length >= 1)
+            {
+                for (int i = 0; i < SpawnPointsToActivateWithFog5.Length; i++)
+                {
+                    SpawnPointsToActivateWithFog5[i].gameObject.SetActive(true);
+                }
+            }
+        }
     }
 
     bool StartNextWave()
