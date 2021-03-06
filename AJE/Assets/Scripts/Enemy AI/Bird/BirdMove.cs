@@ -27,6 +27,7 @@ public class BirdMove : EnemyMove
     public float fleeMultipler;
     public float ChargeMultipler;
 
+
     private void OnEnable()
     {
         fleeTimer = fleeForX;
@@ -66,21 +67,22 @@ public class BirdMove : EnemyMove
 
     private void HoverTowardsPlayerState()
     {
-        navMeshAgent.SetDestination(targetDestination.position);
-
+        // navMeshAgent.SetDestination(targetDestination.position);
+        LookTowardsTarget(targetDestination.position);
         if (!_slowDebuff)
-            SetEnemyMoveSpeed(MyMoveSpeed);
+            MoveForward(MyMoveSpeed);
         else
-            SetEnemyMoveSpeed(MyMoveSpeed / _slowAmount);
+            MoveForward(MyMoveSpeed / _slowAmount);
     }
     private void FleeState()
     {
         fleeTimer -= Time.deltaTime;
         trail.SetActive(false);
-        navMeshAgent.isStopped = false;
+        //navMeshAgent.isStopped = false;
         Vector3 fleePos = transform.position + ((transform.position - targetDestination.transform.position) * fleeMultipler);
         fleePos.y = 1;
-        navMeshAgent.SetDestination(fleePos);
+        LookTowardsTarget(fleePos);
+        MoveForward(MyMoveSpeed);
         if (fleeTimer <= 0)
         {
             fleeing = false;
@@ -94,18 +96,14 @@ public class BirdMove : EnemyMove
 
         if (!posFound)
         {
-            navMeshAgent.velocity = Vector3.zero;
-            navMeshAgent.isStopped = true;
+            MoveForward(0);
             trail.SetActive(true);
             chargePos = targetDestination.transform.position + ((targetDestination.transform.position - transform.position) * ChargeMultipler);
             chargePos.y += 4;
             posFound = true;
         }
 
-        Vector3 lookPos = chargePos - transform.position;
-        lookPos.y = 0;
-        var rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * LookTowardsSpeed);
+        LookTowardsTarget(chargePos);
 
         chargeUptimer += Time.deltaTime;
         if (chargeUptimer >= chargeUpTime)
@@ -119,24 +117,33 @@ public class BirdMove : EnemyMove
     private void ChargeState()
     {
         float distToChargePos = Vector3.Distance(transform.position, chargePos);
-        navMeshAgent.isStopped = false;
-        navMeshAgent.SetDestination(chargePos);
+        LookTowardsTarget(chargePos);
         if (!_slowDebuff)
-            SetEnemyMoveSpeed(ChargeSpeed);
+            MoveForward(ChargeSpeed);
         else
-            SetEnemyMoveSpeed(ChargeSpeed / _slowAmount);
+            MoveForward(ChargeSpeed / _slowAmount);
+
 
         //if object reached charge position reset speed back to normal and restart ai loop from start.
         if (distToChargePos <= 3f)
         {
-            if (!_slowDebuff)
-                SetEnemyMoveSpeed(MyMoveSpeed);
-            else
-                SetEnemyMoveSpeed(MyMoveSpeed / _slowAmount);
-
             chargeUptimer = 0;
             charge = false;
             fleeing = true;
         }
     }
+
+    void MoveForward(float moveSpeed)
+    {
+        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+    }
+
+    public void LookTowardsTarget(Vector3 targetPos)
+    {
+        Vector3 lookPos = targetPos - transform.position;
+        lookPos.y = 0;
+        var rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * LookTowardsSpeed);
+    }
+
 }

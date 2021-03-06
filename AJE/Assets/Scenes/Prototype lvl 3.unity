@@ -121,7 +121,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 431f01ccacb750046a343d3d83d4e902, type: 2}
 --- !u!1 &271085
 GameObject:
   m_ObjectHideFlags: 0
@@ -28150,11 +28150,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fog (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3357229811439746626, guid: 9bf07a86d7eef9b479cf27a06ee22a67,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3715143653945254768, guid: 9bf07a86d7eef9b479cf27a06ee22a67,
         type: 3}
@@ -77518,6 +77513,11 @@ PrefabInstance:
       propertyPath: fog8
       value: 
       objectReference: {fileID: 366889259}
+    - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
 --- !u!1 &1275943386
@@ -112714,6 +112714,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 503688167}
     m_Modifications:
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: activateDamageEnviroment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: activateRangeEnviroment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: rangeEnviromentMultiplier
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1208155663231589020, guid: 2a2db9b688fcc4d449b2135727f8e035,
         type: 3}
       propertyPath: m_Name
@@ -113215,6 +113230,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 503688167}
     m_Modifications:
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: damageEnviromentMultiplier
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1208155663231589020, guid: 2a2db9b688fcc4d449b2135727f8e035,
         type: 3}
       propertyPath: m_Name

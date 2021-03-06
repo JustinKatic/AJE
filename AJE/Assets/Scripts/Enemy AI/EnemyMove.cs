@@ -41,10 +41,6 @@ public class EnemyMove : MonoBehaviour
     public void GetNavComponent()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        if (navMeshAgent == null)
-        {
-            Debug.LogError(gameObject.name + "does not have a nav mesh agent.");
-        }
     }
 
     private void OnDisable()
