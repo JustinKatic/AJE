@@ -12,7 +12,7 @@ public class DamageTower : TowersDefault
         while (i < hitColliders.Length)
         {
             hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerDamage);
-            FloatingTxt(TowerDamage,hitColliders[i].transform);
+            FloatingTxt(TowerDamage,hitColliders[i].transform, "-", Color.red);
             i++;
         }
     }

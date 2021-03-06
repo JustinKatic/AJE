@@ -1096,8 +1096,8 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   fill: {fileID: 0}
-  MyCurrentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
-  MyMaxExp: {fileID: 11400000, guid: 4eaca911255e843479f942db982c3bc6, type: 2}
+  MyCurrentExp: {fileID: 0}
+  MyMaxExp: {fileID: 0}
 --- !u!114 &7070106856600337214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,6 +1601,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5987865968899626023}
     m_Modifications:
+    - target: {fileID: 8464268556039165634, guid: 0ea163b2e36230a4ca9640b6d356782f,
+        type: 3}
+      propertyPath: TowerCost
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8464268556039165638, guid: 0ea163b2e36230a4ca9640b6d356782f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1769,6 +1774,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5987865968899626023}
     m_Modifications:
+    - target: {fileID: 7138501563585709382, guid: 901bc3e60e6abb1439f61461795588e0,
+        type: 3}
+      propertyPath: TowerCost
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7138501563585709402, guid: 901bc3e60e6abb1439f61461795588e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2284,6 +2294,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NecroticTowerButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7399517398431673039, guid: da1f273705ff54e4a9596b6119501080,
+        type: 3}
+      propertyPath: TowerCost
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da1f273705ff54e4a9596b6119501080, type: 3}
@@ -2977,7 +2992,7 @@ PrefabInstance:
     - target: {fileID: 6887552655022053923, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -65.25
+      value: -65
       objectReference: {fileID: 0}
     - target: {fileID: 6887552655022053923, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
@@ -3279,6 +3294,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461388895138363321, guid: 65e9be7a4207acc46ad1b081f6c714a1,
+        type: 3}
+      propertyPath: TowerCost
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3517485661065760281, guid: 65e9be7a4207acc46ad1b081f6c714a1,
         type: 3}

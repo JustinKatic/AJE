@@ -1,5 +1,125 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1125216406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1125216407}
+  - component: {fileID: 1125216408}
+  m_Layer: 0
+  m_Name: NavGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1125216407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125216406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2603444244312050875}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1125216408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125216406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.033333335
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: d3e409bf5e6f6a342bf2dea866fa1277, type: 2}
+--- !u!1 &1627637026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1627637027}
+  - component: {fileID: 1627637028}
+  m_Layer: 0
+  m_Name: NavFlying
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1627637027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627637026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2603444244312050875}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1627637028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627637026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: 4642c015672334a4280583899088dd86, type: 2}
 --- !u!1 &2603444243835781202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,6 +1143,7 @@ GameObject:
   - component: {fileID: 2603444244312050875}
   - component: {fileID: 2603444244312050872}
   - component: {fileID: 2603444244312050877}
+  - component: {fileID: 1565805855}
   m_Layer: 0
   m_Name: GameSystems
   m_TagString: GameManager
@@ -1042,6 +1163,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2603444244513811160}
+  - {fileID: 1125216407}
+  - {fileID: 1627637027}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1059,7 +1182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemsToPool:
   - _amountToPool: 10
-    _objectToPool: {fileID: 5041428423409597981, guid: 80691824c86c5ec49916a9c4eef7f4fa,
+    _objectToPool: {fileID: 6711070231067300023, guid: a7195f5e94bdf7e4d99f398eaa0f7b89,
       type: 3}
     _shouldExpand: 1
   - _amountToPool: 10
@@ -1067,11 +1190,11 @@ MonoBehaviour:
       type: 3}
     _shouldExpand: 1
   - _amountToPool: 10
-    _objectToPool: {fileID: 7125713572530112799, guid: a8de786eb8019054f87b1aeaa5235902,
+    _objectToPool: {fileID: 8965604269013256186, guid: d62ea1204e2de0342ae9ff61601d24f2,
       type: 3}
     _shouldExpand: 1
   - _amountToPool: 10
-    _objectToPool: {fileID: 3641292200666733486, guid: 91a42823553bc7a409cb2238dbf7a0da,
+    _objectToPool: {fileID: 2025066152840980406, guid: 7a4999d7a8bee2c4d9e11681e6e0d550,
       type: 3}
     _shouldExpand: 1
   - _amountToPool: 10
@@ -1083,11 +1206,15 @@ MonoBehaviour:
       type: 3}
     _shouldExpand: 1
   - _amountToPool: 10
-    _objectToPool: {fileID: 3132182535443080359, guid: 70cff41cfb2e9884aae77c393687e930,
+    _objectToPool: {fileID: 8776687007688350405, guid: d45943e8fc2b9a8489c30dff919dbffd,
       type: 3}
     _shouldExpand: 1
   - _amountToPool: 10
-    _objectToPool: {fileID: 1220814645532278434, guid: 513a412997e839849a4be62ef6b189a8,
+    _objectToPool: {fileID: 5205107991290171780, guid: 6ad9effbd01557543a81abeccf9e1e30,
+      type: 3}
+    _shouldExpand: 1
+  - _amountToPool: 10
+    _objectToPool: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
       type: 3}
     _shouldExpand: 1
 --- !u!114 &2603444244312050877
@@ -1103,54 +1230,169 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - name: wave 1
+  - name: Wave 1
     enemy:
-    - {fileID: 5041428423409597982, guid: 80691824c86c5ec49916a9c4eef7f4fa, type: 3}
-    - {fileID: 5041428423409597982, guid: 80691824c86c5ec49916a9c4eef7f4fa, type: 3}
-    - {fileID: 5041428423409597982, guid: 80691824c86c5ec49916a9c4eef7f4fa, type: 3}
-    rate: 0
-  - name: wave 2
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    rate: 3
+  - name: Wave 2
     enemy:
-    - {fileID: 3641292200666733529, guid: 91a42823553bc7a409cb2238dbf7a0da, type: 3}
-    - {fileID: 3641292200666733529, guid: 91a42823553bc7a409cb2238dbf7a0da, type: 3}
-    - {fileID: 3641292200666733529, guid: 91a42823553bc7a409cb2238dbf7a0da, type: 3}
-    rate: 0
-  - name: wave 3
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    rate: 3
+  - name: Wave 3
     enemy:
-    - {fileID: 3132182535443080356, guid: 70cff41cfb2e9884aae77c393687e930, type: 3}
-    - {fileID: 3132182535443080356, guid: 70cff41cfb2e9884aae77c393687e930, type: 3}
-    - {fileID: 3132182535443080356, guid: 70cff41cfb2e9884aae77c393687e930, type: 3}
-    rate: 0
-  - name: wave 4
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    rate: 3
+  - name: Wave 4
     enemy:
-    - {fileID: 7125713572530112796, guid: a8de786eb8019054f87b1aeaa5235902, type: 3}
-    - {fileID: 7125713572530112796, guid: a8de786eb8019054f87b1aeaa5235902, type: 3}
-    - {fileID: 7125713572530112796, guid: a8de786eb8019054f87b1aeaa5235902, type: 3}
-    rate: 0
-  - name: wave 5
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    rate: 3
+  - name: Wave 5
     enemy:
-    - {fileID: 1220814645532278433, guid: 513a412997e839849a4be62ef6b189a8, type: 3}
-    - {fileID: 1220814645532278433, guid: 513a412997e839849a4be62ef6b189a8, type: 3}
-    - {fileID: 1220814645532278433, guid: 513a412997e839849a4be62ef6b189a8, type: 3}
-    rate: 0
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    rate: 3
+  - name: Wave 6
+    enemy:
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    rate: 3
+  - name: Wave 7
+    enemy:
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    rate: 3
+  - name: Wave 8
+    enemy:
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 4088404196454418218, guid: d45943e8fc2b9a8489c30dff919dbffd, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    rate: 3
+  - name: Wave 9
+    enemy:
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 2025066152840980405, guid: 7a4999d7a8bee2c4d9e11681e6e0d550, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    rate: 3
+  - name: Wave 10
+    enemy:
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    rate: 3
   WaveCompletedEvent: {fileID: 11400000, guid: c442acfed93cc8e4f8ac2b2a6e5d4c69, type: 2}
   AllWavesCompleted: {fileID: 11400000, guid: 98f0cd4936af84c4faffeb633aa3c415, type: 2}
-  timeBetweenWaves: 3
+  timeBetweenWaves: 5
   timeBeforeFirstWave: 10
   ListOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
   waveCounterTxt: {fileID: 0}
+  currentWaveTxt: {fileID: 0}
+  buildPromptTxt: {fileID: 0}
+  navSurface: {fileID: 1125216408}
   fog1: {fileID: 0}
   RemoveFog1AtWaveX: 1
-  SpawnPointsToActivateWithFog1: []
+  SpawnPointsToActivateWithFog1:
+  - {fileID: 0}
   fog2: {fileID: 0}
   RemoveFog2AtWaveX: 2
-  SpawnPointsToActivateWithFog2: []
+  SpawnPointsToActivateWithFog2:
+  - {fileID: 0}
   fog3: {fileID: 0}
   RemoveFog3AtWaveX: 3
-  SpawnPointsToActivateWithFog3: []
+  SpawnPointsToActivateWithFog3:
+  - {fileID: 0}
+  - {fileID: 0}
   fog4: {fileID: 0}
   RemoveFog4AtWaveX: 4
-  SpawnPointsToActivateWithFog4: []
+  SpawnPointsToActivateWithFog4:
+  - {fileID: 0}
+  fog5: {fileID: 0}
+  RemoveFog5AtWaveX: 5
+  SpawnPointsToActivateWithFog5:
+  - {fileID: 0}
+  fog6: {fileID: 0}
+  RemoveFog6AtWaveX: 6
+  SpawnPointsToActivateWithFog6:
+  - {fileID: 0}
+  fog7: {fileID: 0}
+  RemoveFog7AtWaveX: 7
+  SpawnPointsToActivateWithFog7:
+  - {fileID: 0}
+  fog8: {fileID: 0}
+  RemoveFog8AtWaveX: 8
+  SpawnPointsToActivateWithFog:
+  - {fileID: 0}
+--- !u!114 &1565805855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eff6ae3d4635b54aa92754363f63365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsText: {fileID: 0}
 --- !u!1 &2603444244323488271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,10 +1886,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2603444244513811160}
-  - component: {fileID: 2603444244513811161}
-  - component: {fileID: 2603444244513811158}
   m_Layer: 0
-  m_Name: NavMesh
+  m_Name: WayPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1748,64 +1988,6 @@ Transform:
   m_Father: {fileID: 2603444244312050875}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2603444244513811161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2603444244513811159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.1
-  m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 78e828957c0311b46b3fb0cdd929c70f, type: 2}
---- !u!114 &2603444244513811158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2603444244513811159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: -1372625422
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: e6ee251655b0fc24081de23f33e3e4d1, type: 2}
 --- !u!1 &2603444244569975897
 GameObject:
   m_ObjectHideFlags: 0

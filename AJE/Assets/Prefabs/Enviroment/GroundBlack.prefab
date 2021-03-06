@@ -50,7 +50,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5120208922396205832
 Transform:
@@ -154,9 +154,12 @@ MonoBehaviour:
   activateDamageEnviroment: 0
   damageEnviromentFx: {fileID: 2693814236763954984, guid: 249a3e1fa34cc3e4e890439aba0366ba,
     type: 3}
+  damageEnviromentMultiplier: 0
   activateSpeedEnviroment: 0
   speedEnviromentFx: {fileID: 2693814236763954984, guid: 4bb405db970b48b498b6b8c61a490185,
     type: 3}
+  speedEnviromentMultiplier: 0
   activateRangeEnviroment: 0
   rangeEnviromentFx: {fileID: 2693814236763954984, guid: ccdaf5a028285224f93c7aaeb32b0917,
     type: 3}
+  rangeEnviromentMultiplier: 0

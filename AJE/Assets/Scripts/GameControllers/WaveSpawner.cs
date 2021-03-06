@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.AI;
 
 
 public class WaveSpawner : MonoBehaviour
@@ -38,6 +39,9 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentWaveTxt;
 
     [SerializeField] GameObject buildPromptTxt;
+
+    [SerializeField] NavMeshSurface navSurface;
+
 
 
     [Header("Fog1")]
@@ -276,5 +280,7 @@ public class WaveSpawner : MonoBehaviour
         //shake.ShakeFog();
         yield return new WaitForSeconds(1.4f);
         fogOb.SetActive(false);
+        navSurface.BuildNavMesh();
+
     }
 }

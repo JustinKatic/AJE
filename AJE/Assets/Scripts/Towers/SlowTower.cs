@@ -16,7 +16,7 @@ public class SlowTower : TowersDefault
         while (i < hitColliders.Length)
         {
             hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerDamage);
-            FloatingTxt(TowerDamage, hitColliders[i].transform);
+            FloatingTxt(TowerDamage, hitColliders[i].transform, "-", Color.red);
             hitColliders[i].GetComponent<EnemyMove>().SetSlowDebuffTrue(slowTowerAmount, slowTowerDuration);
             i++;
         }
