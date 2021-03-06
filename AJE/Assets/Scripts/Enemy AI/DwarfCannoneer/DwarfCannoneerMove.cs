@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DwarfCannoneerMove : EnemyMove
 {
-    [SerializeField] FloatVariable MyAttackRange;
+    [SerializeField] float MyAttackRange;
     DwarfCannoneerShoot dwarfCannoneerShoot;
     [HideInInspector] public bool rePositioned;
     private GameObject randomPos;
     [SerializeField] LayerMask Waypoints;
 
     private float _timer;
-    [SerializeField] protected FloatVariable TimeSpentWandering;
+    [SerializeField] protected float TimeSpentWandering;
 
 
     bool posFound = false;
@@ -24,14 +24,14 @@ public class DwarfCannoneerMove : EnemyMove
     {
         //move towards player
         float dist = Vector3.Distance(transform.position, targetDestination.position);
-        if (rePositioned == true && dist > MyAttackRange.RuntimeValue)
+        if (rePositioned == true && dist > MyAttackRange)
         {
             dwarfCannoneerShoot.canShoot = false;
             navMeshAgent.isStopped = false;
             navMeshAgent.SetDestination(targetDestination.position);
         }
         //stop and shoot at player
-        else if (rePositioned == true && dist < MyAttackRange.RuntimeValue)
+        else if (rePositioned == true && dist < MyAttackRange)
         {
             dwarfCannoneerShoot.canShoot = true;
             navMeshAgent.isStopped = true;
@@ -52,7 +52,7 @@ public class DwarfCannoneerMove : EnemyMove
             _timer += Time.deltaTime;
 
             float distToRand = Vector3.Distance(transform.position, randomPos.transform.position);
-            if (distToRand <= 0.6f || _timer >= TimeSpentWandering.RuntimeValue)
+            if (distToRand <= 0.6f || _timer >= TimeSpentWandering)
             {
                 rePositioned = true;
                 posFound = false;

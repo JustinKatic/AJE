@@ -10,7 +10,7 @@ public class KnightMove : EnemyMove
     Vector3 chargePos;
 
     private float timer;
-    [SerializeField] FloatVariable chargeUpTime;
+    [SerializeField] float chargeUpTime;
 
     bool posFound = false;
     bool charging;
@@ -43,7 +43,7 @@ public class KnightMove : EnemyMove
                 chargePos = targetDestination.position;
                 posFound = true;
             }
-            if (timer >= chargeUpTime.RuntimeValue)
+            if (timer >= chargeUpTime)
             {
                 float distToChargePos = Vector3.Distance(transform.position, chargePos);
                 navMeshAgent.isStopped = false;

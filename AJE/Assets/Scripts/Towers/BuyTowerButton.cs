@@ -6,7 +6,7 @@ using TMPro;
 
 public class BuyTowerButton : MonoBehaviour
 {
-    [SerializeField] FloatVariable TowerCost;
+    [SerializeField] float TowerCost;
     [SerializeField] FloatVariable PlayerInGameCurrency;
     [SerializeField] TextMeshProUGUI ButtonText;
     [SerializeField] string TowerName;
@@ -26,12 +26,12 @@ public class BuyTowerButton : MonoBehaviour
         ObjPurchasingTower = GameObject.FindGameObjectWithTag(TagOfObjectPurchasingTower.Value);
         BuyButton = gameObject.GetComponent<Button>();
         BuyButton.interactable = false;
-        ButtonText.text = TowerName + "\nTower" + "\n$" + TowerCost.RuntimeValue;
+        ButtonText.text = TowerName + "\nTower" + "\n$" + TowerCost;
     }
 
     void Update()
     {
-        if (PlayerInGameCurrency.RuntimeValue >= TowerCost.RuntimeValue)
+        if (PlayerInGameCurrency.RuntimeValue >= TowerCost)
         {
             BuyButton.interactable = true;
         }
@@ -75,10 +75,10 @@ public class BuyTowerButton : MonoBehaviour
 
                     tower.SetTowerEffects();
                     buildable._hasAreaBeenBuiltOn = true;
-                    PlayerInGameCurrency.RuntimeValue -= TowerCost.RuntimeValue;
+                    PlayerInGameCurrency.RuntimeValue -= TowerCost;
                     UpdateCurrency.Raise();
                 }
             }
-        }    // percent is the % * value / 100
+        }   
     }
 }

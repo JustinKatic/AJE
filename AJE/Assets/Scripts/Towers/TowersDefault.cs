@@ -6,7 +6,7 @@ using UnityEngine.ParticleSystemJobs;
 public class TowersDefault : MonoBehaviour
 {
     private float _timer;
-    [SerializeField] public LayerMaskVariable EnemyLayerMask;
+    [SerializeField] public LayerMask EnemyLayerMask;
     [SerializeField] public float ActivateEveryX;
     [SerializeField] public float TowerRadius;
     [SerializeField] public float TowerDamage;

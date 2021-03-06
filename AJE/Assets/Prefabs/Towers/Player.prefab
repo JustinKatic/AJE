@@ -804,7 +804,6 @@ GameObject:
   - component: {fileID: 284077346307895739}
   - component: {fileID: 284077346307895729}
   - component: {fileID: 284077346307895728}
-  - component: {fileID: 2909604892573926125}
   - component: {fileID: 284077346307895743}
   - component: {fileID: 1312703987}
   - component: {fileID: 4784434350246230983}
@@ -869,44 +868,6 @@ MonoBehaviour:
   PlayerHealthBar: {fileID: 0}
   modelGeo: {fileID: 5157071546877137204}
   model: {fileID: 7767252061552466874}
---- !u!114 &2909604892573926125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284077346307895737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7cf92a1c733fea4ea3e52eb909bdd22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerExpNeededToLvl:
-  - {fileID: 11400000, guid: fe5805ac9c8a7474599ba006c2efde05, type: 2}
-  - {fileID: 11400000, guid: 148e5ac8fca951b469c85fdded71df63, type: 2}
-  - {fileID: 11400000, guid: 245317a8763c0b641a734953fb359756, type: 2}
-  - {fileID: 11400000, guid: e314f3baecb3ab143a032474d9b43494, type: 2}
-  - {fileID: 11400000, guid: 2839f8a458da82e479460f1f7ecf7961, type: 2}
-  - {fileID: 11400000, guid: b0f84ece6d69ce048a6a5a514a5b6cf0, type: 2}
-  - {fileID: 11400000, guid: 26b02eaa6d5afdc4182ccde6b67aa949, type: 2}
-  - {fileID: 11400000, guid: 4dfca70462dd944428583d13eee636f5, type: 2}
-  - {fileID: 11400000, guid: 9dfa9f1ff17f2b042946ac30d36788e6, type: 2}
-  - {fileID: 11400000, guid: d47a7de4189d089479a195ecaa86198b, type: 2}
-  - {fileID: 11400000, guid: b77be18ab43543a43b0f6835ed6d9767, type: 2}
-  - {fileID: 11400000, guid: f3e3151a04a9eba41a05c0fb868797c1, type: 2}
-  - {fileID: 11400000, guid: b9c3f607debc77342ab463d23ee60344, type: 2}
-  - {fileID: 11400000, guid: 876ac6f940f54c1438c52b428b338c32, type: 2}
-  - {fileID: 11400000, guid: eb61e32d2ac2d5045a5676b5ed61d441, type: 2}
-  - {fileID: 11400000, guid: 021e63e3044cf0148bd313acf14d5f75, type: 2}
-  - {fileID: 11400000, guid: 805e13b4342067647aba54b90e91ba63, type: 2}
-  - {fileID: 11400000, guid: 55ce64e027418c346a506daef66ffa36, type: 2}
-  - {fileID: 11400000, guid: 112f82c4a4a306a47abaaebb9c7ee258, type: 2}
-  - {fileID: 11400000, guid: a5edb147c2728984d9acf529a344ca58, type: 2}
-  currentExp: {fileID: 11400000, guid: 5de61c81ccbee9842b3c4f2a81f0593c, type: 2}
-  MaxExp: {fileID: 11400000, guid: 4eaca911255e843479f942db982c3bc6, type: 2}
-  _playerLvl: {fileID: 11400000, guid: 4b8a4340755f3b249bb33475979c4d0b, type: 2}
-  PlayerLeveldUp: {fileID: 11400000, guid: 21bd7898e8f4fb34faf86bcbf67f3024, type: 2}
-  ExpIncreased: {fileID: 11400000, guid: cd328e7dc6031ca4fab21d52d603c1ff, type: 2}
 --- !u!136 &284077346307895743
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1172,12 +1133,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7bd3f86fde05874590e58715b3d5f56, type: 3}
---- !u!1 &5157071546877137204 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6879994660558525319, guid: e7bd3f86fde05874590e58715b3d5f56,
-    type: 3}
-  m_PrefabInstance: {fileID: 1795598757833605811}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6742323224250919337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e7bd3f86fde05874590e58715b3d5f56,
@@ -1187,6 +1142,12 @@ Transform:
 --- !u!1 &7767252061552466874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: e7bd3f86fde05874590e58715b3d5f56,
+    type: 3}
+  m_PrefabInstance: {fileID: 1795598757833605811}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5157071546877137204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6879994660558525319, guid: e7bd3f86fde05874590e58715b3d5f56,
     type: 3}
   m_PrefabInstance: {fileID: 1795598757833605811}
   m_PrefabAsset: {fileID: 0}
