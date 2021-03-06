@@ -42,6 +42,17 @@ public class WaveSpawner : MonoBehaviour
 
     [SerializeField] NavMeshSurface navSurface;
 
+    [Header("Navs")]
+    [SerializeField] GameObject defaultNav;
+    [SerializeField] GameObject nav1;
+    [SerializeField] GameObject nav2;
+    [SerializeField] GameObject nav3;
+    [SerializeField] GameObject nav4;
+    [SerializeField] GameObject nav5;
+    [SerializeField] GameObject nav6;
+    [SerializeField] GameObject nav7;
+    [SerializeField] GameObject nav8;
+
 
 
     [Header("Fog1")]
@@ -75,7 +86,7 @@ public class WaveSpawner : MonoBehaviour
     [Header("Fog8")]
     [SerializeField] GameObject fog8;
     [SerializeField] int RemoveFog8AtWaveX;
-    [SerializeField] GameObject[] SpawnPointsToActivateWithFog;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog8;
 
     private float searchCountdown = 1f;
 
@@ -92,11 +103,11 @@ public class WaveSpawner : MonoBehaviour
         currentWaveTxt.text = waves[nextWave].name;
         waveCountdown = timeBeforeFirstWave;
         ShowBuildPromptText();
-        fog1Shake = fog1.GetComponent<FogShake>();
-        fog2Shake = fog2.GetComponent<FogShake>();
-        fog3Shake = fog3.GetComponent<FogShake>();
-        fog4Shake = fog4.GetComponent<FogShake>();
-        fog5Shake = fog5.GetComponent<FogShake>();
+        //fog1Shake = fog1.GetComponent<FogShake>();
+        //fog2Shake = fog2.GetComponent<FogShake>();
+        //fog3Shake = fog3.GetComponent<FogShake>();
+        //fog4Shake = fog4.GetComponent<FogShake>();
+        //fog5Shake = fog5.GetComponent<FogShake>();
 
     }
 
@@ -152,9 +163,11 @@ public class WaveSpawner : MonoBehaviour
         }
         if (nextWave == RemoveFog1AtWaveX)
         {
-            StartCoroutine(FogShake(fog1Shake, fog1));
+            StartCoroutine(FogShake(fog1));
             if (SpawnPointsToActivateWithFog1.Length >= 1)
             {
+                defaultNav.SetActive(false);
+                nav1.SetActive(true);
                 for (int i = 0; i < SpawnPointsToActivateWithFog1.Length; i++)
                 {
                     SpawnPointsToActivateWithFog1[i].gameObject.SetActive(true);
@@ -163,7 +176,9 @@ public class WaveSpawner : MonoBehaviour
         }
         if (nextWave == RemoveFog2AtWaveX)
         {
-            StartCoroutine(FogShake(fog2Shake, fog2));
+            nav1.SetActive(false);
+            nav2.SetActive(true);
+            StartCoroutine(FogShake(fog2));
             if (SpawnPointsToActivateWithFog2.Length >= 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog2.Length; i++)
@@ -174,7 +189,9 @@ public class WaveSpawner : MonoBehaviour
         }
         if (nextWave == RemoveFog3AtWaveX)
         {
-            StartCoroutine(FogShake(fog3Shake, fog3));
+            nav2.SetActive(false);
+            nav3.SetActive(true);
+            StartCoroutine(FogShake(fog3));
             if (SpawnPointsToActivateWithFog3.Length >= 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog3.Length; i++)
@@ -185,7 +202,9 @@ public class WaveSpawner : MonoBehaviour
         }
         if (nextWave == RemoveFog4AtWaveX)
         {
-            StartCoroutine(FogShake(fog4Shake, fog4));
+            nav3.SetActive(false);
+            nav4.SetActive(true);
+            StartCoroutine(FogShake(fog4));
             if (SpawnPointsToActivateWithFog4.Length >= 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog4.Length; i++)
@@ -196,7 +215,9 @@ public class WaveSpawner : MonoBehaviour
         }
         if (nextWave == RemoveFog5AtWaveX)
         {
-            StartCoroutine(FogShake(fog5Shake, fog5));
+            nav4.SetActive(false);
+            nav5.SetActive(true);
+            StartCoroutine(FogShake(fog5));
             if (SpawnPointsToActivateWithFog5.Length >= 1)
             {
                 for (int i = 0; i < SpawnPointsToActivateWithFog5.Length; i++)
@@ -207,12 +228,40 @@ public class WaveSpawner : MonoBehaviour
         }
         if (nextWave == RemoveFog6AtWaveX)
         {
-            StartCoroutine(FogShake(fog5Shake, fog5));
-            if (SpawnPointsToActivateWithFog5.Length >= 1)
+            nav5.SetActive(false);
+            nav6.SetActive(true);
+            StartCoroutine(FogShake(fog6));
+            if (SpawnPointsToActivateWithFog6.Length >= 1)
             {
-                for (int i = 0; i < SpawnPointsToActivateWithFog5.Length; i++)
+                for (int i = 0; i < SpawnPointsToActivateWithFog6.Length; i++)
                 {
-                    SpawnPointsToActivateWithFog5[i].gameObject.SetActive(true);
+                    SpawnPointsToActivateWithFog6[i].gameObject.SetActive(true);
+                }
+            }
+        }
+        if (nextWave == RemoveFog7AtWaveX)
+        {
+            nav6.SetActive(false);
+            nav7.SetActive(true);
+            StartCoroutine(FogShake(fog7));
+            if (SpawnPointsToActivateWithFog7.Length >= 1)
+            {
+                for (int i = 0; i < SpawnPointsToActivateWithFog7.Length; i++)
+                {
+                    SpawnPointsToActivateWithFog7[i].gameObject.SetActive(true);
+                }
+            }
+        }
+        if (nextWave == RemoveFog8AtWaveX)
+        {
+            nav7.SetActive(false);
+            nav8.SetActive(true);
+            StartCoroutine(FogShake(fog8));
+            if (SpawnPointsToActivateWithFog8.Length >= 1)
+            {
+                for (int i = 0; i < SpawnPointsToActivateWithFog8.Length; i++)
+                {
+                    SpawnPointsToActivateWithFog8[i].gameObject.SetActive(true);
                 }
             }
         }
@@ -275,12 +324,10 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    IEnumerator FogShake(FogShake shake, GameObject fogOb)
+    IEnumerator FogShake(GameObject fogOb)
     {
         //shake.ShakeFog();
         yield return new WaitForSeconds(1.4f);
         fogOb.SetActive(false);
-        navSurface.BuildNavMesh();
-
     }
 }

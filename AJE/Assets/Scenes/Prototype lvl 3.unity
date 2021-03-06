@@ -24743,12 +24743,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378891864}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &379234384 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1289911531533620288, guid: ff89e12844b29b7439800f158f799089,
-    type: 3}
-  m_PrefabInstance: {fileID: 1141279771}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &379234385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1289911531533620289, guid: ff89e12844b29b7439800f158f799089,
@@ -77022,28 +77016,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1265969609}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1266408644 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 284077346307895737, guid: d23263cb0bec14241938b115ad05a3f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 284077345400468553}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1266408651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266408644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 0
-  m_Area: 0
-  m_IgnoreFromBuild: 1
-  m_AffectedAgents: ffffffff
 --- !u!1001 &1267499780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77387,20 +77359,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1125216408, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: aed7a74fa1c3ca14c8de2062d9fe3bc9,
-        type: 2}
     - target: {fileID: 1565805855, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: fpsText
       value: 
       objectReference: {fileID: 2086352113}
-    - target: {fileID: 1627637028, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: c952bba44693ebd479b7c36650d15a94,
-        type: 2}
     - target: {fileID: 2603444244312050873, guid: 5bc3cdaf346920148a16bf700474de15,
         type: 3}
       propertyPath: m_Name
@@ -77556,16 +77518,6 @@ PrefabInstance:
       propertyPath: fog8
       value: 
       objectReference: {fileID: 366889259}
-    - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15,
-        type: 3}
-      propertyPath: SpawnPointsToActivateWithFog.Array.data[0]
-      value: 
-      objectReference: {fileID: 379234384}
-    - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
 --- !u!1 &1275943386
