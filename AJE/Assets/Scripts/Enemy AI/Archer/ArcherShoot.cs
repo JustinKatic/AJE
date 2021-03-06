@@ -6,20 +6,31 @@ public class ArcherShoot : EnemyShoot
 {
 
     public bool CanShoot;
-    public bool shotTaken;
     [SerializeField] float lrDistance;
     LineRenderer lr;
+
+    public bool shootReady;
 
 
     private void Awake()
     {
-        shotTaken = true;
         lr = gameObject.GetComponent<LineRenderer>();
     }
+    private void OnDisable()
+    {
+        lr.positionCount = 0;
+    }
+    private void OnEnable()
+    {
+        shootReady = true;
+        _shotCounter = TimeBetweenShots;
+    }
+
     public override void Shoot()
     {
         if (CanShoot)
         {
+            lr.enabled = true;
             lr.positionCount = 2;
             lr.SetPosition(0, gameObject.transform.position);
             lr.SetPosition(1, gameObject.transform.position + gameObject.transform.forward * lrDistance);
@@ -32,8 +43,9 @@ public class ArcherShoot : EnemyShoot
                 bullet.transform.position = _firePoint.position;
                 bullet.transform.rotation = _firePoint.transform.rotation;
                 bullet.SetActive(true);
-                shotTaken = true;
                 lr.positionCount = 0;
+                CanShoot = false;
+                shootReady = false;
             }
         }
     }

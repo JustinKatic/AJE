@@ -27,7 +27,7 @@ public class BirdMove : EnemyMove
     public float fleeMultipler;
     public float ChargeMultipler;
 
-    private void Awake()
+    private void OnEnable()
     {
         fleeTimer = fleeForX;
         hoverToPlayer = true;

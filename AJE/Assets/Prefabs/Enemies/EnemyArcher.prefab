@@ -5029,6 +5029,7 @@ MonoBehaviour:
   LookTowardsSpeed: 15
   slowEffect: {fileID: 8699856903649980464}
   MyAttackRange: 5
+  shootCooldown: 3
 --- !u!54 &2587712376351424755
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5057,13 +5058,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbcde9b527adb74897d837e05592f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBetweenShots: 2
+  TimeBetweenShots: 1
   _firePoint: {fileID: 8016400251654897771}
   AttackRange: 5
   TagOfTarget: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21, type: 2}
   CanShoot: 0
-  shotTaken: 0
   lrDistance: 20
+  shootReady: 0
 --- !u!120 &8812351890786221682
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -5071,7 +5072,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776773300148763184}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
