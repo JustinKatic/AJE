@@ -9,7 +9,6 @@ public class PickUpCurrency : MonoBehaviour
     [SerializeField] StringVariable TagOfObjectsAbleToPickMeUp;
 
     [SerializeField] FloatVariable PlayerInGameCurrency;
-    [SerializeField] FloatVariable PlayerTakeBackToMenuCurrency;
     [SerializeField] FloatVariable CurrencyPickUpValue;
     [SerializeField] GameEvent UpdateCurrencyTextEvent;
 
@@ -21,7 +20,6 @@ public class PickUpCurrency : MonoBehaviour
         if (other.gameObject.tag == TagOfObjectsAbleToPickMeUp.Value)
         {
             PlayerInGameCurrency.RuntimeValue += CurrencyPickUpValue.RuntimeValue;
-            PlayerTakeBackToMenuCurrency.RuntimeValue += CurrencyPickUpValue.RuntimeValue;
             UpdateCurrencyTextEvent.Raise();
             gameObject.SetActive(false);
         }

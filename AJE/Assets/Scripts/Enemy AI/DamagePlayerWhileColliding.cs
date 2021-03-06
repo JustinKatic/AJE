@@ -5,16 +5,16 @@ using TMPro;
 
 public class DamagePlayerWhileColliding : MonoBehaviour
 {
-    [SerializeField] FloatVariable _CollidingDamageEveryX;
-    public float _timer;
-    [SerializeField] FloatVariable _damage;
-    [SerializeField] FloatVariable PlayersCurrentHealth;
+    [SerializeField] float _CollidingDamageEveryX;
+    private float _timer;
+    [SerializeField] float _damage;
+    [SerializeField] FloatVariable playersCurrentHealth;
     [SerializeField] GameObject floatingDmg;
-    [SerializeField] GameEvent PlayerHealthDecreased;
+    [SerializeField] GameEvent PlayerHealthDecreasedEvent;
 
     private void Start()
     {
-        _timer = _CollidingDamageEveryX.RuntimeValue;
+        _timer = _CollidingDamageEveryX;
     }
 
     public void FloatingText(float damage, Vector3 ObjPos)
@@ -28,11 +28,11 @@ public class DamagePlayerWhileColliding : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             _timer += Time.deltaTime;
-            if (_timer > _CollidingDamageEveryX.RuntimeValue)
+            if (_timer > _CollidingDamageEveryX)
             {
-                PlayersCurrentHealth.RuntimeValue -= _damage.RuntimeValue;
-                FloatingText(_damage.RuntimeValue, other.transform.position);
-                PlayerHealthDecreased.Raise();
+                playersCurrentHealth.RuntimeValue -= _damage;
+                FloatingText(_damage, other.transform.position);
+                PlayerHealthDecreasedEvent.Raise();
                 _timer = 0.0f;
             }
         }
@@ -42,7 +42,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            _timer = _CollidingDamageEveryX.RuntimeValue;
+            _timer = _CollidingDamageEveryX;
         }
     }
 }

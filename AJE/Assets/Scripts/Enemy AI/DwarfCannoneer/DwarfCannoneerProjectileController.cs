@@ -5,7 +5,7 @@ using UnityEngine;
 public class DwarfCannoneerProjectileController : EnemyProjectileController
 {
     Vector3 targetPos;
-    [SerializeField] FloatVariable ExplosionRadius;
+    [SerializeField] float ExplosionRadius;
     [SerializeField] LayerMaskVariable ObjAffectsByExplosion;
     [SerializeField] GameObject Explosion;
     CameraShake camShake;
@@ -22,17 +22,17 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
 
     protected override void MoveBullet()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, _speed.RuntimeValue * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, _speed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, targetPos) < 0.2f)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, ExplosionRadius.RuntimeValue, ObjAffectsByExplosion.Value);
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, ExplosionRadius, ObjAffectsByExplosion.Value);
             int i = 0;
             while (i < hitColliders.Length)
             {
                 UpdatePlayerHealthEvent.Raise();
-                PlayerCurrentHp.RuntimeValue -= _damage.RuntimeValue;
-                FloatingText(_damage.RuntimeValue, hitColliders[0].transform.position);
+                PlayerCurrentHp.RuntimeValue -= _damage;
+                FloatingText(_damage, hitColliders[0].transform.position);
                 i++;
             }
             SetUnActive();
@@ -45,9 +45,9 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
         base.SetUnActive();
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, ExplosionRadius.RuntimeValue);
-    }
+    //void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(transform.position, ExplosionRadius);
+    //}
 }

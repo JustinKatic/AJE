@@ -6,9 +6,9 @@ using TMPro;
 
 public class EnemyProjectileController : MonoBehaviour
 {
-    [SerializeField] protected FloatVariable _speed;
-    [SerializeField] protected FloatVariable _bulletLife;
-    [SerializeField] protected FloatVariable _damage;
+    [SerializeField] protected float _speed;
+    [SerializeField] protected float _bulletLife;
+    [SerializeField] protected float _damage;
 
     [SerializeField] protected StringVariable TagOfObjectCanHit;
     [SerializeField] protected GameEvent UpdatePlayerHealthEvent;
@@ -18,7 +18,7 @@ public class EnemyProjectileController : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("SetUnActive", _bulletLife.RuntimeValue);
+        Invoke("SetUnActive", _bulletLife);
     }
 
     void Update()
@@ -29,7 +29,7 @@ public class EnemyProjectileController : MonoBehaviour
 
     virtual protected void MoveBullet()
     {
-        transform.Translate(Vector3.forward * _speed.RuntimeValue * Time.deltaTime);
+        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
     }
 
     virtual protected void SetUnActive()
