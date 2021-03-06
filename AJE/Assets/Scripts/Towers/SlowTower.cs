@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class SlowTower : TowersDefault
 {
@@ -21,10 +20,5 @@ public class SlowTower : TowersDefault
             hitColliders[i].GetComponent<EnemyMove>().SetSlowDebuffTrue(slowTowerAmount, slowTowerDuration);
             i++;
         }
-    }
-    public void FloatingTxt(float damage, Transform transformToSpawnTxtAt)
-    {
-        GameObject points = Instantiate(floatingDmg, transformToSpawnTxtAt.position, Quaternion.identity);
-        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
     }
 }

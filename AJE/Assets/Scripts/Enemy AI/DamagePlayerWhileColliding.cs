@@ -17,10 +17,13 @@ public class DamagePlayerWhileColliding : MonoBehaviour
         _timer = _CollidingDamageEveryX;
     }
 
-    public void FloatingText(float damage, Vector3 ObjPos)
+    public void FloatingTxt(float damage, Transform transformToSpawnTxtAt)
     {
-        GameObject points = Instantiate(floatingDmg, ObjPos, Quaternion.identity);
+        GameObject points = ObjectPooler.SharedInstance.GetPooledObject("FloatingTxt");
+        points.transform.position = transformToSpawnTxtAt.position;
+        points.transform.rotation = Quaternion.identity;
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
+        points.SetActive(true);
     }
 
     private void OnTriggerStay(Collider other)
@@ -31,7 +34,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
             if (_timer > _CollidingDamageEveryX)
             {
                 playersCurrentHealth.RuntimeValue -= _damage;
-                FloatingText(_damage, other.transform.position);
+                FloatingTxt(_damage, other.transform);
                 PlayerHealthDecreasedEvent.Raise();
                 _timer = 0.0f;
             }

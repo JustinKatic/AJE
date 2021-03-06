@@ -32,7 +32,7 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
             {
                 UpdatePlayerHealthEvent.Raise();
                 PlayerCurrentHp.RuntimeValue -= _damage;
-                FloatingText(_damage, hitColliders[0].transform.position);
+                FloatingTxt(_damage, hitColliders[0].transform);
                 i++;
             }
             SetUnActive();

@@ -246,10 +246,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5857732873342331414}
-  - component: {fileID: -6977768145252114128}
+  - component: {fileID: 7142006734042607299}
   m_Layer: 0
   m_Name: FloatingPointDmg
-  m_TagString: Untagged
+  m_TagString: FloatingTxt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,7 +269,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6977768145252114128
+--- !u!114 &7142006734042607299
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,6 +278,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4480678578355624571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 787575268c57fc64fa3b0f4c634cfca4, type: 3}
+  m_Script: {fileID: 11500000, guid: 58c9253414d6763449e9a885f53cd6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectLife: 1

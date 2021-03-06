@@ -23,10 +23,4 @@ public class NecroticTower : TowersDefault
             i++;
         }
     }
-
-    public void FloatingTxt(float value, Transform transformToSpawnTxtAt)
-    {
-        GameObject points = Instantiate(floatingDmg, transformToSpawnTxtAt.position, Quaternion.identity);
-        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + value.ToString();
-    }
 }

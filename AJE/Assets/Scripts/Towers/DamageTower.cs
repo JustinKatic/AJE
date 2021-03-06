@@ -16,10 +16,4 @@ public class DamageTower : TowersDefault
             i++;
         }
     }
-
-    public void FloatingTxt(float damage, Transform transformToSpawnTxtAt)
-    {
-        GameObject points = Instantiate(floatingDmg, transformToSpawnTxtAt.position, Quaternion.identity);
-        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
-    }
 }
