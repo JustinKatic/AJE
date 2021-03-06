@@ -42,18 +42,6 @@ public class PlayerHealthManager : MonoBehaviour
         }
     }
 
-    public void FloatingText(FloatVariable damage)
-    {
-        GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
-        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.RuntimeValue.ToString();
-    }
-
-    public void FloatingTextPlus(FloatVariable heal)
-    {
-        GameObject points = Instantiate(floatingDmg, transform.position, Quaternion.identity);
-        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "+" + heal.RuntimeValue.ToString();
-    }
-
     public void PlayerDmgFX()
     {
         StartCoroutine(TakeDamageVFX());

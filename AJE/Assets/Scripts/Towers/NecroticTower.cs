@@ -25,7 +25,7 @@ public class NecroticTower : TowersDefault
         while (i < hitColliders.Length)
         {
             hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerDamage);
-            FloatingTxt(TowerDamage, hitColliders[i].transform, "-", Color.red);
+            FloatingTxt(TowerDamage, hitColliders[i].transform, "-", Color.white);
             if (PlayerCurrentHealth.RuntimeValue < PlayerMaxHealth.RuntimeValue)
             {
                 PlayerCurrentHealth.RuntimeValue += TowerDamage / 2;

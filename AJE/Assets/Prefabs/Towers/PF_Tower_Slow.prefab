@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1083839064653945646}
   - component: {fileID: 2828962231899752738}
+  - component: {fileID: 2568473527142175671}
   m_Layer: 0
   m_Name: PF_Tower_Slow
   m_TagString: Untagged
@@ -57,6 +58,22 @@ MonoBehaviour:
   pulseFX: {fileID: 4855825740246180063}
   slowTowerAmount: 2
   slowTowerDuration: 5
+--- !u!114 &2568473527142175671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083839064653945643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &7820034902307374956
 GameObject:
   m_ObjectHideFlags: 0

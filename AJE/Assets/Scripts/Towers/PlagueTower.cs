@@ -16,7 +16,10 @@ public class PlagueTower : TowersDefault
         int i = 0;
         while (i < hitColliders.Length)
         {
-            hitColliders[i].GetComponent<EnemyHealthManager>().SetPlagueDebuffTrue(tickDamage, tickRate, duration);
+            EnemyHealthManager enemy = hitColliders[i].GetComponent<EnemyHealthManager>();
+            enemy.HurtEnemy(TowerDamage);
+            FloatingTxt(TowerDamage, hitColliders[i].transform, "-", Color.white);
+            enemy.SetPlagueDebuffTrue(tickDamage, tickRate, duration);
             i++;
         }
     }
