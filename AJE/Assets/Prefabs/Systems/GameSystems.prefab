@@ -1025,7 +1025,6 @@ GameObject:
   - component: {fileID: 2603444244312050877}
   - component: {fileID: 1565805855}
   - component: {fileID: 1418784550}
-  - component: {fileID: 8774989082707095279}
   m_Layer: 0
   m_Name: GameSystems
   m_TagString: GameManager
@@ -1288,19 +1287,6 @@ MonoBehaviour:
   playerInGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
     type: 2}
   UpdateCurrency: {fileID: 11400000, guid: 2f71996132135704393c935fa3e11c94, type: 2}
---- !u!114 &8774989082707095279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2603444244312050873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eff6ae3d4635b54aa92754363f63365, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fpsText: {fileID: 0}
 --- !u!1 &2603444244323488271
 GameObject:
   m_ObjectHideFlags: 0
