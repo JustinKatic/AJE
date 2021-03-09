@@ -11,7 +11,7 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameObject floatingDmg;
     [SerializeField] float MyMaxHealth;
-    [SerializeField] ListOfTransforms _listOfEnemies;
+    [SerializeField] FloatVariable numberOfActiveEnemies;
     [SerializeField] GameEvent ExperienceIncreasedEvent;
     [SerializeField] bool IHaveAHealthBar;
     // [SerializeField] float PlayerCurrentExp;
@@ -74,7 +74,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     public void Death()
     {
-        _listOfEnemies.RuntimeList.Remove(gameObject.transform.parent.transform);
+        numberOfActiveEnemies.RuntimeValue -= 1;
         InstantiateCurrency(CurrencyObj);
         // InstantiateExpDrop(ExpObj);
 
@@ -124,7 +124,7 @@ public class EnemyHealthManager : MonoBehaviour
             if (plagueTickTimer > plagueTickRate)
             {
                 HurtEnemy(plagueTickDamage);
-                FloatingTxt(plagueTickDamage, transform,"-",Color.white);
+                FloatingTxt(plagueTickDamage, transform, "-", Color.white);
                 plagueTickTimer = 0;
             }
 
