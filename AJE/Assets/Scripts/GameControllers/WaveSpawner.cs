@@ -17,63 +17,59 @@ public class WaveSpawner : MonoBehaviour
         public Transform[] enemy;
         public float rate;
     }
-
-    public Wave[] waves;
     private int nextWave = 0;
-    [SerializeField] GameEvent WaveCompletedEvent;
 
+
+    [Header("WAVE DETAILS")]
+    [SerializeField] Wave[] waves;
+    private int _currentEnemy = 0;
+    private float searchCountdown = 1f;
+
+    [SerializeField] float timeBetweenWaves = 5f;
+    [SerializeField] float timeBeforeFirstWave = 10f;
+    private float waveCountdown;
+
+    [SerializeField] FloatVariable NumberOfActiveEnemies;
+
+    [Header("EVENTS")]
+    [SerializeField] GameEvent WaveCompletedEvent;
     [SerializeField] GameEvent AllWavesCompleted;
 
 
 
-    private int _currentEnemy = 0;
-
-    public float timeBetweenWaves = 5f;
-    [SerializeField] float timeBeforeFirstWave = 10f;
-    private float waveCountdown;
-
-    [SerializeField] ListOfTransforms ListOfEnemies;
-
+    [Header("UI TEXT")]
     [SerializeField] TextMeshProUGUI waveCounterTxt;
-
     [SerializeField] TextMeshProUGUI currentWaveTxt;
-
     [SerializeField] GameObject buildPromptTxt;
 
-    [Header("Fog1")]
+    [Header("REMOVE FOG")]
     [SerializeField] GameObject fog1;
     [SerializeField] int RemoveFog1AtWaveX;
-    [SerializeField] GameObject[] SpawnPointsToActivateWithFog1;
-    [Header("Fog2")]
     [SerializeField] GameObject fog2;
     [SerializeField] int RemoveFog2AtWaveX;
-    [SerializeField] GameObject[] SpawnPointsToActivateWithFog2;
-    [Header("Fog3")]
     [SerializeField] GameObject fog3;
     [SerializeField] int RemoveFog3AtWaveX;
-    [SerializeField] GameObject[] SpawnPointsToActivateWithFog3;
-    [Header("Fog4")]
     [SerializeField] GameObject fog4;
     [SerializeField] int RemoveFog4AtWaveX;
-    [SerializeField] GameObject[] SpawnPointsToActivateWithFog4;
-    [Header("Fog5")]
     [SerializeField] GameObject fog5;
     [SerializeField] int RemoveFog5AtWaveX;
-    [SerializeField] GameObject[] SpawnPointsToActivateWithFog5;
-    [Header("Fog6")]
     [SerializeField] GameObject fog6;
     [SerializeField] int RemoveFog6AtWaveX;
-    [SerializeField] GameObject[] SpawnPointsToActivateWithFog6;
-    [Header("Fog7")]
     [SerializeField] GameObject fog7;
     [SerializeField] int RemoveFog7AtWaveX;
-    [SerializeField] GameObject[] SpawnPointsToActivateWithFog7;
-    [Header("Fog8")]
     [SerializeField] GameObject fog8;
     [SerializeField] int RemoveFog8AtWaveX;
+
+    [Header("SPAWN POINTS TO ACTIVATE WITH FOG")]
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog1;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog2;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog3;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog4;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog5;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog6;
+    [SerializeField] GameObject[] SpawnPointsToActivateWithFog7;
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog8;
 
-    private float searchCountdown = 1f;
 
     FogShake fog1Shake;
     FogShake fog2Shake;
@@ -146,7 +142,9 @@ public class WaveSpawner : MonoBehaviour
         {
             nextWave++;
         }
-        if (nextWave == RemoveFog1AtWaveX)
+
+
+        if (nextWave + 1 == RemoveFog1AtWaveX)
         {
             StartCoroutine(FogShake(fog1));
             if (SpawnPointsToActivateWithFog1.Length >= 1)
@@ -157,7 +155,7 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
         }
-        if (nextWave == RemoveFog2AtWaveX)
+        else if (nextWave + 1 == RemoveFog2AtWaveX)
         {
             StartCoroutine(FogShake(fog2));
             if (SpawnPointsToActivateWithFog2.Length >= 1)
@@ -168,7 +166,7 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
         }
-        if (nextWave == RemoveFog3AtWaveX)
+        else if (nextWave + 1 == RemoveFog3AtWaveX)
         {
             StartCoroutine(FogShake(fog3));
             if (SpawnPointsToActivateWithFog3.Length >= 1)
@@ -179,7 +177,7 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
         }
-        if (nextWave == RemoveFog4AtWaveX)
+        else if (nextWave + 1 == RemoveFog4AtWaveX)
         {
             StartCoroutine(FogShake(fog4));
             if (SpawnPointsToActivateWithFog4.Length >= 1)
@@ -190,7 +188,7 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
         }
-        if (nextWave == RemoveFog5AtWaveX)
+        else if (nextWave + 1 == RemoveFog5AtWaveX)
         {
             StartCoroutine(FogShake(fog5));
             if (SpawnPointsToActivateWithFog5.Length >= 1)
@@ -201,7 +199,7 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
         }
-        if (nextWave == RemoveFog6AtWaveX)
+        else if (nextWave + 1 == RemoveFog6AtWaveX)
         {
             StartCoroutine(FogShake(fog6));
             if (SpawnPointsToActivateWithFog6.Length >= 1)
@@ -212,7 +210,7 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
         }
-        if (nextWave == RemoveFog7AtWaveX)
+        else if (nextWave + 1 == RemoveFog7AtWaveX)
         {
             StartCoroutine(FogShake(fog7));
             if (SpawnPointsToActivateWithFog7.Length >= 1)
@@ -223,7 +221,7 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
         }
-        if (nextWave == RemoveFog8AtWaveX)
+        else if (nextWave + 1 == RemoveFog8AtWaveX)
         {
             StartCoroutine(FogShake(fog8));
             if (SpawnPointsToActivateWithFog8.Length >= 1)
@@ -243,7 +241,7 @@ public class WaveSpawner : MonoBehaviour
         {
             searchCountdown = 1f;
 
-            if (ListOfEnemies.RuntimeList.Count <= 0)
+            if (NumberOfActiveEnemies.RuntimeValue <= 0)
             {
                 return true;
             }
@@ -275,7 +273,7 @@ public class WaveSpawner : MonoBehaviour
         GameObject enemy = ObjectPooler.SharedInstance.GetPooledObject(_enemy.name);
         enemy.transform.position = _sp.position;
         enemy.SetActive(true);
-        ListOfEnemies.RuntimeList.Add(enemy.transform);
+        NumberOfActiveEnemies.RuntimeValue += 1;
 
         _currentEnemy++;
         if (_currentEnemy >= spawnPoints.Length)
