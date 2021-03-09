@@ -18,9 +18,12 @@ public class ActiveEnviromentSquare : MonoBehaviour
     [SerializeField] GameObject rangeEnviromentFx;
     public float rangeEnviromentMultiplier;
 
+    public GameObject transenvirSquare;
 
-    private void Awake()
+    private void Start()
     {
+        transenvirSquare.SetActive(false);
+
         if (activateDamageEnviroment)
             Instantiate(damageEnviromentFx, transform.position, damageEnviromentFx.transform.rotation);
 
@@ -29,6 +32,25 @@ public class ActiveEnviromentSquare : MonoBehaviour
 
         if (activateRangeEnviroment)
             Instantiate(rangeEnviromentFx, transform.position, rangeEnviromentFx.transform.rotation);
+    }
+
+
+    private void OnValidate()
+    {
+        if (activateDamageEnviroment || activateRangeEnviroment || activateSpeedEnviroment)
+        {
+            transenvirSquare.SetActive(true);
+
+            if (activateDamageEnviroment)
+                transenvirSquare.GetComponent<MeshRenderer>().material.color = Color.red;
+            if (activateSpeedEnviroment)
+                transenvirSquare.GetComponent<MeshRenderer>().material.color = Color.blue;
+            if (activateRangeEnviroment)
+                transenvirSquare.GetComponent<MeshRenderer>().material.color = Color.green;
+        }
+        else
+            transenvirSquare.SetActive(false);
+    
     }
 }
 
