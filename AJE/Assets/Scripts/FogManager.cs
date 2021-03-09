@@ -6,22 +6,23 @@ public class FogManager : MonoBehaviour
 {
     [SerializeField] IntVariable nextWaveNum;
 
-    [Header("REMOVE FOG")]
     [SerializeField] GameObject fog1;
-    [SerializeField] int RemoveFog1AtWaveX;
     [SerializeField] GameObject fog2;
-    [SerializeField] int RemoveFog2AtWaveX;
     [SerializeField] GameObject fog3;
-    [SerializeField] int RemoveFog3AtWaveX;
     [SerializeField] GameObject fog4;
-    [SerializeField] int RemoveFog4AtWaveX;
     [SerializeField] GameObject fog5;
-    [SerializeField] int RemoveFog5AtWaveX;
     [SerializeField] GameObject fog6;
-    [SerializeField] int RemoveFog6AtWaveX;
     [SerializeField] GameObject fog7;
-    [SerializeField] int RemoveFog7AtWaveX;
     [SerializeField] GameObject fog8;
+
+    [Header("REMOVE FOG")]
+    [SerializeField] int RemoveFog1AtWaveX;
+    [SerializeField] int RemoveFog2AtWaveX;
+    [SerializeField] int RemoveFog3AtWaveX;
+    [SerializeField] int RemoveFog4AtWaveX;
+    [SerializeField] int RemoveFog5AtWaveX;
+    [SerializeField] int RemoveFog6AtWaveX;
+    [SerializeField] int RemoveFog7AtWaveX;
     [SerializeField] int RemoveFog8AtWaveX;
 
     [Header("SPAWN POINTS TO ACTIVATE WITH FOG")]
@@ -37,8 +38,6 @@ public class FogManager : MonoBehaviour
 
     public void CheckForFogToActivate()
     {
-        Debug.Log(nextWaveNum.RuntimeValue + 2);
-
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog1AtWaveX)
         {
             StartCoroutine(FogShake(fog1));
