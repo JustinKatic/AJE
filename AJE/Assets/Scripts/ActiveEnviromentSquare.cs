@@ -18,13 +18,18 @@ public class ActiveEnviromentSquare : MonoBehaviour
     [SerializeField] GameObject rangeEnviromentFx;
     public float rangeEnviromentMultiplier;
 
-    public GameObject transenvirSquare;
-    new Renderer model;
-    Material newMat;
+    public GameObject dmgSquare;
+    public GameObject speedSquare;
+    public GameObject rangeSquare;
+
+
 
     private void Start()
     {
-        transenvirSquare.SetActive(false);
+        dmgSquare.SetActive(false);
+        speedSquare.SetActive(false);
+        rangeSquare.SetActive(false);
+
 
         if (activateDamageEnviroment)
             Instantiate(damageEnviromentFx, transform.position, damageEnviromentFx.transform.rotation);
@@ -39,23 +44,22 @@ public class ActiveEnviromentSquare : MonoBehaviour
 
     private void OnValidate()
     {
-        model = transenvirSquare.GetComponent<Renderer>();
-        newMat = new Material(model.material);
-        model.material = newMat;
-  
-        if (activateDamageEnviroment || activateRangeEnviroment || activateSpeedEnviroment)
-        {
-            transenvirSquare.SetActive(true);
-
-            if (activateDamageEnviroment)
-                model.material.color = Color.red;
-            if (activateSpeedEnviroment)
-                model.material.color = Color.blue;
-            if (activateRangeEnviroment)
-                model.material.color = Color.green;
-        }
+        if (activateDamageEnviroment)
+            dmgSquare.SetActive(true);
         else
-            transenvirSquare.SetActive(false);
+            dmgSquare.SetActive(false);
+
+
+        if (activateSpeedEnviroment)
+            speedSquare.SetActive(true);
+        else
+            speedSquare.SetActive(false);
+
+
+        if (activateRangeEnviroment)
+            rangeSquare.SetActive(true);
+        else
+            rangeSquare.SetActive(false);
 
     }
 }
