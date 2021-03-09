@@ -42,11 +42,11 @@ public class ActiveEnviromentSquare : MonoBehaviour
             transenvirSquare.SetActive(true);
 
             if (activateDamageEnviroment)
-                transenvirSquare.GetComponent<MeshRenderer>().material.color = Color.red;
+                transenvirSquare.GetComponent<MeshRenderer>().sharedMaterial.color = Color.red;
             if (activateSpeedEnviroment)
-                transenvirSquare.GetComponent<MeshRenderer>().material.color = Color.blue;
+                transenvirSquare.GetComponent<MeshRenderer>().sharedMaterial.color = Color.blue;
             if (activateRangeEnviroment)
-                transenvirSquare.GetComponent<MeshRenderer>().material.color = Color.green;
+                transenvirSquare.GetComponent<MeshRenderer>().sharedMaterial.color = Color.green;
         }
         else
             transenvirSquare.SetActive(false);
