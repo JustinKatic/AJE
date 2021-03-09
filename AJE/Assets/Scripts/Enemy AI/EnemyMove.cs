@@ -43,7 +43,12 @@ public class EnemyMove : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    private void OnDisable()
+    //private void OnDisable()
+    //{    
+    //    SetEnemyMoveSpeed(MyMoveSpeed);
+    //}
+
+    private void OnEnable()
     {
         _slowDebuff = false;
         SetEnemyMoveSpeed(MyMoveSpeed);
