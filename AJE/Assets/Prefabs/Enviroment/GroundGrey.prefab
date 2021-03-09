@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 9207698116299851159}
   - component: {fileID: 1444312374245750658}
   - component: {fileID: 871916434428123677}
+  - component: {fileID: 1358927214}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Ground
@@ -163,3 +164,16 @@ MonoBehaviour:
   rangeEnviromentFx: {fileID: 2693814236763954984, guid: ccdaf5a028285224f93c7aaeb32b0917,
     type: 3}
   rangeEnviromentMultiplier: 50
+--- !u!114 &1358927214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396487961692309095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d14ee1df38c037040af2b487cd8b87f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeEnviromentSquare: {fileID: 871916434428123677}
