@@ -19,6 +19,8 @@ public class ActiveEnviromentSquare : MonoBehaviour
     public float rangeEnviromentMultiplier;
 
     public GameObject transenvirSquare;
+    new Renderer model;
+    Material newMat;
 
     private void Start()
     {
@@ -37,20 +39,24 @@ public class ActiveEnviromentSquare : MonoBehaviour
 
     private void OnValidate()
     {
+        model = transenvirSquare.GetComponent<Renderer>();
+        newMat = new Material(model.material);
+        model.material = newMat;
+  
         if (activateDamageEnviroment || activateRangeEnviroment || activateSpeedEnviroment)
         {
             transenvirSquare.SetActive(true);
 
             if (activateDamageEnviroment)
-                transenvirSquare.GetComponent<MeshRenderer>().sharedMaterial.color = Color.red;
+                model.material.color = Color.red;
             if (activateSpeedEnviroment)
-                transenvirSquare.GetComponent<MeshRenderer>().sharedMaterial.color = Color.blue;
+                model.material.color = Color.blue;
             if (activateRangeEnviroment)
-                transenvirSquare.GetComponent<MeshRenderer>().sharedMaterial.color = Color.green;
+                model.material.color = Color.green;
         }
         else
             transenvirSquare.SetActive(false);
-    
+
     }
 }
 

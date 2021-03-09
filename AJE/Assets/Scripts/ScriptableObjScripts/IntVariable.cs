@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu]
 
-public class IntVariable : ScriptableObject
+public class IntVariable : ScriptableObject, ISerializationCallbackReceiver
 {
 #if UNITY_EDITOR
     [Multiline]
@@ -12,23 +12,16 @@ public class IntVariable : ScriptableObject
 #endif
     public int Value;
 
-    public void SetValue(int newValue)
+    // [System.NonSerialized]
+    public int RuntimeValue;
+
+    public void OnAfterDeserialize()
     {
-        Value = newValue;
+        RuntimeValue = Value;
     }
 
-    public void SetValue(IntVariable newValue)
+    public void OnBeforeSerialize()
     {
-        Value = newValue.Value;
-    }
 
-    public void ApplyChange(int amount)
-    {
-        Value += amount;
-    }
-
-    public void ApplyChange(IntVariable amount)
-    {
-        Value += amount.Value;
     }
 }

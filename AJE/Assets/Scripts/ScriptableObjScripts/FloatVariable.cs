@@ -15,6 +15,7 @@ public class FloatVariable : ScriptableObject, ISerializationCallbackReceiver
    // [System.NonSerialized]
     public float RuntimeValue;
 
+
 public void OnAfterDeserialize()
     {
         RuntimeValue = Value;
