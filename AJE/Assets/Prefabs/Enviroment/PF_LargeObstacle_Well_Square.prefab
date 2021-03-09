@@ -96,6 +96,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_LargeObstacle_Well_Square
       objectReference: {fileID: 0}
+    - target: {fileID: 5794415405296956155, guid: 96afa2f4c2d5c474c80df93f9797b5d1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8000986330796593752, guid: 96afa2f4c2d5c474c80df93f9797b5d1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -151,9 +156,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5320065230210199354, guid: 96afa2f4c2d5c474c80df93f9797b5d1, type: 3}
-    - {fileID: 5794415405296956155, guid: 96afa2f4c2d5c474c80df93f9797b5d1, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96afa2f4c2d5c474c80df93f9797b5d1, type: 3}
 --- !u!4 &1668573014522549945 stripped
 Transform:
