@@ -1025,6 +1025,8 @@ GameObject:
   - component: {fileID: 2603444244312050877}
   - component: {fileID: 1565805855}
   - component: {fileID: 1418784550}
+  - component: {fileID: 882962591}
+  - component: {fileID: 882962592}
   m_Layer: 0
   m_Name: GameSystems
   m_TagString: GameManager
@@ -1108,6 +1110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36775e30cd8a09843a16e7fd2bf686bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextWaveNum: {fileID: 11400000, guid: 87c2d4b974b34c447a96bcefb6204d26, type: 2}
   waves:
   - name: Wave 1
     enemy:
@@ -1217,48 +1220,15 @@ MonoBehaviour:
     - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
     - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
     rate: 3
-  WaveCompletedEvent: {fileID: 11400000, guid: c442acfed93cc8e4f8ac2b2a6e5d4c69, type: 2}
-  AllWavesCompleted: {fileID: 11400000, guid: 98f0cd4936af84c4faffeb633aa3c415, type: 2}
   timeBetweenWaves: 5
   timeBeforeFirstWave: 10
-  ListOfEnemies: {fileID: 11400000, guid: 0c2034b5d50fa4b4e80676dfcf5ba934, type: 2}
+  NumberOfActiveEnemies: {fileID: 11400000, guid: ee5a4a18baf440f439927bc50c8d16f3,
+    type: 2}
+  WaveCompletedEvent: {fileID: 11400000, guid: c442acfed93cc8e4f8ac2b2a6e5d4c69, type: 2}
+  AllWavesCompleted: {fileID: 11400000, guid: 98f0cd4936af84c4faffeb633aa3c415, type: 2}
   waveCounterTxt: {fileID: 0}
   currentWaveTxt: {fileID: 0}
   buildPromptTxt: {fileID: 0}
-  fog1: {fileID: 0}
-  RemoveFog1AtWaveX: 2
-  SpawnPointsToActivateWithFog1:
-  - {fileID: 0}
-  - {fileID: 0}
-  fog2: {fileID: 0}
-  RemoveFog2AtWaveX: 4
-  SpawnPointsToActivateWithFog2:
-  - {fileID: 0}
-  - {fileID: 0}
-  fog3: {fileID: 0}
-  RemoveFog3AtWaveX: 6
-  SpawnPointsToActivateWithFog3:
-  - {fileID: 0}
-  - {fileID: 0}
-  fog4: {fileID: 0}
-  RemoveFog4AtWaveX: 7
-  SpawnPointsToActivateWithFog4:
-  - {fileID: 0}
-  - {fileID: 0}
-  fog5: {fileID: 0}
-  RemoveFog5AtWaveX: 9
-  SpawnPointsToActivateWithFog5: []
-  fog6: {fileID: 0}
-  RemoveFog6AtWaveX: 6
-  SpawnPointsToActivateWithFog6:
-  - {fileID: 0}
-  fog7: {fileID: 0}
-  RemoveFog7AtWaveX: 7
-  SpawnPointsToActivateWithFog7:
-  - {fileID: 0}
-  fog8: {fileID: 0}
-  RemoveFog8AtWaveX: 8
-  SpawnPointsToActivateWithFog8: []
 --- !u!114 &1565805855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1286,7 +1256,79 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
     type: 2}
+  nextWave: {fileID: 11400000, guid: 87c2d4b974b34c447a96bcefb6204d26, type: 2}
   UpdateCurrency: {fileID: 11400000, guid: 2f71996132135704393c935fa3e11c94, type: 2}
+--- !u!114 &882962591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: c442acfed93cc8e4f8ac2b2a6e5d4c69, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 882962592}
+        m_MethodName: CheckForFogToActivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &882962592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77cef8499e9128849a2440a1234561cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextWaveNum: {fileID: 11400000, guid: 87c2d4b974b34c447a96bcefb6204d26, type: 2}
+  fog1: {fileID: 0}
+  fog2: {fileID: 0}
+  fog3: {fileID: 0}
+  fog4: {fileID: 0}
+  fog5: {fileID: 0}
+  fog6: {fileID: 0}
+  fog7: {fileID: 0}
+  fog8: {fileID: 0}
+  RemoveFog1AtWaveX: 3
+  RemoveFog2AtWaveX: 5
+  RemoveFog3AtWaveX: 7
+  RemoveFog4AtWaveX: 8
+  RemoveFog5AtWaveX: 10
+  RemoveFog6AtWaveX: 8
+  RemoveFog7AtWaveX: 7
+  RemoveFog8AtWaveX: 9
+  SpawnPointsToActivateWithFog1:
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog2:
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog3:
+  - {fileID: 0}
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog4:
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog5: []
+  SpawnPointsToActivateWithFog6:
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog7:
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog8: []
 --- !u!1 &2603444244323488271
 GameObject:
   m_ObjectHideFlags: 0
