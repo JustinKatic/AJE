@@ -9,7 +9,7 @@ public class NecroticTower : TowersDefault
     [SerializeField] FloatVariable PlayerMaxHealth;
 
     [SerializeField] GameEvent IncreasePlayerHealthEvent;
-    [SerializeField] FloatVariable NecroticTowerHealAmount;
+    [SerializeField] float percentOfDamageToHeal;
 
     GameObject player;
     private void Awake()
@@ -28,7 +28,7 @@ public class NecroticTower : TowersDefault
             FloatingTxt(TowerDamage, hitColliders[i].transform, "-", Color.white);
             if (PlayerCurrentHealth.RuntimeValue < PlayerMaxHealth.RuntimeValue)
             {
-                PlayerCurrentHealth.RuntimeValue += TowerDamage / 2;
+                PlayerCurrentHealth.RuntimeValue += TowerDamage * percentOfDamageToHeal;   //HEAL ME HERE ELRIC MAKE SOME VARIABLE :)
                 FloatingTxt(TowerDamage / 2, player.transform, "+", Color.green);
                 IncreasePlayerHealthEvent.Raise();
             }
