@@ -9,9 +9,21 @@ public class TowersDefault : MonoBehaviour
 {
     private float _timer;
     [SerializeField] public LayerMask EnemyLayerMask;
-    [SerializeField] public float ActivateEveryX;
-    [SerializeField] public float TowerRadius;
     [SerializeField] public float TowerDamage;
+    [SerializeField] public float TowerRadius;
+    [SerializeField] public float ActivateEveryX;
+
+    private float baseTowerDamage;
+    private float baseTowerRadius;
+    private float baseTowerSpeed;
+
+    private void OnEnable()
+    {
+        baseTowerDamage = TowerDamage;
+        baseTowerRadius = TowerRadius;
+        baseTowerSpeed = ActivateEveryX;
+    }
+
 
     [SerializeField] protected GameObject floatingDmg;
 
@@ -23,18 +35,18 @@ public class TowersDefault : MonoBehaviour
         if (other.gameObject.tag == "DmgPowerup")
         {
             other.gameObject.SetActive(false);
-            TowerDamage = TowerDamage + other.gameObject.GetComponent<Powerup>().dmgPowerupValueMultiplier * TowerDamage / 100;    
+            TowerDamage = TowerDamage + other.gameObject.GetComponent<Powerup>().dmgPowerupValueMultiplier * baseTowerDamage / 100;    
         }
        else if (other.gameObject.tag == "SpeedPowerup")
         {
             other.gameObject.SetActive(false);
-            ActivateEveryX = ActivateEveryX - other.gameObject.GetComponent<Powerup>().speedPowerupValueMultiplier * ActivateEveryX / 100;
+            ActivateEveryX = ActivateEveryX - other.gameObject.GetComponent<Powerup>().speedPowerupValueMultiplier * baseTowerSpeed / 100;
             SetTowerEffects();
         }
         else if (other.gameObject.tag == "RangePowerup")
         {
             other.gameObject.SetActive(false);
-            TowerRadius = TowerRadius + other.gameObject.GetComponent<Powerup>().rangePowerupValueMultiplier * TowerRadius / 100;
+            TowerRadius = TowerRadius + other.gameObject.GetComponent<Powerup>().rangePowerupValueMultiplier * baseTowerRadius / 100;
             SetTowerEffects();
         }
     }
