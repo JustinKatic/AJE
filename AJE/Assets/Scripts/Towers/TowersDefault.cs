@@ -18,6 +18,15 @@ public class TowersDefault : MonoBehaviour
     [SerializeField] protected ParticleSystem pulseFX;
 
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "DmgPowerup")
+        {
+            other.gameObject.SetActive(false);
+            TowerDamage = TowerDamage + other.gameObject.GetComponent<Powerup>().dmgPowerupValueMultiplier * TowerDamage / 100;    
+        }
+    }
+
     public void SetTowerEffects()
     {
         ParticleSystem.EmissionModule emission = pulseFX.emission;
@@ -41,7 +50,7 @@ public class TowersDefault : MonoBehaviour
         Debug.Log("Select a specifc tower script");
     }
 
-    public void FloatingTxt(float damage, Transform transformToSpawnTxtAt,string type, Color32 color)
+    public void FloatingTxt(float damage, Transform transformToSpawnTxtAt, string type, Color32 color)
     {
         GameObject points = ObjectPooler.SharedInstance.GetPooledObject("FloatingTxt");
         points.transform.position = transformToSpawnTxtAt.position;

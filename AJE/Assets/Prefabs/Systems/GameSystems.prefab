@@ -1027,6 +1027,7 @@ GameObject:
   - component: {fileID: 1418784550}
   - component: {fileID: 882962591}
   - component: {fileID: 882962592}
+  - component: {fileID: 887570086}
   m_Layer: 0
   m_Name: GameSystems
   m_TagString: GameManager
@@ -1285,6 +1286,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 887570086}
+        m_MethodName: SpawnPowerUpObj
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &882962592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,6 +1341,38 @@ MonoBehaviour:
   SpawnPointsToActivateWithFog7:
   - {fileID: 0}
   SpawnPointsToActivateWithFog8: []
+  ShrinesToActivateWithFog1:
+  - {fileID: 0}
+  ShrinesToActivateWithFog2: []
+  ShrinesToActivateWithFog3: []
+  ShrinesToActivateWithFog4: []
+  ShrinesToActivateWithFog5: []
+  ShrinesToActivateWithFog6: []
+  ShrinesToActivateWithFog7: []
+  ShrinesToActivateWithFog8: []
+--- !u!114 &887570086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c61569df76bca0408e29717d544a59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUps:
+  - {fileID: 578073001688257231, guid: 916b9fbe0fbb1a94f831a71e561dbd3e, type: 3}
+  - {fileID: 578073001688257231, guid: 916b9fbe0fbb1a94f831a71e561dbd3e, type: 3}
+  - {fileID: 578073001688257231, guid: 916b9fbe0fbb1a94f831a71e561dbd3e, type: 3}
+  - {fileID: 578073001688257231, guid: 916b9fbe0fbb1a94f831a71e561dbd3e, type: 3}
+  - {fileID: 4705690496293172046, guid: ca02876ea646bb643975c1ce49f77b45, type: 3}
+  - {fileID: 4705690496293172046, guid: ca02876ea646bb643975c1ce49f77b45, type: 3}
+  - {fileID: 4705690496293172046, guid: ca02876ea646bb643975c1ce49f77b45, type: 3}
+  - {fileID: 82267019448480579, guid: d103369f284a35849a5963cda263dd6d, type: 3}
+  - {fileID: 82267019448480579, guid: d103369f284a35849a5963cda263dd6d, type: 3}
+  - {fileID: 82267019448480579, guid: d103369f284a35849a5963cda263dd6d, type: 3}
 --- !u!1 &2603444244323488271
 GameObject:
   m_ObjectHideFlags: 0

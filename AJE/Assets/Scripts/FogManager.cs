@@ -36,101 +36,90 @@ public class FogManager : MonoBehaviour
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog8;
 
 
+    [Header("SHRINES TO ACTIVATE WITH FOG")]
+    [SerializeField] GameObject[] ShrinesToActivateWithFog1;
+    [SerializeField] GameObject[] ShrinesToActivateWithFog2;
+    [SerializeField] GameObject[] ShrinesToActivateWithFog3;
+    [SerializeField] GameObject[] ShrinesToActivateWithFog4;
+    [SerializeField] GameObject[] ShrinesToActivateWithFog5;
+    [SerializeField] GameObject[] ShrinesToActivateWithFog6;
+    [SerializeField] GameObject[] ShrinesToActivateWithFog7;
+    [SerializeField] GameObject[] ShrinesToActivateWithFog8;
+
     public void CheckForFogToActivate()
     {
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog1AtWaveX)
         {
-            StartCoroutine(FogShake(fog1));
-            if (SpawnPointsToActivateWithFog1.Length >= 1)
-            {
-                for (int i = 0; i < SpawnPointsToActivateWithFog1.Length; i++)
-                {
-                    SpawnPointsToActivateWithFog1[i].gameObject.SetActive(true);
-                }
-            }
+            fog1.SetActive(false);
+            SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog1);
+            ShrinesToActivateWithFog(ShrinesToActivateWithFog1);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog2AtWaveX)
         {
-            StartCoroutine(FogShake(fog2));
-            if (SpawnPointsToActivateWithFog2.Length >= 1)
-            {
-                for (int i = 0; i < SpawnPointsToActivateWithFog2.Length; i++)
-                {
-                    SpawnPointsToActivateWithFog2[i].gameObject.SetActive(true);
-                }
-            }
+            fog2.SetActive(false);
+            SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog2);
+            ShrinesToActivateWithFog(ShrinesToActivateWithFog2);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog3AtWaveX)
         {
-            StartCoroutine(FogShake(fog3));
-            if (SpawnPointsToActivateWithFog3.Length >= 1)
-            {
-                for (int i = 0; i < SpawnPointsToActivateWithFog3.Length; i++)
-                {
-                    SpawnPointsToActivateWithFog3[i].gameObject.SetActive(true);
-                }
-            }
+            fog3.SetActive(false);
+            SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog3);
+            ShrinesToActivateWithFog(ShrinesToActivateWithFog3);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog4AtWaveX)
         {
-            StartCoroutine(FogShake(fog4));
-            if (SpawnPointsToActivateWithFog4.Length >= 1)
-            {
-                for (int i = 0; i < SpawnPointsToActivateWithFog4.Length; i++)
-                {
-                    SpawnPointsToActivateWithFog4[i].gameObject.SetActive(true);
-                }
-            }
+            fog4.SetActive(false);
+            SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog4);
+            ShrinesToActivateWithFog(ShrinesToActivateWithFog4);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog5AtWaveX)
         {
-            StartCoroutine(FogShake(fog5));
-            if (SpawnPointsToActivateWithFog5.Length >= 1)
-            {
-                for (int i = 0; i < SpawnPointsToActivateWithFog5.Length; i++)
-                {
-                    SpawnPointsToActivateWithFog5[i].gameObject.SetActive(true);
-                }
-            }
+            fog5.SetActive(false);
+            SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog5);
+            ShrinesToActivateWithFog(ShrinesToActivateWithFog5);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog6AtWaveX)
         {
-            StartCoroutine(FogShake(fog6));
-            if (SpawnPointsToActivateWithFog6.Length >= 1)
-            {
-                for (int i = 0; i < SpawnPointsToActivateWithFog6.Length; i++)
-                {
-                    SpawnPointsToActivateWithFog6[i].gameObject.SetActive(true);
-                }
-            }
+            fog6.SetActive(false);
+            SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog6);
+            ShrinesToActivateWithFog(ShrinesToActivateWithFog6);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog7AtWaveX)
         {
-            StartCoroutine(FogShake(fog7));
-            if (SpawnPointsToActivateWithFog7.Length >= 1)
-            {
-                for (int i = 0; i < SpawnPointsToActivateWithFog7.Length; i++)
-                {
-                    SpawnPointsToActivateWithFog7[i].gameObject.SetActive(true);
-                }
-            }
+            fog7.SetActive(false);
+
+            SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog7);
+            ShrinesToActivateWithFog(ShrinesToActivateWithFog7);
+
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog8AtWaveX)
         {
-            StartCoroutine(FogShake(fog8));
-            if (SpawnPointsToActivateWithFog8.Length >= 1)
+            fog8.SetActive(false);
+            SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog8);
+            ShrinesToActivateWithFog(ShrinesToActivateWithFog8);
+        }
+
+        void SpawnPointsToActivateWithFog(GameObject[] spawnPointToActivate)
+        {
+            if (spawnPointToActivate.Length >= 1)
             {
-                for (int i = 0; i < SpawnPointsToActivateWithFog8.Length; i++)
+                for (int i = 0; i < spawnPointToActivate.Length; i++)
                 {
-                    SpawnPointsToActivateWithFog8[i].gameObject.SetActive(true);
+                    spawnPointToActivate[i].gameObject.SetActive(true);
                 }
             }
         }
-        IEnumerator FogShake(GameObject fogOb)
+
+        void ShrinesToActivateWithFog(GameObject[] spawnPointToActivate)
         {
-            //shake.ShakeFog();
-            yield return new WaitForSeconds(1.4f);
-            fogOb.SetActive(false);
+            if (spawnPointToActivate.Length >= 1)
+            {
+                for (int i = 0; i < spawnPointToActivate.Length; i++)
+                {
+                    spawnPointToActivate[i].gameObject.SetActive(true);
+                }
+            }
         }
+
     }
 }
