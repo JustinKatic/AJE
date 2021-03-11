@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1083839064653945646}
   - component: {fileID: 2828962231899752738}
-  - component: {fileID: 2568473527142175671}
+  - component: {fileID: 4790777007662496898}
   m_Layer: 0
   m_Name: PF_Tower_Slow
   m_TagString: Untagged
@@ -50,30 +50,27 @@ MonoBehaviour:
   EnemyLayerMask:
     serializedVersion: 2
     m_Bits: 1024
-  ActivateEveryX: 1
-  TowerRadius: 2
   TowerDamage: 2
+  TowerRadius: 2
+  ActivateEveryX: 1
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
   pulseFX: {fileID: 4855825740246180063}
   slowTowerAmount: 2
   slowTowerDuration: 5
---- !u!114 &2568473527142175671
-MonoBehaviour:
+--- !u!65 &4790777007662496898
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083839064653945643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 0
-  m_Area: 0
-  m_IgnoreFromBuild: 1
-  m_AffectedAgents: ffffffff
+  serializedVersion: 2
+  m_Size: {x: 2, y: 6.24, z: 2}
+  m_Center: {x: 0, y: 3.24, z: 0}
 --- !u!1 &7820034902307374956
 GameObject:
   m_ObjectHideFlags: 0

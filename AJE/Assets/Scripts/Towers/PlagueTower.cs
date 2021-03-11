@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlagueTower : TowersDefault
 {
 
-    public float tickDamage;
     public float tickRate;
     public float duration;
 
@@ -19,7 +18,7 @@ public class PlagueTower : TowersDefault
             EnemyHealthManager enemy = hitColliders[i].GetComponent<EnemyHealthManager>();
             enemy.HurtEnemy(TowerDamage);
             FloatingTxt(TowerDamage, hitColliders[i].transform, "-", Color.white);
-            enemy.SetPlagueDebuffTrue(tickDamage, tickRate, duration);
+            enemy.SetPlagueDebuffTrue(TowerDamage, tickRate, duration);
             i++;
         }
     }
