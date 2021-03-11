@@ -49,10 +49,10 @@ public class PlayerHealthManager : MonoBehaviour
 
     IEnumerator TakeDamageVFX()
     {
-        model.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+        //model.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
         renderer.material.EnableKeyword("_EMISSION");
         yield return new WaitForSeconds(0.1f);
         renderer.material.DisableKeyword("_EMISSION");
-        model.transform.localScale = new Vector3(1f, 1f, 1f);
+        //model.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 }
