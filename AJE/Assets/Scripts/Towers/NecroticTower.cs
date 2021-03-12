@@ -28,7 +28,7 @@ public class NecroticTower : TowersDefault
             FloatingTxt(TowerDamage, hitColliders[i].transform, "-", Color.white);
             if (PlayerCurrentHealth.RuntimeValue < PlayerMaxHealth.RuntimeValue)
             {
-                PlayerCurrentHealth.RuntimeValue += TowerDamage * percentOfDamageToHeal;   //HEAL ME HERE ELRIC MAKE SOME VARIABLE :)
+                PlayerCurrentHealth.RuntimeValue += TowerDamage * percentOfDamageToHeal;
                 FloatingTxt(TowerDamage / 2, player.transform, "+", Color.green);
                 IncreasePlayerHealthEvent.Raise();
             }
