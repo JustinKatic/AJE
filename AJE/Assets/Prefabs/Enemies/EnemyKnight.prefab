@@ -10388,6 +10388,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6272371319158803756}
     m_Modifications:
+    - target: {fileID: 524418144440625963, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e,
+        type: 3}
+      propertyPath: ShapeModule.m_MeshRenderer
+      value: 
+      objectReference: {fileID: 6272371317974400580}
     - target: {fileID: 524418144538838437, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10447,11 +10452,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PS_SlowEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 524418144538838438, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e, type: 3}
