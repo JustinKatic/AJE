@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class ActiveEnviromentSquare : MonoBehaviour
 {
     public bool activateDamageEnviroment;
@@ -60,7 +59,6 @@ public class ActiveEnviromentSquare : MonoBehaviour
             rangeSquare.SetActive(true);
         else
             rangeSquare.SetActive(false);
-
     }
 }
 

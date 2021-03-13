@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5813867858828089837}
   - component: {fileID: 7031133540268832868}
   m_Layer: 0
-  m_Name: DebugRange
+  m_Name: EnabledRangeEnviroment
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -106,9 +106,9 @@ GameObject:
   - component: {fileID: 582960404026891055}
   - component: {fileID: 5453038988101667305}
   m_Layer: 0
-  m_Name: DebugSpeed
+  m_Name: EnabledSpeedEnviroment
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -199,9 +199,9 @@ GameObject:
   - component: {fileID: 3267710067891049612}
   - component: {fileID: 7012417517645936630}
   m_Layer: 0
-  m_Name: Debugdmg
+  m_Name: EnabledDamageEnviroment
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -245,7 +245,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 2e57b630e2e2afa47b127f555088ad72, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
