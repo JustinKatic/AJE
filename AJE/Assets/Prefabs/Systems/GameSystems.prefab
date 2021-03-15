@@ -1257,6 +1257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
     type: 2}
+  ActiveEnemies: {fileID: 11400000, guid: ee5a4a18baf440f439927bc50c8d16f3, type: 2}
   nextWave: {fileID: 11400000, guid: 87c2d4b974b34c447a96bcefb6204d26, type: 2}
   UpdateCurrency: {fileID: 11400000, guid: 2f71996132135704393c935fa3e11c94, type: 2}
 --- !u!114 &882962591
@@ -1343,13 +1344,18 @@ MonoBehaviour:
   SpawnPointsToActivateWithFog8: []
   ShrinesToActivateWithFog1:
   - {fileID: 0}
-  ShrinesToActivateWithFog2: []
+  ShrinesToActivateWithFog2:
+  - {fileID: 0}
   ShrinesToActivateWithFog3: []
-  ShrinesToActivateWithFog4: []
-  ShrinesToActivateWithFog5: []
-  ShrinesToActivateWithFog6: []
+  ShrinesToActivateWithFog4:
+  - {fileID: 0}
+  ShrinesToActivateWithFog5:
+  - {fileID: 0}
+  ShrinesToActivateWithFog6:
+  - {fileID: 0}
   ShrinesToActivateWithFog7: []
-  ShrinesToActivateWithFog8: []
+  ShrinesToActivateWithFog8:
+  - {fileID: 0}
 --- !u!114 &887570086
 MonoBehaviour:
   m_ObjectHideFlags: 0

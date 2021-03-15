@@ -24,6 +24,8 @@ public class TowersDefault : MonoBehaviour
         baseTowerDamage = TowerDamage;
         baseTowerRadius = TowerRadius;
         baseTowerSpeed = ActivateEveryX;
+
+        powerupSlotManager = transform.Find("PowerupSlots").GetComponent<PowerupSlotManager>();
     }
 
 
@@ -33,10 +35,6 @@ public class TowersDefault : MonoBehaviour
 
     PowerupSlotManager powerupSlotManager;
 
-    private void Awake()
-    {
-        powerupSlotManager = transform.Find("PowerupSlots").GetComponent<PowerupSlotManager>();
-    }
 
 
     private void OnTriggerEnter(Collider other)
