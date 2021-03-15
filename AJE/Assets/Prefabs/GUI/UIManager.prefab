@@ -1445,7 +1445,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 27
     m_Bottom: 0
   m_ChildAlignment: 1
   m_Spacing: 0
@@ -1919,12 +1919,12 @@ PrefabInstance:
     - target: {fileID: 8464268556039165638, guid: 0ea163b2e36230a4ca9640b6d356782f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8464268556039165638, guid: 0ea163b2e36230a4ca9640b6d356782f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 130
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 8464268556039165638, guid: 0ea163b2e36230a4ca9640b6d356782f,
         type: 3}
@@ -1961,6 +1961,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DamageTowerButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8464268556039165639, guid: 0ea163b2e36230a4ca9640b6d356782f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ea163b2e36230a4ca9640b6d356782f, type: 3}
 --- !u!224 &5987865968778483304 stripped
@@ -1976,16 +1981,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1562534812980439177}
     m_Modifications:
-    - target: {fileID: 2038989082516966509, guid: 901bc3e60e6abb1439f61461795588e0,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2038989082516966509, guid: 901bc3e60e6abb1439f61461795588e0,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 7138501563585709402, guid: 901bc3e60e6abb1439f61461795588e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2054,12 +2049,12 @@ PrefabInstance:
     - target: {fileID: 7138501563585709402, guid: 901bc3e60e6abb1439f61461795588e0,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7138501563585709402, guid: 901bc3e60e6abb1439f61461795588e0,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 130
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 7138501563585709402, guid: 901bc3e60e6abb1439f61461795588e0,
         type: 3}
@@ -2095,6 +2090,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlowTowerButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138501563585709403, guid: 901bc3e60e6abb1439f61461795588e0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 901bc3e60e6abb1439f61461795588e0, type: 3}
@@ -2310,12 +2310,12 @@ PrefabInstance:
     - target: {fileID: 7399517398431673036, guid: da1f273705ff54e4a9596b6119501080,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7399517398431673036, guid: da1f273705ff54e4a9596b6119501080,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 130
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 7399517398431673036, guid: da1f273705ff54e4a9596b6119501080,
         type: 3}
@@ -3202,12 +3202,12 @@ PrefabInstance:
     - target: {fileID: 3461388895138363320, guid: 65e9be7a4207acc46ad1b081f6c714a1,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3461388895138363320, guid: 65e9be7a4207acc46ad1b081f6c714a1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 130
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 3461388895138363320, guid: 65e9be7a4207acc46ad1b081f6c714a1,
         type: 3}
