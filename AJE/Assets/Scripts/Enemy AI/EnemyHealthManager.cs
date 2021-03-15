@@ -17,8 +17,8 @@ public class EnemyHealthManager : MonoBehaviour
     // [SerializeField] float PlayerCurrentExp;
 
     // [SerializeField] GameObject ExpObj;
-    [SerializeField] GameObject CurrencyObj;
-
+    [SerializeField] GameObject currencyObject;
+    [SerializeField] GameObject currencySpawn;
 
     [HideInInspector] public bool plagueDebuff;
     private float plagueDurationTimer;
@@ -75,7 +75,7 @@ public class EnemyHealthManager : MonoBehaviour
     public void Death()
     {
         numberOfActiveEnemies.RuntimeValue -= 1;
-        InstantiateCurrency(CurrencyObj);
+        InstantiateCurrency(currencyObject);
         // InstantiateExpDrop(ExpObj);
 
 
@@ -92,7 +92,7 @@ public class EnemyHealthManager : MonoBehaviour
     public void InstantiateCurrency(GameObject CurrencyObj)
     {
         if (CurrencyObj)
-            Instantiate(CurrencyObj, transform.position, transform.rotation);
+            Instantiate(CurrencyObj, currencySpawn.transform.position, currencySpawn.transform.rotation);
         else
             Debug.Log("no currency Obj added" + gameObject.name);
     }
