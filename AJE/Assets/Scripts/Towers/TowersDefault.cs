@@ -13,6 +13,8 @@ public class TowersDefault : MonoBehaviour
     [SerializeField] public float TowerRadius;
     [SerializeField] public float ActivateEveryX;
 
+
+
     private float baseTowerDamage;
     private float baseTowerRadius;
     private float baseTowerSpeed;
@@ -29,23 +31,39 @@ public class TowersDefault : MonoBehaviour
 
     [SerializeField] protected ParticleSystem pulseFX;
 
+    PowerupSlotManager powerupSlotManager;
+
+    private void Awake()
+    {
+        powerupSlotManager = transform.Find("PowerupSlots").GetComponent<PowerupSlotManager>();
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "DmgPowerup")
         {
-            other.gameObject.SetActive(false);
-            TowerDamage = TowerDamage + other.gameObject.GetComponent<Powerup>().dmgPowerupValueMultiplier * baseTowerDamage / 100;    
+            if (powerupSlotManager.slotsFull)
+                return;
+            powerupSlotManager.AddPowerupToSlot(other.transform);
+            other.transform.GetComponent<BoxCollider>().enabled = false;
+            TowerDamage = TowerDamage + other.gameObject.GetComponent<Powerup>().dmgPowerupValueMultiplier * baseTowerDamage / 100;
         }
-       else if (other.gameObject.tag == "SpeedPowerup")
+        else if (other.gameObject.tag == "SpeedPowerup")
         {
-            other.gameObject.SetActive(false);
+            if (powerupSlotManager.slotsFull)
+                return;
+            powerupSlotManager.AddPowerupToSlot(other.transform);
+            other.transform.GetComponent<BoxCollider>().enabled = false;
             ActivateEveryX = ActivateEveryX - other.gameObject.GetComponent<Powerup>().speedPowerupValueMultiplier * baseTowerSpeed / 100;
             SetTowerEffects();
         }
         else if (other.gameObject.tag == "RangePowerup")
         {
-            other.gameObject.SetActive(false);
+            if (powerupSlotManager.slotsFull)
+                return;
+            powerupSlotManager.AddPowerupToSlot(other.transform);
+            other.transform.GetComponent<BoxCollider>().enabled = false;
             TowerRadius = TowerRadius + other.gameObject.GetComponent<Powerup>().rangePowerupValueMultiplier * baseTowerRadius / 100;
             SetTowerEffects();
         }

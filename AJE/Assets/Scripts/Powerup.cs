@@ -7,5 +7,4 @@ public class Powerup : MonoBehaviour
     public float dmgPowerupValueMultiplier;
     public float speedPowerupValueMultiplier;
     public float rangePowerupValueMultiplier;
-
 }
