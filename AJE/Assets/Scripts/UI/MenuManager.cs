@@ -12,6 +12,9 @@ public class MenuManager : MonoBehaviour
     //[SerializeField] GameObject equipmentScreen;
     [SerializeField] GameObject generalsScreen;
     //[SerializeField] GameObject mapScreen;
+    [SerializeField] GameObject pauseScreen;
+
+    bool paused = false;
 
     public void GoToScene(string level)
     {
@@ -98,5 +101,16 @@ public class MenuManager : MonoBehaviour
         creditsScreen.SetActive(false);
         settingsScreen.SetActive(false);
         mainMenuScreen.SetActive(false);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        pauseScreen.SetActive(true);
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        pauseScreen.SetActive(false);
     }
 }

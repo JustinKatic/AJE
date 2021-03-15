@@ -66,6 +66,36 @@ MonoBehaviour:
     type: 3}
   PlayerHealthDecreasedEvent: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee,
     type: 2}
+--- !u!1 &896518509110834054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7745697672484467833}
+  m_Layer: 10
+  m_Name: CurrencySpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7745697672484467833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896518509110834054}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.71, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6272371319158803756}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2237023977665644274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5431,6 +5461,7 @@ Transform:
   - {fileID: 7412780242009932193}
   - {fileID: 627702398710847026}
   - {fileID: 7659325445273649020}
+  - {fileID: 7745697672484467833}
   m_Father: {fileID: 2106981233647898129}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5529,8 +5560,9 @@ MonoBehaviour:
   ExperienceIncreasedEvent: {fileID: 11400000, guid: cd328e7dc6031ca4fab21d52d603c1ff,
     type: 2}
   IHaveAHealthBar: 1
-  CurrencyObj: {fileID: 669046667064256851, guid: 6e2a3b81f6f5a364d99459ce9ea48b8a,
+  currencyObject: {fileID: 669046667064256851, guid: 6e2a3b81f6f5a364d99459ce9ea48b8a,
     type: 3}
+  currencySpawn: {fileID: 896518509110834054}
   plagueDebuff: 0
   DeathSound: {fileID: 0}
   deathParticle: {fileID: 0}
