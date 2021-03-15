@@ -23115,7 +23115,7 @@ PrefabInstance:
     - target: {fileID: 5748706245952288976, guid: fff823ff67d5b4042a960bbd07200deb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.155
+      value: 6.155
       objectReference: {fileID: 0}
     - target: {fileID: 5748706245952288976, guid: fff823ff67d5b4042a960bbd07200deb,
         type: 3}
@@ -28470,6 +28470,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2e57b630e2e2afa47b127f555088ad72, type: 2}
+    - target: {fileID: 871916434428123677, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: activateRangeEnviroment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 894534709810631060, guid: 2a2db9b688fcc4d449b2135727f8e035,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1208155663231589020, guid: 2a2db9b688fcc4d449b2135727f8e035,
         type: 3}
       propertyPath: m_Name
@@ -34486,7 +34496,7 @@ PrefabInstance:
     - target: {fileID: 5204839199529683687, guid: 1f19ee28ae4381942ab47f661d4ad5e4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7502879642037135932, guid: 1f19ee28ae4381942ab47f661d4ad5e4,
         type: 3}
@@ -34551,7 +34561,7 @@ PrefabInstance:
     - target: {fileID: 8569092956426990158, guid: 1f19ee28ae4381942ab47f661d4ad5e4,
         type: 3}
       propertyPath: activateRangeEnviroment
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f19ee28ae4381942ab47f661d4ad5e4, type: 3}
@@ -49593,7 +49603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &761201000
 Transform:
   m_ObjectHideFlags: 0
