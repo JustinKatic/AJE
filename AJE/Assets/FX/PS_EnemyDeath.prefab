@@ -1557,7 +1557,7 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
+          value: -1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1964,30 +1964,39 @@ ParticleSystem:
         m_RotationOrder: 4
     radial:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: -4
+      minMaxState: 1
+      scalar: 4
       minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
+          value: 0.000002026558
+          inSlope: 0.1029657
+          outSlope: 0.1029657
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0.34300315
+        - serializedVersion: 3
+          time: 0.12294174
+          value: 0.34366247
+          inSlope: -0.015647618
+          outSlope: -0.015647618
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.23260318
+          outWeight: 0.13774256
         - serializedVersion: 3
           time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
+          value: -1
+          inSlope: -0.2505545
+          outSlope: -0.2505545
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0.2572997
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -2018,7 +2027,7 @@ ParticleSystem:
     speedModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2068,7 +2077,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    inWorldSpace: 0
+    inWorldSpace: 1
   InheritVelocityModule:
     enabled: 0
     m_Mode: 0
