@@ -8,6 +8,10 @@ public class EquipUnequipTower : MonoBehaviour
     [SerializeField] GameObject myTowerInSelection;
     [SerializeField] GameObject myResourceMenu;
 
+    [SerializeField] GameObject equipButton;
+    [SerializeField] GameObject unEquipButton;
+
+
     [SerializeField] BoolVariable myTowerActiveState;
 
 
@@ -27,13 +31,20 @@ public class EquipUnequipTower : MonoBehaviour
     public void Slot1SelectedTrue()
     {
         slot1Selected = true;
+        slot2Selected = false;
+        slot3Selected = false;
+
     }
     public void Slot2SelectedTrue()
     {
+        slot1Selected = false;
         slot2Selected = true;
+        slot3Selected = false;
     }
     public void Slot3SelectedTrue()
     {
+        slot1Selected = false;
+        slot2Selected = false;
         slot3Selected = true;
     }
 
@@ -47,6 +58,7 @@ public class EquipUnequipTower : MonoBehaviour
             towerSlots1.slotEquiped = true;
             myTowerActiveState.Value = true;
             myResourceMenu.SetActive(false);
+            equipButton.SetActive(false);
         }
         else if (!towerSlots2.slotEquiped)
         {
@@ -55,6 +67,7 @@ public class EquipUnequipTower : MonoBehaviour
             towerSlots2.slotEquiped = true;
             myTowerActiveState.Value = true;
             myResourceMenu.SetActive(false);
+            equipButton.SetActive(false);
         }
         else if (!towerSlots3.slotEquiped)
         {
@@ -63,6 +76,7 @@ public class EquipUnequipTower : MonoBehaviour
             towerSlots3.slotEquiped = true;
             myTowerActiveState.Value = true;
             myResourceMenu.SetActive(false);
+            equipButton.SetActive(false);
         }
     }
 
@@ -70,22 +84,32 @@ public class EquipUnequipTower : MonoBehaviour
     public void UnEquip()
     {
         if (slot1Selected)
+        {
+            myTowerActiveState.Value = false;
+            myTowerInSelection.SetActive(true);
+            towerSlots1.slotEquiped = false;
             myTowerInSlot1.SetActive(false);
+            myResourceMenu.SetActive(false);
+            unEquipButton.SetActive(false);
+        }
+        else if (slot2Selected)
+        {
+            myTowerActiveState.Value = false;
+            myTowerInSelection.SetActive(true);
+            towerSlots2.slotEquiped = false;
+            myTowerInSlot2.SetActive(false);
+            myResourceMenu.SetActive(false);
+            unEquipButton.SetActive(false);
+        }
+        else if (slot3Selected)
+        {
+            myTowerActiveState.Value = false;
+            myTowerInSelection.SetActive(true);
+            towerSlots3.slotEquiped = false;
+            myTowerInSlot3.SetActive(false);
+            myResourceMenu.SetActive(false);
+            unEquipButton.SetActive(false);
+        }
     }
-
-    public void Slot2Selected()
-    {
-        slot2Selected = true;
-        myTowerInSlot2.SetActive(false);
-
-    }
-
-    public void Slot3Selected()
-    {
-        slot3Selected = true;
-        myTowerInSlot3.SetActive(false);
-    }
-
-
 }
 

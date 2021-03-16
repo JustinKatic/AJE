@@ -167,14 +167,13 @@ GameObject:
   - component: {fileID: 9166310862314217339}
   - component: {fileID: 9166310862314217338}
   - component: {fileID: 9166310862314217333}
-  - component: {fileID: 1616196635}
   m_Layer: 5
   m_Name: Equip Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9166310862314217332
 RectTransform:
   m_ObjectHideFlags: 0
@@ -274,8 +273,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1616196635}
-        m_MethodName: EquipDamageTower
+      - m_Target: {fileID: 0}
+        m_MethodName: EquipTower
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -285,22 +284,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1616196635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9166310862314217335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd2a367e0911ae4d9a1f6a8cd56f50f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTowerInSelection: {fileID: 0}
-  myTowerInSlot1: {fileID: 0}
-  myTowerInSlot2: {fileID: 0}
-  myTowerInSlot3: {fileID: 0}
-  towerSlots1: {fileID: 0}
-  towerSlots2: {fileID: 0}
-  towerSlots3: {fileID: 0}
+      - m_Target: {fileID: 9166310862314217335}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
