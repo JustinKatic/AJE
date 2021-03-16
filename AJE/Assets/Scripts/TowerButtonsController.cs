@@ -15,8 +15,7 @@ public class TowerButtonsController : MonoBehaviour
     [SerializeField] BoolVariable isPlagueButtonActive;
     [SerializeField] BoolVariable isVamparicButtonActive;
 
-
-    private void Start()
+    private void OnEnable()
     {
         //DAMAGE TOWER BUTTON  set active/notActive
         if (isDmgButtonActive.Value)
@@ -41,7 +40,6 @@ public class TowerButtonsController : MonoBehaviour
             vamparicTowerButton.SetActive(true);
         else
             vamparicTowerButton.SetActive(false);
-
-
     }
+
 }

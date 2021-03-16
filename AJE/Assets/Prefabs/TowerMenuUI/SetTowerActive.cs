@@ -11,8 +11,4 @@ public class SetTowerActive : MonoBehaviour
         myTowerActiveState.Value = true;
     }
 
-    private void OnDisable()
-    {
-        myTowerActiveState.Value = false;
-    }
 }
