@@ -108,7 +108,7 @@ public class EnemyHealthManager : MonoBehaviour
     public void InstantiateDeathParticle(GameObject deathParticle)
     {
         if (deathParticle)
-            Instantiate(deathParticle, model.transform.position, transform.rotation);
+            Instantiate(deathParticle, currencySpawn.transform.position, transform.rotation);
         else
             Debug.Log("no deathParticle Obj added" + gameObject.name);
     }
