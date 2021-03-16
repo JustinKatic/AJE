@@ -23727,6 +23727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2114296545}
   - component: {fileID: 2114296546}
+  - component: {fileID: 2114296547}
   m_Layer: 5
   m_Name: UpgradeSlot1 (1)
   m_TagString: Untagged
@@ -23782,6 +23783,14 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2114296547
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114296544}
+  m_CullTransparentMesh: 0
 --- !u!1 &2116305097
 GameObject:
   m_ObjectHideFlags: 0
