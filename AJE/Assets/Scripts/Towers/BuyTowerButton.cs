@@ -26,7 +26,7 @@ public class BuyTowerButton : MonoBehaviour
         ObjPurchasingTower = GameObject.FindGameObjectWithTag(TagOfObjectPurchasingTower.Value);
         BuyButton = gameObject.GetComponent<Button>();
         BuyButton.interactable = false;
-        ButtonText.text = TowerName + "\nTower" + "\n$" + TowerCost;
+        ButtonText.text = /*TowerName + "\nTower" + "\n$" +*/ TowerCost + " ";
     }
 
     void Update()
