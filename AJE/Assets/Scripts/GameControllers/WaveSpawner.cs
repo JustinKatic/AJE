@@ -154,7 +154,7 @@ public class WaveSpawner : MonoBehaviour
         Transform _sp = spawnPoints[_currentEnemy].transform;
 
         GameObject enemy = ObjectPooler.SharedInstance.GetPooledObject(_enemy.name);
-        enemy.transform.position = _sp.position;
+        enemy.transform.position = new Vector3 (_sp.position.x, _sp.position.y-0.95f, _sp.position.z);
         enemy.SetActive(true);
         NumberOfActiveEnemies.RuntimeValue += 1;
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PowerUpManager : MonoBehaviour
 {
 
-    [SerializeField] GameObject[] powerUps;
+    [SerializeField] List <GameObject> powerUps;
 
     private GameObject[] listOfActiveShrines;
 
@@ -16,9 +16,12 @@ public class PowerUpManager : MonoBehaviour
         if (listOfActiveShrines.Length > 0)
         {
             int randShrine = Random.Range(0, listOfActiveShrines.Length - 1);
-            int randPowerup = Random.Range(0, powerUps.Length - 1);
-            if (powerUps.Length > 0)
+            int randPowerup = Random.Range(0, powerUps.Count - 1);
+            if (powerUps.Count > 0)
+            {
                 listOfActiveShrines[randShrine].GetComponent<Shrine>().SpawnObj(powerUps[randPowerup]);
+                powerUps.RemoveAt(randPowerup);
+            }
         }
     }
 }
