@@ -72897,50 +72897,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: ShrinesToActivateWithFog2.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: ShrinesToActivateWithFog3.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: ShrinesToActivateWithFog4.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: ShrinesToActivateWithFog5.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: ShrinesToActivateWithFog6.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: ShrinesToActivateWithFog7.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: ShrinesToActivateWithFog8.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: SpawnPointsToActivateWithFog3.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: SpawnPointsToActivateWithFog4.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: SpawnPointsToActivateWithFog5.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: SpawnPointsToActivateWithFog8.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: fog1
       value: 
       objectReference: {fileID: 1600939174}
@@ -72985,13 +72941,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1120988197}
     - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: SpawnPointsToActivateWithFog3.Array.data[1]
-      value: 
-      objectReference: {fileID: 1809591030}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: SpawnPointsToActivateWithFog4.Array.data[0]
       value: 
       objectReference: {fileID: 1809591030}
+    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: SpawnPointsToActivateWithFog4.Array.data[1]
+      value: 
+      objectReference: {fileID: 1588366438}
+    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: SpawnPointsToActivateWithFog5.Array.data[0]
+      value: 
+      objectReference: {fileID: 1823141072}
     - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: SpawnPointsToActivateWithFog6.Array.data[0]
       value: 
@@ -73000,6 +72960,10 @@ PrefabInstance:
       propertyPath: SpawnPointsToActivateWithFog7.Array.data[0]
       value: 
       objectReference: {fileID: 1361451893}
+    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: SpawnPointsToActivateWithFog8.Array.data[0]
+      value: 
+      objectReference: {fileID: 903334168}
     - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: ShrinesToActivateWithFog1.Array.data[0]
       value: 
@@ -73024,51 +72988,6 @@ PrefabInstance:
       propertyPath: ShrinesToActivateWithFog8.Array.data[0]
       value: 
       objectReference: {fileID: 1708505910}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: RemoveFog1AtWaveX
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: RemoveFog2AtWaveX
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: RemoveFog3AtWaveX
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: RemoveFog4AtWaveX
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: RemoveFog5AtWaveX
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: RemoveFog6AtWaveX
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: RemoveFog7AtWaveX
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: SpawnPointsToActivateWithFog4.Array.data[1]
-      value: 
-      objectReference: {fileID: 1588366438}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: SpawnPointsToActivateWithFog5.Array.data[0]
-      value: 
-      objectReference: {fileID: 1823141072}
-    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: SpawnPointsToActivateWithFog8.Array.data[0]
-      value: 
-      objectReference: {fileID: 903334168}
-    - target: {fileID: 1418784550, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
-      propertyPath: ActiveEnemies
-      value: 
-      objectReference: {fileID: 11400000, guid: ee5a4a18baf440f439927bc50c8d16f3,
-        type: 2}
     - target: {fileID: 1565805855, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: fpsText
       value: 
