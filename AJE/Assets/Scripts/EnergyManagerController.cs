@@ -98,7 +98,7 @@ public class EnergyManagerController : MonoBehaviour
         }
 
         TimeSpan t = nextEnergyTime - DateTime.Now;
-        string value = string.Format("{0}:{1:D2}:{2:D2}", (int)t.TotalHours, t.Minutes, t.Seconds);
+        string value = string.Format("{1:D2}:{2:D2}", (int)t.TotalHours, t.Minutes, t.Seconds);
         textTimer.text = value;
     }
     private void UpdateEnergy()
