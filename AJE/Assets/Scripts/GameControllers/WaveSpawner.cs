@@ -151,7 +151,8 @@ public class WaveSpawner : MonoBehaviour
     {
         GameObject[] spawnPoints;
         spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoints");
-        Transform _sp = spawnPoints[_currentEnemy].transform;
+        int randSpawnPoint = Random.Range(0, spawnPoints.Length -1);
+        Transform _sp = spawnPoints[randSpawnPoint].transform;
 
         GameObject enemy = ObjectPooler.SharedInstance.GetPooledObject(_enemy.name);
         enemy.transform.position = new Vector3 (_sp.position.x, _sp.position.y-0.95f, _sp.position.z);
