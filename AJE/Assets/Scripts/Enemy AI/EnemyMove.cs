@@ -25,6 +25,8 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] float FindTowerRadiusCheck;
     [SerializeField] LayerMask TowerLayerMask;
 
+    [SerializeField] float distanceOffset;
+
 
     protected virtual void OnEnable()
     {
@@ -48,10 +50,13 @@ public class EnemyMove : MonoBehaviour
 
     void CheckForCloseTowers()
     {
+        float dist = Vector3.Distance(transform.position, player.transform.position);
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, FindTowerRadiusCheck, TowerLayerMask);
 
-        if (hitColliders.Length >= 1)
-            targetDestination = hitColliders[0].transform;
+        if (hitColliders.Length >= 1 && dist > distanceOffset)
+        {
+                targetDestination = hitColliders[0].transform;
+        }
         else
             targetDestination = player.transform;
     }

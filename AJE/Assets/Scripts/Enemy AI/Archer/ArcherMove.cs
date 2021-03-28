@@ -44,6 +44,7 @@ public class ArcherMove : EnemyMove
             {
                 navMeshAgent.velocity = Vector3.zero;
                 navMeshAgent.isStopped = true;
+                LookTowards();
             }
             if (dist < MyAttackRange)
             {
