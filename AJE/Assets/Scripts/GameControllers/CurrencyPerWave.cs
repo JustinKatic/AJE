@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CurrencyPerWave : MonoBehaviour
 {
+    private void Start()
+    {
+        
+    }
 
     [System.Serializable]
     public class Wave

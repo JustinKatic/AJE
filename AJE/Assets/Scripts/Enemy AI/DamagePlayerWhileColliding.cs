@@ -12,9 +12,15 @@ public class DamagePlayerWhileColliding : MonoBehaviour
     [SerializeField] GameObject floatingDmg;
     [SerializeField] GameEvent PlayerHealthDecreasedEvent;
 
+
+
     private void Start()
     {
         _timer = _CollidingDamageEveryX;
+    }
+    private void OnEnable()
+    {
+
     }
 
     public void FloatingTxt(float damage, Transform transformToSpawnTxtAt, string type, Color32 color)
@@ -36,8 +42,18 @@ public class DamagePlayerWhileColliding : MonoBehaviour
             if (_timer > _CollidingDamageEveryX)
             {
                 playersCurrentHealth.RuntimeValue -= _damage;
-                FloatingTxt(_damage, other.transform,"-",Color.red);
+                FloatingTxt(_damage, other.transform, "-", Color.red);
                 PlayerHealthDecreasedEvent.Raise();
+                _timer = 0.0f;
+            }
+        }
+        else if (other.gameObject.tag == "DamageableTower")
+        {
+            _timer += Time.deltaTime;
+            if (_timer > _CollidingDamageEveryX)
+            {
+                FloatingTxt(_damage, other.transform, "-", Color.red);
+                other.gameObject.GetComponent<TowerHealth>().HurtEnemy(_damage);
                 _timer = 0.0f;
             }
         }
@@ -45,7 +61,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "DamageableTower")
         {
             _timer = _CollidingDamageEveryX;
         }

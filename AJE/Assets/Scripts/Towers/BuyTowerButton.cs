@@ -6,7 +6,7 @@ using TMPro;
 
 public class BuyTowerButton : MonoBehaviour
 {
-    [SerializeField] float TowerCost;
+   // [SerializeField] float TowerCost;
     [SerializeField] FloatVariable PlayerInGameCurrency;
     [SerializeField] TextMeshProUGUI ButtonText;
     [SerializeField] string TowerName;
@@ -17,6 +17,10 @@ public class BuyTowerButton : MonoBehaviour
     [SerializeField] GameEvent UpdateCurrency;
     [SerializeField] LayerMask notBuildable;
 
+    [SerializeField] FloatVariable myTowerCost;
+
+
+
 
 
     private Button BuyButton;
@@ -26,12 +30,12 @@ public class BuyTowerButton : MonoBehaviour
         ObjPurchasingTower = GameObject.FindGameObjectWithTag(TagOfObjectPurchasingTower.Value);
         BuyButton = gameObject.GetComponent<Button>();
         BuyButton.interactable = false;
-        ButtonText.text = /*TowerName + "\nTower" + "\n$" +*/ TowerCost + " ";
+        ButtonText.text = /*TowerName + "\nTower" + "\n$" +*/ myTowerCost.Value + " ";
     }
 
     void Update()
     {
-        if (PlayerInGameCurrency.RuntimeValue >= TowerCost)
+        if (PlayerInGameCurrency.RuntimeValue >= myTowerCost.Value)
         {
             BuyButton.interactable = true;
         }
@@ -59,6 +63,8 @@ public class BuyTowerButton : MonoBehaviour
                          hit.collider.gameObject.transform.position.z),
                          hit.collider.gameObject.transform.rotation);
 
+
+
                     TowersDefault tower = towerSpawned.GetComponent<TowersDefault>();
                     ActiveEnviromentSquare enviromentSquare = hit.collider.gameObject.GetComponent<ActiveEnviromentSquare>();
 
@@ -75,7 +81,7 @@ public class BuyTowerButton : MonoBehaviour
 
                     tower.SetTowerEffects();
                     buildable._hasAreaBeenBuiltOn = true;
-                    PlayerInGameCurrency.RuntimeValue -= TowerCost;
+                    PlayerInGameCurrency.RuntimeValue -= myTowerCost.Value;
                     UpdateCurrency.Raise();
                 }
             }

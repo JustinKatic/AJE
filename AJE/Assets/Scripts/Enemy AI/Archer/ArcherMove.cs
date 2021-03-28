@@ -5,6 +5,8 @@ using UnityEngine;
 public class ArcherMove : EnemyMove
 {
     [SerializeField] float MyAttackRange;
+    [SerializeField] float myFollowRange;
+
     private ArcherShoot archerShoot;
 
     bool shootState;
@@ -18,8 +20,10 @@ public class ArcherMove : EnemyMove
         archerShoot = gameObject.GetComponent<ArcherShoot>();
     }
 
-    private void OnEnable()
+
+    protected override void OnEnable()
     {
+        base.OnEnable();
         followTargetState = true;
         shootCooldownTimer = shootCooldown;
     }
@@ -27,12 +31,20 @@ public class ArcherMove : EnemyMove
     {
         float dist = Vector3.Distance(transform.position, targetDestination.position);
 
-
         if (followTargetState)
         {
             navMeshAgent.isStopped = false;
-            navMeshAgent.SetDestination(targetDestination.position);
 
+            if (dist > myFollowRange)
+            {
+                navMeshAgent.SetDestination(targetDestination.position);
+                navMeshAgent.isStopped = false;
+            }
+            else
+            {
+                navMeshAgent.velocity = Vector3.zero;
+                navMeshAgent.isStopped = true;
+            }
             if (dist < MyAttackRange)
             {
                 if (archerShoot.shootReady)
@@ -48,7 +60,6 @@ public class ArcherMove : EnemyMove
                 shootCooldownTimer = shootCooldown;
                 archerShoot.shootReady = true;
             }
-
         }
 
         if (shootState)
@@ -59,6 +70,7 @@ public class ArcherMove : EnemyMove
             if (archerShoot.shootReady == true)
             {
                 archerShoot.CanShoot = true;
+                LookTowards();
             }
             if (archerShoot.shootReady == false)
             {

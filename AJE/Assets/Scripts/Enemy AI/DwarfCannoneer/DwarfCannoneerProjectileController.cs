@@ -6,9 +6,15 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
 {
     Vector3 targetPos;
     [SerializeField] float ExplosionRadius;
-    [SerializeField] LayerMaskVariable ObjAffectsByExplosion;
+    [SerializeField] LayerMask Player;
+    [SerializeField] LayerMask AttackableTower;
+
     [SerializeField] GameObject Explosion;
     CameraShake camShake;
+
+    [SerializeField] float FindTowerRadiusCheck;
+
+    GameObject player;
 
     private void Start()
     {
@@ -17,7 +23,14 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
 
     private void OnEnable()
     {
-        targetPos = GameObject.FindGameObjectWithTag(TagOfObjectCanHit.Value).transform.position;
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, FindTowerRadiusCheck, AttackableTower);
+
+        if (hitColliders.Length >= 1)
+            targetPos = hitColliders[0].transform.position;
+        else
+            targetPos = player.transform.position;
     }
 
     protected override void MoveBullet()
@@ -26,13 +39,20 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
 
         if (Vector3.Distance(transform.position, targetPos) < 0.2f)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, ExplosionRadius, ObjAffectsByExplosion.Value);
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, ExplosionRadius, Player | AttackableTower);
             int i = 0;
             while (i < hitColliders.Length)
-            {
-                UpdatePlayerHealthEvent.Raise();
-                PlayerCurrentHp.RuntimeValue -= _damage;
-                FloatingTxt(_damage, hitColliders[0].transform);
+            {               
+                if (hitColliders[i].gameObject.layer == LayerMask.NameToLayer("Player"))
+                {
+                    PlayerCurrentHp.RuntimeValue -= _damage;
+                    UpdatePlayerHealthEvent.Raise();
+                    FloatingTxt(_damage, hitColliders[0].transform);
+                }
+                else if (hitColliders[i].gameObject.layer == LayerMask.NameToLayer("AttackableTower"))
+                {
+                    hitColliders[i].GetComponent<TowerHealth>().HurtEnemy(_damage);
+                }
                 i++;
             }
             SetUnActive();
@@ -41,7 +61,7 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
     protected override void SetUnActive()
     {
         camShake.CamShake();
-        Instantiate(Explosion, transform.position, Quaternion.Euler(-90, transform.rotation.y, transform.rotation.z));       
+        Instantiate(Explosion, transform.position, Quaternion.Euler(-90, transform.rotation.y, transform.rotation.z));
         base.SetUnActive();
     }
 

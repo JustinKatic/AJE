@@ -133,7 +133,15 @@ MonoBehaviour:
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
   ExplosionRadius: 1.5
-  ObjAffectsByExplosion: {fileID: 11400000, guid: 18b34321b11fb0248b953cf187cd84f8,
-    type: 2}
+  Player:
+    serializedVersion: 2
+    m_Bits: 256
+  AttackableTower:
+    serializedVersion: 2
+    m_Bits: 65536
   Explosion: {fileID: 6662740089847281203, guid: 5a1efc4b2857ad040983987f8734505c,
     type: 3}
+  FindTowerRadiusCheck: 4
+  TowerLayerMask:
+    serializedVersion: 2
+    m_Bits: 65536

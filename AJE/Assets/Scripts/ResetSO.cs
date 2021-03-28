@@ -7,6 +7,7 @@ public class ResetSO : MonoBehaviour
     [SerializeField] FloatVariable playerInGameCurrency;
     [SerializeField] FloatVariable ActiveEnemies;
 
+
     [SerializeField] IntVariable nextWave;
 
     [SerializeField] GameEvent UpdateCurrency;

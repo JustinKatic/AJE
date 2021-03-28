@@ -10,49 +10,58 @@ public class EnemyMove : MonoBehaviour
     protected Transform targetDestination;
 
     [SerializeField] protected float MyMoveSpeed;
-    [SerializeField] StringVariable TagOfTargetDestination;
     [SerializeField] protected float LookTowardsSpeed;
     protected float _slowTowerDuration;
     protected float _slowAmount;
     [SerializeField] GameObject slowEffect;
 
 
-
     [HideInInspector] protected bool _slowDebuff;
     private float _slowDurationTimer;
 
+    GameObject player;
+    // [SerializeField] ListOfTransforms ListOfActiveTowers;
+
+    [SerializeField] float FindTowerRadiusCheck;
+    [SerializeField] LayerMask TowerLayerMask;
+
+
+    protected virtual void OnEnable()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        targetDestination = player.transform;
+        _slowDebuff = false;
+        SetEnemyMoveSpeed(MyMoveSpeed);
+        InvokeRepeating("CheckForCloseTowers", 0, 0.5f);
+    }
+
     void Start()
     {
-        GetTargetPos();
         GetNavComponent();
     }
     private void Update()
     {
         SlowDebuff();
+
         Move();
     }
 
-
-    public void GetTargetPos()
+    void CheckForCloseTowers()
     {
-        targetDestination = GameObject.FindGameObjectWithTag(TagOfTargetDestination.Value).transform;
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, FindTowerRadiusCheck, TowerLayerMask);
+
+        if (hitColliders.Length >= 1)
+            targetDestination = hitColliders[0].transform;
+        else
+            targetDestination = player.transform;
     }
+
 
     public void GetNavComponent()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    //private void OnDisable()
-    //{    
-    //    SetEnemyMoveSpeed(MyMoveSpeed);
-    //}
-
-    private void OnEnable()
-    {
-        _slowDebuff = false;
-        SetEnemyMoveSpeed(MyMoveSpeed);
-    }
     public virtual void Move()
     {
         navMeshAgent.SetDestination(targetDestination.position);
@@ -103,5 +112,11 @@ public class EnemyMove : MonoBehaviour
             var rotation = Quaternion.LookRotation(lookPos);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * LookTowardsSpeed);
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, FindTowerRadiusCheck);
     }
 }

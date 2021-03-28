@@ -28,8 +28,9 @@ public class BirdMove : EnemyMove
     public float ChargeMultipler;
 
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         fleeTimer = fleeForX;
         hoverToPlayer = true;
     }

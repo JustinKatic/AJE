@@ -9,7 +9,7 @@ public class PowerupRotate : MonoBehaviour
     PowerupSlotManager powerupSlotManager;
     private void Awake()
     {
-        powerupSlotManager = gameObject.GetComponent<PowerupSlotManager>();
+        powerupSlotManager = gameObject.GetComponentInParent<PowerupSlotManager>();
     }
     void Update()
     {

@@ -10,7 +10,6 @@ public class EnemyProjectileController : MonoBehaviour
     [SerializeField] protected float _bulletLife;
     [SerializeField] protected float _damage;
 
-    [SerializeField] protected StringVariable TagOfObjectCanHit;
     [SerializeField] protected GameEvent UpdatePlayerHealthEvent;
     [SerializeField] protected FloatVariable PlayerCurrentHp;
 
@@ -46,11 +45,4 @@ public class EnemyProjectileController : MonoBehaviour
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
         points.SetActive(true);
     }
-
-    //virtual protected void FloatingText(float damage, Vector3 ObjPos)
-    //{
-    //    GameObject points = Instantiate(floatingDmg, ObjPos, Quaternion.identity);
-    //    points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "-" + damage.ToString();
-    //}
-
 }

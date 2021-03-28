@@ -14,7 +14,6 @@ public class TowersDefault : MonoBehaviour
     [SerializeField] public float ActivateEveryX;
 
 
-
     private float baseTowerDamage;
     private float baseTowerRadius;
     private float baseTowerSpeed;
@@ -25,7 +24,7 @@ public class TowersDefault : MonoBehaviour
         baseTowerRadius = TowerRadius;
         baseTowerSpeed = ActivateEveryX;
 
-        powerupSlotManager = transform.Find("PowerupSlots").GetComponent<PowerupSlotManager>();
+        powerupSlotManager = gameObject.GetComponent<PowerupSlotManager>();
     }
 
 

@@ -5027,11 +5027,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 7650035559107353574}
   MyMoveSpeed: 5
-  TagOfTargetDestination: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
-    type: 2}
   LookTowardsSpeed: 15
   slowEffect: {fileID: 8699856903649980464}
+  FindTowerRadiusCheck: 3
+  TowerLayerMask:
+    serializedVersion: 2
+    m_Bits: 65536
   MyAttackRange: 5
+  myFollowRange: 5
   shootCooldown: 3
 --- !u!54 &2587712376351424755
 Rigidbody:
