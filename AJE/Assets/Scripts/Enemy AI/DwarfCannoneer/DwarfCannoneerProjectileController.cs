@@ -51,7 +51,7 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
                 }
                 else if (hitColliders[i].gameObject.layer == LayerMask.NameToLayer("AttackableTower"))
                 {
-                    hitColliders[i].GetComponent<TowerHealth>().HurtEnemy(_damage);
+                    hitColliders[i].GetComponent<TowerHealth>().HurtEnemy(_damage,true);
                 }
                 i++;
             }

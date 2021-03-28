@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4790777007662496898}
   - component: {fileID: 1996866756845515420}
   - component: {fileID: -5360624007063189015}
+  - component: {fileID: -693549632891616138}
   m_Layer: 0
   m_Name: PF_Tower_Slow
   m_TagString: Untagged
@@ -152,6 +153,20 @@ MonoBehaviour:
   myTowerCost: {fileID: 11400000, guid: 9f86daf19463066499f4c26d63944565, type: 2}
   inGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784, type: 2}
   UpdateCurrency: {fileID: 11400000, guid: 2f71996132135704393c935fa3e11c94, type: 2}
+--- !u!114 &-693549632891616138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083839064653945643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c879dfefecc3a71489b4f87787e5f23e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 50
+  _damageEveryXSeconds: 1
 --- !u!1 &2252979327598666942
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,15 +843,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3e0ad5eb2b102144baeb66b6e70f282, type: 3}
---- !u!4 &2377099253140753568 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 557166638606675281, guid: d3e0ad5eb2b102144baeb66b6e70f282,
-    type: 3}
-  m_PrefabInstance: {fileID: 2830040908141191665}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &4855825740246180063 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 7216183867747991854, guid: d3e0ad5eb2b102144baeb66b6e70f282,
+    type: 3}
+  m_PrefabInstance: {fileID: 2830040908141191665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2377099253140753568 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 557166638606675281, guid: d3e0ad5eb2b102144baeb66b6e70f282,
     type: 3}
   m_PrefabInstance: {fileID: 2830040908141191665}
   m_PrefabAsset: {fileID: 0}

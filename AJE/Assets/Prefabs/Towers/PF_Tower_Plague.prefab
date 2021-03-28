@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 8092609877165080987}
   - component: {fileID: 4201427928595886646}
   - component: {fileID: 7230994407335477459}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 6660145900951228166}
   - component: {fileID: 4946890592251375258}
   - component: {fileID: 2142440867465496272}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: EnemyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,9 +352,10 @@ GameObject:
   - component: {fileID: 4981055773086995023}
   - component: {fileID: 4084899586482976620}
   - component: {fileID: 2623608131298937068}
-  m_Layer: 16
+  - component: {fileID: 4757117904819955320}
+  m_Layer: 0
   m_Name: PF_Tower_Plague
-  m_TagString: DamageableTower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -460,6 +461,20 @@ MonoBehaviour:
   myTowerCost: {fileID: 11400000, guid: d9797e0c3c925a14291c3a3de950c994, type: 2}
   inGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784, type: 2}
   UpdateCurrency: {fileID: 11400000, guid: 2f71996132135704393c935fa3e11c94, type: 2}
+--- !u!114 &4757117904819955320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5875444475641572519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c879dfefecc3a71489b4f87787e5f23e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 50
+  _damageEveryXSeconds: 1
 --- !u!1 &6357934683606486935
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +516,7 @@ GameObject:
   - component: {fileID: 6524145096288821217}
   - component: {fileID: 3573702301968539815}
   - component: {fileID: 4038652031578957207}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +648,7 @@ GameObject:
   - component: {fileID: 4578039836755770434}
   - component: {fileID: 4920433648297711169}
   - component: {fileID: 2263511206279851248}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,15 +779,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2bf52bde206f3e46b757e789d52f3e3, type: 3}
---- !u!198 &5788911225474807059 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7216183867747991854, guid: d2bf52bde206f3e46b757e789d52f3e3,
-    type: 3}
-  m_PrefabInstance: {fileID: 3779453469819434045}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3731272917899352428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 557166638606675281, guid: d2bf52bde206f3e46b757e789d52f3e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3779453469819434045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5788911225474807059 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7216183867747991854, guid: d2bf52bde206f3e46b757e789d52f3e3,
     type: 3}
   m_PrefabInstance: {fileID: 3779453469819434045}
   m_PrefabAsset: {fileID: 0}

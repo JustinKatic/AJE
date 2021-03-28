@@ -37,10 +37,11 @@ public class TowerHealth : MonoBehaviour
             Death();
     }
 
-    public void HurtEnemy(float damage)
+    public void HurtEnemy(float damage, bool displayDmg)
     {
         _currentHealth -= damage;
-        FloatingTxt(damage, transform, "-", Color.white);
+        if (displayDmg)
+            FloatingTxt(damage, transform, "-", Color.white);
         if (IHaveAHealthBar)
             healthBar.SetHealth(_currentHealth);
     }

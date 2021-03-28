@@ -53,7 +53,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
             if (_timer > _CollidingDamageEveryX)
             {
                 FloatingTxt(_damage, other.transform, "-", Color.red);
-                other.gameObject.GetComponent<TowerHealth>().HurtEnemy(_damage);
+                other.gameObject.GetComponent<TowerHealth>().HurtEnemy(_damage, true);
                 _timer = 0.0f;
             }
         }

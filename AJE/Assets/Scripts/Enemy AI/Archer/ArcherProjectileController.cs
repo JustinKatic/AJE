@@ -16,7 +16,7 @@ public class ArcherProjectileController : EnemyProjectileController
         }
         else if(other.gameObject.tag == "DamageableTower")
         {
-            other.GetComponent<TowerHealth>().HurtEnemy(_damage);
+            other.GetComponent<TowerHealth>().HurtEnemy(_damage,true);
             SetUnActive();
         }
 
