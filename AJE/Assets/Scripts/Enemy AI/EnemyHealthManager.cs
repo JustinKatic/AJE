@@ -121,9 +121,10 @@ public class EnemyHealthManager : MonoBehaviour
             plagueTickTimer += Time.deltaTime;
             plagueDurationTimer += Time.deltaTime;
 
+
             if (plagueTickTimer > plagueTickRate)
             {
-                HurtEnemy(plagueTickDamage);
+                HurtEnemy(plagueTickDamage);          
                 FloatingTxt(plagueTickDamage, transform, "-", Color.white);
                 plagueTickTimer = 0;
             }
@@ -141,7 +142,6 @@ public class EnemyHealthManager : MonoBehaviour
     {
         plagueDebuff = true;
         plagueDurationTimer = 0;
-        plagueTickTimer = 0;
         plagueTickDamage = tickDmg;
         plagueTickRate = tickrate;
         plagueDebuffDuration = duration;
