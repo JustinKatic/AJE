@@ -366,7 +366,6 @@ GameObject:
   - component: {fileID: 6140582864606889210}
   - component: {fileID: 7846223766183997293}
   - component: {fileID: 4792904809847559535}
-  - component: {fileID: -8773282552756548940}
   m_Layer: 16
   m_Name: PF_Tower_Damage
   m_TagString: DamageableTower
@@ -473,19 +472,6 @@ MonoBehaviour:
   myTowerCost: {fileID: 11400000, guid: c5b5039a580de2b42b1af20e8de31d99, type: 2}
   inGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784, type: 2}
   UpdateCurrency: {fileID: 11400000, guid: 2f71996132135704393c935fa3e11c94, type: 2}
---- !u!65 &-8773282552756548940
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4333854907648893736}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 6.24, z: 2}
-  m_Center: {x: 0, y: 3.24, z: 0}
 --- !u!114 &7018452789864833547
 MonoBehaviour:
   m_ObjectHideFlags: 0
