@@ -78,8 +78,6 @@ public class ArcherMove : EnemyMove
                 shootState = false;
                 followTargetState = true;
             }
-
         }
-
     }
 }

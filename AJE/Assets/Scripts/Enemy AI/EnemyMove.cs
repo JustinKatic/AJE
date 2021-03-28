@@ -22,7 +22,7 @@ public class EnemyMove : MonoBehaviour
     GameObject player;
     // [SerializeField] ListOfTransforms ListOfActiveTowers;
 
-    [SerializeField] float FindTowerRadiusCheck;
+    [SerializeField] FloatVariable EnemyLureToTowerRange;
     [SerializeField] LayerMask TowerLayerMask;
 
     [SerializeField] float distanceOffset;
@@ -51,11 +51,11 @@ public class EnemyMove : MonoBehaviour
     void CheckForCloseTowers()
     {
         float dist = Vector3.Distance(transform.position, player.transform.position);
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, FindTowerRadiusCheck, TowerLayerMask);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, EnemyLureToTowerRange.Value, TowerLayerMask);
 
         if (hitColliders.Length >= 1 && dist > distanceOffset)
         {
-                targetDestination = hitColliders[0].transform;
+            targetDestination = hitColliders[0].transform;
         }
         else
             targetDestination = player.transform;
@@ -122,6 +122,6 @@ public class EnemyMove : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, FindTowerRadiusCheck);
+        Gizmos.DrawWireSphere(transform.position, EnemyLureToTowerRange.Value);
     }
 }

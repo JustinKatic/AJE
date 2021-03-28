@@ -56,8 +56,16 @@ public class TowerHealth : MonoBehaviour
         gameObject.SetActive(false);
         inGameCurrency.RuntimeValue += myTowerCost.Value;
         UpdateCurrency.Raise();
-
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 100f))
+        {
+            if (hit.collider.tag == "Ground")
+            {
+                hit.transform.Find("DestroyedTower").gameObject.SetActive(true);
+            }
+        }
     }
+
     public void InstantiateDeathParticle(GameObject deathParticle)
     {
         if (deathParticle)
