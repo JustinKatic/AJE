@@ -217,7 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3dd519455c80b4a9892f622e2d35d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerCost: 20
   PlayerInGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
     type: 2}
   ButtonText: {fileID: 8142005368418663650}
@@ -228,6 +227,7 @@ MonoBehaviour:
   notBuildable:
     serializedVersion: 2
     m_Bits: 8192
+  myTowerCost: {fileID: 0}
 --- !u!1001 &3417024970739001026
 PrefabInstance:
   m_ObjectHideFlags: 0
