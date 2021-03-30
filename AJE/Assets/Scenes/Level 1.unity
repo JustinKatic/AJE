@@ -85297,12 +85297,12 @@ MonoBehaviour:
   slowTowerButton: {fileID: 255975461}
   plagueTowerButton: {fileID: 473041341}
   vamparicTowerButton: {fileID: 908775949}
-  isDmgButtonActive: {fileID: 11400000, guid: 5d4728563c41d874c911a53acce1125d, type: 2}
-  isSlowButtonActive: {fileID: 11400000, guid: 8d669874806a403479e8f63663ee1843, type: 2}
-  isPlagueButtonActive: {fileID: 11400000, guid: 4a2a34d7b1aa6a64a952bc8329708c08,
-    type: 2}
-  isVamparicButtonActive: {fileID: 11400000, guid: 75425c965a9f4474381d7fcd99eda0db,
-    type: 2}
+  rangeTowerButton: {fileID: 0}
+  isDmgTowerAvaible: 1
+  isSlowTowerAvaible: 0
+  isPlagueTowerAvaible: 0
+  isVamparicTowerAvaible: 0
+  isRangeTowerAvaible: 0
 --- !u!1 &1490075356
 GameObject:
   m_ObjectHideFlags: 0
@@ -120281,6 +120281,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -5798073766403290361, guid: 9f8475057e96206488058ab1a8410031,
         type: 2}
+    - target: {fileID: 2769207138520599378, guid: 36d4966411abe9d4d8f0e04e481f5735,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769207138520599378, guid: 36d4966411abe9d4d8f0e04e481f5735,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769207138520599378, guid: 36d4966411abe9d4d8f0e04e481f5735,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769207138520599378, guid: 36d4966411abe9d4d8f0e04e481f5735,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -137
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769207138520599379, guid: 36d4966411abe9d4d8f0e04e481f5735,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3761341220244223830, guid: 36d4966411abe9d4d8f0e04e481f5735,
         type: 3}
       propertyPath: m_sharedMaterial
@@ -120476,21 +120501,26 @@ PrefabInstance:
     - target: {fileID: 5987865969143923812, guid: 36d4966411abe9d4d8f0e04e481f5735,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5987865969143923812, guid: 36d4966411abe9d4d8f0e04e481f5735,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5987865969143923812, guid: 36d4966411abe9d4d8f0e04e481f5735,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 5987865969143923812, guid: 36d4966411abe9d4d8f0e04e481f5735,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: -137
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987865969143923813, guid: 36d4966411abe9d4d8f0e04e481f5735,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6951603391740753015, guid: 36d4966411abe9d4d8f0e04e481f5735,
