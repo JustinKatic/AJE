@@ -25,7 +25,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] FloatVariable EnemyLureToTowerRange;
     [SerializeField] LayerMask TowerLayerMask;
 
-    [SerializeField] float distanceOffset;
+    [SerializeField] float distanceOffSet;
 
     private float followPlayertimer;
     [SerializeField] FloatVariable followPlayerForXAfterLure;
@@ -60,21 +60,31 @@ public class EnemyMove : MonoBehaviour
 
     void CheckForCloseTowers()
     {
-        if(targetDestination == player.transform && followPlayertimer < followPlayerForXAfterLure.Value)
+        //if Current target is player and followLureTimer is less then followPlayer timer Dont Check for close towers and continue following player.
+        if (targetDestination == player.transform && followPlayertimer < followPlayerForXAfterLure.Value)
         {
             return;
         }
 
-        float dist = Vector3.Distance(transform.position, player.transform.position);
+        //Get the distance between the enemy and player.
+        float distBetweenSelfandPlayer = Vector3.Distance(transform.position, player.transform.position);
+
+        //Get list of all the towers that are within range of the enemy.
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, EnemyLureToTowerRange.Value, TowerLayerMask);
 
-        if (hitColliders.Length >= 1 && dist > distanceOffset)
+        //If any tower is in range AND distBetweenSelfandPlayer is greater then the distanceOffSet value.
+        if (hitColliders.Length >= 1 && distBetweenSelfandPlayer > distanceOffSet)
         {
+            //set target destination to the first tower in collider list.
             targetDestination = hitColliders[0].transform;
         }
+
+        //Player is inside the offset range
         else
         {
+            //set destination to player
             targetDestination = player.transform;
+            //reset the followPlayerTimer to 0 to force enemy to follow player for the followPlayerForXAfterLure variable.
             followPlayertimer = 0;
         }
     }
