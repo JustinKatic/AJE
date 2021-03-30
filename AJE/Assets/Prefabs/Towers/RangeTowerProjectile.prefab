@@ -54,7 +54,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352675099744952819}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1127,7 +1127,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 20
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1199,7 +1199,7 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0.12994349
         - serializedVersion: 3
-          time: 1
+          time: 0.75323486
           value: 0
           inSlope: -2
           outSlope: -2
@@ -5881,7 +5881,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 20
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -10635,7 +10635,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 20
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -11022,7 +11022,7 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 1, g: 0.7879015, b: 0, a: 0}
         key1: {r: 1, g: 0.30612943, b: 0.051886797, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 1}
+        key2: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
