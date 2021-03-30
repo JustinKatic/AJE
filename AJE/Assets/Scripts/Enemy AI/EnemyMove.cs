@@ -27,6 +27,10 @@ public class EnemyMove : MonoBehaviour
 
     [SerializeField] float distanceOffset;
 
+    private float followPlayertimer;
+    [SerializeField] FloatVariable followPlayerForXAfterLure;
+
+
 
     protected virtual void OnEnable()
     {
@@ -35,6 +39,10 @@ public class EnemyMove : MonoBehaviour
         _slowDebuff = false;
         SetEnemyMoveSpeed(MyMoveSpeed);
         InvokeRepeating("CheckForCloseTowers", 0, 0.5f);
+    }
+    private void OnDisable()
+    {
+        CancelInvoke();
     }
 
     void Start()
@@ -46,10 +54,17 @@ public class EnemyMove : MonoBehaviour
         SlowDebuff();
 
         Move();
+
+        followPlayertimer += Time.deltaTime;
     }
 
     void CheckForCloseTowers()
     {
+        if(targetDestination == player.transform && followPlayertimer < followPlayerForXAfterLure.Value)
+        {
+            return;
+        }
+
         float dist = Vector3.Distance(transform.position, player.transform.position);
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, EnemyLureToTowerRange.Value, TowerLayerMask);
 
@@ -58,7 +73,10 @@ public class EnemyMove : MonoBehaviour
             targetDestination = hitColliders[0].transform;
         }
         else
+        {
             targetDestination = player.transform;
+            followPlayertimer = 0;
+        }
     }
 
 

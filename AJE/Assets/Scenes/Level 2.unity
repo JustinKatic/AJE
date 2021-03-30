@@ -25506,6 +25506,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 468731145}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &469523664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2769207138520599379, guid: 36d4966411abe9d4d8f0e04e481f5735,
+    type: 3}
+  m_PrefabInstance: {fileID: 5987865969485163049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &469647644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64467,6 +64473,27 @@ PrefabInstance:
       propertyPath: fpsText
       value: 
       objectReference: {fileID: 2086352113}
+    - target: {fileID: 2603444244312050872, guid: 5bc3cdaf346920148a16bf700474de15,
+        type: 3}
+      propertyPath: _itemsToPool.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603444244312050872, guid: 5bc3cdaf346920148a16bf700474de15,
+        type: 3}
+      propertyPath: _itemsToPool.Array.data[9]._amountToPool
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603444244312050872, guid: 5bc3cdaf346920148a16bf700474de15,
+        type: 3}
+      propertyPath: _itemsToPool.Array.data[9]._objectToPool
+      value: 
+      objectReference: {fileID: 1285037239008932908, guid: f124f313f645d8242a6b1a1f1df76fd7,
+        type: 3}
+    - target: {fileID: 2603444244312050872, guid: 5bc3cdaf346920148a16bf700474de15,
+        type: 3}
+      propertyPath: _itemsToPool.Array.data[9]._shouldExpand
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2603444244312050873, guid: 5bc3cdaf346920148a16bf700474de15,
         type: 3}
       propertyPath: m_Name
@@ -105458,6 +105485,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1487073918, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: israngeButtonActive
+      value: 
+      objectReference: {fileID: 11400000, guid: e1b55da72e2fb8742af036317e36d5cc,
+        type: 2}
+    - target: {fileID: 1487073918, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: isRangeButtonActive
+      value: 
+      objectReference: {fileID: 11400000, guid: e1b55da72e2fb8742af036317e36d5cc,
+        type: 2}
+    - target: {fileID: 1487073918, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: rangeTowerButton
+      value: 
+      objectReference: {fileID: 469523664}
+    - target: {fileID: 1487073918, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: isDmgTowerAvaible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487073918, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: isPlagueTowerAvaible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487073918, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: isSlowTowerAvaible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487073918, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: isVamparicTowerAvaible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487073918, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: isRangeTowerAvaible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2769207138520599378, guid: 36d4966411abe9d4d8f0e04e481f5735,
         type: 3}
       propertyPath: m_AnchorMin.y

@@ -8,38 +8,47 @@ public class TowerButtonsController : MonoBehaviour
     [SerializeField] GameObject slowTowerButton;
     [SerializeField] GameObject plagueTowerButton;
     [SerializeField] GameObject vamparicTowerButton;
+    [SerializeField] GameObject rangeTowerButton;
 
-
-    [SerializeField] BoolVariable isDmgButtonActive;
-    [SerializeField] BoolVariable isSlowButtonActive;
-    [SerializeField] BoolVariable isPlagueButtonActive;
-    [SerializeField] BoolVariable isVamparicButtonActive;
+    [SerializeField] bool isDmgTowerAvaible;
+    [SerializeField] bool isSlowTowerAvaible;
+    [SerializeField] bool isPlagueTowerAvaible;
+    [SerializeField] bool isVamparicTowerAvaible;
+    [SerializeField] bool isRangeTowerAvaible;
 
     private void OnEnable()
     {
+
+
         //DAMAGE TOWER BUTTON  set active/notActive
-        if (isDmgButtonActive.Value)
+        if (isDmgTowerAvaible)
             damageTowerButton.SetActive(true);
         else
             damageTowerButton.SetActive(false);
 
         //SLOW TOWER BUTTON  set active/notActive
-        if (isSlowButtonActive.Value)
+        if (isSlowTowerAvaible)
             slowTowerButton.SetActive(true);
         else
             slowTowerButton.SetActive(false);
 
         //PLAGUE TOWER BUTTON  set active/notActive
-        if (isPlagueButtonActive.Value)
+        if (isPlagueTowerAvaible)
             plagueTowerButton.SetActive(true);
         else
             plagueTowerButton.SetActive(false);
 
         //VAMPARIC TOWER BUTTON  set active/notActive
-        if (isVamparicButtonActive.Value)
+        if (isVamparicTowerAvaible)
             vamparicTowerButton.SetActive(true);
         else
             vamparicTowerButton.SetActive(false);
+
+        //Range TOWER BUTTON  set active/notActive
+        if (isRangeTowerAvaible)
+            rangeTowerButton.SetActive(true);
+        else
+            rangeTowerButton.SetActive(false);
     }
 
 }

@@ -31,7 +31,11 @@ public class RangeTowerShoot : MonoBehaviour
         _shotCounter -= Time.deltaTime;
         if (_shotCounter <= 0)
         {
-            Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation);
+          //  Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation);
+            GameObject projectile = ObjectPooler.SharedInstance.GetPooledObject("RangeTowerProjectile");
+            projectile.transform.position = shootPoint.transform.position;
+            projectile.transform.rotation = shootPoint.transform.rotation;
+            projectile.SetActive(true);
             _shotCounter = TimeBetweenShots;
         }
     }
