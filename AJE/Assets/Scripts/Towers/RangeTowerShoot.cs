@@ -6,7 +6,6 @@ public class RangeTowerShoot : MonoBehaviour
 {
     RangeTower rangeTower;
     [SerializeField] float TimeBetweenShots;
-    [SerializeField] GameObject projectile;
     [SerializeField] GameObject shootPoint;
 
 
