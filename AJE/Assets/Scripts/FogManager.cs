@@ -36,67 +36,49 @@ public class FogManager : MonoBehaviour
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog8;
 
 
-    [Header("SHRINES TO ACTIVATE WITH FOG")]
-    [SerializeField] GameObject[] ShrinesToActivateWithFog1;
-    [SerializeField] GameObject[] ShrinesToActivateWithFog2;
-    [SerializeField] GameObject[] ShrinesToActivateWithFog3;
-    [SerializeField] GameObject[] ShrinesToActivateWithFog4;
-    [SerializeField] GameObject[] ShrinesToActivateWithFog5;
-    [SerializeField] GameObject[] ShrinesToActivateWithFog6;
-    [SerializeField] GameObject[] ShrinesToActivateWithFog7;
-    [SerializeField] GameObject[] ShrinesToActivateWithFog8;
-
     public void CheckForFogToActivate()
     {
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog1AtWaveX)
         {
             fog1.SetActive(false);
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog1);
-            ShrinesToActivateWithFog(ShrinesToActivateWithFog1);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog2AtWaveX)
         {
             fog2.SetActive(false);
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog2);
-            ShrinesToActivateWithFog(ShrinesToActivateWithFog2);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog3AtWaveX)
         {
             fog3.SetActive(false);
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog3);
-            ShrinesToActivateWithFog(ShrinesToActivateWithFog3);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog4AtWaveX)
         {
             fog4.SetActive(false);
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog4);
-            ShrinesToActivateWithFog(ShrinesToActivateWithFog4);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog5AtWaveX)
         {
             fog5.SetActive(false);
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog5);
-            ShrinesToActivateWithFog(ShrinesToActivateWithFog5);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog6AtWaveX)
         {
             fog6.SetActive(false);
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog6);
-            ShrinesToActivateWithFog(ShrinesToActivateWithFog6);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog7AtWaveX)
         {
             fog7.SetActive(false);
 
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog7);
-            ShrinesToActivateWithFog(ShrinesToActivateWithFog7);
 
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog8AtWaveX)
         {
             fog8.SetActive(false);
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog8);
-            ShrinesToActivateWithFog(ShrinesToActivateWithFog8);
         }
 
         void SpawnPointsToActivateWithFog(GameObject[] spawnPointToActivate)
@@ -109,17 +91,5 @@ public class FogManager : MonoBehaviour
                 }
             }
         }
-
-        void ShrinesToActivateWithFog(GameObject[] spawnPointToActivate)
-        {
-            if (spawnPointToActivate.Length >= 1)
-            {
-                for (int i = 0; i < spawnPointToActivate.Length; i++)
-                {
-                    spawnPointToActivate[i].gameObject.SetActive(true);
-                }
-            }
-        }
-
     }
 }

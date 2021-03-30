@@ -16,6 +16,9 @@ public class RangeTower : TowersDefault
             targetFound = true;
         }
         else targetFound = false;
-
+    }
+    protected override void MyTriggerEffect()
+    {
+        return;
     }
 }

@@ -9,7 +9,10 @@ public class PowerUpManager : MonoBehaviour
 
     private GameObject[] listOfActiveShrines;
 
-
+    private void Start()
+    {
+        
+    }
     public void SpawnPowerUpObj()
     {
         listOfActiveShrines = GameObject.FindGameObjectsWithTag("Shrine");

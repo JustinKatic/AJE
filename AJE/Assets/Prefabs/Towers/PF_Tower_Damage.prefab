@@ -1,173 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &631908150
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 631908151}
-  m_Layer: 0
-  m_Name: powerup2Slot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &631908151
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631908150}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1589782848}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1589782847
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1589782848}
-  - component: {fileID: 1589782849}
-  m_Layer: 0
-  m_Name: PowerupSlots
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1589782848
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589782847}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.35, z: 0.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2060276570}
-  - {fileID: 631908151}
-  - {fileID: 1798153237}
-  - {fileID: 1854873063}
-  m_Father: {fileID: 5504593678153855387}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1589782849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589782847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 086edb71281064847938750bfc35365c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 45
---- !u!1 &1798153236
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1798153237}
-  m_Layer: 0
-  m_Name: powerup3Slot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1798153237
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798153236}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1589782848}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1854873062
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1854873063}
-  m_Layer: 0
-  m_Name: powerup4Slot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1854873063
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1854873062}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1589782848}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2060276569
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2060276570}
-  m_Layer: 0
-  m_Name: powerup1Slot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2060276570
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2060276569}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1589782848}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1367815257005052779
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +106,7 @@ RectTransform:
   m_Children:
   - {fileID: 1356966495484585710}
   m_Father: {fileID: 5504593678153855387}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -395,7 +227,6 @@ GameObject:
   - component: {fileID: 5504593678153855387}
   - component: {fileID: -2625417208157316353}
   - component: {fileID: 6140582864606889210}
-  - component: {fileID: 7846223766183997293}
   - component: {fileID: 4792904809847559535}
   m_Layer: 16
   m_Name: PF_Tower_Damage
@@ -418,7 +249,6 @@ Transform:
   - {fileID: 863132295088611040}
   - {fileID: 6000570682790727999}
   - {fileID: 6499961992335897405}
-  - {fileID: 1589782848}
   - {fileID: 965237223179242958}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -443,7 +273,6 @@ MonoBehaviour:
   ActivateEveryX: 1.2
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
-  pulseFX: {fileID: 3519620128448855360}
 --- !u!65 &6140582864606889210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -457,29 +286,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 6.24, z: 2}
   m_Center: {x: 0, y: 3.24, z: 0}
---- !u!114 &7846223766183997293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4333854907648893736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 618baaddd0cad5744bfad0345bb4fa12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slots:
-  - slot: {fileID: 2060276570}
-    slotted: 0
-  - slot: {fileID: 631908151}
-    slotted: 0
-  - slot: {fileID: 1798153237}
-    slotted: 0
-  - slot: {fileID: 1854873063}
-    slotted: 0
-  slotsFull: 0
-  powerupAdded: 0
 --- !u!114 &4792904809847559535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,15 +609,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e59926cd1fde54d49a6eee4cce8d2aa5, type: 3}
---- !u!1 &7092911634854522934 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: e59926cd1fde54d49a6eee4cce8d2aa5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1247207492450150719}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6067558529104593445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e59926cd1fde54d49a6eee4cce8d2aa5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1247207492450150719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7092911634854522934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: e59926cd1fde54d49a6eee4cce8d2aa5,
     type: 3}
   m_PrefabInstance: {fileID: 1247207492450150719}
   m_PrefabAsset: {fileID: 0}
@@ -957,14 +763,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Particle_DamageTower
       objectReference: {fileID: 0}
+    - target: {fileID: 5045862394212482337, guid: 48be73444ed205b4eb7985cc50ac120d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48be73444ed205b4eb7985cc50ac120d, type: 3}
---- !u!198 &3519620128448855360 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7216183867747991854, guid: 48be73444ed205b4eb7985cc50ac120d,
-    type: 3}
-  m_PrefabInstance: {fileID: 6124116099660528750}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6000570682790727999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 557166638606675281, guid: 48be73444ed205b4eb7985cc50ac120d,

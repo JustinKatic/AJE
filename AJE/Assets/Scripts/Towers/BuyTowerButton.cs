@@ -6,7 +6,7 @@ using TMPro;
 
 public class BuyTowerButton : MonoBehaviour
 {
-   // [SerializeField] float TowerCost;
+
     [SerializeField] FloatVariable PlayerInGameCurrency;
     [SerializeField] TextMeshProUGUI ButtonText;
     [SerializeField] string TowerName;
@@ -20,9 +20,6 @@ public class BuyTowerButton : MonoBehaviour
     [SerializeField] FloatVariable myTowerCost;
 
 
-
-
-
     private Button BuyButton;
 
     void Start()
@@ -30,7 +27,7 @@ public class BuyTowerButton : MonoBehaviour
         ObjPurchasingTower = GameObject.FindGameObjectWithTag(TagOfObjectPurchasingTower.Value);
         BuyButton = gameObject.GetComponent<Button>();
         BuyButton.interactable = false;
-        ButtonText.text = /*TowerName + "\nTower" + "\n$" +*/ myTowerCost.Value + " ";
+        ButtonText.text = myTowerCost.Value + " ";
     }
 
     void Update()
@@ -79,7 +76,6 @@ public class BuyTowerButton : MonoBehaviour
                     if (enviromentSquare.activateRangeEnviroment)
                         tower.TowerRadius = tower.TowerRadius + enviromentSquare.rangeEnviromentMultiplier * tower.TowerRadius / 100;
 
-                    tower.SetTowerEffects();
                     buildable._hasAreaBeenBuiltOn = true;
                     PlayerInGameCurrency.RuntimeValue -= myTowerCost.Value;
                     UpdateCurrency.Raise();

@@ -19,7 +19,8 @@ public class RangeTowerShoot : MonoBehaviour
 
     private void Update()
     {
-        if(rangeTower.targetFound == true)
+        _shotCounter -= Time.deltaTime;      
+        if (rangeTower.targetFound == true)
         {
             Shoot();
         }
@@ -27,10 +28,10 @@ public class RangeTowerShoot : MonoBehaviour
 
     public void Shoot()
     {
-        _shotCounter -= Time.deltaTime;
         if (_shotCounter <= 0)
         {
-          //  Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation);
+            Debug.Log("SHOOTING");
+            //  Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation);
             GameObject projectile = ObjectPooler.SharedInstance.GetPooledObject("RangeTowerProjectile");
             projectile.transform.position = shootPoint.transform.position;
             projectile.transform.rotation = shootPoint.transform.rotation;

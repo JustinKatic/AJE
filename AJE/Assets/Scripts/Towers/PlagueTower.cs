@@ -9,17 +9,22 @@ public class PlagueTower : TowersDefault
     public float duration;
 
 
-    protected override void MyCollisions()
+    protected override void MyTriggerEffect()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, TowerRadius, EnemyLayerMask);
         int i = 0;
         while (i < hitColliders.Length)
         {
             EnemyHealthManager enemy = hitColliders[i].GetComponent<EnemyHealthManager>();
-            enemy.HurtEnemy(TowerDamage);
             FloatingTxt(TowerDamage, hitColliders[i].transform, "-", Color.white);
             enemy.SetPlagueDebuffTrue(TowerDamage, tickRate, duration);
             i++;
         }
+    }
+
+
+    protected override void MyCollisions()
+    {
+        return;
     }
 }
