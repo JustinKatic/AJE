@@ -5031,12 +5031,12 @@ MonoBehaviour:
   slowEffect: {fileID: 8699856903649980464}
   EnemyLureToTowerRange: {fileID: 11400000, guid: 1f2ede5b52d19794485d583f293c35f5,
     type: 2}
+  followPlayerForXAfterLure: {fileID: 11400000, guid: bb52036486ae0b84797a9103c593a489,
+    type: 2}
+  distanceOffSet: 3
   TowerLayerMask:
     serializedVersion: 2
     m_Bits: 65536
-  distanceOffset: 3
-  followPlayerForXAfterLure: {fileID: 11400000, guid: bb52036486ae0b84797a9103c593a489,
-    type: 2}
   MyAttackRange: 5
   myFollowRange: 5
   shootCooldown: 3

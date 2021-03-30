@@ -158,13 +158,16 @@ public class EnemyMove : MonoBehaviour
             lookPos.y = 0;
             var rotation = Quaternion.LookRotation(lookPos);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * LookTowardsSpeed);
-        }
+        }   
     }
-
+    
     //DEBUG TOOLS to check range of enemys lure range
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, EnemyLureToTowerRange.Value);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, distanceOffSet);
     }
 }

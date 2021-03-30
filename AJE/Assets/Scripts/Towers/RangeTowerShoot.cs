@@ -30,7 +30,6 @@ public class RangeTowerShoot : MonoBehaviour
     {
         if (_shotCounter <= 0)
         {
-            Debug.Log("SHOOTING");
             //  Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation);
             GameObject projectile = ObjectPooler.SharedInstance.GetPooledObject("RangeTowerProjectile");
             projectile.transform.position = shootPoint.transform.position;
