@@ -9,7 +9,6 @@ public class RangeTowerProjectile : MonoBehaviour
     [SerializeField] float _bulletLife;
     [SerializeField] float _damage;
 
-    [SerializeField] GameObject floatingDmg;
 
     private void OnEnable()
     {

@@ -509,7 +509,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   TowerDamage: 0
-  TowerRadius: 30
+  TowerRadius: 10
   ActivateEveryX: 1
   floatingDmg: {fileID: 0}
   pulseFX: {fileID: 6415422529918343367}
@@ -528,8 +528,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeBetweenShots: 0.5
-  projectile: {fileID: 1285037239008932908, guid: f124f313f645d8242a6b1a1f1df76fd7,
-    type: 3}
   shootPoint: {fileID: 1932530680229515465}
 --- !u!1 &7624623955725910705
 GameObject:

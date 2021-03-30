@@ -100,9 +100,9 @@ public class TowersDefault : MonoBehaviour
         points.SetActive(true);
     }
 
-    //void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireSphere(transform.position, TowerRadius);
-    //}
+   void OnDrawGizmos()
+   {
+       Gizmos.color = Color.red;
+       Gizmos.DrawWireSphere(transform.position, TowerRadius);
+   }
 }
