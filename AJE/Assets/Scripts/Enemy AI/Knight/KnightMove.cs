@@ -14,11 +14,24 @@ public class KnightMove : EnemyMove
 
     bool posFound = false;
     bool charging;
+    bool canCharge;
+
+    [SerializeField] float chargeCooldown;
+    private float chargeCooldownTimer;
 
     [SerializeField] TrailRenderer trail;
 
     public override void Move()
     {
+        if (!canCharge)
+        {
+            chargeCooldownTimer -= Time.deltaTime;
+            if(chargeCooldownTimer < 0)
+            {
+                canCharge = true;
+            }
+        }
+
         //move towards player
         float dist = Vector3.Distance(transform.position, targetDestination.position);
         if (charging == false && dist > MyChargeRange)
@@ -28,7 +41,7 @@ public class KnightMove : EnemyMove
             navMeshAgent.SetDestination(targetDestination.position);
         }
 
-        else if (charging == false && dist < MyChargeRange)
+        else if (charging == false && dist < MyChargeRange && canCharge)
         {
             charging = true;
             navMeshAgent.isStopped = true;
@@ -64,6 +77,8 @@ public class KnightMove : EnemyMove
                     posFound = false;
                     charging = false;
                     timer = 0;
+                    canCharge = false;
+                    chargeCooldownTimer = chargeCooldown;
                 }
             }
         }
