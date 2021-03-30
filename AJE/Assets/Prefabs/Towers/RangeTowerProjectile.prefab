@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6523595559113871897}
   m_Layer: 0
   m_Name: RangeTowerProjectile
-  m_TagString: Untagged
+  m_TagString: RangeTowerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 3433444889241310025}
   - component: {fileID: 9206997165248970831}
   - component: {fileID: 420815560642331629}
-  - component: {fileID: 650408660755017132}
   m_Layer: 0
   m_Name: RangeTowerProjectile
   m_TagString: Untagged
@@ -146,22 +145,6 @@ MonoBehaviour:
   _bulletLife: 5
   _damage: 2
   floatingDmg: {fileID: 0}
---- !u!54 &650408660755017132
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457609246590754145}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!1 &5657659144286483860
 GameObject:
   m_ObjectHideFlags: 0
@@ -14435,7 +14418,6 @@ GameObject:
   - component: {fileID: 6158186915891048495}
   - component: {fileID: 6305626647049310000}
   - component: {fileID: 4089108082228155538}
-  - component: {fileID: 474664247390417523}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -14504,17 +14486,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &474664247390417523
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9006841019714243923}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
