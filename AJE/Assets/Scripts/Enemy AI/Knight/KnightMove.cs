@@ -54,7 +54,7 @@ public class KnightMove : EnemyMove
                 else
                     SetEnemyMoveSpeed(ChargeSpeed / _slowAmount);
 
-                if (distToChargePos <= 1f)
+                if (distToChargePos <= 2f)
                 {
                     if (!_slowDebuff)
                         SetEnemyMoveSpeed(MyMoveSpeed);
