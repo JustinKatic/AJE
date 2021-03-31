@@ -22,15 +22,18 @@ public class EnemyMove : MonoBehaviour
     private float _slowDurationTimer;
 
     [Header("Lureing variables")]
-    [SerializeField] FloatVariable EnemyLureToTowerRange;
-    [SerializeField] FloatVariable followPlayerForXAfterLure;
-    [SerializeField] float distanceOffSet;
+    [SerializeField] FloatVariable EnemyDetectionRange;
 
-    [SerializeField] LayerMask TowerLayerMask;
-    private float followPlayertimer;
+    private LayerMask TowerLayerMask;
+    private LayerMask PlayerMask;
 
 
 
+    protected virtual void Awake()
+    {
+        PlayerMask = LayerMask.GetMask("Player");
+        TowerLayerMask = LayerMask.GetMask("AttackableTower");
+    }
 
     protected virtual void OnEnable()
     {
@@ -42,7 +45,7 @@ public class EnemyMove : MonoBehaviour
         //set nav agent speed to moveSpeed var
         SetEnemyMoveSpeed(MyMoveSpeed);
         //check to see if tower is in range every 0.5 seconds.
-        InvokeRepeating("CheckForCloseTowers", 0, 0.5f);
+        InvokeRepeating("CheckForObjectsInRadius", 0, 0.5f);
     }
 
     private void OnDisable()
@@ -65,39 +68,26 @@ public class EnemyMove : MonoBehaviour
         //call move function
         Move();
 
-        //increment follow player timer each second used to force enemy to follow player if timer is less then followPlayerForXAfterLure value
-        followPlayertimer += Time.deltaTime;
+
     }
 
-    void CheckForCloseTowers()
+    void CheckForObjectsInRadius()
     {
-        //if Current target is player and followLureTimer is less then followPlayer timer Dont Check for close towers and continue following player.
-        if (targetDestination == player.transform && followPlayertimer < followPlayerForXAfterLure.Value)
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, EnemyDetectionRange.Value, TowerLayerMask | PlayerMask);
+        if (hitColliders.Length <= 0)
         {
+            targetDestination = player.transform;
             return;
         }
-
-        //Get the distance between the enemy and player.
-        float distBetweenSelfandPlayer = Vector3.Distance(transform.position, player.transform.position);
-
-        //Get list of all the towers that are within range of the enemy.
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, EnemyLureToTowerRange.Value, TowerLayerMask);
-
-        //If any tower is in range AND distBetweenSelfandPlayer is greater then the distanceOffSet value.
-        if (hitColliders.Length >= 1 && distBetweenSelfandPlayer > distanceOffSet)
+        foreach (Collider col in hitColliders)
         {
-            //set target destination to the first tower in collider list.
-            targetDestination = hitColliders[0].transform;
+            if (col.gameObject.CompareTag("Player"))
+            {
+                targetDestination = player.transform;
+                return;
+            }
         }
-
-        //Player is inside the offset range
-        else
-        {
-            //set destination to player
-            targetDestination = player.transform;
-            //reset the followPlayerTimer to 0 to force enemy to follow player for the followPlayerForXAfterLure variable.
-            followPlayertimer = 0;
-        }
+        targetDestination = hitColliders[0].transform;
     }
 
 
@@ -158,16 +148,13 @@ public class EnemyMove : MonoBehaviour
             lookPos.y = 0;
             var rotation = Quaternion.LookRotation(lookPos);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * LookTowardsSpeed);
-        }   
+        }
     }
-    
+
     //DEBUG TOOLS to check range of enemys lure range
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, EnemyLureToTowerRange.Value);
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, distanceOffSet);
+        Gizmos.DrawWireSphere(transform.position, EnemyDetectionRange.Value);
     }
 }

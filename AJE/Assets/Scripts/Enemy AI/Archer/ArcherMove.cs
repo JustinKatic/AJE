@@ -15,8 +15,9 @@ public class ArcherMove : EnemyMove
     [SerializeField] float shootCooldown;
     private float shootCooldownTimer;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         archerShoot = gameObject.GetComponent<ArcherShoot>();
     }
 
