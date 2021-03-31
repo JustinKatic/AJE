@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 2276529519293963912}
   - component: {fileID: 4860798522882467936}
   - component: {fileID: 6975486890688543633}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: EnemyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 863132295088611040}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: -2625417208157316353}
   - component: {fileID: 6140582864606889210}
   - component: {fileID: 4792904809847559535}
-  m_Layer: 16
+  m_Layer: 12
   m_Name: PF_Tower_Damage
   m_TagString: DamageableTower
   m_Icon: {fileID: 0}
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 1356966495484585710}
   - component: {fileID: 3131660623108567367}
   - component: {fileID: 2330929904971887317}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1230,10 +1230,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5504593678153855387}
     m_Modifications:
+    - target: {fileID: 1559700984411332969, guid: 143185f91ed39e04b9f153c845027b0b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1886926122443243295, guid: 143185f91ed39e04b9f153c845027b0b,
         type: 3}
       propertyPath: m_Name
       value: EnemyObstacleCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886926122443243295, guid: 143185f91ed39e04b9f153c845027b0b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4143295632546044752, guid: 143185f91ed39e04b9f153c845027b0b,
         type: 3}

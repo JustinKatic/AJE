@@ -5,7 +5,7 @@ using TMPro;
 
 public class TowerHealth : MonoBehaviour
 {
-    public float _currentHealth;
+    private float _currentHealth;
 
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameObject floatingDmg;

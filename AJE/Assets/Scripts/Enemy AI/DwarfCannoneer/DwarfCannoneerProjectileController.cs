@@ -49,7 +49,7 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
                     UpdatePlayerHealthEvent.Raise();
                     FloatingTxt(_damage, hitColliders[0].transform);
                 }
-                else if (hitColliders[i].gameObject.layer == LayerMask.NameToLayer("AttackableTower"))
+                else if (hitColliders[i].gameObject.layer == LayerMask.NameToLayer("Tower"))
                 {
                     hitColliders[i].GetComponent<TowerHealth>().HurtEnemy(_damage,true);
                 }

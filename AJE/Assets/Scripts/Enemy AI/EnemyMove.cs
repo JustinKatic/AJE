@@ -32,7 +32,7 @@ public class EnemyMove : MonoBehaviour
     protected virtual void Awake()
     {
         PlayerMask = LayerMask.GetMask("Player");
-        TowerLayerMask = LayerMask.GetMask("AttackableTower");
+        TowerLayerMask = LayerMask.GetMask("Tower");
     }
 
     protected virtual void OnEnable()
