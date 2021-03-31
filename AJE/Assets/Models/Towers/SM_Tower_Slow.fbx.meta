@@ -3,7 +3,17 @@ guid: ea813ae05dc82bd47b2ee53c3596f6a6
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Tower_Slow
+    second: {fileID: 2100000, guid: 788cb35d513e5584f9fa6b690f6a5a37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: cc9230dfbef977543966170d23699cf4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

@@ -11,6 +11,7 @@ public class TowerHealth : MonoBehaviour
     [SerializeField] private GameObject floatingDmg;
     [SerializeField] float myMaxHealth;
 
+    [SerializeField] GameObject model;
     [SerializeField] bool IHaveAHealthBar;
     [SerializeField] ScriptableSoundObj DeathSound;
 
@@ -20,10 +21,19 @@ public class TowerHealth : MonoBehaviour
     [SerializeField] FloatVariable inGameCurrency;
 
     [SerializeField] GameEvent UpdateCurrency;
+    private new Renderer renderer;
+    private Material newMat;
 
 
-
-
+    private void Start()
+    {
+        if (model != null)
+        {
+            renderer = model.GetComponent<Renderer>();
+            newMat = new Material(renderer.material);
+            renderer.material = newMat;
+        }
+    }
 
     private void OnEnable()
     {
@@ -39,6 +49,7 @@ public class TowerHealth : MonoBehaviour
 
     public void HurtEnemy(float damage, bool displayDmg)
     {
+        StartCoroutine(HurtEffect());
         _currentHealth -= damage;
         if (displayDmg)
             FloatingTxt(damage, transform, "-", Color.white);
@@ -82,6 +93,16 @@ public class TowerHealth : MonoBehaviour
         txt.text = type + damage.ToString();
         txt.color = color;
         points.SetActive(true);
+    }
+
+    IEnumerator HurtEffect()
+    {
+        if (model != null)
+        {
+            renderer.material.EnableKeyword("_EMISSION");
+            yield return new WaitForSeconds(0.1f);
+            renderer.material.DisableKeyword("_EMISSION");
+        }
     }
 
 }

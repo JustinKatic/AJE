@@ -453,11 +453,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa18f7eaed5b96b43a5ad2e8d4f14c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth: 0
   healthBar: {fileID: 2692974501319801098}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
   myMaxHealth: 1000
+  model: {fileID: 788352322188040107}
   IHaveAHealthBar: 1
   DeathSound: {fileID: 0}
   deathParticle: {fileID: 0}
@@ -846,6 +846,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d26c79b5feb20624aac9978726732317, type: 3}
+--- !u!1 &788352322188040107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -622214978037277674, guid: d26c79b5feb20624aac9978726732317,
+    type: 3}
+  m_PrefabInstance: {fileID: 9056097305839946685}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4095755898963615911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: d26c79b5feb20624aac9978726732317,

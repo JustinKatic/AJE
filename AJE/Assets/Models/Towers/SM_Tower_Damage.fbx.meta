@@ -3,7 +3,17 @@ guid: e59926cd1fde54d49a6eee4cce8d2aa5
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Tower_Damage
+    second: {fileID: 2100000, guid: 0718f22749d20c846a1f689f218af973, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: ec3a575859b161d44b920aad653f8a18, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
