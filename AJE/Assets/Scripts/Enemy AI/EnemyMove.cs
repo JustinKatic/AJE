@@ -28,6 +28,16 @@ public class EnemyMove : MonoBehaviour
     private LayerMask PlayerMask;
 
 
+    private float playerAggroTimer;
+    public float playerAggroTime;
+    private bool playerHasAggro = false;
+
+
+    private float towerAggroTimer;
+    public float towerAggroTime;
+    private bool towerHasAggro = false;
+
+
 
     protected virtual void Awake()
     {
@@ -69,26 +79,75 @@ public class EnemyMove : MonoBehaviour
         Move();
 
 
+        //if player has aggro increment time.
+        if (playerHasAggro == true)
+        {
+            playerAggroTimer += Time.deltaTime;
+            //If time is above player aggro time. 
+            if (playerAggroTimer >= playerAggroTime)
+            {
+                //Set playerHasAggro to false so the enemy becomes not fixated on player.
+                playerHasAggro = false;
+            }
+        }
+
+        //if tower has aggro increment time.
+        if (towerHasAggro == true)
+        {
+            towerAggroTimer += Time.deltaTime;
+            //If time is above player aggro time.
+            if (towerAggroTimer >= towerAggroTime)
+            {
+                // Set towerHasAggro to false so the enemy becomes not fixated on tower.
+                towerHasAggro = false;
+            }
+        }
     }
 
     void CheckForObjectsInRadius()
     {
+        //get list of collider around enemy
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, EnemyDetectionRange.Value, TowerLayerMask | PlayerMask);
-        if (hitColliders.Length <= 0)
+
+        if (playerHasAggro && playerAggroTimer < playerAggroTime)
         {
-            targetDestination = player.transform;
             return;
         }
-        foreach (Collider col in hitColliders)
+
+        //If no colliders in detection range.
+        if (hitColliders.Length <= 0)
         {
-            if (col.gameObject.CompareTag("Player"))
+            targetDestination = player.transform;  //target = player
+            playerHasAggro = true;                 //player has aggro
+            towerHasAggro = false;                 //tower doesnt have aggro
+            towerAggroTimer = 0;                   //set tower aggro back to 0 
+            return;                                //EXIT FUNCTION
+        }
+
+        //If no one has aggro and both player and tower are in detection range
+        //target = player
+        if (playerHasAggro == false && towerHasAggro == false)
+        {
+            foreach (Collider col in hitColliders)
             {
-                targetDestination = player.transform;
-                return;
+                if (col.gameObject.CompareTag("Player"))
+                {
+                    targetDestination = player.transform;
+                    playerHasAggro = true;
+                    towerAggroTimer = 0;
+                    return;
+                }
             }
         }
-        targetDestination = hitColliders[0].transform;
+        //target = closest tower to enemy
+        if (hitColliders.Length >= 1)
+        {
+            targetDestination = hitColliders[0].transform;
+            playerAggroTimer = 0;
+            towerHasAggro = true;
+        }
     }
+
 
 
     public void GetNavComponent()
