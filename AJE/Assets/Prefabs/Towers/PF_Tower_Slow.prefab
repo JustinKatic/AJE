@@ -4872,11 +4872,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa18f7eaed5b96b43a5ad2e8d4f14c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth: 0
   healthBar: {fileID: 4697752494645147092}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
   myMaxHealth: 1000
+  model: {fileID: 0}
   IHaveAHealthBar: 1
   DeathSound: {fileID: 0}
   deathParticle: {fileID: 0}
@@ -5408,7 +5408,7 @@ RectTransform:
   m_GameObject: {fileID: 8945343893414659470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.009, z: 0.01}
+  m_LocalScale: {x: 0.013, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 4600102347445911970}
   m_Father: {fileID: 1083839064653945646}
