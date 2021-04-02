@@ -10,7 +10,7 @@ public class ArcherProjectileController : EnemyProjectileController
         if (other.gameObject.tag == "Player")
         {
             PlayerCurrentHp.RuntimeValue -= _damage;
-            FloatingTxt(_damage, other.transform);
+            FloatingTxt(_damage, other.transform, "-", Color.red);
             UpdatePlayerHealthEvent.Raise();
             SetUnActive();
         }

@@ -47,7 +47,7 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
                 {
                     PlayerCurrentHp.RuntimeValue -= _damage;
                     UpdatePlayerHealthEvent.Raise();
-                    FloatingTxt(_damage, hitColliders[0].transform);
+                    FloatingTxt(_damage, hitColliders[0].transform, "-", Color.red);
                 }
                 else if (hitColliders[i].gameObject.layer == LayerMask.NameToLayer("Tower"))
                 {
