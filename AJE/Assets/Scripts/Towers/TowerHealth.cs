@@ -17,6 +17,8 @@ public class TowerHealth : MonoBehaviour
 
     [SerializeField] GameObject deathParticle;
 
+    [SerializeField] GameObject healthPickup;
+
     [SerializeField] FloatVariable myTowerCost;
     [SerializeField] FloatVariable inGameCurrency;
 
@@ -63,6 +65,7 @@ public class TowerHealth : MonoBehaviour
         else
             Debug.Log("no death sound added" + gameObject.name);
 
+        SpawnHealthPickup();
         InstantiateDeathParticle(deathParticle);
         gameObject.SetActive(false);
         inGameCurrency.RuntimeValue += myTowerCost.Value;
@@ -103,6 +106,12 @@ public class TowerHealth : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             renderer.material.DisableKeyword("_EMISSION");
         }
+    }
+
+    public void SpawnHealthPickup()
+    {
+        if (healthPickup)
+            Instantiate(healthPickup, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y+1, gameObject.transform.position.z) , gameObject.transform.rotation);
     }
 
 }

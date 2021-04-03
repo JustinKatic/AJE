@@ -425,8 +425,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.03836772, b: 0, a: 1}
-      maxColor: {r: 1, g: 0.9654912, b: 0, a: 1}
+      minColor: {r: 0.62629044, g: 1, b: 0, a: 1}
+      maxColor: {r: 0.02349341, g: 1, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5045,7 +5045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8499fab379a7e1242bb3ed7173ed8f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 200
+  _damage: 150
   playersCurrentHealth: {fileID: 11400000, guid: 4d7b1cc8dd422994d9a43ef5e09b5796,
     type: 2}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
