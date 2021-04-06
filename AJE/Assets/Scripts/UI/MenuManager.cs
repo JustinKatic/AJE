@@ -15,7 +15,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject pauseScreen;
 
     bool paused = false;
-
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
     public void GoToScene(string level)
     {
         SceneManager.LoadScene(level);
