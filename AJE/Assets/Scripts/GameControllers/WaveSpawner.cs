@@ -169,7 +169,7 @@ public class WaveSpawner : MonoBehaviour
         StartCoroutine(ShowTextForX());
         IEnumerator ShowTextForX()
         {
-            buildPromptTxt.SetActive(true);
+            //buildPromptTxt.SetActive(true);
             yield return new WaitForSeconds(timeBeforeFirstWave);
             buildPromptTxt.SetActive(false);
         }
