@@ -19,7 +19,8 @@ public class UpdateUIFloat : MonoBehaviour
 
     public void UpdateText(FloatVariable floatVariable)
     {
-        anim.Play("CurrencyTextScale");
+        
+        anim?.Play("CurrencyTextScale");
         TextToUpdate.text = floatVariable.RuntimeValue.ToString();
     }
 }
