@@ -34,12 +34,19 @@ public class FogManager : MonoBehaviour
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog6;
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog7;
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog8;
-
+    GameObject[] objectsToAnimate;
 
     public void CheckForFogToActivate()
     {
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog1AtWaveX)
         {
+            // BELOW CODE: experimenting with ways to trigger animations in children (to animate each fog object)
+
+            //objectsToAnimate = GameObject.FindGameObjectsWithTag("Fog1");
+            //foreach (GameObject obToAnimate in objectsToAnimate)
+            //{
+            //    obToAnimate.GetComponentInChildren(Animator).Play("FogShrink");
+            //}
             fog1.SetActive(false);
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog1);
         }
