@@ -83,7 +83,7 @@ public class TowerHealth : MonoBehaviour
     public void InstantiateDeathParticle(GameObject deathParticle)
     {
         if (deathParticle)
-            Instantiate(deathParticle, transform.position, transform.rotation);
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
         else
             Debug.Log("no deathParticle Obj added" + gameObject.name);
     }
