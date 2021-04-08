@@ -34,57 +34,49 @@ public class FogManager : MonoBehaviour
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog6;
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog7;
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog8;
-    GameObject[] objectsToAnimate;
+    Animator[] anim;
 
     public void CheckForFogToActivate()
     {
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog1AtWaveX)
         {
-            // BELOW CODE: experimenting with ways to trigger animations in children (to animate each fog object)
-
-            //objectsToAnimate = GameObject.FindGameObjectsWithTag("Fog1");
-            //foreach (GameObject obToAnimate in objectsToAnimate)
-            //{
-            //    obToAnimate.GetComponentInChildren(Animator).Play("FogShrink");
-            //}
-            fog1.SetActive(false);
+            StartCoroutine(DespawnFog(fog1));
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog1);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog2AtWaveX)
         {
-            fog2.SetActive(false);
+            StartCoroutine(DespawnFog(fog2));
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog2);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog3AtWaveX)
         {
-            fog3.SetActive(false);
+            StartCoroutine(DespawnFog(fog3));
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog3);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog4AtWaveX)
         {
-            fog4.SetActive(false);
+            StartCoroutine(DespawnFog(fog4));
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog4);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog5AtWaveX)
         {
-            fog5.SetActive(false);
+            StartCoroutine(DespawnFog(fog5));
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog5);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog6AtWaveX)
         {
-            fog6.SetActive(false);
+            StartCoroutine(DespawnFog(fog6));
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog6);
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog7AtWaveX)
         {
-            fog7.SetActive(false);
-
+            StartCoroutine(DespawnFog(fog7));
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog7);
 
         }
         if (nextWaveNum.RuntimeValue + 1 == RemoveFog8AtWaveX)
         {
-            fog8.SetActive(false);
+            StartCoroutine(DespawnFog(fog8));
             SpawnPointsToActivateWithFog(SpawnPointsToActivateWithFog8);
         }
 
@@ -98,5 +90,16 @@ public class FogManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator DespawnFog(GameObject fogName)
+    {
+        anim = fogName.transform.GetComponentsInChildren<Animator>();
+        foreach (Animator a in anim)
+        {
+            a.Play("FogShrink");
+        }
+        yield return new WaitForSeconds(1);
+        fogName.SetActive(false);
     }
 }
