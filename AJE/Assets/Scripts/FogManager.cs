@@ -97,9 +97,12 @@ public class FogManager : MonoBehaviour
         anim = fogName.transform.GetComponentsInChildren<Animator>();
         foreach (Animator a in anim)
         {
+            float randomTime = Random.Range(0, 1);
+            
             a.Play("FogShrink");
+            yield return new WaitForSeconds(randomTime);
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         fogName.SetActive(false);
     }
 }
