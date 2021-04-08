@@ -100,10 +100,8 @@ public class FogManager : MonoBehaviour
         Shuffle();
         foreach (Animator a in anim)
         {
-            float randomTime = Random.Range(0, 1);
-            
             a.Play("FogShrink");
-            yield return new WaitForSeconds(randomTime);
+            yield return new WaitForSeconds(.005f);
         }
         yield return new WaitForSeconds(2);
         fogName.SetActive(false);
