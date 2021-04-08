@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class FogManager : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class FogManager : MonoBehaviour
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog7;
     [SerializeField] GameObject[] SpawnPointsToActivateWithFog8;
     Animator[] anim;
+    Animator tempAnim;
 
     public void CheckForFogToActivate()
     {
@@ -95,6 +97,7 @@ public class FogManager : MonoBehaviour
     IEnumerator DespawnFog(GameObject fogName)
     {
         anim = fogName.transform.GetComponentsInChildren<Animator>();
+        Shuffle();
         foreach (Animator a in anim)
         {
             float randomTime = Random.Range(0, 1);
@@ -104,5 +107,16 @@ public class FogManager : MonoBehaviour
         }
         yield return new WaitForSeconds(2);
         fogName.SetActive(false);
+    }
+
+    public void Shuffle()
+    {
+        for (int i = 0; i < anim.Length; i++)
+        {
+            int rnd = Random.Range(0, anim.Length);
+            tempAnim = anim[rnd];
+            anim[rnd] = anim[i];
+            anim[i] = tempAnim;
+        }
     }
 }
