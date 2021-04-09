@@ -103,7 +103,7 @@ public class FogManager : MonoBehaviour
             a.Play("FogShrink");
             yield return new WaitForSeconds(.005f);
         }
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         fogName.SetActive(false);
     }
 
