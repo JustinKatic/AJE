@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
-        Screen.SetResolution(720, 1280, true);
+        //Screen.SetResolution(720, 1280, true);
     }
     public void GoToScene(string level)
     {
