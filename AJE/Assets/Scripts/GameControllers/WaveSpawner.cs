@@ -42,16 +42,6 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentWaveTxt;
     [SerializeField] GameObject buildPromptTxt;
 
-
-
-
-
-    FogShake fog1Shake;
-    FogShake fog2Shake;
-    FogShake fog3Shake;
-    FogShake fog4Shake;
-    FogShake fog5Shake;
-
     public SpawnState State { get; private set; } = SpawnState.COUNTING;
 
     void Start()
@@ -59,12 +49,6 @@ public class WaveSpawner : MonoBehaviour
         currentWaveTxt.text = waves[nextWaveNum.RuntimeValue].name;
         waveCountdown = timeBeforeFirstWave;
         ShowBuildPromptText();
-        //fog1Shake = fog1.GetComponent<FogShake>();
-        //fog2Shake = fog2.GetComponent<FogShake>();
-        //fog3Shake = fog3.GetComponent<FogShake>();
-        //fog4Shake = fog4.GetComponent<FogShake>();
-        //fog5Shake = fog5.GetComponent<FogShake>();
-
     }
 
     void Update()
@@ -169,7 +153,6 @@ public class WaveSpawner : MonoBehaviour
         StartCoroutine(ShowTextForX());
         IEnumerator ShowTextForX()
         {
-            //buildPromptTxt.SetActive(true);
             yield return new WaitForSeconds(timeBeforeFirstWave);
             buildPromptTxt.SetActive(false);
         }

@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6923643291354355072, guid: 47d0bfc517f8d194791a3fd6036381ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8000986330796593752, guid: 47d0bfc517f8d194791a3fd6036381ea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -74,9 +79,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47d0bfc517f8d194791a3fd6036381ea, type: 3}
---- !u!4 &1461053003015616122 stripped
+--- !u!4 &5813126514718609435 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4179963551495160268, guid: 47d0bfc517f8d194791a3fd6036381ea,
+  m_CorrespondingSourceObject: {fileID: 9144799317503338413, guid: 47d0bfc517f8d194791a3fd6036381ea,
     type: 3}
   m_PrefabInstance: {fileID: 3333936148013676470}
   m_PrefabAsset: {fileID: 0}
@@ -85,12 +90,17 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1461053003015616122}
+    m_TransformParent: {fileID: 5813126514718609435}
     m_Modifications:
+    - target: {fileID: -4456407349534365314, guid: 83c8f488410544e4189149d761830db2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 83c8f488410544e4189149d761830db2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0000024438
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 83c8f488410544e4189149d761830db2,
         type: 3}
@@ -105,7 +115,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 83c8f488410544e4189149d761830db2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 83c8f488410544e4189149d761830db2,
         type: 3}
@@ -145,17 +155,22 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 83c8f488410544e4189149d761830db2,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 83c8f488410544e4189149d761830db2,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 83c8f488410544e4189149d761830db2,
         type: 3}
       propertyPath: m_Name
       value: SM_Base_Indent_4
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83c8f488410544e4189149d761830db2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c8f488410544e4189149d761830db2, type: 3}
@@ -164,7 +179,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1461053003015616122}
+    m_TransformParent: {fileID: 5813126514718609435}
     m_Modifications:
     - target: {fileID: -4216859302048453862, guid: d02b2daf0c375d442b2d5b0239184e95,
         type: 3}
@@ -229,17 +244,22 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d02b2daf0c375d442b2d5b0239184e95,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d02b2daf0c375d442b2d5b0239184e95,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: d02b2daf0c375d442b2d5b0239184e95,
         type: 3}
       propertyPath: m_Name
       value: SM_WallCorner_Clay
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d02b2daf0c375d442b2d5b0239184e95,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d02b2daf0c375d442b2d5b0239184e95, type: 3}
