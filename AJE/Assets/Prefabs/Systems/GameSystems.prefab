@@ -1100,7 +1100,7 @@ MonoBehaviour:
     _objectToPool: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
       type: 3}
     _shouldExpand: 1
-  - _amountToPool: 15
+  - _amountToPool: 7
     _objectToPool: {fileID: 352675099744952819, guid: f124f313f645d8242a6b1a1f1df76fd7,
       type: 3}
     _shouldExpand: 1
@@ -1291,6 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77cef8499e9128849a2440a1234561cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fogShrinkController: {fileID: 9100000, guid: 5c14be30bdb6f15448e81927cca50671, type: 2}
   nextWaveNum: {fileID: 11400000, guid: 87c2d4b974b34c447a96bcefb6204d26, type: 2}
   fog1: {fileID: 0}
   fog2: {fileID: 0}

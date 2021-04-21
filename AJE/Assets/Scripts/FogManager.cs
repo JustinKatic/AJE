@@ -5,6 +5,7 @@ using System.Linq;
 
 public class FogManager : MonoBehaviour
 {
+    [SerializeField] RuntimeAnimatorController fogShrinkController;
     [SerializeField] IntVariable nextWaveNum;
 
     [SerializeField] GameObject fog1;
@@ -100,6 +101,7 @@ public class FogManager : MonoBehaviour
         Shuffle();
         foreach (Animator a in anim)
         {
+            a.runtimeAnimatorController = fogShrinkController;
             a.Play("FogShrink");
             yield return new WaitForSeconds(.005f);
         }
