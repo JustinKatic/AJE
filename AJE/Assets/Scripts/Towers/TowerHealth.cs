@@ -54,7 +54,7 @@ public class TowerHealth : MonoBehaviour
         StartCoroutine(HurtEffect());
         _currentHealth -= damage;
         if (displayDmg)
-            FloatingTxt(damage, transform, "-", Color.white);
+            FloatingTxt(damage, transform, "-", Color.red);
         if (IHaveAHealthBar)
             healthBar.SetHealth(_currentHealth);
     }

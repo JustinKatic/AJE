@@ -8,6 +8,8 @@ public class MoveObjToObj : MonoBehaviour
     private GameObject target;
     [SerializeField] FloatVariable speed;
     private bool shouldObjMoveToPlayer;
+    [SerializeField] FloatVariable playerMenuCurrency;
+    [SerializeField] FloatVariable myCurrencyValue;
 
     private void OnEnable()
     {
@@ -21,6 +23,14 @@ public class MoveObjToObj : MonoBehaviour
         {
             if (target != null)
                 transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed.RuntimeValue * Time.deltaTime);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            playerMenuCurrency.Value += myCurrencyValue.RuntimeValue;
+            gameObject.SetActive(false);
         }
     }
 

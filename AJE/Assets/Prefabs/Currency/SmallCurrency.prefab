@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 669046667064256841}
   - component: {fileID: 5053955735945579614}
   - component: {fileID: 5348788894711254279}
+  - component: {fileID: 5293965561019574790}
   m_Layer: 0
   m_Name: SmallCurrency
   m_TagString: Currency
@@ -49,6 +50,8 @@ MonoBehaviour:
   TagOfObjToMoveTowards: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21,
     type: 2}
   speed: {fileID: 11400000, guid: caafbbe10a471c841becb13110f6232c, type: 2}
+  playerMenuCurrency: {fileID: 11400000, guid: b3baa54d022492f479c3717269c381b9, type: 2}
+  myCurrencyValue: {fileID: 11400000, guid: 372b74b4152206a4b80ba1faa4f56913, type: 2}
 --- !u!114 &5053955735945579614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +103,44 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5293965561019574790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669046667064256851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 98f0cd4936af84c4faffeb633aa3c415, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 669046667064256841}
+        m_MethodName: MoveObjToPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5348788894711254279}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &4476001081976947854
 GameObject:
   m_ObjectHideFlags: 0

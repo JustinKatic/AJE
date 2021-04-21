@@ -8,7 +8,8 @@ public class GameStateManager : MonoBehaviour
 {
     public void PauseGame()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        StartCoroutine(PauseAfterX());
     }
     public void ResumeGame()
     {
@@ -18,6 +19,11 @@ public class GameStateManager : MonoBehaviour
     public void GoToScene(string level)
     {
         SceneManager.LoadScene(level);
+    }
+    IEnumerator PauseAfterX()
+    {
+        yield return new WaitForSeconds(2);
+        Time.timeScale = 0;
     }
 
 }
