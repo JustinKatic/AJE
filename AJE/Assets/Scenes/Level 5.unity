@@ -44570,6 +44570,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff89e12844b29b7439800f158f799089, type: 3}
+--- !u!1 &822897179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1289911531533620288, guid: ff89e12844b29b7439800f158f799089,
+    type: 3}
+  m_PrefabInstance: {fileID: 822897178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &823426881
 GameObject:
   m_ObjectHideFlags: 0
@@ -57668,6 +57674,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff89e12844b29b7439800f158f799089, type: 3}
+--- !u!1 &1141279772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1289911531533620288, guid: ff89e12844b29b7439800f158f799089,
+    type: 3}
+  m_PrefabInstance: {fileID: 1141279771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1142133753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63898,11 +63910,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: SpawnPointsToActivateWithFog8.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: SpawnPointsToActivateWithFog5.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: SpawnPointsToActivateWithFog2.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: fog1
@@ -63947,7 +63963,7 @@ PrefabInstance:
     - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: SpawnPointsToActivateWithFog3.Array.data[0]
       value: 
-      objectReference: {fileID: 1120988197}
+      objectReference: {fileID: 1809591030}
     - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: SpawnPointsToActivateWithFog3.Array.data[1]
       value: 
@@ -64016,6 +64032,18 @@ PrefabInstance:
       propertyPath: RemoveFog7AtWaveX
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: SpawnPointsToActivateWithFog2.Array.data[1]
+      value: 
+      objectReference: {fileID: 1120988197}
+    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: SpawnPointsToActivateWithFog5.Array.data[0]
+      value: 
+      objectReference: {fileID: 822897179}
+    - target: {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: SpawnPointsToActivateWithFog8.Array.data[0]
+      value: 
+      objectReference: {fileID: 1141279772}
     - target: {fileID: 887570086, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: m_Enabled
       value: 0
