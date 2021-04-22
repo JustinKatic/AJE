@@ -4875,7 +4875,7 @@ MonoBehaviour:
   healthBar: {fileID: 4697752494645147092}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
     type: 3}
-  myMaxHealth: 1000
+  myMaxHealth: 90
   model: {fileID: 0}
   IHaveAHealthBar: 1
   DeathSound: {fileID: 0}
@@ -4898,7 +4898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c879dfefecc3a71489b4f87787e5f23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerDuration: 20
+  towerHealthLossSpeed: 0.5
 --- !u!1 &3095767586665226395
 GameObject:
   m_ObjectHideFlags: 0

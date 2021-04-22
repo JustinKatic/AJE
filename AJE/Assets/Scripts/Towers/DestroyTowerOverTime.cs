@@ -5,12 +5,12 @@ using UnityEngine;
 public class DestroyTowerOverTime : MonoBehaviour
 {
     TowerHealth towerHealth;
-    [SerializeField] float TowerDuration;
+    [SerializeField] float towerHealthLossSpeed;
 
     private void OnEnable()
     {
         towerHealth = gameObject.GetComponent<TowerHealth>();
-        InvokeRepeating("HurtTowerEveryX", 0, TowerDuration);
+        InvokeRepeating("HurtTowerEveryX", 0, towerHealthLossSpeed);
     }
 
     private void HurtTowerEveryX()
