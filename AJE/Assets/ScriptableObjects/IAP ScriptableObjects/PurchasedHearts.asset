@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55809fc5a9a08e14c93837e01a449d7b, type: 3}
-  m_Name: PlayerCurrentHp
+  m_Script: {fileID: 11500000, guid: 48334836d6bb1fc42824d14101d0e7ef, type: 3}
+  m_Name: PurchasedHearts
   m_EditorClassIdentifier: 
-  DeveloperDescription: 'Players current health.
-
-    Value set to Player Max health
-
-    in
-    PlayerHealthManager Script'
-  Value: 1500
-  RuntimeValue: -6980
+  DeveloperDescription: Total remaining hearts purchased through IAP.
+  Value: 0
+  RuntimeValue: 0

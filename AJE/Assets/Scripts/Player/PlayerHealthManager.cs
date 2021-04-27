@@ -16,10 +16,12 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] GameObject model;
     new Renderer renderer;
     Material newMat;
+    [SerializeField] BoolVariable playerIsDead;
 
 
     void Awake()
     {
+        playerIsDead.Value = false;
         currentHealth.RuntimeValue = maxHealth.RuntimeValue;
         _healthTxt.text = currentHealth.RuntimeValue.ToString();
 
@@ -33,7 +35,12 @@ public class PlayerHealthManager : MonoBehaviour
     {
         if (currentHealth.RuntimeValue <= 0)
         {
-            PlayerDeath.Raise();
+            if (playerIsDead.Value == false)
+            {
+                Debug.Log("playerdied");
+                PlayerDeath.Raise();
+                playerIsDead.Value = true;
+            }
         }
         if (currentHealth.RuntimeValue > maxHealth.RuntimeValue)
         {
@@ -54,5 +61,10 @@ public class PlayerHealthManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         renderer.material.DisableKeyword("_EMISSION");
         //model.transform.localScale = new Vector3(1f, 1f, 1f);
+    }
+
+    public void Revive()
+    {
+        currentHealth.RuntimeValue = maxHealth.RuntimeValue;
     }
 }

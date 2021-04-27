@@ -15,6 +15,9 @@ public class IAPManager : MonoBehaviour, IStoreListener
     private string buyMoreSouls = "buy_more_souls";
     private string buyTower1 = "buy_tower1";
 
+    [SerializeField] IntVariable purchasedHearts;
+    [SerializeField] IntVariable purchasedSouls;
+    [SerializeField] BoolVariable tower1Purchased;
 
     //************************** Adjust these methods **************************************
     public void InitializePurchasing()
@@ -58,15 +61,21 @@ public class IAPManager : MonoBehaviour, IStoreListener
     {
         if (String.Equals(args.purchasedProduct.definition.id, buyExtraLives, StringComparison.Ordinal))
         {
+            purchasedHearts.Value += 10;
             Debug.Log("purchase extra lives successful");
+            Debug.Log("total hearts = " + purchasedHearts.Value);
         }
         else if (String.Equals(args.purchasedProduct.definition.id, buyMoreSouls, StringComparison.Ordinal))
         {
+            purchasedSouls.Value += 2;
             Debug.Log("purchase more souls successful");
+            Debug.Log("total purchased souls = " + purchasedSouls.Value);
         }
         else if (String.Equals(args.purchasedProduct.definition.id, buyTower1, StringComparison.Ordinal))
         {
+            tower1Purchased.Value = true;
             Debug.Log("purchase new tower 1 successful");
+            Debug.Log("tower1purchased = " + tower1Purchased.Value);
         }
         else
         {

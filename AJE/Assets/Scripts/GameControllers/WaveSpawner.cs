@@ -17,7 +17,9 @@ public class WaveSpawner : MonoBehaviour
         public Transform[] enemy;
         public float rate;
     }
-
+    [SerializeField] bool doesLevelRewardSouls = false;
+    [SerializeField] BoolVariable levelBonusSoulsCollected;
+    [SerializeField] FloatVariable playerCurrency;
     [SerializeField] IntVariable nextWaveNum;
 
     [Header("WAVE DETAILS")]
@@ -91,7 +93,7 @@ public class WaveSpawner : MonoBehaviour
 
         if (nextWaveNum.RuntimeValue + 1 == waves.Length)
         {
-            AllWavesCompleted.Raise();
+            EndLevel();
         }
         else
         {
@@ -157,5 +159,19 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(timeBeforeFirstWave);
             buildPromptTxt.SetActive(false);
         }
+    }
+
+    void EndLevel()
+    {
+        //play victory animations
+        if (doesLevelRewardSouls)
+        {
+            if (levelBonusSoulsCollected.Value == false)
+            {
+                levelBonusSoulsCollected.Value = true;
+                playerCurrency.Value += 2;
+            }
+        }
+        AllWavesCompleted.Raise();
     }
 }

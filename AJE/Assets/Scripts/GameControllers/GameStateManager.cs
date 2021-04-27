@@ -6,10 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
-    public void PauseGame()
+    public void PauseGameWithTimer()
     {
+        Debug.Log("pause game being called");
         //Time.timeScale = 0;
         StartCoroutine(PauseAfterX());
+
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
     }
     public void ResumeGame()
     {
@@ -22,8 +29,14 @@ public class GameStateManager : MonoBehaviour
     }
     IEnumerator PauseAfterX()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         Time.timeScale = 0;
     }
+
+    //IEnumerator ResumeAfterX()
+    //{
+    //    yield return new WaitForSeconds(1);
+    //    Time.timeScale = 1;
+    //}
 
 }
