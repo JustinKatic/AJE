@@ -1116,6 +1116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36775e30cd8a09843a16e7fd2bf686bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doesLevelRewardSouls: 0
+  levelBonusSoulsCollected: {fileID: 0}
+  playerCurrency: {fileID: 0}
   nextWaveNum: {fileID: 11400000, guid: 87c2d4b974b34c447a96bcefb6204d26, type: 2}
   waves:
   - name: Wave 1
@@ -1225,6 +1228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a448d34265e684ab8c4ec0ae1bbbcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  purchasedCurrency: {fileID: 11400000, guid: 3a93f192357ca124aa813c1b45918085, type: 2}
   playerInGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
     type: 2}
   ActiveEnemies: {fileID: 11400000, guid: ee5a4a18baf440f439927bc50c8d16f3, type: 2}

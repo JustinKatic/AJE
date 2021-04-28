@@ -8,6 +8,7 @@ public class ReviveButton : MonoBehaviour
     [SerializeField] GameObject defeatScreen;
     [SerializeField] GameObject shopScreen;
     PlayerHealthManager healthManager;
+    [SerializeField] GameEvent playerHealthIncreaseEvent;
     [SerializeField] IntVariable hearts;
     [SerializeField] GameStateManager stateManager;
     [SerializeField] BoolVariable playerDead;
@@ -38,6 +39,7 @@ public class ReviveButton : MonoBehaviour
             shopScreen.SetActive(false);
             stateManager.ResumeGame();
             joystick.SetActive(true);
+            playerHealthIncreaseEvent.Raise();
         }
         else
         {
