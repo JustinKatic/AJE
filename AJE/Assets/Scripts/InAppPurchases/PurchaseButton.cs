@@ -19,6 +19,7 @@ public class PurchaseButton : MonoBehaviour
                 break;
             case PurchaseType.buyTower1:
                 IAPManager.instance.BuyTower1();
+                gameObject.SetActive(false);
                 break;
         }
     }

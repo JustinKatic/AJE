@@ -15,11 +15,19 @@ public class TowerButtonsController : MonoBehaviour
     [SerializeField] bool isPlagueTowerAvaible;
     [SerializeField] bool isVamparicTowerAvaible;
     [SerializeField] bool isRangeTowerAvaible;
+    [SerializeField] BoolVariable isNewTower1Purchased;
 
     private void OnEnable()
     {
-
-
+        //Set tower to active if NewTower1 has been purchased
+        if (isNewTower1Purchased.Value == true)
+        {
+            isPlagueTowerAvaible = true;
+            plagueTowerButton.SetActive(true);
+        }
+        else
+            plagueTowerButton.SetActive(false);
+        
         //DAMAGE TOWER BUTTON  set active/notActive
         if (isDmgTowerAvaible)
             damageTowerButton.SetActive(true);
@@ -50,5 +58,4 @@ public class TowerButtonsController : MonoBehaviour
         else
             rangeTowerButton.SetActive(false);
     }
-
 }
