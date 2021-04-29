@@ -263,6 +263,8 @@ MonoBehaviour:
   stateManager: {fileID: 0}
   playerDead: {fileID: 0}
   joystick: {fileID: 0}
+  playerInvincibleEvent: {fileID: 11400000, guid: 0a5191ab626ac9d43845a18164614eec,
+    type: 2}
 --- !u!1 &8466454558737777037
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +449,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6887552655022053922, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
@@ -959,7 +971,7 @@ PrefabInstance:
     - target: {fileID: 6252037432882936848, guid: 467c305b62ca57b4ba29bdc4b9b45a4c,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6252037432882936848, guid: 467c305b62ca57b4ba29bdc4b9b45a4c,
         type: 3}
@@ -970,6 +982,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: REVIVE
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252037432882936848, guid: 467c305b62ca57b4ba29bdc4b9b45a4c,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6252037432882936851, guid: 467c305b62ca57b4ba29bdc4b9b45a4c,
         type: 3}

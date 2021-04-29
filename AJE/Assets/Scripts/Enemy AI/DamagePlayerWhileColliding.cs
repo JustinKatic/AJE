@@ -11,6 +11,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
     [SerializeField] FloatVariable playersCurrentHealth;
     [SerializeField] GameObject floatingDmg;
     [SerializeField] GameEvent PlayerHealthDecreasedEvent;
+    [SerializeField] BoolVariable isPlayerInvincible;
 
 
 
@@ -41,10 +42,13 @@ public class DamagePlayerWhileColliding : MonoBehaviour
             _timer += Time.deltaTime;
             if (_timer > _CollidingDamageEveryX)
             {
-                playersCurrentHealth.RuntimeValue -= _damage;
-                FloatingTxt(_damage, other.transform, "-", Color.red);
-                PlayerHealthDecreasedEvent.Raise();
-                _timer = 0.0f;
+                if (isPlayerInvincible.Value == false)
+                {
+                    playersCurrentHealth.RuntimeValue -= _damage;
+                    FloatingTxt(_damage, other.transform, "-", Color.red);
+                    PlayerHealthDecreasedEvent.Raise();
+                    _timer = 0.0f;
+                }
             }
         }
         else if (other.gameObject.tag == "DamageableTower")

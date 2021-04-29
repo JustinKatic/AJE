@@ -17,6 +17,7 @@ public class PlayerHealthManager : MonoBehaviour
     new Renderer renderer;
     Material newMat;
     [SerializeField] BoolVariable playerIsDead;
+    [SerializeField] BoolVariable isPlayerInvincible;
 
 
     void Awake()
@@ -66,5 +67,18 @@ public class PlayerHealthManager : MonoBehaviour
     public void Revive()
     {
         currentHealth.RuntimeValue = maxHealth.RuntimeValue;
+    }
+
+    public void Invincibility()
+    {
+        StartCoroutine(InvincibilityRoutine());
+        print("doing a thing");
+    }
+
+    IEnumerator InvincibilityRoutine()
+    {
+        isPlayerInvincible.Value = true;
+        yield return new WaitForSeconds(3);
+        isPlayerInvincible.Value = false;
     }
 }

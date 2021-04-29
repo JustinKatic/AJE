@@ -14,6 +14,8 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
 
     [SerializeField] float FindTowerRadiusCheck;
 
+    [SerializeField] BoolVariable isPlayerInvincible;
+
     GameObject player;
 
     private void Start()
@@ -45,9 +47,12 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
             {               
                 if (hitColliders[i].gameObject.layer == LayerMask.NameToLayer("Player"))
                 {
-                    PlayerCurrentHp.RuntimeValue -= _damage;
-                    UpdatePlayerHealthEvent.Raise();
-                    FloatingTxt(_damage, hitColliders[0].transform, "-", Color.red);
+                    if (isPlayerInvincible.Value == false)
+                    {
+                        PlayerCurrentHp.RuntimeValue -= _damage;
+                        UpdatePlayerHealthEvent.Raise();
+                        FloatingTxt(_damage, hitColliders[0].transform, "-", Color.red);
+                    }
                 }
                 else if (hitColliders[i].gameObject.layer == LayerMask.NameToLayer("Tower"))
                 {

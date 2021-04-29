@@ -13,6 +13,7 @@ public class ReviveButton : MonoBehaviour
     [SerializeField] GameStateManager stateManager;
     [SerializeField] BoolVariable playerDead;
     [SerializeField] GameObject joystick;
+    [SerializeField] GameEvent playerInvincibleEvent;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class ReviveButton : MonoBehaviour
             healthManager.Revive();
             hearts.Value -= 1;
             Debug.Log("hearts remaining = " + hearts.Value);
+            playerInvincibleEvent.Raise();
             defeatScreen.SetActive(false);
             shopScreen.SetActive(false);
             stateManager.ResumeGame();

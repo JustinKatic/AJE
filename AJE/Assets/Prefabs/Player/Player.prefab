@@ -811,6 +811,7 @@ GameObject:
   - component: {fileID: 4784434350246230983}
   - component: {fileID: 1266408651}
   - component: {fileID: 8650644798948072627}
+  - component: {fileID: 832473612076383194}
   m_Layer: 8
   m_Name: Logic
   m_TagString: Player
@@ -875,6 +876,7 @@ MonoBehaviour:
   modelGeo: {fileID: 5157071546877137204}
   model: {fileID: 7767252061552466874}
   playerIsDead: {fileID: 11400000, guid: 84060f51ee78e464a9d9001ef3ddf11c, type: 2}
+  isPlayerInvincible: {fileID: 11400000, guid: b40bbec5a5cf88544b01b41386fc6c34, type: 2}
 --- !u!136 &284077346307895743
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -968,6 +970,33 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7682976927453866654}
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &832473612076383194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284077346307895737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 0a5191ab626ac9d43845a18164614eec, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 284077346307895728}
+        m_MethodName: Invincibility
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1431,12 +1460,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7bd3f86fde05874590e58715b3d5f56, type: 3}
---- !u!4 &6742323224250919337 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e7bd3f86fde05874590e58715b3d5f56,
-    type: 3}
-  m_PrefabInstance: {fileID: 1795598757833605811}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7767252061552466874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: e7bd3f86fde05874590e58715b3d5f56,
@@ -1446,6 +1469,12 @@ GameObject:
 --- !u!1 &5157071546877137204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6879994660558525319, guid: e7bd3f86fde05874590e58715b3d5f56,
+    type: 3}
+  m_PrefabInstance: {fileID: 1795598757833605811}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6742323224250919337 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e7bd3f86fde05874590e58715b3d5f56,
     type: 3}
   m_PrefabInstance: {fileID: 1795598757833605811}
   m_PrefabAsset: {fileID: 0}

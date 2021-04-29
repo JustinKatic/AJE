@@ -13,11 +13,14 @@ public class ResetSO : MonoBehaviour
 
     [SerializeField] GameEvent UpdateCurrency;
 
+    [SerializeField] BoolVariable isPlayerInvincible;
+
     private void OnEnable()
     {
         ActiveEnemies.RuntimeValue = ActiveEnemies.Value;
         nextWave.RuntimeValue = nextWave.Value;
         playerInGameCurrency.RuntimeValue = playerInGameCurrency.Value + purchasedCurrency.Value;
+        isPlayerInvincible.Value = false;
         UpdateCurrency.Raise();
     }
 }
