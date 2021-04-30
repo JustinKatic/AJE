@@ -6,7 +6,7 @@ public class SocialMediaLinks : MonoBehaviour
 {
     public string url;
 
-    public void Open()
+    public void OpenURL()
     {
         Application.OpenURL(url);
     }
