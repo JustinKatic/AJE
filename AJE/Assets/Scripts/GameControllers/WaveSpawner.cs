@@ -44,6 +44,11 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentWaveTxt;
     [SerializeField] GameObject buildPromptTxt;
 
+    [Header("SAVE")]
+    [SerializeField] BoolVariableList unlockedLevels;
+    [SerializeField] int currentLevel;
+
+
     public SpawnState State { get; private set; } = SpawnState.COUNTING;
 
     void Start()
@@ -137,12 +142,12 @@ public class WaveSpawner : MonoBehaviour
     {
         GameObject[] spawnPoints;
         spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoints");
-        int randSpawnPoint = Random.Range(0, spawnPoints.Length -1);
+        int randSpawnPoint = Random.Range(0, spawnPoints.Length - 1);
         Debug.Log("rand spawn numer " + randSpawnPoint);
         Transform _sp = spawnPoints[randSpawnPoint].transform;
 
         GameObject enemy = ObjectPooler.SharedInstance.GetPooledObject(_enemy.name);
-        enemy.transform.position = new Vector3 (_sp.position.x, _sp.position.y-0.95f, _sp.position.z);
+        enemy.transform.position = new Vector3(_sp.position.x, _sp.position.y - 0.95f, _sp.position.z);
         enemy.SetActive(true);
         NumberOfActiveEnemies.RuntimeValue += 1;
 
@@ -172,6 +177,11 @@ public class WaveSpawner : MonoBehaviour
                 playerCurrency.Value += 2;
             }
         }
+
+        //Save and unlock next level.
+        if (unlockedLevels.boolList[currentLevel] != null)
+            unlockedLevels.boolList[currentLevel].locked = false;
+        GameSaveManager.instance.SaveGame(unlockedLevels, "unlockedLevels");
         AllWavesCompleted.Raise();
     }
 }

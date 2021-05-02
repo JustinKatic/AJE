@@ -33,12 +33,12 @@ public class TowersDefault : MonoBehaviour
 
     protected virtual void MyTriggerEffect()
     {
-        Debug.Log("Select a specifc tower script");
+        
     }
 
     protected virtual void MyCollisions()
     {
-        Debug.Log("Select a specifc tower script");
+        
     }
 
     public void FloatingTxt(float damage, Transform transformToSpawnTxtAt, string type, Color32 color)

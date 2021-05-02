@@ -3,21 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] GameObject mainMenuScreen;
     [SerializeField] GameObject settingsScreen;
     [SerializeField] GameObject creditsScreen;
     [SerializeField] GameObject shopScreen;
-    //[SerializeField] GameObject equipmentScreen;
-   // [SerializeField] GameObject generalsScreen;
-    //[SerializeField] GameObject mapScreen;
+
+    [SerializeField] BoolVariableList unlockedLevels;
+
+    [SerializeField] GameObject[] lockedLevelOverlay;
+
 
     private void Start()
     {
+        if (!GameSaveManager.instance.DoesSaveFileExist("unlockedLevels"))
+        {
+            for (int i = 0; i < unlockedLevels.boolList.Length; i++)
+            {
+                unlockedLevels.boolList[i].locked = true;
+            }
+            unlockedLevels.boolList[0].locked = false;
+        }
 
-        //Time.timeScale = 1;
-        //Screen.SetResolution(720, 1280, true);
+
+        GameSaveManager.instance.LoadGame(unlockedLevels, "unlockedLevels");
+
+        for (int i = 0; i < unlockedLevels.boolList.Length; i++)
+        {
+            if (unlockedLevels.boolList[i].locked == true)
+                lockedLevelOverlay[i].SetActive(true);
+            else
+                lockedLevelOverlay[i].SetActive(false);
+        }
     }
     public void GoToScene(string level)
     {
@@ -39,9 +59,6 @@ public class MenuManager : MonoBehaviour
         settingsScreen.SetActive(false);
         creditsScreen.SetActive(false);
         shopScreen.SetActive(false);
-        //equipmentScreen.SetActive(false);
-       // generalsScreen.SetActive(false);
-        //mapScreen.SetActive(false);
     }
 
     public void GoToSettings()
@@ -50,9 +67,6 @@ public class MenuManager : MonoBehaviour
         creditsScreen.SetActive(false);
         mainMenuScreen.SetActive(false);
         shopScreen.SetActive(false);
-        //equipmentScreen.SetActive(false);
-       // generalsScreen.SetActive(false);
-        //mapScreen.SetActive(false);
     }
 
     public void GoToCredits()
@@ -61,9 +75,6 @@ public class MenuManager : MonoBehaviour
         settingsScreen.SetActive(false);
         mainMenuScreen.SetActive(false);
         shopScreen.SetActive(false);
-        //equipmentScreen.SetActive(false);
-       // generalsScreen.SetActive(false);
-        //mapScreen.SetActive(false);
     }
     public void GoToShop()
     {
@@ -71,35 +82,23 @@ public class MenuManager : MonoBehaviour
         creditsScreen.SetActive(false);
         settingsScreen.SetActive(false);
         mainMenuScreen.SetActive(false);
-        //equipmentScreen.SetActive(false);
-       // generalsScreen.SetActive(false);
-        //mapScreen.SetActive(false);
     }
     public void GoToEquipment()
     {
-        //equipmentScreen.SetActive(true);
         shopScreen.SetActive(false);
         creditsScreen.SetActive(false);
         settingsScreen.SetActive(false);
         mainMenuScreen.SetActive(false);
-      //  generalsScreen.SetActive(false);
-        //mapScreen.SetActive(false);
     }
     public void GoToGenerals()
     {
-       // generalsScreen.SetActive(true);
-       //equipmentScreen.SetActive(false);
         shopScreen.SetActive(false);
         creditsScreen.SetActive(false);
         settingsScreen.SetActive(false);
         mainMenuScreen.SetActive(false);
-        //mapScreen.SetActive(false);
     }
     public void GoToMap()
     {
-        //mapScreen.SetActive(true);
-        //generalsScreen.SetActive(false);
-        //equipmentScreen.SetActive(false);
         shopScreen.SetActive(false);
         creditsScreen.SetActive(false);
         settingsScreen.SetActive(false);
