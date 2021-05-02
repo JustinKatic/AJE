@@ -72,7 +72,7 @@ public class ArcherMove : EnemyMove
             if (archerShoot.shootReady == true)
             {
                 archerShoot.CanShoot = true;
-                LookTowards();
+                //LookTowards();
             }
             if (archerShoot.shootReady == false)
             {

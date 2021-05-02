@@ -5,60 +5,99 @@ using UnityEngine;
 public class DwarfCannoneerMove : EnemyMove
 {
     [SerializeField] float MyAttackRange;
-    DwarfCannoneerShoot dwarfCannoneerShoot;
-    [HideInInspector] public bool rePositioned;
-    private GameObject randomPos;
-    [SerializeField] LayerMask Waypoints;
+    [SerializeField] float myFollowRange;
 
-    private float _timer;
-    [SerializeField] protected float TimeSpentWandering;
+    [SerializeField] float randomXZWanderRangeMinMax;
 
+    private DwarfCannoneerShoot dwarfCannoneerShoot;
+
+    bool shootState;
+    bool followTargetState = true;
+    bool wanderState;
+
+
+    [SerializeField] float wanderTime;
+    private float wanderCounter;
 
     bool posFound = false;
+    Vector3 wanderPos;
 
-    private void Awake()
+
+    protected override void Awake()
     {
+        base.Awake();
         dwarfCannoneerShoot = gameObject.GetComponent<DwarfCannoneerShoot>();
+    }
+
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        followTargetState = true;
+        wanderCounter = 0;
     }
     public override void Move()
     {
-        //move towards player
         float dist = Vector3.Distance(transform.position, targetDestination.position);
-        if (rePositioned == true && dist > MyAttackRange)
+
+        if (wanderState)
         {
-            dwarfCannoneerShoot.canShoot = false;
+            wanderCounter += Time.deltaTime;
             navMeshAgent.isStopped = false;
-            navMeshAgent.SetDestination(targetDestination.position);
-        }
-        //stop and shoot at player
-        else if (rePositioned == true && dist < MyAttackRange)
-        {
-            dwarfCannoneerShoot.canShoot = true;
-            navMeshAgent.isStopped = true;
-            LookTowards();
-        }
-        else if (rePositioned == false)
-        {
+
             if (posFound == false)
             {
-                Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4, Waypoints);
-                randomPos = hitColliders[Random.Range(0, hitColliders.Length)].gameObject;
+                float x = Random.Range(transform.position.x - randomXZWanderRangeMinMax, transform.position.x + randomXZWanderRangeMinMax);
+                float z = Random.Range(transform.position.z - randomXZWanderRangeMinMax, transform.position.z + randomXZWanderRangeMinMax);
+                wanderPos = new Vector3(x, transform.position.y, z);
                 posFound = true;
             }
-            navMeshAgent.isStopped = false;
-            dwarfCannoneerShoot.canShoot = false;
-            navMeshAgent.SetDestination(randomPos.transform.position);
+            navMeshAgent.SetDestination(wanderPos);
 
-            _timer += Time.deltaTime;
-
-            float distToRand = Vector3.Distance(transform.position, randomPos.transform.position);
-            if (distToRand <= 0.6f || _timer >= TimeSpentWandering)
+            if (wanderCounter >= wanderTime)
             {
-                rePositioned = true;
                 posFound = false;
-                _timer = 0;
+                wanderCounter = 0;
+                wanderState = false;
+                followTargetState = true;
+            }
+        }
+
+        if (followTargetState)
+        {
+
+            navMeshAgent.isStopped = false;
+
+            if (dist > myFollowRange)
+            {
+                navMeshAgent.SetDestination(targetDestination.position);
+                navMeshAgent.isStopped = false;
+            }
+            if (dist < MyAttackRange)
+            {
+                followTargetState = false;
+                shootState = true;
+            }
+        }
+
+        if (shootState)
+        {
+
+            navMeshAgent.ResetPath();
+            navMeshAgent.velocity = Vector3.zero;
+            navMeshAgent.isStopped = true;
+
+            dwarfCannoneerShoot.CanShoot = true;
+            LookTowards();
+
+            if (dwarfCannoneerShoot.shotBullet == true)
+            {
+                dwarfCannoneerShoot.CanShoot = false;
+                shootState = false;
+                wanderState = true;
+                dwarfCannoneerShoot.shotBullet = false;
             }
         }
     }
-
 }
+

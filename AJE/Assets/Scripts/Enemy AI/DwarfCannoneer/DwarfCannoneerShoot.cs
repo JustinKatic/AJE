@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class DwarfCannoneerShoot : EnemyShoot
 {
-    public bool canShoot;
+    public bool CanShoot;
+
+
+    public bool shotBullet;
+
+
+
+    private void OnEnable()
+    {
+        _shotCounter = TimeBetweenShots;
+        CanShoot = false;
+    }
+
     public override void Shoot()
     {
-        if (canShoot)
+        if (CanShoot)
         {
             _shotCounter -= Time.deltaTime;
             if (_shotCounter <= 0)
@@ -17,7 +29,9 @@ public class DwarfCannoneerShoot : EnemyShoot
                 bullet.transform.position = _firePoint.position;
                 bullet.transform.rotation = _firePoint.transform.rotation;
                 bullet.SetActive(true);
-                gameObject.GetComponent<DwarfCannoneerMove>().rePositioned = false;
+
+                shotBullet = true;
+                _shotCounter = TimeBetweenShots;
             }
         }
     }

@@ -617,11 +617,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794a56260118b8046a62d96ec3005608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBetweenShots: 1.5
+  TimeBetweenShots: 3
   _firePoint: {fileID: 26521991779869460}
-  AttackRange: 6
+  AttackRange: 5
   TagOfTarget: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21, type: 2}
-  canShoot: 0
+  CanShoot: 0
+  shotBullet: 0
 --- !u!114 &6682816962737754754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,11 +649,9 @@ MonoBehaviour:
   towerHasAggro: 0
   hasFoundInitialTarget: 0
   MyAttackRange: 6
-  rePositioned: 0
-  Waypoints:
-    serializedVersion: 2
-    m_Bits: 8192
-  TimeSpentWandering: 2
+  myFollowRange: 5
+  randomXZWanderRangeMinMax: 10
+  wanderTime: 3
 --- !u!114 &2230505477993307501
 MonoBehaviour:
   m_ObjectHideFlags: 0
