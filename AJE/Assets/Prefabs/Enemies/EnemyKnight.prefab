@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _CollidingDamageEveryX: 1
-  _damage: 120
+  _damage: 105
   playersCurrentHealth: {fileID: 11400000, guid: 4d7b1cc8dd422994d9a43ef5e09b5796,
     type: 2}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
@@ -842,10 +842,8 @@ MonoBehaviour:
   slowEffect: {fileID: 627702398710847025}
   EnemyDetectionRange: {fileID: 11400000, guid: df85dd4b00b0713418b37d8ca8fab818,
     type: 2}
-  playerAggroTimer: 0
   playerAggroTime: 2
   playerHasAggro: 0
-  towerAggroTimer: 0
   towerAggroTime: 1.5
   towerHasAggro: 0
   hasFoundInitialTarget: 0
