@@ -61,14 +61,14 @@ public class IAPManager : MonoBehaviour, IStoreListener
     {
         if (String.Equals(args.purchasedProduct.definition.id, buyExtraLives, StringComparison.Ordinal))
         {
-            purchasedHearts.Value += 10;
+            purchasedHearts.Value += 5;
             Debug.Log("purchase extra lives successful");
             Debug.Log("total hearts = " + purchasedHearts.Value);
             GameSaveManager.instance.SaveGame(purchasedHearts, "purchasedHearts");
         }
         else if (String.Equals(args.purchasedProduct.definition.id, buyMoreSouls, StringComparison.Ordinal))
         {
-            purchasedSouls.Value += 2;
+            purchasedSouls.Value += 1;
             Debug.Log("purchase more souls successful");
             Debug.Log("total purchased souls = " + purchasedSouls.Value);
             GameSaveManager.instance.SaveGame(purchasedSouls, "purchasedSouls");
