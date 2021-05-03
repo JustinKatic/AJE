@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
-    public void PauseGameWithTimer()
+    public void PauseGameWithTimer(float seconds)
     {
         Debug.Log("pause game being called");
         //Time.timeScale = 0;
-        StartCoroutine(PauseAfterX());
+        StartCoroutine(PauseAfterX(seconds));
 
     }
 
@@ -27,9 +27,9 @@ public class GameStateManager : MonoBehaviour
     {
         SceneManager.LoadScene(level);
     }
-    IEnumerator PauseAfterX()
+    IEnumerator PauseAfterX(float seconds)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(seconds);
         Time.timeScale = 0;
     }
 
