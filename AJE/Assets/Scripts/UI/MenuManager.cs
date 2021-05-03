@@ -16,9 +16,24 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] GameObject[] lockedLevelOverlay;
 
+    [SerializeField] BoolVariable purchasedTower1;
+    [SerializeField] IntVariable purchasedHearts;
+    [SerializeField] IntVariable purchasedSouls;
 
     private void Start()
     {
+        if (!GameSaveManager.instance.DoesSaveFileExist("purchasedHearts"))
+        {
+            purchasedHearts.Value = 0;
+        }
+        if (!GameSaveManager.instance.DoesSaveFileExist("purchasedSouls"))
+        {
+            purchasedSouls.Value = 0;
+        }
+        if (!GameSaveManager.instance.DoesSaveFileExist("purchasedTower1"))
+        {
+            purchasedTower1.Value = false;
+        }
         if (!GameSaveManager.instance.DoesSaveFileExist("unlockedLevels"))
         {
             for (int i = 0; i < unlockedLevels.boolList.Length; i++)
@@ -28,7 +43,9 @@ public class MenuManager : MonoBehaviour
             unlockedLevels.boolList[0].locked = false;
         }
 
-
+        GameSaveManager.instance.LoadGame(purchasedHearts, "purchasedHearts");
+        GameSaveManager.instance.LoadGame(purchasedSouls, "purchasedSouls");
+        GameSaveManager.instance.LoadGame(purchasedTower1, "purchasedTower1");
         GameSaveManager.instance.LoadGame(unlockedLevels, "unlockedLevels");
 
         for (int i = 0; i < unlockedLevels.boolList.Length; i++)

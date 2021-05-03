@@ -64,18 +64,21 @@ public class IAPManager : MonoBehaviour, IStoreListener
             purchasedHearts.Value += 10;
             Debug.Log("purchase extra lives successful");
             Debug.Log("total hearts = " + purchasedHearts.Value);
+            GameSaveManager.instance.SaveGame(purchasedHearts, "purchasedHearts");
         }
         else if (String.Equals(args.purchasedProduct.definition.id, buyMoreSouls, StringComparison.Ordinal))
         {
             purchasedSouls.Value += 2;
             Debug.Log("purchase more souls successful");
             Debug.Log("total purchased souls = " + purchasedSouls.Value);
+            GameSaveManager.instance.SaveGame(purchasedSouls, "purchasedSouls");
         }
         else if (String.Equals(args.purchasedProduct.definition.id, buyTower1, StringComparison.Ordinal))
         {
             tower1Purchased.Value = true;
             Debug.Log("purchase new tower 1 successful");
             Debug.Log("tower1purchased = " + tower1Purchased.Value);
+            GameSaveManager.instance.SaveGame(tower1Purchased, "purchasedTower1");
         }
         else
         {
