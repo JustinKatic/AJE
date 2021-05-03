@@ -12,6 +12,9 @@ public class ArcherMove : EnemyMove
     bool shootState;
     bool followTargetState;
 
+    float rotatingTimer;
+    public float timeRotatingBeforeShot;
+
     [SerializeField] float shootCooldown;
     private float shootCooldownTimer;
 
@@ -71,11 +74,17 @@ public class ArcherMove : EnemyMove
 
             if (archerShoot.shootReady == true)
             {
+                rotatingTimer += Time.deltaTime;
+                if(rotatingTimer <= timeRotatingBeforeShot)
+                {
+                    LookTowards();
+                }
                 archerShoot.CanShoot = true;
-                //LookTowards();
+                
             }
             if (archerShoot.shootReady == false)
             {
+                rotatingTimer = 0f;
                 shootState = false;
                 followTargetState = true;
             }

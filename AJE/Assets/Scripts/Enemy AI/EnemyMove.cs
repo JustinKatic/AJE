@@ -28,12 +28,12 @@ public class EnemyMove : MonoBehaviour
     private LayerMask PlayerMask;
 
 
-    public float playerAggroTimer;
+    private float playerAggroTimer;
     public float playerAggroTime;
     public bool playerHasAggro = false;
 
 
-    public float towerAggroTimer;
+    private float towerAggroTimer;
     public float towerAggroTime;
     public bool towerHasAggro = false;
 
