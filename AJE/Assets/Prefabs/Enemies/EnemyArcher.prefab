@@ -278,16 +278,14 @@ MonoBehaviour:
   slowEffect: {fileID: 8699856903649980464}
   EnemyDetectionRange: {fileID: 11400000, guid: df85dd4b00b0713418b37d8ca8fab818,
     type: 2}
-  playerAggroTimer: 0
-  playerAggroTime: 2
+  playerAggroTime: 2.5
   playerHasAggro: 0
-  towerAggroTimer: 0
   towerAggroTime: 1.5
   towerHasAggro: 0
   hasFoundInitialTarget: 0
   MyAttackRange: 5
   myFollowRange: 5
-  timeRotatingBeforeShot: 1
+  timeRotatingBeforeShot: 0.85
   shootCooldown: 4
 --- !u!54 &2587712376351424755
 Rigidbody:
@@ -317,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbcde9b527adb74897d837e05592f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBetweenShots: 2
+  TimeBetweenShots: 1.15
   _firePoint: {fileID: 8016400251654897771}
   AttackRange: 5
   TagOfTarget: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21, type: 2}
