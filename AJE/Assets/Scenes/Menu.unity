@@ -696,8 +696,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 103.6}
-  m_SizeDelta: {x: -30, y: -237.2}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: -40, y: -264}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &294717252
 MonoBehaviour:
@@ -1290,7 +1290,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -47.200073, y: 0}
-  m_SizeDelta: {x: 207.09998, y: 126}
+  m_SizeDelta: {x: 220.9, y: 126}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &413819814
 MonoBehaviour:
@@ -2889,7 +2889,7 @@ PrefabInstance:
     - target: {fileID: 2522312462230702925, guid: b0227a40392876a4bbd33fc9cdf988ee,
         type: 3}
       propertyPath: m_Name
-      value: LockedImageOverlayLevel8
+      value: LockedImageOverlayLevel9
       objectReference: {fileID: 0}
     - target: {fileID: 2904435925776706454, guid: b0227a40392876a4bbd33fc9cdf988ee,
         type: 3}
@@ -3141,6 +3141,7 @@ GameObject:
   - component: {fileID: 1126214932}
   - component: {fileID: 1126214931}
   - component: {fileID: 1126214930}
+  - component: {fileID: 1126214933}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -3183,7 +3184,7 @@ MonoBehaviour:
   m_Content: {fileID: 1198170917}
   m_Horizontal: 1
   m_Vertical: 0
-  m_MovementType: 1
+  m_MovementType: 0
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.05
@@ -3234,6 +3235,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126214928}
   m_CullTransparentMesh: 0
+--- !u!114 &1126214933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126214928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54aaa385a9b88e84e9d50b9804aaa24e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementType: 0
+  movementAxis: 0
+  automaticallyLayout: 1
+  sizeControl: 0
+  size: {x: 400, y: 250}
+  automaticLayoutSpacing: 0
+  leftMargin: 25
+  rightMargin: 25
+  topMargin: 70
+  bottomMargin: 0
+  infinitelyScroll: 0
+  infiniteScrollingEndSpacing: 0
+  useOcclusionCulling: 0
+  startingPanel: 0
+  swipeGestures: 1
+  minimumSwipeSpeed: 0
+  previousButton: {fileID: 0}
+  nextButton: {fileID: 0}
+  pagination: {fileID: 0}
+  toggleNavigation: 1
+  snapTarget: 2
+  snappingSpeed: 10
+  thresholdSnappingSpeed: -1
+  hardSnap: 1
+  useUnscaledTime: 0
+  onPanelChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelSelecting:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelSelected:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelChanging:
+    m_PersistentCalls:
+      m_Calls: []
+  transitionEffects:
+  - minDisplacement: -1000
+    maxDisplacement: 1000
+    minValue: 0.75
+    maxValue: 1
+    defaultMinValue: 0.75
+    defaultMaxValue: 1
+    defaultMinDisplacement: -50
+    defaultMaxDisplacement: 50
+    showPanel: 1
+    showDisplacement: 1
+    showValue: 0
+    label: color.a
+    function:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -1000
+        value: 0.75
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1000
+        value: 0.75
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defaultFunction:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -50
+        value: 0.75
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 50
+        value: 0.75
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    simpleScrollSnap: {fileID: 1126214933}
 --- !u!1 &1134382787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,10 +3565,10 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 5520, y: -435.88843}
-  m_Pivot: {x: 0, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1198170918
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3476,12 +3606,12 @@ MonoBehaviour:
   m_Padding:
     m_Left: 35
     m_Right: 35
-    m_Top: 40
-    m_Bottom: 50
+    m_Top: 0
+    m_Bottom: 0
   m_ChildAlignment: 3
   m_StartCorner: 2
   m_StartAxis: 0
-  m_CellSize: {x: 550, y: 934}
+  m_CellSize: {x: 500, y: 850}
   m_Spacing: {x: 150, y: 50}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -3782,6 +3912,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1317844045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2522312462230702925, guid: b0227a40392876a4bbd33fc9cdf988ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 987146514}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1321422099
 GameObject:
   m_ObjectHideFlags: 0
@@ -4397,6 +4533,7 @@ MonoBehaviour:
   - {fileID: 1793106522}
   - {fileID: 1446267635}
   - {fileID: 949602092}
+  - {fileID: 1317844045}
   purchasedTower1: {fileID: 11400000, guid: 23b3b707e4afd0344afc5f6914aac30c, type: 2}
   purchasedHearts: {fileID: 11400000, guid: b176d21d84f67ca48b285937e934b1d7, type: 2}
   purchasedSouls: {fileID: 11400000, guid: 3a93f192357ca124aa813c1b45918085, type: 2}
@@ -6580,7 +6717,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -247.95, y: 0}
+  m_AnchoredPosition: {x: -266, y: 0}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &383701045467936807
@@ -6825,6 +6962,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textAlignment
       value: 516
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887552655022053920, guid: 09d16204ba35cca4cb87066a59b2c203,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 7.520508
       objectReference: {fileID: 0}
     - target: {fileID: 6887552655022053922, guid: 09d16204ba35cca4cb87066a59b2c203,
         type: 3}
@@ -7783,7 +7925,7 @@ PrefabInstance:
     - target: {fileID: 4562942708046771752, guid: e6f3a7cd7c60dee48a6c20704b5f3d7b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.0999756
+      value: -5.1000977
       objectReference: {fileID: 0}
     - target: {fileID: 4562942708064229885, guid: e6f3a7cd7c60dee48a6c20704b5f3d7b,
         type: 3}
