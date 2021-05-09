@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 [AddComponentMenu("UI/Simple Scroll-Snap")]
 [RequireComponent(typeof(ScrollRect))]
-public class ScrollSnap : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class SimpleScrollSnap : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
     #region Fields
     public MovementType movementType = MovementType.Fixed;
@@ -131,12 +131,12 @@ public class ScrollSnap : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 
         DetermineVelocity();
     }
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
     private void OnValidate()
     {
         Initialize();
     }
-#endif
+    #endif
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -539,10 +539,10 @@ public class ScrollSnap : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
                         panel.transform.localPosition = new Vector3(panel.transform.localPosition.x, panel.transform.localPosition.y, transitionEffect.GetValue(displacement));
                         break;
                     case "localScale.x":
-                        panel.transform.localScale = new Vector3(transitionEffect.GetValue(displacement), panel.transform.localScale.y, panel.transform.localScale.z);
+                        panel.transform.localScale = new Vector2(transitionEffect.GetValue(displacement), panel.transform.localScale.y);
                         break;
                     case "localScale.y":
-                        panel.transform.localScale = new Vector3(panel.transform.localScale.x, transitionEffect.GetValue(displacement), panel.transform.localScale.z);
+                        panel.transform.localScale = new Vector2(panel.transform.localScale.x, transitionEffect.GetValue(displacement));
                         break;
                     case "localRotation.x":
                         panel.transform.localRotation = Quaternion.Euler(new Vector3(transitionEffect.GetValue(displacement), panel.transform.localEulerAngles.y, panel.transform.localEulerAngles.z));
@@ -764,8 +764,7 @@ public class ScrollSnap : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     #endregion
 
     #region Inner Classes
-    [Serializable]
-    public class TransitionEffect
+    [Serializable] public class TransitionEffect
     {
         #region Fields
         [SerializeField] protected float minDisplacement, maxDisplacement, minValue, maxValue, defaultMinValue, defaultMaxValue, defaultMinDisplacement, defaultMaxDisplacement;
@@ -773,7 +772,7 @@ public class ScrollSnap : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
         [SerializeField] private string label;
         [SerializeField] private AnimationCurve function;
         [SerializeField] private AnimationCurve defaultFunction;
-        [SerializeField] private ScrollSnap scrollSnap;
+        [SerializeField] private SimpleScrollSnap simpleScrollSnap;
         #endregion
 
         #region Properties
@@ -810,10 +809,10 @@ public class ScrollSnap : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
         #endregion
 
         #region Methods
-        public TransitionEffect(string label, float minValue, float maxValue, float minDisplacement, float maxDisplacement, AnimationCurve function, ScrollSnap simpleScrollSnap)
+        public TransitionEffect(string label, float minValue, float maxValue, float minDisplacement, float maxDisplacement, AnimationCurve function, SimpleScrollSnap simpleScrollSnap)
         {
             this.label = label;
-            this.scrollSnap = simpleScrollSnap;
+            this.simpleScrollSnap = simpleScrollSnap;
             this.minValue = minValue;
             this.maxValue = maxValue;
             this.minDisplacement = minDisplacement;
@@ -821,9 +820,9 @@ public class ScrollSnap : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
             this.function = function;
 
             SetDefaultValues(minValue, maxValue, minDisplacement, maxDisplacement, function);
-#if UNITY_EDITOR
+            #if UNITY_EDITOR
             UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
-#endif
+            #endif
         }
 
         private void SetDefaultValues(float minValue, float maxValue, float minDisplacement, float maxDisplacement, AnimationCurve function)
@@ -834,7 +833,7 @@ public class ScrollSnap : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
             defaultMaxDisplacement = maxDisplacement;
             defaultFunction = function;
         }
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         public void Init()
         {
             GUILayout.BeginVertical("HelpBox");
@@ -881,14 +880,14 @@ public class ScrollSnap : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
                 // Remove
                 if (GUILayout.Button("Remove"))
                 {
-                    scrollSnap.transitionEffects.Remove(this);
+                    simpleScrollSnap.transitionEffects.Remove(this);
                 }
                 GUILayout.EndHorizontal();
                 EditorGUI.indentLevel--;
             }
             GUILayout.EndVertical();
         }
-#endif
+        #endif
         public void Reset()
         {
             minValue = defaultMinValue;
