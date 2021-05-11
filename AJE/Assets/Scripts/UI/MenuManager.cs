@@ -11,6 +11,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject settingsScreen;
     [SerializeField] GameObject creditsScreen;
     [SerializeField] GameObject shopScreen;
+    [SerializeField] GameObject audioSettingsScreen;
+
 
     [SerializeField] BoolVariableList unlockedLevels;
 
@@ -82,6 +84,7 @@ public class MenuManager : MonoBehaviour
         settingsScreen.SetActive(false);
         creditsScreen.SetActive(false);
         shopScreen.SetActive(false);
+        audioSettingsScreen.SetActive(false);
     }
 
     public void GoToSettings()
@@ -90,6 +93,7 @@ public class MenuManager : MonoBehaviour
         creditsScreen.SetActive(false);
         mainMenuScreen.SetActive(false);
         shopScreen.SetActive(false);
+        audioSettingsScreen.SetActive(false);
     }
 
     public void GoToCredits()
@@ -98,6 +102,7 @@ public class MenuManager : MonoBehaviour
         settingsScreen.SetActive(false);
         mainMenuScreen.SetActive(false);
         shopScreen.SetActive(false);
+        audioSettingsScreen.SetActive(false);
     }
     public void GoToShop()
     {
@@ -105,23 +110,11 @@ public class MenuManager : MonoBehaviour
         creditsScreen.SetActive(false);
         settingsScreen.SetActive(false);
         mainMenuScreen.SetActive(false);
+        audioSettingsScreen.SetActive(false);
     }
-    public void GoToEquipment()
+    public void GoToAudioSettings()
     {
-        shopScreen.SetActive(false);
-        creditsScreen.SetActive(false);
-        settingsScreen.SetActive(false);
-        mainMenuScreen.SetActive(false);
-    }
-    public void GoToGenerals()
-    {
-        shopScreen.SetActive(false);
-        creditsScreen.SetActive(false);
-        settingsScreen.SetActive(false);
-        mainMenuScreen.SetActive(false);
-    }
-    public void GoToMap()
-    {
+        audioSettingsScreen.SetActive(true);
         shopScreen.SetActive(false);
         creditsScreen.SetActive(false);
         settingsScreen.SetActive(false);
