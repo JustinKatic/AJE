@@ -532,10 +532,8 @@ MonoBehaviour:
   slowEffect: {fileID: 6217657519593583842}
   EnemyDetectionRange: {fileID: 11400000, guid: df85dd4b00b0713418b37d8ca8fab818,
     type: 2}
-  playerAggroTimer: 0
   playerAggroTime: 2
   playerHasAggro: 0
-  towerAggroTimer: 0
   towerAggroTime: 1.5
   towerHasAggro: 0
   hasFoundInitialTarget: 0
@@ -583,12 +581,11 @@ MonoBehaviour:
   ExperienceIncreasedEvent: {fileID: 11400000, guid: cd328e7dc6031ca4fab21d52d603c1ff,
     type: 2}
   IHaveAHealthBar: 1
-  currencyObject: {fileID: 669046667064256851, guid: 60509befd15f6604a92ccc0fb51241ff,
-    type: 3}
+  currencyObject: {fileID: 0}
   currencySpawn: {fileID: 4156855207557731390}
   plagueDebuff: 0
   DeathSound: {fileID: 0}
-  deathParticle: {fileID: 6133443843850154140, guid: 37fd9e7d503c1bd4d99e0baa076beb01,
+  deathParticle: {fileID: 6606425185224255905, guid: 7de7ef1b84658f44caed2769adcdd49a,
     type: 3}
   model: {fileID: 6541282450822933812}
   plagueParticle: {fileID: 8468688847771926908}

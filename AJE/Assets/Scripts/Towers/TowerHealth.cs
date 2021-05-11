@@ -22,7 +22,7 @@ public class TowerHealth : MonoBehaviour
     [SerializeField] FloatVariable myTowerCost;
     [SerializeField] FloatVariable inGameCurrency;
 
-    [SerializeField] GameEvent UpdateCurrency;
+    //[SerializeField] GameEvent UpdateCurrency;
     private new Renderer renderer;
     private Material newMat;
 
@@ -69,7 +69,7 @@ public class TowerHealth : MonoBehaviour
         InstantiateDeathParticle(deathParticle);
         gameObject.SetActive(false);
         inGameCurrency.RuntimeValue += myTowerCost.Value;
-        UpdateCurrency.Raise();
+        //UpdateCurrency.Raise();
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 100f))
         {

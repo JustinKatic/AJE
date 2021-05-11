@@ -4,38 +4,34 @@ using UnityEngine;
 
 public class MoveObjToObj : MonoBehaviour
 {
-    [SerializeField] StringVariable TagOfObjToMoveTowards;
-    private GameObject target;
-    [SerializeField] FloatVariable speed;
-    private bool shouldObjMoveToPlayer;
-    [SerializeField] FloatVariable playerMenuCurrency;
-    [SerializeField] FloatVariable myCurrencyValue;
+    float speed = 45f;
+    private bool shouldObjMove;
+    GameObject uiObject;
+    [SerializeField] GameEvent updateCurrency;
 
     private void OnEnable()
     {
-        target = GameObject.FindGameObjectWithTag(TagOfObjToMoveTowards.Value);
-        shouldObjMoveToPlayer = false;
+        uiObject = GameObject.FindGameObjectWithTag("UICurrency");
+        shouldObjMove = false;
+        StartCoroutine(MoveAfterX());
     }
 
     private void Update()
     {
-        if (shouldObjMoveToPlayer)
+        if (shouldObjMove)
         {
-            if (target != null)
-                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed.RuntimeValue * Time.deltaTime);
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Player"))
-        {
-            playerMenuCurrency.Value += myCurrencyValue.RuntimeValue;
-            gameObject.SetActive(false);
+            Vector3 screenPoint = uiObject.transform.position + new Vector3(0, 0, 5);
+            Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPoint);
+            transform.position = Vector3.MoveTowards(transform.position, worldPos, speed * Time.deltaTime);
         }
     }
 
-    public void MoveObjToPlayer()
+    IEnumerator MoveAfterX()
     {
-        shouldObjMoveToPlayer = true;
+        yield return new WaitForSeconds(1.5f);
+        shouldObjMove = true;
+        yield return new WaitForSeconds(.55f);
+        updateCurrency.Raise();
+        gameObject.SetActive(false);
     }
 }
