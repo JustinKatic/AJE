@@ -20,7 +20,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField] IntVariable purchasedHearts;
     [SerializeField] IntVariable purchasedSouls;
 
-    private void Start()
+    [SerializeField] SimpleScrollSnap simpleScrollSnap;
+
+
+    private void Awake()
     {
         if (!GameSaveManager.instance.DoesSaveFileExist("purchasedHearts"))
         {
@@ -53,7 +56,10 @@ public class MenuManager : MonoBehaviour
             if (unlockedLevels.boolList[i].locked == true)
                 lockedLevelOverlay[i].SetActive(true);
             else
+            {
                 lockedLevelOverlay[i].SetActive(false);
+                simpleScrollSnap.startingPanel = i;
+            }
         }
     }
     public void GoToScene(string level)

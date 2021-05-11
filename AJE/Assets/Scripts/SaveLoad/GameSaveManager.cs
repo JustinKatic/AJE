@@ -12,16 +12,16 @@ public class GameSaveManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
         {
             instance = this;
         }
-        else if (instance = this)
-        {
-            Destroy(this);
-        }
         DontDestroyOnLoad(this);
-    
+
         //LoadGame(unlockedLevels, "unlockedLevels");
     }
 

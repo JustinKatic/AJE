@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ArcherMove : EnemyMove
 {
     [SerializeField] float MyAttackRange;
-    [SerializeField] float myFollowRange;
 
     private ArcherShoot archerShoot;
 
@@ -17,6 +17,9 @@ public class ArcherMove : EnemyMove
 
     [SerializeField] float shootCooldown;
     private float shootCooldownTimer;
+
+    public LayerMask playerLayer;
+    public LayerMask towerLayer;
 
     protected override void Awake()
     {
@@ -38,26 +41,21 @@ public class ArcherMove : EnemyMove
         if (followTargetState)
         {
             navMeshAgent.isStopped = false;
+            navMeshAgent.SetDestination(targetDestination.position);
+            LookTowards();
 
-            if (dist > myFollowRange)
-            {
-                navMeshAgent.SetDestination(targetDestination.position);
-                navMeshAgent.isStopped = false;
-            }
-            else
+            if (!archerShoot.shootReady && HasLOS() && dist <= MyAttackRange)
             {
                 navMeshAgent.velocity = Vector3.zero;
                 navMeshAgent.isStopped = true;
-                LookTowards();
             }
-            if (dist < MyAttackRange)
+
+            else if (archerShoot.shootReady && HasLOS() && dist <= MyAttackRange)
             {
-                if (archerShoot.shootReady)
-                {
-                    followTargetState = false;
-                    shootState = true;
-                }
+                followTargetState = false;
+                shootState = true;
             }
+
 
             shootCooldownTimer -= Time.deltaTime;
             if (shootCooldownTimer <= 0)
@@ -67,6 +65,7 @@ public class ArcherMove : EnemyMove
             }
         }
 
+
         if (shootState)
         {
             navMeshAgent.velocity = Vector3.zero;
@@ -75,12 +74,12 @@ public class ArcherMove : EnemyMove
             if (archerShoot.shootReady == true)
             {
                 rotatingTimer += Time.deltaTime;
-                if(rotatingTimer <= timeRotatingBeforeShot)
+                if (rotatingTimer <= timeRotatingBeforeShot)
                 {
                     LookTowards();
                 }
                 archerShoot.CanShoot = true;
-                
+
             }
             if (archerShoot.shootReady == false)
             {
@@ -89,5 +88,22 @@ public class ArcherMove : EnemyMove
                 followTargetState = true;
             }
         }
+    }
+
+    private bool HasLOS()
+    {
+        RaycastHit hit;
+        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity);
+
+        if (hit.transform.gameObject.tag == "DamageableTower")
+            return true;
+
+
+        if (hit.transform.gameObject.tag == "Player")
+        {
+            return true;
+        }
+
+        return false;
     }
 }
