@@ -1,0 +1,383 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2603444244312050873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2603444244312050875}
+  - component: {fileID: 2603444244312050872}
+  - component: {fileID: 2603444244312050877}
+  - component: {fileID: 1565805855}
+  - component: {fileID: 1418784550}
+  - component: {fileID: 882962591}
+  - component: {fileID: 882962592}
+  - component: {fileID: 887570086}
+  - component: {fileID: 1200570942}
+  m_Layer: 0
+  m_Name: GameSystems
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2603444244312050875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -50.8, y: 0, z: 51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2603444244312050872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec4d44aae522b147b878531cfad3b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemsToPool:
+  - _amountToPool: 10
+    _objectToPool: {fileID: 6711070231067300023, guid: a7195f5e94bdf7e4d99f398eaa0f7b89,
+      type: 3}
+    _shouldExpand: 1
+  - _amountToPool: 10
+    _objectToPool: {fileID: 4311653764472788136, guid: 0ac82f05bbb409a48a76a63569bdb565,
+      type: 3}
+    _shouldExpand: 1
+  - _amountToPool: 10
+    _objectToPool: {fileID: 8965604269013256186, guid: d62ea1204e2de0342ae9ff61601d24f2,
+      type: 3}
+    _shouldExpand: 1
+  - _amountToPool: 10
+    _objectToPool: {fileID: 2025066152840980406, guid: 7a4999d7a8bee2c4d9e11681e6e0d550,
+      type: 3}
+    _shouldExpand: 1
+  - _amountToPool: 10
+    _objectToPool: {fileID: 6711070231067300023, guid: aa619f7d39920e945acb203f42602b57,
+      type: 3}
+    _shouldExpand: 1
+  - _amountToPool: 10
+    _objectToPool: {fileID: 8647397162320647654, guid: 492083a229e34334cb5bd425570d029b,
+      type: 3}
+    _shouldExpand: 1
+  - _amountToPool: 10
+    _objectToPool: {fileID: 8776687007688350405, guid: d45943e8fc2b9a8489c30dff919dbffd,
+      type: 3}
+    _shouldExpand: 1
+  - _amountToPool: 10
+    _objectToPool: {fileID: 5205107991290171780, guid: 6ad9effbd01557543a81abeccf9e1e30,
+      type: 3}
+    _shouldExpand: 1
+  - _amountToPool: 10
+    _objectToPool: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7,
+      type: 3}
+    _shouldExpand: 1
+  - _amountToPool: 7
+    _objectToPool: {fileID: 352675099744952819, guid: f124f313f645d8242a6b1a1f1df76fd7,
+      type: 3}
+    _shouldExpand: 1
+--- !u!114 &2603444244312050877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36775e30cd8a09843a16e7fd2bf686bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doesLevelRewardSouls: 0
+  levelBonusSoulsCollected: {fileID: 0}
+  playerCurrency: {fileID: 0}
+  nextWaveNum: {fileID: 11400000, guid: 87c2d4b974b34c447a96bcefb6204d26, type: 2}
+  waves:
+  - name: Wave 1
+    enemy:
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    rate: 3
+  - name: Wave 2/10
+    enemy:
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    rate: 3
+  - name: Wave 3
+    enemy:
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    rate: 3
+  - name: Wave 4
+    enemy:
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    rate: 3
+  - name: Wave 5
+    enemy:
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    rate: 3
+  - name: Wave 6
+    enemy:
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    rate: 3
+  - name: Wave 7
+    enemy:
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    rate: 3
+  - name: Wave 8
+    enemy:
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    rate: 3
+  - name: Wave 9
+    enemy:
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    rate: 3
+  - name: Wave 10
+    enemy:
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 4160927990481318090, guid: a7195f5e94bdf7e4d99f398eaa0f7b89, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 2106981233647898129, guid: 6ad9effbd01557543a81abeccf9e1e30, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    - {fileID: 7684252675751348301, guid: d62ea1204e2de0342ae9ff61601d24f2, type: 3}
+    rate: 3
+  timeBetweenWaves: 5
+  timeBeforeFirstWave: 10
+  NumberOfActiveEnemies: {fileID: 11400000, guid: ee5a4a18baf440f439927bc50c8d16f3,
+    type: 2}
+  WaveCompletedEvent: {fileID: 11400000, guid: c442acfed93cc8e4f8ac2b2a6e5d4c69, type: 2}
+  AllWavesCompleted: {fileID: 11400000, guid: 98f0cd4936af84c4faffeb633aa3c415, type: 2}
+  waveCounterTxt: {fileID: 0}
+  currentWaveTxt: {fileID: 0}
+  buildPromptTxt: {fileID: 0}
+  unlockedLevels: {fileID: 0}
+  currentLevel: 0
+--- !u!114 &1565805855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eff6ae3d4635b54aa92754363f63365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsText: {fileID: 0}
+--- !u!114 &1418784550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a448d34265e684ab8c4ec0ae1bbbcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  purchasedCurrency: {fileID: 11400000, guid: 3a93f192357ca124aa813c1b45918085, type: 2}
+  playerInGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
+    type: 2}
+  ActiveEnemies: {fileID: 11400000, guid: ee5a4a18baf440f439927bc50c8d16f3, type: 2}
+  nextWave: {fileID: 11400000, guid: 87c2d4b974b34c447a96bcefb6204d26, type: 2}
+  UpdateCurrency: {fileID: 11400000, guid: 2f71996132135704393c935fa3e11c94, type: 2}
+  isPlayerInvincible: {fileID: 11400000, guid: b40bbec5a5cf88544b01b41386fc6c34, type: 2}
+--- !u!114 &882962591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d1f6b47acb950449a74f430285ca03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: c442acfed93cc8e4f8ac2b2a6e5d4c69, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 882962592}
+        m_MethodName: CheckForFogToActivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 887570086}
+        m_MethodName: SpawnPowerUpObj
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1200570942}
+        m_MethodName: AddCurrency
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &882962592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77cef8499e9128849a2440a1234561cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fogShrinkController: {fileID: 9100000, guid: 5c14be30bdb6f15448e81927cca50671, type: 2}
+  nextWaveNum: {fileID: 11400000, guid: 87c2d4b974b34c447a96bcefb6204d26, type: 2}
+  fog1: {fileID: 0}
+  fog2: {fileID: 0}
+  fog3: {fileID: 0}
+  fog4: {fileID: 0}
+  fog5: {fileID: 0}
+  fog6: {fileID: 0}
+  fog7: {fileID: 0}
+  fog8: {fileID: 0}
+  RemoveFog1AtWaveX: 2
+  RemoveFog2AtWaveX: 3
+  RemoveFog3AtWaveX: 4
+  RemoveFog4AtWaveX: 5
+  RemoveFog5AtWaveX: 6
+  RemoveFog6AtWaveX: 7
+  RemoveFog7AtWaveX: 8
+  RemoveFog8AtWaveX: 9
+  SpawnPointsToActivateWithFog1:
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog2:
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog3:
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog4:
+  - {fileID: 0}
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog5:
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog6:
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog7:
+  - {fileID: 0}
+  SpawnPointsToActivateWithFog8:
+  - {fileID: 0}
+--- !u!114 &887570086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c61569df76bca0408e29717d544a59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUps:
+  - {fileID: 578073001688257231, guid: 916b9fbe0fbb1a94f831a71e561dbd3e, type: 3}
+  - {fileID: 578073001688257231, guid: 916b9fbe0fbb1a94f831a71e561dbd3e, type: 3}
+  - {fileID: 578073001688257231, guid: 916b9fbe0fbb1a94f831a71e561dbd3e, type: 3}
+  - {fileID: 578073001688257231, guid: 916b9fbe0fbb1a94f831a71e561dbd3e, type: 3}
+  - {fileID: 4705690496293172046, guid: ca02876ea646bb643975c1ce49f77b45, type: 3}
+  - {fileID: 4705690496293172046, guid: ca02876ea646bb643975c1ce49f77b45, type: 3}
+  - {fileID: 4705690496293172046, guid: ca02876ea646bb643975c1ce49f77b45, type: 3}
+  - {fileID: 82267019448480579, guid: d103369f284a35849a5963cda263dd6d, type: 3}
+  - {fileID: 82267019448480579, guid: d103369f284a35849a5963cda263dd6d, type: 3}
+  - {fileID: 82267019448480579, guid: d103369f284a35849a5963cda263dd6d, type: 3}
+--- !u!114 &1200570942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95981a94b231679488c755e1f13de611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextWaveNum: {fileID: 11400000, guid: 87c2d4b974b34c447a96bcefb6204d26, type: 2}
+  wave:
+  - name: wave1
+    value: 100
+  - name: wave2
+    value: 200
+  - name: wave3
+    value: 300
+  - name: wave4
+    value: 400
+  - name: wave5
+    value: 500
+  - name: wave6
+    value: 600
+  - name: wave7
+    value: 700
+  - name: wave8
+    value: 800
+  - name: wave9
+    value: 900
+  - name: wave10
+    value: 1000
+  PlayerInGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784,
+    type: 2}
+  UpdateCurrencyTextEvent: {fileID: 11400000, guid: 2f71996132135704393c935fa3e11c94,
+    type: 2}
