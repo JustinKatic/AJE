@@ -405,7 +405,7 @@ MonoBehaviour:
   currencyObject: {fileID: 0}
   currencySpawn: {fileID: 3179094489868329178}
   plagueDebuff: 0
-  DeathSound: {fileID: 0}
+  DeathSound: {fileID: 11400000, guid: 2b173cef13b319d4092e880504f28acd, type: 2}
   deathParticle: {fileID: 6606425185224255905, guid: 7de7ef1b84658f44caed2769adcdd49a, type: 3}
   model: {fileID: 9047101518768769405}
   plagueParticle: {fileID: 5502196732354297079}
@@ -1021,6 +1021,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4160927990481318090}
     m_Modifications:
+    - target: {fileID: 8239793689055849729, guid: 9afb8739e4caa07409d85a02462dc975, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239793690055917537, guid: 9afb8739e4caa07409d85a02462dc975, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8239793690055917539, guid: 9afb8739e4caa07409d85a02462dc975, type: 3}
       propertyPath: m_RootOrder
       value: 0
