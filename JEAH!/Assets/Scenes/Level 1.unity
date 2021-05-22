@@ -19606,6 +19606,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5987865969485163051}
     - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: playerCurrency
+      value: 
+      objectReference: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784, type: 2}
+    - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: unlockedLevels
       value: 
       objectReference: {fileID: 11400000, guid: 7a0b0b8bdfab4284c8c3e63f99f6b3eb, type: 2}
@@ -19617,6 +19621,14 @@ PrefabInstance:
       propertyPath: waves.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: doesLevelRewardSouls
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: levelBonusSoulsCollected
+      value: 
+      objectReference: {fileID: 11400000, guid: df54856d53314cc48a77bfc103cc515d, type: 2}
     - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: waves.Array.data[0].name
       value: 
@@ -19663,7 +19675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: waves.Array.data[0].enemy.Array.size
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: waves.Array.data[1].enemy.Array.size
@@ -33654,15 +33666,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1289911531533620289, guid: ff89e12844b29b7439800f158f799089, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8
+      value: 7.9999976
       objectReference: {fileID: 0}
     - target: {fileID: 1289911531533620289, guid: ff89e12844b29b7439800f158f799089, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 1289911531533620289, guid: ff89e12844b29b7439800f158f799089, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18
+      value: 22.000002
       objectReference: {fileID: 0}
     - target: {fileID: 1289911531533620289, guid: ff89e12844b29b7439800f158f799089, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33759,6 +33771,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4625049383079223893, guid: 6b82deb7acdfeac44b99cd72dc3f5a08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522135716720833426, guid: 6b82deb7acdfeac44b99cd72dc3f5a08, type: 3}
+      propertyPath: _hasAreaBeenBuiltOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522135717694066428, guid: 6b82deb7acdfeac44b99cd72dc3f5a08, type: 3}
+      propertyPath: _hasAreaBeenBuiltOn
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
