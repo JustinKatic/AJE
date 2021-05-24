@@ -5181,20 +5181,20 @@ Transform:
   - {fileID: 1881244163}
   - {fileID: 235513640}
   - {fileID: 966200794}
+  - {fileID: 1206524647}
   - {fileID: 981767045}
+  - {fileID: 1601963776}
+  - {fileID: 840834955}
   - {fileID: 746005836}
   - {fileID: 2113533091}
   - {fileID: 340820082}
-  - {fileID: 751131961}
-  - {fileID: 764951630}
-  - {fileID: 840834955}
-  - {fileID: 1601963776}
-  - {fileID: 1206524647}
   - {fileID: 1288865317}
   - {fileID: 180275201}
   - {fileID: 526273979}
   - {fileID: 629068487}
+  - {fileID: 751131961}
   - {fileID: 1099138988}
+  - {fileID: 764951630}
   m_Father: {fileID: 33731965}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -39001,6 +39001,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: UIManager
+      value: 
+      objectReference: {fileID: 5987865969485163052}
+    - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: currentLevel
       value: 3
       objectReference: {fileID: 0}
@@ -66069,6 +66073,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5987865969485163052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5987865968312646924, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+  m_PrefabInstance: {fileID: 5987865969485163049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7353605353010891287
 PrefabInstance:
   m_ObjectHideFlags: 0

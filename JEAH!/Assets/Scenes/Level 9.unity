@@ -21256,6 +21256,11 @@ PrefabInstance:
     - {fileID: 8231445256766245616, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
     - {fileID: 6990095633488916673, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+--- !u!1 &904447781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5987865968312646924, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+  m_PrefabInstance: {fileID: 904447780}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &909170029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28139,6 +28144,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: UIManager
+      value: 
+      objectReference: {fileID: 904447781}
     - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: m_Enabled
       value: 1
