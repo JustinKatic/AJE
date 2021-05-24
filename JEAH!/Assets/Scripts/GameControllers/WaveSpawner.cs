@@ -17,9 +17,6 @@ public class WaveSpawner : MonoBehaviour
         public Transform[] enemy;
         public float rate;
     }
-    [SerializeField] bool doesLevelRewardSouls = false;
-    [SerializeField] BoolVariable levelBonusSoulsCollected;
-    [SerializeField] FloatVariable playerCurrency;
     [SerializeField] IntVariable nextWaveNum;
 
     bool allWavesComplete = false;
@@ -196,16 +193,6 @@ public class WaveSpawner : MonoBehaviour
 
     void EndLevel()
     {
-        //play victory animations
-        if (doesLevelRewardSouls)
-        {
-            if (levelBonusSoulsCollected.Value == false)
-            {
-                levelBonusSoulsCollected.Value = true;
-                playerCurrency.Value += 2;
-            }
-        }
-
         //Save and unlock next level.
         if (unlockedLevels.boolList[currentLevel] != null)
             unlockedLevels.boolList[currentLevel].locked = false;

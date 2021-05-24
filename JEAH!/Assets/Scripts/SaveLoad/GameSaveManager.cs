@@ -10,6 +10,18 @@ public class GameSaveManager : MonoBehaviour
 
     public BoolVariableList unlockedLevels;
 
+
+
+    public int levelNeededUnlockedFor4Souls;
+    public int levelNeededUnlockedFor6Souls;
+    //  public int levelNeededUnlockedFor8Souls;
+
+
+    [SerializeField] FloatVariable playerCurrency;
+    public IntVariable purchasedSouls;
+
+
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -22,7 +34,27 @@ public class GameSaveManager : MonoBehaviour
         }
         DontDestroyOnLoad(this);
 
-        //LoadGame(unlockedLevels, "unlockedLevels");
+
+        //if (unlockedLevels.boolList[levelNeededUnlockedFor8Souls].locked == false)
+        //{
+        //    playerCurrency.Value = 8;
+        //}
+        if (unlockedLevels.boolList[levelNeededUnlockedFor6Souls - 1].locked == false)
+        {
+            playerCurrency.Value = 6;
+            playerCurrency.RuntimeValue = playerCurrency.Value + purchasedSouls.Value;
+
+        }
+        else if (unlockedLevels.boolList[levelNeededUnlockedFor4Souls - 1].locked == false)
+        {
+            playerCurrency.Value = 4;
+            playerCurrency.RuntimeValue = playerCurrency.Value + purchasedSouls.Value;
+        }
+        else
+        {
+            playerCurrency.Value = 2;
+            playerCurrency.RuntimeValue = playerCurrency.Value + purchasedSouls.Value;
+        }
     }
 
 
