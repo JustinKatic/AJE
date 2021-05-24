@@ -211,9 +211,9 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator Cutscene()
     {
-        cutsceneAnim.Play("FadeIn");
+        cutsceneAnim.Play("FadeInFadeOut");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
 
         //set cutscene 1 active
@@ -222,8 +222,9 @@ public class WaveSpawner : MonoBehaviour
         //if no cutscene 1 fade out and exit
         else
         {
-            cutsceneAnim.Play("FadeOut");
-            Invoke("CallAllWavesComplete", 2);
+            cutsceneAnim.Play("FadeInFadeOut");
+            yield return new WaitForSeconds(1);
+            Invoke("CallAllWavesComplete", 1);
             StopCoroutine(cutsceneCo);
         }
 
@@ -238,8 +239,9 @@ public class WaveSpawner : MonoBehaviour
             cutsceneImg2.SetActive(true);
         else
         {
-            cutsceneAnim.Play("FadeOut");
-            Invoke("CallAllWavesComplete", 2);
+            cutsceneAnim.Play("FadeInFadeOut");
+            yield return new WaitForSeconds(1);
+            Invoke("CallAllWavesComplete", 1);
             StopCoroutine(cutsceneCo);
         }
 
@@ -255,16 +257,18 @@ public class WaveSpawner : MonoBehaviour
             cutsceneImg3.SetActive(true);
         else
         {
-            cutsceneAnim.Play("FadeOut");
-            Invoke("CallAllWavesComplete", 2);
+            cutsceneAnim.Play("FadeInFadeOut");
+            yield return new WaitForSeconds(1);
+            Invoke("CallAllWavesComplete", 1);
             StopCoroutine(cutsceneCo);
         }
 
 
         yield return new WaitForSeconds(lengthOfCutscene3);
+        cutsceneAnim.Play("FadeInFadeOut");
+        yield return new WaitForSeconds(1);
         cutsceneImg3.SetActive(false);
-        cutsceneAnim.Play("FadeOut");
-        Invoke("CallAllWavesComplete", 2);
+        AllWavesCompleted.Raise();
         StopCoroutine(cutsceneCo);
 
     }
