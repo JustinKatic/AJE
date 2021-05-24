@@ -52,6 +52,7 @@ public class WaveSpawner : MonoBehaviour
 
     [Header("CUTSCENE")]
     [SerializeField] GameObject UIManager;
+    private Animator cutsceneAnim;
     [SerializeField] bool isThereACutscene;
 
     [SerializeField] bool isThereACutscene1Img;
@@ -75,6 +76,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
+        cutsceneAnim = UIManager.GetComponent<Animator>();
         currentWaveTxt.text = waves[nextWaveNum.RuntimeValue].name;
         waveCountdown = timeBeforeFirstWave;
         ShowBuildPromptText();
@@ -209,7 +211,7 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator Cutscene()
     {
-        UIManager.GetComponent<Animator>().Play("FadeIn");
+        cutsceneAnim.Play("FadeIn");
 
         yield return new WaitForSeconds(2f);
 
@@ -220,36 +222,40 @@ public class WaveSpawner : MonoBehaviour
         //if no cutscene 1 fade out and exit
         else
         {
-            UIManager.GetComponent<Animator>().Play("FadeOut");
+            cutsceneAnim.Play("FadeOut");
             Invoke("CallAllWavesComplete", 2);
             StopCoroutine(cutsceneCo);
         }
 
 
         yield return new WaitForSeconds(lengthOfCutscene1);
+        cutsceneAnim.Play("FadeInFadeOut");
+        yield return new WaitForSeconds(1f);
         cutsceneImg1.SetActive(false);
-
 
         //load cutscene 2
         if (isThereACutscene2Img)
             cutsceneImg2.SetActive(true);
         else
         {
-            UIManager.GetComponent<Animator>().Play("FadeOut");
+            cutsceneAnim.Play("FadeOut");
             Invoke("CallAllWavesComplete", 2);
             StopCoroutine(cutsceneCo);
         }
 
         yield return new WaitForSeconds(lengthOfCutscene2);
+        cutsceneAnim.Play("FadeInFadeOut");
+        yield return new WaitForSeconds(1f);
         cutsceneImg2.SetActive(false);
 
+        
 
 
         if (isThereACutscene3Img)
             cutsceneImg3.SetActive(true);
         else
         {
-            UIManager.GetComponent<Animator>().Play("FadeOut");
+            cutsceneAnim.Play("FadeOut");
             Invoke("CallAllWavesComplete", 2);
             StopCoroutine(cutsceneCo);
         }
@@ -257,7 +263,7 @@ public class WaveSpawner : MonoBehaviour
 
         yield return new WaitForSeconds(lengthOfCutscene3);
         cutsceneImg3.SetActive(false);
-        UIManager.GetComponent<Animator>().Play("FadeOut");
+        cutsceneAnim.Play("FadeOut");
         Invoke("CallAllWavesComplete", 2);
         StopCoroutine(cutsceneCo);
 
