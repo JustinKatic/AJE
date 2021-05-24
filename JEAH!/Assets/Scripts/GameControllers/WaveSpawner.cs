@@ -22,6 +22,8 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] FloatVariable playerCurrency;
     [SerializeField] IntVariable nextWaveNum;
 
+    bool allWavesComplete = false;
+
     [Header("WAVE DETAILS")]
     [SerializeField] Wave[] waves;
     private int _currentEnemy = 0;
@@ -49,6 +51,29 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] int currentLevel;
 
 
+    IEnumerator cutsceneCo;
+
+    [Header("CUTSCENE")]
+    [SerializeField] GameObject UIManager;
+    [SerializeField] bool isThereACutscene;
+
+    [SerializeField] bool isThereACutscene1Img;
+    [SerializeField] GameObject cutsceneImg1;
+
+    [SerializeField] bool isThereACutscene2Img;
+    [SerializeField] GameObject cutsceneImg2;
+
+    [SerializeField] bool isThereACutscene3Img;
+    [SerializeField] GameObject cutsceneImg3;
+
+    [SerializeField] float lengthOfCutscene1;
+    [SerializeField] float lengthOfCutscene2;
+    [SerializeField] float lengthOfCutscene3;
+
+
+
+
+
     public SpawnState State { get; private set; } = SpawnState.COUNTING;
 
     void Start()
@@ -60,6 +85,9 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
+        if (allWavesComplete)
+            return;
+
         if (State == SpawnState.WAITING)
         {
             if (StartNextWave())
@@ -98,6 +126,7 @@ public class WaveSpawner : MonoBehaviour
 
         if (nextWaveNum.RuntimeValue + 1 == waves.Length)
         {
+            allWavesComplete = true;
             EndLevel();
         }
         else
@@ -181,6 +210,75 @@ public class WaveSpawner : MonoBehaviour
         if (unlockedLevels.boolList[currentLevel] != null)
             unlockedLevels.boolList[currentLevel].locked = false;
         GameSaveManager.instance.SaveGame(unlockedLevels, "unlockedLevels");
+
+        if (isThereACutscene)
+        {
+            cutsceneCo = Cutscene();
+            StartCoroutine(cutsceneCo);
+        }
+        else
+            AllWavesCompleted.Raise();
+    }
+
+    IEnumerator Cutscene()
+    {
+        UIManager.GetComponent<Animator>().Play("FadeIn");
+
+        yield return new WaitForSeconds(2f);
+
+
+        //set cutscene 1 active
+        if (isThereACutscene1Img)
+            cutsceneImg1.SetActive(true);
+        //if no cutscene 1 fade out and exit
+        else
+        {
+            UIManager.GetComponent<Animator>().Play("FadeOut");
+            Invoke("CallAllWavesComplete", 2);
+            StopCoroutine(cutsceneCo);
+        }
+
+
+        yield return new WaitForSeconds(lengthOfCutscene1);
+        cutsceneImg1.SetActive(false);
+
+
+        //load cutscene 2
+        if (isThereACutscene2Img)
+            cutsceneImg2.SetActive(true);
+        else
+        {
+            UIManager.GetComponent<Animator>().Play("FadeOut");
+            Invoke("CallAllWavesComplete", 2);
+            StopCoroutine(cutsceneCo);
+        }
+
+        yield return new WaitForSeconds(lengthOfCutscene2);
+        cutsceneImg2.SetActive(false);
+
+
+
+        if (isThereACutscene3Img)
+            cutsceneImg3.SetActive(true);
+        else
+        {
+            UIManager.GetComponent<Animator>().Play("FadeOut");
+            Invoke("CallAllWavesComplete", 2);
+            StopCoroutine(cutsceneCo);
+        }
+
+
+        yield return new WaitForSeconds(lengthOfCutscene3);
+        cutsceneImg3.SetActive(false);
+        UIManager.GetComponent<Animator>().Play("FadeOut");
+        Invoke("CallAllWavesComplete", 2);
+        StopCoroutine(cutsceneCo);
+
+    }
+
+    void CallAllWavesComplete()
+    {
         AllWavesCompleted.Raise();
     }
+
 }
