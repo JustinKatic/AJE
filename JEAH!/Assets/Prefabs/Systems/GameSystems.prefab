@@ -94,9 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36775e30cd8a09843a16e7fd2bf686bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doesLevelRewardSouls: 0
-  levelBonusSoulsCollected: {fileID: 0}
-  playerCurrency: {fileID: 0}
   nextWaveNum: {fileID: 11400000, guid: 87c2d4b974b34c447a96bcefb6204d26, type: 2}
   waves:
   - name: Wave 1
@@ -182,6 +179,17 @@ MonoBehaviour:
   buildPromptTxt: {fileID: 0}
   unlockedLevels: {fileID: 0}
   currentLevel: 0
+  UIManager: {fileID: 0}
+  isThereACutscene: 0
+  isThereACutscene1Img: 0
+  cutsceneImg1: {fileID: 0}
+  isThereACutscene2Img: 0
+  cutsceneImg2: {fileID: 0}
+  isThereACutscene3Img: 0
+  cutsceneImg3: {fileID: 0}
+  lengthOfCutscene1: 0
+  lengthOfCutscene2: 0
+  lengthOfCutscene3: 0
 --- !u!114 &1565805855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,18 +252,6 @@ MonoBehaviour:
       - m_Target: {fileID: 887570086}
         m_TargetAssemblyTypeName: 
         m_MethodName: SpawnPowerUpObj
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1200570942}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: AddCurrency
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
