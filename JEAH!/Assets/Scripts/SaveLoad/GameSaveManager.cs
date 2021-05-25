@@ -14,7 +14,7 @@ public class GameSaveManager : MonoBehaviour
 
     public int levelNeededUnlockedFor4Souls;
     public int levelNeededUnlockedFor6Souls;
-    //  public int levelNeededUnlockedFor8Souls;
+    public int levelNeededUnlockedFor8Souls;
 
 
     [SerializeField] FloatVariable playerCurrency;
@@ -35,11 +35,12 @@ public class GameSaveManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
 
-        //if (unlockedLevels.boolList[levelNeededUnlockedFor8Souls].locked == false)
-        //{
-        //    playerCurrency.Value = 8;
-        //}
-        if (unlockedLevels.boolList[levelNeededUnlockedFor6Souls - 1].locked == false)
+        if (unlockedLevels.boolList[levelNeededUnlockedFor8Souls - 1].locked == false)
+        {
+            playerCurrency.Value = 8;
+            playerCurrency.RuntimeValue = playerCurrency.Value + purchasedSouls.Value;
+        }
+        else if (unlockedLevels.boolList[levelNeededUnlockedFor6Souls - 1].locked == false)
         {
             playerCurrency.Value = 6;
             playerCurrency.RuntimeValue = playerCurrency.Value + purchasedSouls.Value;

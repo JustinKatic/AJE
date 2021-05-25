@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.16788375, g: 0.21073635, b: 0.28994125, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 431f01ccacb750046a343d3d83d4e902, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 998460b378c16f247aeb304f08ff9375, type: 2}
 --- !u!1 &271085
 GameObject:
   m_ObjectHideFlags: 0
@@ -98984,6 +98984,10 @@ PrefabInstance:
     - target: {fileID: 2598763734731273773, guid: 9837110b8753a79449024b3bb7c7dfd6, type: 3}
       propertyPath: m_Name
       value: PF_CheckeredLevelFog
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598763734731273773, guid: 9837110b8753a79449024b3bb7c7dfd6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2598763735514840825, guid: 9837110b8753a79449024b3bb7c7dfd6, type: 3}
       propertyPath: m_LocalPosition.x
