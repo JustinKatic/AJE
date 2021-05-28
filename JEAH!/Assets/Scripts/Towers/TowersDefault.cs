@@ -15,6 +15,8 @@ public class TowersDefault : MonoBehaviour
 
     [SerializeField] protected GameObject floatingDmg;
 
+    public bool powerdUp = false;
+
 
     protected void OnTriggerEnter(Collider other)
     {
