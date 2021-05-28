@@ -10,6 +10,8 @@ public class TowersDefault : MonoBehaviour
     private float _timer;
     [SerializeField] public LayerMask EnemyLayerMask;
     [SerializeField] public float TowerDamage;
+    [SerializeField] public float poweredUpDamage;
+    private float baseTowerDamage;
     [SerializeField] public float TowerRadius;
     [SerializeField] public float ActivateEveryX;
 
@@ -17,6 +19,11 @@ public class TowersDefault : MonoBehaviour
 
     public bool powerdUp = false;
 
+
+    private void Start()
+    {
+        baseTowerDamage = TowerDamage;
+    }
 
     protected void OnTriggerEnter(Collider other)
     {
@@ -31,6 +38,12 @@ public class TowersDefault : MonoBehaviour
             MyCollisions();
             _timer = 0;
         }
+
+
+        if (powerdUp)
+            TowerDamage = poweredUpDamage + baseTowerDamage;
+        else
+            TowerDamage = baseTowerDamage;
     }
 
     protected virtual void MyTriggerEffect()

@@ -34,6 +34,7 @@ public class RangeTowerShoot : MonoBehaviour
             GameObject projectile = ObjectPooler.SharedInstance.GetPooledObject("RangeTowerProjectile");
             projectile.transform.position = shootPoint.transform.position;
             projectile.transform.rotation = shootPoint.transform.rotation;
+            projectile.GetComponent<RangeTowerProjectile>()._damage = rangeTower.TowerDamage;
             projectile.SetActive(true);
             _shotCounter = TimeBetweenShots;
         }

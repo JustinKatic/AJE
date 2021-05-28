@@ -5394,10 +5394,12 @@ MonoBehaviour:
   EnemyLayerMask:
     serializedVersion: 2
     m_Bits: 1024
-  TowerDamage: 0
+  TowerDamage: 2
+  poweredUpDamage: 1
   TowerRadius: 8
   ActivateEveryX: 1
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7, type: 3}
+  powerdUp: 0
   objectToLookAtAimAtEnemy: {fileID: 4468125212950754232}
   targetFound: 0
 --- !u!114 &3006295988413306658

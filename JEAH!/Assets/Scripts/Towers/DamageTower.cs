@@ -15,5 +15,5 @@ public class DamageTower : TowersDefault
             FloatingTxt(TowerDamage,hitColliders[i].transform, "-", Color.white);
             i++;
         }
-    }
+    }   
 }
