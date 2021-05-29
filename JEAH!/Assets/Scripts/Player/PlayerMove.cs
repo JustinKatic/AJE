@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] CharacterController controller;
 
+    //[SerializeField] AudioSource beamSFXSource;
+
     float closestDist = Mathf.Infinity;
     GameObject closestTowerObj = null;
 
@@ -82,6 +84,7 @@ public class PlayerMove : MonoBehaviour
                             {
                                 closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = false;
                                 LR.enabled = false;
+                                //beamSFXSource.Pause();
                             }
                             closestTowerObj = hitColliders[i].transform.gameObject;
                         }
@@ -90,7 +93,7 @@ public class PlayerMove : MonoBehaviour
                     LR.enabled = true;
                     LR.SetPosition(0, powerUpBeamPos.position);
                     LR.SetPosition(1, closestTowerObj.transform.position);
-
+                    //beamSFXSource.Play();
                 }
                 _timer = 0;
             }
