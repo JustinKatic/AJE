@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5320477636678674679}
   - component: {fileID: 5320477636678674672}
   m_Layer: 0
-  m_Name: FX_Beam
+  m_Name: PS_Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,10 +47,11 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9547ad2ff659e144996b74c18c1b4899, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

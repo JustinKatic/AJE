@@ -1041,7 +1041,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e4a618e4a99a23a429412d121833ef4b, type: 2}
+  - {fileID: 2100000, guid: fb04eeecfd06cb84997cde37e3490ee5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1067,7 +1067,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -1132,7 +1132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5cc68cbb2ba62d4d90631c84b43b6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScrollSpeed: 10
+  ScrollSpeed: -2.5
 --- !u!1 &284077346451477942
 GameObject:
   m_ObjectHideFlags: 0

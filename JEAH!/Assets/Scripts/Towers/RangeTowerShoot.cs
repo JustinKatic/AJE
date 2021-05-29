@@ -10,6 +10,8 @@ public class RangeTowerShoot : MonoBehaviour
 
     GameObject projectile;
 
+    [SerializeField] ScriptableSoundObj rangeTowerShootSFX;
+
 
     private float _shotCounter;
 
@@ -43,6 +45,10 @@ public class RangeTowerShoot : MonoBehaviour
             projectile.GetComponent<RangeTowerProjectile>()._damage = rangeTower.TowerDamage;
             projectile.SetActive(true);
             _shotCounter = TimeBetweenShots;
+            if (rangeTowerShootSFX)
+                rangeTowerShootSFX.Play();
+            else
+                Debug.Log("no death sound added" + gameObject.name);
         }
     }
 }

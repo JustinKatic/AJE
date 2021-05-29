@@ -11,6 +11,7 @@ public class ArcherShoot : EnemyShoot
 
     public bool shootReady;
 
+    [SerializeField] ScriptableSoundObj shootSound;
 
     private void Awake()
     {
@@ -46,6 +47,10 @@ public class ArcherShoot : EnemyShoot
                 lr.positionCount = 0;
                 CanShoot = false;
                 shootReady = false;
+                if (shootSound)
+                    shootSound.Play();
+                else
+                    Debug.Log("no death sound added" + gameObject.name);
             }
         }
     }
