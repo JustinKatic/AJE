@@ -9,6 +9,7 @@ public class DwarfCannoneerShoot : EnemyShoot
 
     public bool shotBullet;
 
+    [SerializeField] ScriptableSoundObj cannoneerAttackSFX;
 
 
     private void OnEnable()
@@ -32,6 +33,10 @@ public class DwarfCannoneerShoot : EnemyShoot
 
                 shotBullet = true;
                 _shotCounter = TimeBetweenShots;
+                if (cannoneerAttackSFX)
+                    cannoneerAttackSFX.Play();
+                else
+                    Debug.Log("no death sound added" + gameObject.name);
             }
         }
     }
