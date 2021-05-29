@@ -14,6 +14,7 @@ public class TowerHealth : MonoBehaviour
     [SerializeField] GameObject model;
     [SerializeField] bool IHaveAHealthBar;
     [SerializeField] ScriptableSoundObj DeathSound;
+    [SerializeField] ScriptableSoundObj towerSpawnSFX;
 
     [SerializeField] GameObject deathParticle;
 
@@ -35,6 +36,7 @@ public class TowerHealth : MonoBehaviour
             newMat = new Material(renderer.material);
             renderer.material = newMat;
         }
+
     }
 
     private void OnEnable()
@@ -42,6 +44,11 @@ public class TowerHealth : MonoBehaviour
         _currentHealth = myMaxHealth;
         if (IHaveAHealthBar)
             healthBar.SetMaxHealth(myMaxHealth);
+
+        if (towerSpawnSFX)
+            towerSpawnSFX.Play();
+        else
+            Debug.Log("no death sound added" + gameObject.name);
     }
     private void Update()
     {

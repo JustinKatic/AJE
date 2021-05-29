@@ -4880,9 +4880,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   TowerDamage: 0
+  poweredUpDamage: 0
   TowerRadius: 1.5
   ActivateEveryX: 0.2
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7, type: 3}
+  powerdUp: 0
   slowTowerAmount: 3
   slowTowerDuration: 5
 --- !u!65 &4790777007662496898
@@ -4938,7 +4940,8 @@ MonoBehaviour:
   myMaxHealth: 90
   model: {fileID: 0}
   IHaveAHealthBar: 1
-  DeathSound: {fileID: 0}
+  DeathSound: {fileID: 11400000, guid: f23d1abc21fe46b4387ac9e1159081ea, type: 2}
+  towerSpawnSFX: {fileID: 11400000, guid: 9fe796bc05fcf6a4a97e8276c9dc15e0, type: 2}
   deathParticle: {fileID: 2601876884035110369, guid: 4431e82507d5a1746a84c4f78a223a74, type: 3}
   healthPickup: {fileID: 4602745833125398909, guid: 32b5dcf034d6d3446afdb50446c8fe1c, type: 3}
   myTowerCost: {fileID: 11400000, guid: 9f86daf19463066499f4c26d63944565, type: 2}
