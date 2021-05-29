@@ -1067,19 +1067,37 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 2
+    widthMultiplier: 2.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.7457611
+        inSlope: 2.0990987
+        outSlope: 2.0990987
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.27922642
+      - serializedVersion: 3
+        time: 0.5060564
+        value: 0.99360096
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.5965623
+      - serializedVersion: 3
+        time: 1
+        value: 0.75423753
+        inSlope: -1.9881324
+        outSlope: -1.9881324
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.29340926
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1132,7 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5cc68cbb2ba62d4d90631c84b43b6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScrollSpeed: -2.5
+  ScrollSpeed: -3
 --- !u!1 &284077346451477942
 GameObject:
   m_ObjectHideFlags: 0
