@@ -18,6 +18,7 @@ public class PlayerHealthManager : MonoBehaviour
     Material newMat;
     [SerializeField] BoolVariable playerIsDead;
     [SerializeField] BoolVariable isPlayerInvincible;
+    [SerializeField] ScriptableSoundObj reviveSFX;
 
 
     void Awake()
@@ -67,6 +68,10 @@ public class PlayerHealthManager : MonoBehaviour
     public void Revive()
     {
         currentHealth.RuntimeValue = maxHealth.RuntimeValue;
+        if (reviveSFX)
+            reviveSFX.Play();
+        else
+            Debug.Log("no death sound added" + gameObject.name);
     }
 
     public void Invincibility()
