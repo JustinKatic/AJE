@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _CollidingDamageEveryX: 1
-  _damage: 100
+  _damage: 10
   playersCurrentHealth: {fileID: 11400000, guid: 4d7b1cc8dd422994d9a43ef5e09b5796, type: 2}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7, type: 3}
   PlayerHealthDecreasedEvent: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee, type: 2}
@@ -283,7 +283,7 @@ MonoBehaviour:
   hasFoundInitialTarget: 0
   MyAttackRange: 5
   timeRotatingBeforeShot: 0.85
-  shootCooldown: 3
+  shootCooldown: 2
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbcde9b527adb74897d837e05592f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBetweenShots: 1.15
+  TimeBetweenShots: 1
   _firePoint: {fileID: 8016400251654897771}
   AttackRange: 5
   TagOfTarget: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21, type: 2}
