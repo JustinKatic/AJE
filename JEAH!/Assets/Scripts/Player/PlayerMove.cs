@@ -92,7 +92,7 @@ public class PlayerMove : MonoBehaviour
                     closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = true;
                     LR.enabled = true;
                     LR.SetPosition(0, powerUpBeamPos.position);
-                    LR.SetPosition(1, closestTowerObj.transform.position);
+                    LR.SetPosition(1, new Vector3(closestTowerObj.transform.position.x, 0.5f, closestTowerObj.transform.position.z));
                     //beamSFXSource.Play();
                 }
                 _timer = 0;
