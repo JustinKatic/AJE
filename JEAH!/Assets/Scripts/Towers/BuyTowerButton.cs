@@ -51,7 +51,7 @@ public class BuyTowerButton : MonoBehaviour
                 SetAreaUnbuildable buildable = hit.collider.GetComponent<SetAreaUnbuildable>();
                 if (buildable._hasAreaBeenBuiltOn)
                 {
-                    AudioManager.instance.Play("TowerCannotBuild");
+                    SFXAudioManager.instance.Play("TowerCannotBuild");
 
                     return;
                 }
@@ -63,7 +63,7 @@ public class BuyTowerButton : MonoBehaviour
                          hit.collider.gameObject.transform.position.z),
                          hit.collider.gameObject.transform.rotation);
 
-                    AudioManager.instance.Play("TowerSpawn");
+                    SFXAudioManager.instance.Play("TowerSpawn");
 
                     TowersDefault tower = towerSpawned.GetComponent<TowersDefault>();
                     ActiveEnviromentSquare enviromentSquare = hit.collider.gameObject.GetComponent<ActiveEnviromentSquare>();

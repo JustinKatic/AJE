@@ -61,7 +61,7 @@ public class TowerHealth : MonoBehaviour
     }
     public void Death()
     {
-        AudioManager.instance.Play("TowerDestroyed");
+        SFXAudioManager.instance.Play("TowerDestroyed");
 
 
         SpawnHealthPickup();

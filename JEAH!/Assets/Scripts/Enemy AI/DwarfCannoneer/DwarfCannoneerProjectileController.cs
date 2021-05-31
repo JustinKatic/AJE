@@ -65,7 +65,7 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
     }
     protected override void SetUnActive()
     {
-        AudioManager.instance.Play("CannoneerProjectile");
+        SFXAudioManager.instance.Play("CannoneerProjectile");
 
         camShake.CamShake();
         Instantiate(Explosion, transform.position, Quaternion.Euler(-90, transform.rotation.y, transform.rotation.z));

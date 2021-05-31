@@ -32,7 +32,7 @@ public class DwarfCannoneerShoot : EnemyShoot
 
                 shotBullet = true;
                 _shotCounter = TimeBetweenShots;
-                AudioManager.instance.Play("CanoneerAttack");
+                SFXAudioManager.instance.Play("CanoneerAttack");
             }
         }
     }

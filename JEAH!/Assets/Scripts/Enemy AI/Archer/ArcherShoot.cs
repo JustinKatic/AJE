@@ -47,7 +47,7 @@ public class ArcherShoot : EnemyShoot
                 lr.positionCount = 0;
                 CanShoot = false;
                 shootReady = false;
-                AudioManager.instance.Play("ArcherAttack");
+                SFXAudioManager.instance.Play("ArcherAttack");
                 //if (shootSound)
                 //    shootSound.Play();
             }

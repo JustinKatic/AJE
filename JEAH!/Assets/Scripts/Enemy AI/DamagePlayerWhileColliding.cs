@@ -50,7 +50,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
                     PlayerHealthDecreasedEvent.Raise();
                     _timer = 0.0f;
 
-                    AudioManager.instance.Play(attackSFX);
+                    SFXAudioManager.instance.Play(attackSFX);
 
                 }
             }
@@ -63,7 +63,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
                 FloatingTxt(_damage, other.transform, "-", Color.red);
                 other.gameObject.GetComponent<TowerHealth>().HurtEnemy(_damage, true);
                 _timer = 0.0f;
-                AudioManager.instance.Play(attackSFX);
+                SFXAudioManager.instance.Play(attackSFX);
             }
         }
     }

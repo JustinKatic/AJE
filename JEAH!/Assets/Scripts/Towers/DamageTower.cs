@@ -20,7 +20,7 @@ public class DamageTower : TowersDefault
         timer += Time.deltaTime;
         if (timer >= SFXFrequency)
         {
-            AudioManager.instance.Play("TowerMeleeAttack");
+            SFXAudioManager.instance.Play("TowerMeleeAttack");
             playMelleTowerSFX = false;
             timer = 0;
         }

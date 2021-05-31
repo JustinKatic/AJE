@@ -74,7 +74,7 @@ public class EnemyHealthManager : MonoBehaviour
         numberOfActiveEnemies.RuntimeValue -= 1;
         InstantiateCurrency(currencyObject);
 
-        AudioManager.instance.Play("EnemyDeath");
+        SFXAudioManager.instance.Play("EnemyDeath");
 
 
         InstantiateDeathParticle(deathParticle);

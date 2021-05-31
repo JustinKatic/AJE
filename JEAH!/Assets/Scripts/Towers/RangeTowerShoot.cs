@@ -44,7 +44,7 @@ public class RangeTowerShoot : MonoBehaviour
             projectile.GetComponent<RangeTowerProjectile>()._damage = rangeTower.TowerDamage;
             projectile.SetActive(true);
             _shotCounter = TimeBetweenShots;
-            AudioManager.instance.Play("TowerRangeAttack");
+            SFXAudioManager.instance.Play("TowerRangeAttack");
 
         }
     }

@@ -3,13 +3,13 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 
-public class AudioManager : MonoBehaviour
+public class SFXAudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public AudioMixerGroup mixer;
 
 
-    public static AudioManager instance;
+    public static SFXAudioManager instance;
     // Start is called before the first frame update
     void Awake()
     {

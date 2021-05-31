@@ -61,8 +61,8 @@ public class PlayerMove : MonoBehaviour
                 closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = false;
                 closestTowerObj = null;
                 LR.enabled = false;
-                if (AudioManager.instance.IsPlaying("PlayerBeam"))
-                    AudioManager.instance.Stop("PlayerBeam");
+                if (SFXAudioManager.instance.IsPlaying("PlayerBeam"))
+                    SFXAudioManager.instance.Stop("PlayerBeam");
             }
         }
         else
@@ -96,8 +96,8 @@ public class PlayerMove : MonoBehaviour
                             closestTowerObj = hitColliders[i].transform.gameObject;
                         }
                     }
-                    if (!AudioManager.instance.IsPlaying("PlayerBeam"))
-                        AudioManager.instance.Play("PlayerBeam");
+                    if (!SFXAudioManager.instance.IsPlaying("PlayerBeam"))
+                        SFXAudioManager.instance.Play("PlayerBeam");
                     closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = true;
                     LR.enabled = true;
                     LR.SetPosition(0, powerUpBeamPos.position);
