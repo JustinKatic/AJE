@@ -4940,8 +4940,8 @@ MonoBehaviour:
   myMaxHealth: 90
   model: {fileID: 0}
   IHaveAHealthBar: 1
-  DeathSound: {fileID: 11400000, guid: f23d1abc21fe46b4387ac9e1159081ea, type: 2}
-  towerSpawnSFX: {fileID: 11400000, guid: 9fe796bc05fcf6a4a97e8276c9dc15e0, type: 2}
+  DeathSound: {fileID: 0}
+  towerSpawnSFX: {fileID: 0}
   deathParticle: {fileID: 2601876884035110369, guid: 4431e82507d5a1746a84c4f78a223a74, type: 3}
   healthPickup: {fileID: 4602745833125398909, guid: 32b5dcf034d6d3446afdb50446c8fe1c, type: 3}
   myTowerCost: {fileID: 11400000, guid: 9f86daf19463066499f4c26d63944565, type: 2}
@@ -5443,9 +5443,9 @@ MonoBehaviour:
   slider: {fileID: 4129773025974003674}
   gradient:
     serializedVersion: 2
-    key0: {r: 0.972549, g: 0.07739103, b: 0.015686259, a: 1}
-    key1: {r: 0.972549, g: 0.78604376, b: 0.015686259, a: 1}
-    key2: {r: 0.029236369, g: 0.6886792, b: 0.15440005, a: 0}
+    key0: {r: 1, g: 0, b: 0.85567, a: 1}
+    key1: {r: 0.5058824, g: 0.13375351, b: 0.926986, a: 1}
+    key2: {r: 0, g: 0.27069163, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
@@ -5461,8 +5461,8 @@ MonoBehaviour:
     ctime7: 0
     atime0: 0
     atime1: 65535
-    atime2: 0
-    atime3: 0
+    atime2: 65535
+    atime3: 65535
     atime4: 0
     atime5: 0
     atime6: 0
@@ -5554,7 +5554,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6069408713330338467
 MonoBehaviour:
   m_ObjectHideFlags: 0
