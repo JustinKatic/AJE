@@ -15,8 +15,6 @@ GameObject:
   - component: {fileID: 1418784550}
   - component: {fileID: 882962591}
   - component: {fileID: 882962592}
-  - component: {fileID: 887570086}
-  - component: {fileID: 1200570942}
   m_Layer: 0
   m_Name: GameSystems
   m_TagString: GameManager
@@ -252,7 +250,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 887570086}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: SpawnPowerUpObj
         m_Mode: 1
@@ -311,65 +309,6 @@ MonoBehaviour:
   - {fileID: 0}
   SpawnPointsToActivateWithFog8:
   - {fileID: 0}
---- !u!114 &887570086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2603444244312050873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c61569df76bca0408e29717d544a59c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUps:
-  - {fileID: 578073001688257231, guid: 916b9fbe0fbb1a94f831a71e561dbd3e, type: 3}
-  - {fileID: 578073001688257231, guid: 916b9fbe0fbb1a94f831a71e561dbd3e, type: 3}
-  - {fileID: 578073001688257231, guid: 916b9fbe0fbb1a94f831a71e561dbd3e, type: 3}
-  - {fileID: 578073001688257231, guid: 916b9fbe0fbb1a94f831a71e561dbd3e, type: 3}
-  - {fileID: 4705690496293172046, guid: ca02876ea646bb643975c1ce49f77b45, type: 3}
-  - {fileID: 4705690496293172046, guid: ca02876ea646bb643975c1ce49f77b45, type: 3}
-  - {fileID: 4705690496293172046, guid: ca02876ea646bb643975c1ce49f77b45, type: 3}
-  - {fileID: 82267019448480579, guid: d103369f284a35849a5963cda263dd6d, type: 3}
-  - {fileID: 82267019448480579, guid: d103369f284a35849a5963cda263dd6d, type: 3}
-  - {fileID: 82267019448480579, guid: d103369f284a35849a5963cda263dd6d, type: 3}
---- !u!114 &1200570942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2603444244312050873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95981a94b231679488c755e1f13de611, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextWaveNum: {fileID: 11400000, guid: 87c2d4b974b34c447a96bcefb6204d26, type: 2}
-  wave:
-  - name: wave1
-    value: 100
-  - name: wave2
-    value: 200
-  - name: wave3
-    value: 300
-  - name: wave4
-    value: 400
-  - name: wave5
-    value: 500
-  - name: wave6
-    value: 600
-  - name: wave7
-    value: 700
-  - name: wave8
-    value: 800
-  - name: wave9
-    value: 900
-  - name: wave10
-    value: 1000
-  PlayerInGameCurrency: {fileID: 11400000, guid: 536a25c1ca9ddef4bbeb233db118b784, type: 2}
-  UpdateCurrencyTextEvent: {fileID: 11400000, guid: 2f71996132135704393c935fa3e11c94, type: 2}
 --- !u!1 &3405683559932046226
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +452,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: PlayerBeam
     clip: {fileID: 8300000, guid: 43eab937ef775804d9a00095081ccb1e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: b859b92bd11ed2143b62c97ae5ee8a07, type: 3}
     volume: 1
     pitch: 1
     loop: 0

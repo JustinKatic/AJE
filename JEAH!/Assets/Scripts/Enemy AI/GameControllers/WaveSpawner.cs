@@ -207,6 +207,8 @@ public class WaveSpawner : MonoBehaviour
         }
         else
             AllWavesCompleted.Raise();
+            SFXAudioManager.instance.Play("Victory");
+
     }
 
     IEnumerator Cutscene()
