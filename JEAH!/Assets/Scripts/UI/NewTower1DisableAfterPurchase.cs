@@ -9,7 +9,7 @@ public class NewTower1DisableAfterPurchase : MonoBehaviour
     [SerializeField] GameObject button;
     [SerializeField] BoolVariable isNewTower1Purchased;
 
-    void OnEnable()
+    void Update()
     {
         //Disables the button to purchase a new tower (it's a one time purchase).
         if (isNewTower1Purchased.Value == true)
