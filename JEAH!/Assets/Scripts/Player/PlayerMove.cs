@@ -95,7 +95,7 @@ public class PlayerMove : MonoBehaviour
                             closestTowerObj = hitColliders[i].transform.gameObject;
                         }
                     }
-                    beamSFXSource.Play();
+                    //beamSFXSource.Play();
                     closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = true;
                     LR.enabled = true;
                     LR.SetPosition(0, powerUpBeamPos.position);
