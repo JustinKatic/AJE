@@ -19,9 +19,6 @@ public class BuyTowerButton : MonoBehaviour
 
     [SerializeField] FloatVariable myTowerCost;
 
-    [SerializeField] ScriptableSoundObj cantBuildSFX;
-
-
     private Button BuyButton;
 
     void Start()
@@ -54,10 +51,8 @@ public class BuyTowerButton : MonoBehaviour
                 SetAreaUnbuildable buildable = hit.collider.GetComponent<SetAreaUnbuildable>();
                 if (buildable._hasAreaBeenBuiltOn)
                 {
-                    if (cantBuildSFX)
-                        cantBuildSFX.Play();
-                    else
-                        Debug.Log("no death sound added" + gameObject.name);
+                    AudioManager.instance.Play("TowerCannotBuild");
+
                     return;
                 }
                 else
@@ -68,7 +63,7 @@ public class BuyTowerButton : MonoBehaviour
                          hit.collider.gameObject.transform.position.z),
                          hit.collider.gameObject.transform.rotation);
 
-
+                    AudioManager.instance.Play("TowerSpawn");
 
                     TowersDefault tower = towerSpawned.GetComponent<TowersDefault>();
                     ActiveEnviromentSquare enviromentSquare = hit.collider.gameObject.GetComponent<ActiveEnviromentSquare>();
@@ -89,6 +84,6 @@ public class BuyTowerButton : MonoBehaviour
                     UpdateCurrency.Raise();
                 }
             }
-        }   
+        }
     }
 }

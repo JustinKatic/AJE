@@ -12,7 +12,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
     [SerializeField] GameObject floatingDmg;
     [SerializeField] GameEvent PlayerHealthDecreasedEvent;
     [SerializeField] BoolVariable isPlayerInvincible;
-    [SerializeField] ScriptableSoundObj meleeAttackSFX;
+    [SerializeField] string attackSFX;
 
 
 
@@ -49,10 +49,9 @@ public class DamagePlayerWhileColliding : MonoBehaviour
                     FloatingTxt(_damage, other.transform, "-", Color.red);
                     PlayerHealthDecreasedEvent.Raise();
                     _timer = 0.0f;
-                    if (meleeAttackSFX)
-                        meleeAttackSFX.Play();
-                    else
-                        Debug.Log("no death sound added" + gameObject.name);
+
+                    AudioManager.instance.Play(attackSFX);
+
                 }
             }
         }
@@ -64,10 +63,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
                 FloatingTxt(_damage, other.transform, "-", Color.red);
                 other.gameObject.GetComponent<TowerHealth>().HurtEnemy(_damage, true);
                 _timer = 0.0f;
-                if (meleeAttackSFX)
-                    meleeAttackSFX.Play();
-                else
-                    Debug.Log("no death sound added" + gameObject.name);
+                AudioManager.instance.Play(attackSFX);
             }
         }
     }

@@ -23,7 +23,6 @@ public class TowerHealth : MonoBehaviour
     [SerializeField] FloatVariable myTowerCost;
     [SerializeField] FloatVariable inGameCurrency;
 
-    //[SerializeField] GameEvent UpdateCurrency;
     private new Renderer renderer;
     private Material newMat;
 
@@ -44,11 +43,6 @@ public class TowerHealth : MonoBehaviour
         _currentHealth = myMaxHealth;
         if (IHaveAHealthBar)
             healthBar.SetMaxHealth(myMaxHealth);
-
-        if (towerSpawnSFX)
-            towerSpawnSFX.Play();
-        else
-            Debug.Log("no death sound added" + gameObject.name);
     }
     private void Update()
     {
@@ -67,16 +61,13 @@ public class TowerHealth : MonoBehaviour
     }
     public void Death()
     {
-        if (DeathSound)
-            DeathSound.Play();
-        else
-            Debug.Log("no death sound added" + gameObject.name);
+        AudioManager.instance.Play("TowerDestroyed");
+
 
         SpawnHealthPickup();
         InstantiateDeathParticle(deathParticle);
         gameObject.SetActive(false);
         inGameCurrency.RuntimeValue += myTowerCost.Value;
-        //UpdateCurrency.Raise();
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 100f))
         {

@@ -122,7 +122,7 @@ MonoBehaviour:
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7, type: 3}
   PlayerHealthDecreasedEvent: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee, type: 2}
   isPlayerInvincible: {fileID: 11400000, guid: b40bbec5a5cf88544b01b41386fc6c34, type: 2}
-  meleeAttackSFX: {fileID: 0}
+  attackSFX: BarbarianAttack
 --- !u!1 &896518509110834054
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +878,6 @@ MonoBehaviour:
   currencyObject: {fileID: 0}
   currencySpawn: {fileID: 896518509110834054}
   plagueDebuff: 0
-  DeathSound: {fileID: 11400000, guid: 158253207f4ed9244b9c2a3cd72c5555, type: 2}
   deathParticle: {fileID: 6606425185224255905, guid: 7de7ef1b84658f44caed2769adcdd49a, type: 3}
   model: {fileID: 6272371317974400585}
   plagueParticle: {fileID: 5090973573825549829}

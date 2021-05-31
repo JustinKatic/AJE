@@ -30,7 +30,7 @@ public class TowersDefault : MonoBehaviour
         MyTriggerEffect();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         _timer += Time.deltaTime;
         if (_timer >= ActivateEveryX)
@@ -38,7 +38,6 @@ public class TowersDefault : MonoBehaviour
             MyCollisions();
             _timer = 0;
         }
-
 
         if (powerdUp)
             TowerDamage = poweredUpDamage + baseTowerDamage;
@@ -48,12 +47,12 @@ public class TowersDefault : MonoBehaviour
 
     protected virtual void MyTriggerEffect()
     {
-        
+
     }
 
     protected virtual void MyCollisions()
     {
-        
+
     }
 
     public void FloatingTxt(float damage, Transform transformToSpawnTxtAt, string type, Color32 color)
@@ -67,9 +66,9 @@ public class TowersDefault : MonoBehaviour
         points.SetActive(true);
     }
 
-   void OnDrawGizmos()
-   {
-       Gizmos.color = Color.red;
-       Gizmos.DrawWireSphere(transform.position, TowerRadius);
-   }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, TowerRadius);
+    }
 }

@@ -39,16 +39,13 @@ public class RangeTowerShoot : MonoBehaviour
             else
                 projectile = ObjectPooler.SharedInstance.GetPooledObject("RangeTowerProjectile");
 
-            //  Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation);
             projectile.transform.position = shootPoint.transform.position;
             projectile.transform.rotation = shootPoint.transform.rotation;
             projectile.GetComponent<RangeTowerProjectile>()._damage = rangeTower.TowerDamage;
             projectile.SetActive(true);
             _shotCounter = TimeBetweenShots;
-            if (rangeTowerShootSFX)
-                rangeTowerShootSFX.Play();
-            else
-                Debug.Log("no death sound added" + gameObject.name);
+            AudioManager.instance.Play("TowerRangeAttack");
+
         }
     }
 }

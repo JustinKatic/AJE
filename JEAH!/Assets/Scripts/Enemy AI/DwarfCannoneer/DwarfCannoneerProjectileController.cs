@@ -16,8 +16,6 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
 
     [SerializeField] BoolVariable isPlayerInvincible;
 
-    [SerializeField] ScriptableSoundObj cannoneerProjectileSFX;
-
     GameObject player;
 
     private void Start()
@@ -67,19 +65,11 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
     }
     protected override void SetUnActive()
     {
-        if (cannoneerProjectileSFX)
-            cannoneerProjectileSFX.Play();
-        else
-            Debug.Log("no death sound added" + gameObject.name);
+        AudioManager.instance.Play("CannoneerProjectile");
 
         camShake.CamShake();
         Instantiate(Explosion, transform.position, Quaternion.Euler(-90, transform.rotation.y, transform.rotation.z));
         base.SetUnActive();
     }
 
-    //void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireSphere(transform.position, ExplosionRadius);
-    //}
 }

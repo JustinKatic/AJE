@@ -14,9 +14,7 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField] FloatVariable numberOfActiveEnemies;
     [SerializeField] GameEvent ExperienceIncreasedEvent;
     [SerializeField] bool IHaveAHealthBar;
-    // [SerializeField] float PlayerCurrentExp;
 
-    // [SerializeField] GameObject ExpObj;
     [SerializeField] GameObject currencyObject;
     [SerializeField] GameObject currencySpawn;
 
@@ -28,7 +26,6 @@ public class EnemyHealthManager : MonoBehaviour
     float plagueTickRate;
     private float plagueTickTimer;
 
-    [SerializeField] ScriptableSoundObj DeathSound;
 
     [SerializeField] GameObject deathParticle;
     [SerializeField] GameObject model;
@@ -76,13 +73,9 @@ public class EnemyHealthManager : MonoBehaviour
     {
         numberOfActiveEnemies.RuntimeValue -= 1;
         InstantiateCurrency(currencyObject);
-        // InstantiateExpDrop(ExpObj);
 
+        AudioManager.instance.Play("EnemyDeath");
 
-        if (DeathSound)
-            DeathSound.Play();
-        else
-            Debug.Log("no death sound added" + gameObject.name);
 
         InstantiateDeathParticle(deathParticle);
 
@@ -97,13 +90,7 @@ public class EnemyHealthManager : MonoBehaviour
             Debug.Log("no currency Obj added" + gameObject.name);
     }
 
-    //public void InstantiateExpDrop(GameObject expObj)
-    //{
-    //    if (expObj)
-    //        Instantiate(expObj, transform.position, transform.rotation);
-    //    else
-    //        Debug.Log("no Exp Obj added" + gameObject.name);
-    //}
+
 
     public void InstantiateDeathParticle(GameObject deathParticle)
     {
@@ -124,7 +111,7 @@ public class EnemyHealthManager : MonoBehaviour
 
             if (plagueTickTimer > plagueTickRate)
             {
-                HurtEnemy(plagueTickDamage);          
+                HurtEnemy(plagueTickDamage);
                 FloatingTxt(plagueTickDamage, transform, "-", Color.white);
                 plagueTickTimer = 0;
             }

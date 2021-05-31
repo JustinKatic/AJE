@@ -31,7 +31,7 @@ public class PlayerMove : MonoBehaviour
     public float checkToPowerTowerEveryX;
     public Transform powerUpBeamPos;
     public LineRenderer LR;
-    public float beamRange =5f;
+    public float beamRange = 5f;
     public float lookTowardsSpeed = 5f;
     public ScriptableSoundObj beamSFXSource;
 
@@ -61,7 +61,9 @@ public class PlayerMove : MonoBehaviour
             {
                 closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = false;
                 closestTowerObj = null;
-                LR.enabled = false;                
+                LR.enabled = false;
+                if (AudioManager.instance.IsPlaying("PlayerBeam"))
+                    AudioManager.instance.Stop("PlayerBeam");
             }
         }
         else
@@ -74,7 +76,7 @@ public class PlayerMove : MonoBehaviour
             _timer += Time.deltaTime;
             if (_timer >= checkToPowerTowerEveryX)
             {
-                
+
                 Collider[] hitColliders = Physics.OverlapSphere(transform.position, beamRange, towerLayer);
                 if (hitColliders.Length > 0)
                 {
@@ -95,7 +97,8 @@ public class PlayerMove : MonoBehaviour
                             closestTowerObj = hitColliders[i].transform.gameObject;
                         }
                     }
-                    beamSFXSource.Play();
+                    if (!AudioManager.instance.IsPlaying("PlayerBeam"))
+                        AudioManager.instance.Play("PlayerBeam");
                     closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = true;
                     LR.enabled = true;
                     LR.SetPosition(0, powerUpBeamPos.position);

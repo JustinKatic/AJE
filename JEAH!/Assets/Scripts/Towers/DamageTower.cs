@@ -5,6 +5,25 @@ using UnityEngine;
 
 public class DamageTower : TowersDefault
 {
+    private bool playMelleTowerSFX;
+    private float timer;
+    public float SFXFrequency = 1.5f;
+
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if(playMelleTowerSFX)
+        timer += Time.deltaTime;
+        if (timer >= SFXFrequency)
+        {
+            AudioManager.instance.Play("TowerMeleeAttack");
+            playMelleTowerSFX = false;
+            timer = 0;
+        }
+    }
+
     protected override void MyCollisions()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, TowerRadius, EnemyLayerMask);
@@ -12,8 +31,15 @@ public class DamageTower : TowersDefault
         while (i < hitColliders.Length)
         {
             hitColliders[i].GetComponent<EnemyHealthManager>().HurtEnemy(TowerDamage);
-            FloatingTxt(TowerDamage,hitColliders[i].transform, "-", Color.white);
+            FloatingTxt(TowerDamage, hitColliders[i].transform, "-", Color.white);
             i++;
         }
-    }   
+        if (hitColliders.Length >= 1)
+        {
+            playMelleTowerSFX = true;
+        }
+        else
+            playMelleTowerSFX = false;
+
+    }
 }
