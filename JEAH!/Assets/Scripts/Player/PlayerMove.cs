@@ -31,7 +31,9 @@ public class PlayerMove : MonoBehaviour
     public float checkToPowerTowerEveryX;
     public Transform powerUpBeamPos;
     public LineRenderer LR;
-
+    public float beamRange =5f;
+    public float lookTowardsSpeed = 5f;
+    public ScriptableSoundObj beamSFXSource;
 
     void Start()
     {
@@ -58,17 +60,22 @@ public class PlayerMove : MonoBehaviour
             if (closestTowerObj != null)
             {
                 closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = false;
-                LR.enabled = false;
+                closestTowerObj = null;
+                LR.enabled = false;                
             }
         }
         else
         {
             _anim.SetBool("IsRunning", false);
-
+            if (closestTowerObj != null)
+            {
+                LookTowards(closestTowerObj.transform);
+            }
             _timer += Time.deltaTime;
             if (_timer >= checkToPowerTowerEveryX)
             {
-                Collider[] hitColliders = Physics.OverlapSphere(transform.position, 5, towerLayer);
+                
+                Collider[] hitColliders = Physics.OverlapSphere(transform.position, beamRange, towerLayer);
                 if (hitColliders.Length > 0)
                 {
                     closestDist = Mathf.Infinity;
@@ -84,16 +91,15 @@ public class PlayerMove : MonoBehaviour
                             {
                                 closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = false;
                                 LR.enabled = false;
-                                //beamSFXSource.Pause();
                             }
                             closestTowerObj = hitColliders[i].transform.gameObject;
                         }
                     }
+                    beamSFXSource.Play();
                     closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = true;
                     LR.enabled = true;
                     LR.SetPosition(0, powerUpBeamPos.position);
                     LR.SetPosition(1, new Vector3(closestTowerObj.transform.position.x, 0.5f, closestTowerObj.transform.position.z));
-                    //beamSFXSource.Play();
                 }
                 _timer = 0;
             }
@@ -107,6 +113,15 @@ public class PlayerMove : MonoBehaviour
     {
         //movePlayer
         controller.Move(_moveVelocity * Time.deltaTime);
+    }
+
+    //look towards target destination smoothly
+    public void LookTowards(Transform lookAtTarget)
+    {
+        Vector3 lookPos = lookAtTarget.position - transform.position;
+        lookPos.y = 0;
+        var rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * lookTowardsSpeed);
     }
 }
 

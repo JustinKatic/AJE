@@ -9,9 +9,11 @@ public class ScriptableSoundObj : ScriptableObject
     [SerializeField] AudioClipVariable toPlay;
     [SerializeField] GameEvent playOneShot;
 
+
     public void Play()
     {
-        toPlay.Value = clips[Random.Range(0, clips.Length)];
+        toPlay.Value = clips[Random.Range(0, clips.Length)];    
         playOneShot.Raise();
     }
+
 }
