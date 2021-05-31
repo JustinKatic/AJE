@@ -9,6 +9,8 @@ public class DamageTower : TowersDefault
     private float timer;
     public float SFXFrequency = 1.5f;
 
+    public GameObject powerUpFx;
+
 
     protected override void Update()
     {
@@ -22,6 +24,12 @@ public class DamageTower : TowersDefault
             playMelleTowerSFX = false;
             timer = 0;
         }
+
+        if (powerdUp)
+            powerUpFx.SetActive(true);
+        else
+            powerUpFx.SetActive(false);
+
     }
 
     protected override void MyCollisions()

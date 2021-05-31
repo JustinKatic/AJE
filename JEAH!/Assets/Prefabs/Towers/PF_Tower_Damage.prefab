@@ -10013,6 +10013,8 @@ MonoBehaviour:
   ActivateEveryX: 0.4
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7, type: 3}
   powerdUp: 0
+  SFXFrequency: 1.5
+  powerUpFx: {fileID: 8985410652770919743}
 --- !u!65 &6140582864606889210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10043,8 +10045,8 @@ MonoBehaviour:
   myMaxHealth: 125
   model: {fileID: 1965801023363825199}
   IHaveAHealthBar: 1
-  DeathSound: {fileID: 11400000, guid: f23d1abc21fe46b4387ac9e1159081ea, type: 2}
-  towerSpawnSFX: {fileID: 11400000, guid: 9fe796bc05fcf6a4a97e8276c9dc15e0, type: 2}
+  DeathSound: {fileID: 0}
+  towerSpawnSFX: {fileID: 0}
   deathParticle: {fileID: 2601876884035110369, guid: 4431e82507d5a1746a84c4f78a223a74, type: 3}
   healthPickup: {fileID: 0}
   myTowerCost: {fileID: 11400000, guid: c5b5039a580de2b42b1af20e8de31d99, type: 2}
@@ -14908,7 +14910,7 @@ Transform:
   m_GameObject: {fileID: 7111612488683245692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.49, z: 0.00000014901}
-  m_LocalScale: {x: 0.561521, y: 0.561521, z: 0.561521}
+  m_LocalScale: {x: 0.6739375, y: 0.6739375, z: 0.6739375}
   m_Children: []
   m_Father: {fileID: 1655502776987519340}
   m_RootOrder: 3
