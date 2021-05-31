@@ -93,16 +93,11 @@ public class ArcherMove : EnemyMove
     private bool HasLOS()
     {
         RaycastHit hit;
-        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity);
-
-        if (hit.transform.gameObject.tag == "DamageableTower")
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity) && hit.transform.gameObject.tag == "DamageableTower")
             return true;
 
-
-        if (hit.transform.gameObject.tag == "Player")
-        {
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity) && hit.transform.gameObject.tag == "Player")
             return true;
-        }
 
         return false;
     }
