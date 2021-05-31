@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
+
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
     public void PauseGameWithTimer(float seconds)
     {
         Debug.Log("pause game being called");
