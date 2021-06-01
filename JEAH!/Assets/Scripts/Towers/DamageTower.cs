@@ -16,8 +16,8 @@ public class DamageTower : TowersDefault
     {
         base.Update();
 
-        if(playMelleTowerSFX)
-        timer += Time.deltaTime;
+        if (playMelleTowerSFX)
+            timer += Time.deltaTime;
         if (timer >= SFXFrequency)
         {
             SFXAudioManager.instance.Play("TowerMeleeAttack");
@@ -29,7 +29,14 @@ public class DamageTower : TowersDefault
             powerUpFx.SetActive(true);
         else
             powerUpFx.SetActive(false);
+    }
 
+    protected override void MyTriggerEffect()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, TowerRadius, EnemyLayerMask);
+
+        if (hitColliders.Length >= 1)
+            SFXAudioManager.instance.Play("TowerMeleeAttack");
     }
 
     protected override void MyCollisions()
