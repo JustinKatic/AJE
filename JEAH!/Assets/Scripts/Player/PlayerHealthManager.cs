@@ -40,6 +40,7 @@ public class PlayerHealthManager : MonoBehaviour
             if (playerIsDead.Value == false)
             {
                 Debug.Log("playerdied");
+                SFXAudioManager.instance.Play("Defeat");
                 PlayerDeath.Raise();
                 playerIsDead.Value = true;
             }
@@ -68,8 +69,7 @@ public class PlayerHealthManager : MonoBehaviour
     public void Revive()
     {
         currentHealth.RuntimeValue = maxHealth.RuntimeValue;
-        //if (reviveSFX)
-        //    reviveSFX.Play();
+        SFXAudioManager.instance.Play("PlayerRevive");
     }
 
     public void Invincibility()
