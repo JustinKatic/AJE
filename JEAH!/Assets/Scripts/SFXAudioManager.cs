@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -7,7 +8,6 @@ public class SFXAudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public AudioMixerGroup mixer;
-
 
     public static SFXAudioManager instance;
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class SFXAudioManager : MonoBehaviour
 
         //DontDestroyOnLoad(gameObject);
 
-        foreach(Sound s in sounds)
+        foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
 
@@ -40,7 +40,7 @@ public class SFXAudioManager : MonoBehaviour
 
     private void Start()
     {
-        
+       
     }
 
     public void Play(string name)
@@ -49,8 +49,10 @@ public class SFXAudioManager : MonoBehaviour
         if (s == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
-            return; 
+            return;
         }
+        s.source.Stop();
+        s.source.volume = 1;
         s.source.Play();
     }
 
@@ -63,7 +65,7 @@ public class SFXAudioManager : MonoBehaviour
                 Debug.LogWarning("Sound: " + name + " not found!");
                 return;
             }
-            s.source.Stop();           
+            s.source.Stop();
         }
     }
 
@@ -78,9 +80,29 @@ public class SFXAudioManager : MonoBehaviour
             }
             if (s.source.isPlaying == true)
                 return true;
-            
+
         }
         return false;
+    }
+
+    public IEnumerator FadeOut(string name, float fadeTime)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            yield return 0;
+        }
+        float startVolume = s.source.volume;
+        float adjustedVol = startVolume;
+        while (adjustedVol > 0)
+        {
+            adjustedVol -= startVolume * Time.deltaTime / fadeTime;
+            s.source.volume = adjustedVol;
+            yield return new WaitForEndOfFrame();
+        }
+        s.source.Stop();
+        s.source.volume = startVolume;
     }
 
 
