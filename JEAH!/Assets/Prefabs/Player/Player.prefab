@@ -105,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763732467}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.76, z: 0.19}
+  m_LocalPosition: {x: 0, y: 0.12, z: 0.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 284077346307895739}
@@ -866,9 +866,10 @@ MonoBehaviour:
   towerLayer:
     serializedVersion: 2
     m_Bits: 4096
-  checkToPowerTowerEveryX: 1
   powerUpBeamPos: {fileID: 1763732468}
   LR: {fileID: 1745142711}
+  beamRange: 5.5
+  lookTowardsSpeed: 5
 --- !u!114 &284077346307895728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,7 +892,7 @@ MonoBehaviour:
   model: {fileID: 7767252061552466874}
   playerIsDead: {fileID: 11400000, guid: 84060f51ee78e464a9d9001ef3ddf11c, type: 2}
   isPlayerInvincible: {fileID: 11400000, guid: b40bbec5a5cf88544b01b41386fc6c34, type: 2}
-  reviveSFX: {fileID: 11400000, guid: 8379350e9e9a8bc40afe8a7d00db7864, type: 2}
+  reviveSFX: {fileID: 0}
 --- !u!136 &284077346307895743
 CapsuleCollider:
   m_ObjectHideFlags: 0
