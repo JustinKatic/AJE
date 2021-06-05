@@ -29,6 +29,7 @@ public class PlayerMove : MonoBehaviour
     public LayerMask towerLayer;
     public Transform powerUpBeamPos;
     public LineRenderer LR;
+    public GameObject playerBeamFX;
     public float beamRange = 5f;
     public float lookTowardsSpeed = 5f;
 
@@ -72,6 +73,7 @@ public class PlayerMove : MonoBehaviour
                 closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = false;
                 closestTowerObj = null;
                 LR.enabled = false;
+                playerBeamFX.SetActive(false);
             }
         }
         else
@@ -99,6 +101,7 @@ public class PlayerMove : MonoBehaviour
                         {
                             closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = false;
                             LR.enabled = false;
+                            playerBeamFX.SetActive(false);
                         }
                         closestTowerObj = hitColliders[i].transform.gameObject;
                     }
@@ -116,6 +119,7 @@ public class PlayerMove : MonoBehaviour
                 LR.enabled = true;
                 LR.SetPosition(0, powerUpBeamPos.position);
                 LR.SetPosition(1, new Vector3(closestTowerObj.transform.position.x, 0.5f, closestTowerObj.transform.position.z));
+                playerBeamFX.SetActive(true);
 
             }
 
