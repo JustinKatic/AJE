@@ -13,8 +13,6 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] CharacterController controller;
 
-    //[SerializeField] AudioSource beamSFXSource;
-
     float closestDist = Mathf.Infinity;
     GameObject closestTowerObj = null;
 
