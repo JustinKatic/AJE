@@ -23,6 +23,14 @@ public class MoveObjToObj : MonoBehaviour
             Vector3 screenPoint = uiObject.transform.position + new Vector3(0, 0, 5);
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPoint);
             transform.position = Vector3.MoveTowards(transform.position, worldPos, speed * Time.deltaTime);
+
+            float dist = Vector3.Distance(transform.position, worldPos);
+            if (dist <= 1f)
+            {
+                updateCurrency.Raise();
+                gameObject.SetActive(false);
+                SFXAudioManager.instance.Play("GainSouls");
+            }
         }
     }
 
@@ -30,8 +38,5 @@ public class MoveObjToObj : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         shouldObjMove = true;
-        yield return new WaitForSeconds(.55f);
-        updateCurrency.Raise();
-        gameObject.SetActive(false);
     }
 }
