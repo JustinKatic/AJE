@@ -7,6 +7,18 @@ public class RangeTower : TowersDefault
     public Transform objectToLookAtAimAtEnemy;
     [HideInInspector] public bool targetFound = false;
 
+    public GameObject powerUpFx;
+
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if (powerdUp)
+            powerUpFx.SetActive(true);
+        else
+            powerUpFx.SetActive(false);
+    }
 
     protected override void MyCollisions()
     {
