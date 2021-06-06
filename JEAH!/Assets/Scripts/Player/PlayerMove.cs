@@ -37,8 +37,6 @@ public class PlayerMove : MonoBehaviour
     {
         _anim = GetComponentInChildren<Animator>();
         _moveJoystick = FindObjectOfType<FloatingJoystick>();
-
-
     }
 
     void Update()
@@ -79,6 +77,11 @@ public class PlayerMove : MonoBehaviour
         else
         {
             _anim.SetBool("IsRunning", false);
+
+            if (Time.timeScale == 0)
+                SFXAudioManager.instance.Stop("PlayerBeam");
+
+
             if (closestTowerObj != null)
             {
                 LookTowards(closestTowerObj.transform);
@@ -113,7 +116,9 @@ public class PlayerMove : MonoBehaviour
                         SFXAudioManager.instance.StopCoroutine(fadeCO);
                         fadeCO = null;
                     }
-                    SFXAudioManager.instance.Play("PlayerBeam");
+                    if (Time.timeScale > 0)
+                        SFXAudioManager.instance.Play("PlayerBeam");
+
                 }
                 closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = true;
                 LR.enabled = true;
