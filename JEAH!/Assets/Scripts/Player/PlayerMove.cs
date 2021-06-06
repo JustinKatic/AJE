@@ -66,6 +66,8 @@ public class PlayerMove : MonoBehaviour
 
             }
             _anim.SetBool("IsRunning", true);
+            if (!SFXAudioManager.instance.IsPlaying("PlayerMove"))
+                SFXAudioManager.instance.Play("PlayerMove");
             if (closestTowerObj != null)
             {
                 closestTowerObj.gameObject.GetComponent<TowersDefault>().powerdUp = false;
