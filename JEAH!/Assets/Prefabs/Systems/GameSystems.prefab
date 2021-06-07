@@ -493,5 +493,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aace0be0eebfe424da0397fb1cb24770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: Menu
+    clip: {fileID: 8300000, guid: a0fb92f67b6541d4c8e6a225c94f801e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: DungeonEnvironment
+    clip: {fileID: 8300000, guid: 68a587d8debbfa9449a545cbe29333eb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: VillageEnvironment
+    clip: {fileID: 8300000, guid: 0d4854c544d82be40b18aee4561618cc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: CastleEnvironment
+    clip: {fileID: 8300000, guid: 4a16375c7b54f1644b94c88fe1a2a506, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   mixer: {fileID: 24300002, guid: 154603c5f49054a48b49636785d92277, type: 2}
