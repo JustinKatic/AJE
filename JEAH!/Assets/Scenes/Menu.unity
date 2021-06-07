@@ -6220,6 +6220,10 @@ PrefabInstance:
       propertyPath: sounds.Array.data[20].volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9218719249456588093, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: musicName
+      value: Menu
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 882962592, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
@@ -12252,7 +12256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1847978965
 RectTransform:
   m_ObjectHideFlags: 0

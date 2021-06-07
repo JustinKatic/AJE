@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1418784550}
   - component: {fileID: 882962591}
   - component: {fileID: 882962592}
+  - component: {fileID: 9218719249456588093}
   m_Layer: 0
   m_Name: GameSystems
   m_TagString: GameManager
@@ -309,6 +310,18 @@ MonoBehaviour:
   - {fileID: 0}
   SpawnPointsToActivateWithFog8:
   - {fileID: 0}
+--- !u!114 &9218719249456588093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21023f0867b62614a8ecf7af1851851b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3405683559932046226
 GameObject:
   m_ObjectHideFlags: 0
