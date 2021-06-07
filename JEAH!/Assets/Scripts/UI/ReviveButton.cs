@@ -46,7 +46,7 @@ public class ReviveButton : MonoBehaviour
         else
         {
             Debug.Log("not enough hearts, opening shop page");
-            shopScreen.SetActive(true);
+            shopScreen.SetActive(true);          
         }
     }
 }

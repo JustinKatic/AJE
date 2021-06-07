@@ -17,6 +17,8 @@ public class ResetSO : MonoBehaviour
 
     private void OnEnable()
     {
+        Time.timeScale = 1;
+
         ActiveEnemies.RuntimeValue = ActiveEnemies.Value;
         nextWave.RuntimeValue = nextWave.Value;
         playerInGameCurrency.RuntimeValue = playerInGameCurrency.Value + purchasedCurrency.Value;
