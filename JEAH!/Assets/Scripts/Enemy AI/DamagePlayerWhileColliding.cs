@@ -63,7 +63,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
                 FloatingTxt(_damage, other.transform, "-", Color.red);
                 other.gameObject.GetComponent<TowerHealth>().HurtEnemy(_damage, true);
                 _timer = 0.0f;
-                SFXAudioManager.instance.Play("SFX_DefaultAttack");
+                SFXAudioManager.instance.Play("SFX_Default_Attack");
             }
         }
     }
