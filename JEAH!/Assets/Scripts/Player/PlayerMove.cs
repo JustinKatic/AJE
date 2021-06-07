@@ -87,6 +87,9 @@ public class PlayerMove : MonoBehaviour
                 LookTowards(closestTowerObj.transform);
             }
 
+            if (SFXAudioManager.instance.IsPlaying("PlayerMove"))
+                SFXAudioManager.instance.Stop("PlayerMove");
+
 
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, beamRange, towerLayer);
             if (hitColliders.Length > 0)
@@ -125,7 +128,6 @@ public class PlayerMove : MonoBehaviour
                 LR.SetPosition(0, powerUpBeamPos.position);
                 LR.SetPosition(1, new Vector3(closestTowerObj.transform.position.x, 0.5f, closestTowerObj.transform.position.z));
                 playerBeamFX.SetActive(true);
-
             }
 
         }
