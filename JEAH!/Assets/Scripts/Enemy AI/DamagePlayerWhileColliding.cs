@@ -12,7 +12,6 @@ public class DamagePlayerWhileColliding : MonoBehaviour
     [SerializeField] GameObject floatingDmg;
     [SerializeField] GameEvent PlayerHealthDecreasedEvent;
     [SerializeField] BoolVariable isPlayerInvincible;
-    [SerializeField] string attackSFX;
 
 
 
@@ -50,7 +49,8 @@ public class DamagePlayerWhileColliding : MonoBehaviour
                     PlayerHealthDecreasedEvent.Raise();
                     _timer = 0.0f;
 
-                    SFXAudioManager.instance.Play(attackSFX);
+                    SFXAudioManager.instance.Play("SFX_Default_Attack");
+                    
 
                 }
             }
@@ -63,7 +63,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
                 FloatingTxt(_damage, other.transform, "-", Color.red);
                 other.gameObject.GetComponent<TowerHealth>().HurtEnemy(_damage, true);
                 _timer = 0.0f;
-                SFXAudioManager.instance.Play(attackSFX);
+                SFXAudioManager.instance.Play("SFX_DefaultAttack");
             }
         }
     }

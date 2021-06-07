@@ -16,6 +16,8 @@ public class ArcherMove : EnemyMove
     public float timeRotatingBeforeShot;
 
     [SerializeField] float shootCooldown;
+    [SerializeField] float shootCooldownSlowDebuff;
+
     private float shootCooldownTimer;
 
     public LayerMask playerLayer;
@@ -60,7 +62,11 @@ public class ArcherMove : EnemyMove
             shootCooldownTimer -= Time.deltaTime;
             if (shootCooldownTimer <= 0)
             {
-                shootCooldownTimer = shootCooldown;
+                if (_slowDebuff)
+                    shootCooldownTimer = shootCooldownSlowDebuff;
+                else
+                    shootCooldownTimer = shootCooldown;
+
                 archerShoot.shootReady = true;
             }
         }

@@ -109,7 +109,7 @@ public class TowerHealth : MonoBehaviour
     public void SpawnHealthPickup()
     {
         if (healthPickup)
-            Instantiate(healthPickup, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y+1, gameObject.transform.position.z) , gameObject.transform.rotation);
+            Instantiate(healthPickup, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1, gameObject.transform.position.z), gameObject.transform.rotation);
     }
 
 }

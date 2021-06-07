@@ -64,7 +64,6 @@ MonoBehaviour:
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7, type: 3}
   PlayerHealthDecreasedEvent: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee, type: 2}
   isPlayerInvincible: {fileID: 11400000, guid: b40bbec5a5cf88544b01b41386fc6c34, type: 2}
-  attackSFX: BarbarianAttack
 --- !u!1 &1304188381929085126
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +283,7 @@ MonoBehaviour:
   MyAttackRange: 5
   timeRotatingBeforeShot: 0.85
   shootCooldown: 2
+  shootCooldownSlowDebuff: 3
   playerLayer:
     serializedVersion: 2
     m_Bits: 256

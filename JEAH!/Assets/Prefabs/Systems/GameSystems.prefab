@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21023f0867b62614a8ecf7af1851851b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicName: 
 --- !u!1 &3405683559932046226
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +374,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: BarbarianAttack
+  - name: SFX_Default_Attack
     clip: {fileID: 8300000, guid: 11fd3923edc6e174284f5035c667f584, type: 3}
     volume: 1
     pitch: 1
