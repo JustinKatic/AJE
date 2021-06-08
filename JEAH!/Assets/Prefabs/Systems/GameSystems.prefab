@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 882962591}
   - component: {fileID: 882962592}
   - component: {fileID: 9218719249456588093}
+  - component: {fileID: 2313447774367637410}
   m_Layer: 0
   m_Name: GameSystems
   m_TagString: GameManager
@@ -323,6 +324,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicName: 
+--- !u!114 &2313447774367637410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603444244312050873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1c2d409f823fe41ab8d57df7581b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearts: {fileID: 11400000, guid: b176d21d84f67ca48b285937e934b1d7, type: 2}
 --- !u!1 &3405683559932046226
 GameObject:
   m_ObjectHideFlags: 0
