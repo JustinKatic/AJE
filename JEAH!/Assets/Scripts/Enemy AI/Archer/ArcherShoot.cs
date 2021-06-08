@@ -10,8 +10,7 @@ public class ArcherShoot : EnemyShoot
     LineRenderer lr;
 
     public bool shootReady;
-
-
+    public Animator anim;
 
     private void Awake()
     {
@@ -39,6 +38,9 @@ public class ArcherShoot : EnemyShoot
             _shotCounter -= Time.deltaTime;
             if (_shotCounter <= 0)
             {
+                anim.SetBool("shoot", true);
+                anim.SetBool("aim", false);
+                Invoke("SetAnimAimBoolFalse", 1);
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("ArcherProjectile");
                 _shotCounter = TimeBetweenShots;
                 bullet.transform.position = _firePoint.position;
@@ -48,10 +50,15 @@ public class ArcherShoot : EnemyShoot
                 CanShoot = false;
                 shootReady = false;
                 SFXAudioManager.instance.Play("ArcherAttack");
-                //if (shootSound)
-                //    shootSound.Play();
             }
         }
     }
+
+    void SetAnimAimBoolFalse()
+    {
+        anim.SetBool("shoot", false);
+    }
+
+
 }
 

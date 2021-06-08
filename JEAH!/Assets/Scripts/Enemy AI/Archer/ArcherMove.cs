@@ -79,6 +79,7 @@ public class ArcherMove : EnemyMove
 
             if (archerShoot.shootReady == true)
             {
+                anim.SetBool("aim", true);
                 rotatingTimer += Time.deltaTime;
                 if (rotatingTimer <= timeRotatingBeforeShot)
                 {
