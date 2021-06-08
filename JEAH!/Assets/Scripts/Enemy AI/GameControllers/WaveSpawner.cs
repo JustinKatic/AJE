@@ -3,7 +3,9 @@ using System.Collections;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.AI;
-
+using UnityEngine.Analytics;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -69,6 +71,8 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] float lengthOfCutscene3;
 
 
+    float timeTakenToCompleteLevel;
+
 
 
 
@@ -76,6 +80,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
+        timeTakenToCompleteLevel = 0;
         cutsceneAnim = UIManager.GetComponent<Animator>();
         currentWaveTxt.text = waves[nextWaveNum.RuntimeValue].name;
         waveCountdown = timeBeforeFirstWave;
@@ -86,6 +91,8 @@ public class WaveSpawner : MonoBehaviour
     {
         if (allWavesComplete)
             return;
+
+        timeTakenToCompleteLevel += Time.deltaTime;
 
         if (State == SpawnState.WAITING)
         {
@@ -126,6 +133,12 @@ public class WaveSpawner : MonoBehaviour
         if (nextWaveNum.RuntimeValue + 1 == waves.Length)
         {
             allWavesComplete = true;
+            Analytics.CustomEvent("Level Complete", new Dictionary<string, object>
+            {
+                 {"Level", SceneManager.GetActiveScene().name},
+                 {"Time Taken", Mathf.RoundToInt(timeTakenToCompleteLevel)},
+                {"Health Remaining",GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealthManager>().currentHealth.RuntimeValue}
+            });
             EndLevel();
         }
         else
@@ -207,7 +220,7 @@ public class WaveSpawner : MonoBehaviour
         }
         else
             AllWavesCompleted.Raise();
-            SFXAudioManager.instance.Play("Victory");
+        SFXAudioManager.instance.Play("Victory");
 
     }
 
@@ -252,7 +265,7 @@ public class WaveSpawner : MonoBehaviour
         yield return new WaitForSeconds(1f);
         cutsceneImg2.SetActive(false);
 
-        
+
 
 
         if (isThereACutscene3Img)

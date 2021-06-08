@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : MonoBehaviour
 {
@@ -41,6 +43,12 @@ public class PlayerHealthManager : MonoBehaviour
             {
                 Debug.Log("playerdied");
                 SFXAudioManager.instance.Play("Defeat");
+
+                Analytics.CustomEvent("Player Died", new Dictionary<string, object>
+            {
+                 {"Level", SceneManager.GetActiveScene().name}
+            });
+
                 PlayerDeath.Raise();
                 playerIsDead.Value = true;
             }
