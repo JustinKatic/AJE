@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 6340457241009497968}
   - component: {fileID: 5282890710993299776}
   - component: {fileID: 3319663159716357531}
+  - component: {fileID: 3964567794453205056}
   m_Layer: 10
   m_Name: Barbarian
   m_TagString: Untagged
@@ -408,6 +409,25 @@ MonoBehaviour:
   deathParticle: {fileID: 6606425185224255905, guid: 7de7ef1b84658f44caed2769adcdd49a, type: 3}
   model: {fileID: 9047101518768769405}
   plagueParticle: {fileID: 5502196732354297079}
+--- !u!95 &3964567794453205056
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952964317118796841}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 414e4b93ce6beea40956acbaac7004df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2413921861015650776
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4148155548538529822}
   - component: {fileID: 710457225902747767}
-  - component: {fileID: 144125693398115659}
+  - component: {fileID: 8259082593262077508}
   m_Layer: 0
   m_Name: HurtZone
   m_TagString: Untagged
@@ -454,7 +474,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &144125693398115659
+--- !u!114 &8259082593262077508
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -463,7 +483,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2413921861015650776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f63ca6a0099e46345ae53b9d53500d11, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e647db2a57d2674cafa65192c312068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _CollidingDamageEveryX: 1

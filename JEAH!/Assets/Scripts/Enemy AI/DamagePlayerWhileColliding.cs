@@ -13,10 +13,13 @@ public class DamagePlayerWhileColliding : MonoBehaviour
     [SerializeField] GameEvent PlayerHealthDecreasedEvent;
     [SerializeField] BoolVariable isPlayerInvincible;
 
+    protected Animator anim;
+
 
 
     private void Start()
     {
+        anim = gameObject.GetComponentInParent<Animator>();
         _timer = _CollidingDamageEveryX;
     }
     private void OnEnable()
@@ -50,8 +53,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
                     _timer = 0.0f;
 
                     SFXAudioManager.instance.Play("SFX_Default_Attack");
-                    
-
+                    AttackAnimation();
                 }
             }
         }
@@ -64,6 +66,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
                 other.gameObject.GetComponent<TowerHealth>().HurtEnemy(_damage, true);
                 _timer = 0.0f;
                 SFXAudioManager.instance.Play("SFX_Default_Attack");
+                AttackAnimation();
             }
         }
     }
@@ -74,5 +77,10 @@ public class DamagePlayerWhileColliding : MonoBehaviour
         {
             _timer = _CollidingDamageEveryX;
         }
+    }
+
+    public virtual void AttackAnimation()
+    {
+        
     }
 }
