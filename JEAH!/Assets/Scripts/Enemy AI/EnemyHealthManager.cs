@@ -29,7 +29,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     [SerializeField] GameObject deathParticle;
     [SerializeField] GameObject model;
-    private new Renderer renderer;
+    private new SkinnedMeshRenderer renderer;
     private Material newMat;
 
     [SerializeField] GameObject plagueParticle;
@@ -38,7 +38,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     private void Start()
     {
-        renderer = model.GetComponent<Renderer>();
+        renderer = model.GetComponent<SkinnedMeshRenderer>();
         newMat = new Material(renderer.material);
         renderer.material = newMat;
     }

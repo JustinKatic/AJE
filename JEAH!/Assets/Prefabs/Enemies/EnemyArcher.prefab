@@ -447,7 +447,7 @@ MonoBehaviour:
   currencySpawn: {fileID: 2042887176326852755}
   plagueDebuff: 0
   deathParticle: {fileID: 6606425185224255905, guid: 7de7ef1b84658f44caed2769adcdd49a, type: 3}
-  model: {fileID: 1776773301112834390}
+  model: {fileID: 1456522524476425379}
   plagueParticle: {fileID: 5465991815611817246}
 --- !u!1 &1776773301112834390
 GameObject:
@@ -1038,14 +1038,19 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: c67e4420762a1cb42838007841cb5c70, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0938a75d33146984186af60e960576f9, type: 3}
---- !u!4 &4910985741292718262 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0938a75d33146984186af60e960576f9, type: 3}
+--- !u!1 &1456522524476425379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6312764074689719294, guid: 0938a75d33146984186af60e960576f9, type: 3}
   m_PrefabInstance: {fileID: 4876812349773688669}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1353190227299996364 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 0938a75d33146984186af60e960576f9, type: 3}
+  m_PrefabInstance: {fileID: 4876812349773688669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4910985741292718262 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0938a75d33146984186af60e960576f9, type: 3}
   m_PrefabInstance: {fileID: 4876812349773688669}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5547652402444142299
