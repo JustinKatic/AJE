@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BarbarianDamageWhileColliding : DamagePlayerWhileColliding
+public class MilitiaDamageWhileColliding : DamagePlayerWhileColliding
 {
     public Animator anim;
     public override void AttackAnimation()
@@ -15,5 +15,4 @@ public class BarbarianDamageWhileColliding : DamagePlayerWhileColliding
         base.OnTriggerExit(other);
         anim.SetBool("isWalking", true);
     }
-
 }

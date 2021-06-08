@@ -418,7 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4148155548538529822}
   - component: {fileID: 710457225902747767}
-  - component: {fileID: 144125693398115659}
+  - component: {fileID: 847556555267384422}
   m_Layer: 0
   m_Name: HurtZone
   m_TagString: Untagged
@@ -454,7 +454,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &144125693398115659
+--- !u!114 &847556555267384422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2413921861015650776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f63ca6a0099e46345ae53b9d53500d11, type: 3}
+  m_Script: {fileID: 11500000, guid: fa8d25c08a456954d912cf9c714569fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _CollidingDamageEveryX: 0.5
@@ -472,6 +472,7 @@ MonoBehaviour:
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7, type: 3}
   PlayerHealthDecreasedEvent: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee, type: 2}
   isPlayerInvincible: {fileID: 11400000, guid: b40bbec5a5cf88544b01b41386fc6c34, type: 2}
+  anim: {fileID: 8258263894202068574}
 --- !u!1 &3179094489868329178
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +536,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -923,6 +924,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: dd504e6e4961310449923f3e3001bcf3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b8f82aaa030f4f4a9208bd58930ce2d, type: 3}
+--- !u!95 &8258263894202068574 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 2b8f82aaa030f4f4a9208bd58930ce2d, type: 3}
+  m_PrefabInstance: {fileID: 2590039174268163023}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2628716340154004516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2b8f82aaa030f4f4a9208bd58930ce2d, type: 3}
