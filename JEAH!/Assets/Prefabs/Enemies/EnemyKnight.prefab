@@ -801,7 +801,7 @@ MonoBehaviour:
   towerAggroTime: 1.5
   towerHasAggro: 0
   hasFoundInitialTarget: 0
-  anim: {fileID: 0}
+  anim: {fileID: 5905228939032629493}
   ChargeSpeed: 25
   MyChargeRange: 5
   chargeUpTime: 1
@@ -1005,6 +1005,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 5d09b07eee8def64ab23b544a551771d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 193ed169f8b6c4641a6b103787a25710, type: 3}
+--- !u!95 &5905228939032629493 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 193ed169f8b6c4641a6b103787a25710, type: 3}
+  m_PrefabInstance: {fileID: 43069825603677540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &509956492076010127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 193ed169f8b6c4641a6b103787a25710, type: 3}
@@ -1146,14 +1151,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e, type: 3}
---- !u!1 &627702398710847025 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 524418144538838438, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e, type: 3}
-  m_PrefabInstance: {fileID: 1148725251242447767}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &627702398710847026 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 524418144538838437, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e, type: 3}
+  m_PrefabInstance: {fileID: 1148725251242447767}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &627702398710847025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 524418144538838438, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e, type: 3}
   m_PrefabInstance: {fileID: 1148725251242447767}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5137336210259548450

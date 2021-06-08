@@ -291,7 +291,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3697446642878641216, guid: c7b941c42af94f044a17cc2100358a8a, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3697446642878641216, guid: c7b941c42af94f044a17cc2100358a8a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2507,7 +2507,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1243310074
 PrefabInstance:
@@ -2938,6 +2938,10 @@ PrefabInstance:
       propertyPath: UIManager
       value: 
       objectReference: {fileID: 5987865969485163052}
+    - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: currentLevel
       value: 12

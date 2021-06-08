@@ -61,6 +61,7 @@ public class KnightMove : EnemyMove
             trail.enabled = true;
             ChargeUpTimer += Time.deltaTime;
             LookTowardChargePos();
+            anim.SetBool("aim", true);
 
             //If not charge pos is found get the targets pos at its current pos and then stop looking for pos.
             if (posFound == false)
@@ -78,6 +79,10 @@ public class KnightMove : EnemyMove
                 //Move agent towards charge Pos.
                 navMeshAgent.isStopped = false;
                 navMeshAgent.SetDestination(chargePos);
+                anim.SetBool("charge", true);
+                anim.SetBool("aim", false);
+
+
 
                 //change speed based of if slowdebuff is true or not.
                 if (!_slowDebuff)
@@ -93,6 +98,8 @@ public class KnightMove : EnemyMove
                         SetEnemyMoveSpeed(MyMoveSpeed);
                     else
                         SetEnemyMoveSpeed(MyMoveSpeed / _slowAmount);
+
+                    anim.SetBool("charge", false);
 
                     //reset variables ready for next time charge state is made true
                     posFound = false;
