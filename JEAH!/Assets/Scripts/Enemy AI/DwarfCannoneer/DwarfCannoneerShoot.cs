@@ -8,6 +8,7 @@ public class DwarfCannoneerShoot : EnemyShoot
 
 
     public bool shotBullet;
+    public Animator anim;
 
 
 
@@ -24,6 +25,10 @@ public class DwarfCannoneerShoot : EnemyShoot
             _shotCounter -= Time.deltaTime;
             if (_shotCounter <= 0)
             {
+                anim.SetBool("aim", false);
+                anim.SetBool("shoot", true);
+
+
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("DwarfCannoneerProjectile");
                 _shotCounter = TimeBetweenShots;
                 bullet.transform.position = _firePoint.position;

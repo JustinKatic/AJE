@@ -39,6 +39,8 @@ public class EnemyMove : MonoBehaviour
 
     public bool hasFoundInitialTarget = false;
 
+    public Animator anim;
+
 
 
     protected virtual void Awake()

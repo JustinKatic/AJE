@@ -13,13 +13,11 @@ public class DamagePlayerWhileColliding : MonoBehaviour
     [SerializeField] GameEvent PlayerHealthDecreasedEvent;
     [SerializeField] BoolVariable isPlayerInvincible;
 
-    protected Animator anim;
 
 
 
     private void Start()
     {
-        anim = gameObject.GetComponentInParent<Animator>();
         _timer = _CollidingDamageEveryX;
     }
     private void OnEnable()
@@ -71,7 +69,7 @@ public class DamagePlayerWhileColliding : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public virtual void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "DamageableTower")
         {
@@ -81,6 +79,6 @@ public class DamagePlayerWhileColliding : MonoBehaviour
 
     public virtual void AttackAnimation()
     {
-        
+
     }
 }

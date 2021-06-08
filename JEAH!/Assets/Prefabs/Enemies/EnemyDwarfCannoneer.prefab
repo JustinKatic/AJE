@@ -625,6 +625,7 @@ MonoBehaviour:
   TagOfTarget: {fileID: 11400000, guid: 3b0bde773cbb5b54693bb62a7198ae21, type: 2}
   CanShoot: 0
   shotBullet: 0
+  anim: {fileID: 5730989216227791646}
 --- !u!114 &6682816962737754754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,6 +648,7 @@ MonoBehaviour:
   towerAggroTime: 1.5
   towerHasAggro: 0
   hasFoundInitialTarget: 0
+  anim: {fileID: 5730989216227791646}
   MyAttackRange: 5
   myFollowRange: 5
   randomXZWanderRangeMinMax: 5
@@ -985,6 +987,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 87714c06317c78c47b97994c0f1444b1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e99ccfc5056b5924a9a97fda766c2104, type: 3}
+--- !u!95 &5730989216227791646 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: e99ccfc5056b5924a9a97fda766c2104, type: 3}
+  m_PrefabInstance: {fileID: 2225347737293598351}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1830920538573752676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e99ccfc5056b5924a9a97fda766c2104, type: 3}
@@ -1051,14 +1058,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15990d81aef49074d8c9f7059bc08e33, type: 3}
---- !u!4 &8926416467984718162 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3771852402206713618, guid: 15990d81aef49074d8c9f7059bc08e33, type: 3}
-  m_PrefabInstance: {fileID: 5744710474227859008}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6600229070588448502 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1450712012315209910, guid: 15990d81aef49074d8c9f7059bc08e33, type: 3}
+  m_PrefabInstance: {fileID: 5744710474227859008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8926416467984718162 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3771852402206713618, guid: 15990d81aef49074d8c9f7059bc08e33, type: 3}
   m_PrefabInstance: {fileID: 5744710474227859008}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6364076277063041960

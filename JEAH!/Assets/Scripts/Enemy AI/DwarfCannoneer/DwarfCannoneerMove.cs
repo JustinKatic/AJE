@@ -86,6 +86,7 @@ public class DwarfCannoneerMove : EnemyMove
             navMeshAgent.ResetPath();
             navMeshAgent.velocity = Vector3.zero;
             navMeshAgent.isStopped = true;
+            anim.SetBool("aim", true);
 
             dwarfCannoneerShoot.CanShoot = true;
             LookTowards();
@@ -93,11 +94,18 @@ public class DwarfCannoneerMove : EnemyMove
             if (dwarfCannoneerShoot.shotBullet == true)
             {
                 dwarfCannoneerShoot.CanShoot = false;
+                anim.SetBool("aim", false);
+                Invoke("SetAnimAimBoolFalse", 1);
                 shootState = false;
                 wanderState = true;
                 dwarfCannoneerShoot.shotBullet = false;
             }
         }
+    }
+
+    void SetAnimAimBoolFalse()
+    {
+        anim.SetBool("shoot", false);
     }
 }
 
