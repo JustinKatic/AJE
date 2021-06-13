@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 37ac4ced89fd9624d9127678250386fa
+guid: 385de449d9534404d906bcd5c1d13ca3
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,10 +7,10 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Tomb
-    second: {fileID: 2100000, guid: 38476526cf7cdaf4b8529565fec066d1, type: 2}
+      name: M_Castle
+    second: {fileID: 2100000, guid: 1d07ed392ded60c47bb6ef2c26bb3223, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -48,7 +48,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    fileIdsGeneration: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -100,7 +100,7 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
