@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e59926cd1fde54d49a6eee4cce8d2aa5
+guid: eb535e31deed84749993ec944adbd88f
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -9,18 +9,8 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_Tower
     second: {fileID: 2100000, guid: a0e2fbe73f3bec54082a35834d29a134, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Tower_Damage
-    second: {fileID: 2100000, guid: a0e2fbe73f3bec54082a35834d29a134, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: a0e2fbe73f3bec54082a35834d29a134, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -46,7 +36,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -58,7 +48,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    fileIdsGeneration: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -110,7 +100,7 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
