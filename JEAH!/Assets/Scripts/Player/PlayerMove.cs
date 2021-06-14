@@ -95,7 +95,7 @@ public class PlayerMove : MonoBehaviour
             if (hitColliders.Length > 0)
             {
                 closestDist = Mathf.Infinity;
-                closestTowerObj = null;
+                //closestTowerObj = null;
 
                 for (int i = 0; i < hitColliders.Length; i++)
                 {

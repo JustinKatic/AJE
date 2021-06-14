@@ -238,7 +238,7 @@ public class WaveSpawner : MonoBehaviour
         else
         {
             cutsceneAnim.Play("FadeInFadeOut");
-            yield return new WaitForSeconds(1);
+            //yield return new WaitForSeconds(1);
             Invoke("CallAllWavesComplete", 0);
             StopCoroutine(cutsceneCo);
         }
@@ -255,7 +255,7 @@ public class WaveSpawner : MonoBehaviour
         else
         {
             cutsceneAnim.Play("FadeInFadeOut");
-            yield return new WaitForSeconds(1);
+            //yield return new WaitForSeconds(1);
             Invoke("CallAllWavesComplete", 0);
             StopCoroutine(cutsceneCo);
         }
@@ -273,7 +273,7 @@ public class WaveSpawner : MonoBehaviour
         else
         {
             cutsceneAnim.Play("FadeInFadeOut");
-            yield return new WaitForSeconds(1);
+            //yield return new WaitForSeconds(1);
             Invoke("CallAllWavesComplete", 0);
             StopCoroutine(cutsceneCo);
         }

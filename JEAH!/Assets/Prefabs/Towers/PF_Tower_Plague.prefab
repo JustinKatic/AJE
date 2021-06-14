@@ -225,7 +225,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &4946890592251375258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,8 +369,8 @@ MonoBehaviour:
   myMaxHealth: 70
   model: {fileID: 7858474803132383735}
   IHaveAHealthBar: 1
-  DeathSound: {fileID: 11400000, guid: f23d1abc21fe46b4387ac9e1159081ea, type: 2}
-  towerSpawnSFX: {fileID: 11400000, guid: 9fe796bc05fcf6a4a97e8276c9dc15e0, type: 2}
+  DeathSound: {fileID: 0}
+  towerSpawnSFX: {fileID: 0}
   deathParticle: {fileID: 2601876884035110369, guid: 4431e82507d5a1746a84c4f78a223a74, type: 3}
   healthPickup: {fileID: 0}
   myTowerCost: {fileID: 11400000, guid: d9797e0c3c925a14291c3a3de950c994, type: 2}
