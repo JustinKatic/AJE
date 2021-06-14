@@ -129,7 +129,11 @@ public class PlayerMove : MonoBehaviour
                 LR.SetPosition(1, new Vector3(closestTowerObj.transform.position.x, 0.5f, closestTowerObj.transform.position.z));
                 playerBeamFX.SetActive(true);
             }
-
+            else
+            {
+                LR.enabled = false;
+                playerBeamFX.SetActive(false);
+            }
         }
     }
 
