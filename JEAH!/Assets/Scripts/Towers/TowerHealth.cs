@@ -52,10 +52,12 @@ public class TowerHealth : MonoBehaviour
 
     public void HurtEnemy(float damage, bool displayDmg)
     {
-        StartCoroutine(HurtEffect());
-        _currentHealth -= damage;
         if (displayDmg)
+        {
+            StartCoroutine(HurtEffect());
             FloatingTxt(damage, transform, "-", Color.red);
+        }
+        _currentHealth -= damage;
         if (IHaveAHealthBar)
             healthBar.SetHealth(_currentHealth);
     }

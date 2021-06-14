@@ -3693,7 +3693,7 @@ PrefabInstance:
       objectReference: {fileID: 486437105}
     - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2603444244312050877, guid: 5bc3cdaf346920148a16bf700474de15, type: 3}
       propertyPath: isACutscene
@@ -7111,6 +7111,10 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3194415815257846772, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.499878
+      objectReference: {fileID: 0}
     - target: {fileID: 3308496867353043492, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -7127,6 +7131,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3308496867353043492, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3308496868225797139, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -7142,6 +7150,14 @@ PrefabInstance:
     - target: {fileID: 3308496868225797139, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308496868225797139, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308496868623496141, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3761341220244223830, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
       propertyPath: m_sharedMaterial
@@ -7413,7 +7429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7081935126733138947, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.0999756
+      value: -5.0998535
       objectReference: {fileID: 0}
     - target: {fileID: 7081935126924529913, guid: 36d4966411abe9d4d8f0e04e481f5735, type: 3}
       propertyPath: m_AnchorMax.y
