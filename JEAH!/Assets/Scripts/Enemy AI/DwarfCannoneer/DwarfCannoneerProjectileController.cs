@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DwarfCannoneerProjectileController : EnemyProjectileController
 {
-    Vector3 targetPos;
+    public Vector3 shootPos;
     [SerializeField] float ExplosionRadius;
     [SerializeField] LayerMask Player;
     [SerializeField] LayerMask AttackableTower;
@@ -18,6 +18,8 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
 
     GameObject player;
 
+
+
     private void Start()
     {
         camShake = GameObject.FindObjectOfType<CameraShake>();
@@ -25,21 +27,14 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
 
     private void OnEnable()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, FindTowerRadiusCheck, AttackableTower);
-
-        if (hitColliders.Length >= 1)
-            targetPos = hitColliders[0].transform.position;
-        else
-            targetPos = player.transform.position;
+        
     }
 
     protected override void MoveBullet()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, _speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, shootPos, _speed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, targetPos) < 0.2f)
+        if (Vector3.Distance(transform.position, shootPos) < 0.2f)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, ExplosionRadius, Player | AttackableTower);
             int i = 0;
@@ -71,5 +66,4 @@ public class DwarfCannoneerProjectileController : EnemyProjectileController
         Instantiate(Explosion, transform.position, Quaternion.Euler(-90, transform.rotation.y, transform.rotation.z));
         base.SetUnActive();
     }
-
 }
