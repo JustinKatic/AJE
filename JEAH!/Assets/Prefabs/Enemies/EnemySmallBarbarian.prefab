@@ -924,6 +924,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: dd504e6e4961310449923f3e3001bcf3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b8f82aaa030f4f4a9208bd58930ce2d, type: 3}
+--- !u!137 &6202634516871780700 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -728028623983768941, guid: 2b8f82aaa030f4f4a9208bd58930ce2d, type: 3}
+  m_PrefabInstance: {fileID: 2590039174268163023}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4083311849293384267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1971306245941827972, guid: 2b8f82aaa030f4f4a9208bd58930ce2d, type: 3}
@@ -1096,6 +1101,14 @@ PrefabInstance:
       propertyPath: ShapeModule.m_MeshRenderer
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 524418144440625963, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e, type: 3}
+      propertyPath: ShapeModule.m_SkinnedMeshRenderer
+      value: 
+      objectReference: {fileID: 6202634516871780700}
+    - target: {fileID: 524418144440625964, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 524418144538838437, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1143,6 +1156,10 @@ PrefabInstance:
     - target: {fileID: 524418144538838438, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e, type: 3}
       propertyPath: m_Name
       value: PS_SlowEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 524418144538838438, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f4740ad625c82d41a1aeaeb55c6cb9e, type: 3}

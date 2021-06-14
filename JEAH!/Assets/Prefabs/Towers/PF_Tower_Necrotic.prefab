@@ -481,8 +481,8 @@ MonoBehaviour:
   myMaxHealth: 130
   model: {fileID: 788352322188040107}
   IHaveAHealthBar: 1
-  DeathSound: {fileID: 11400000, guid: f23d1abc21fe46b4387ac9e1159081ea, type: 2}
-  towerSpawnSFX: {fileID: 11400000, guid: 9fe796bc05fcf6a4a97e8276c9dc15e0, type: 2}
+  DeathSound: {fileID: 0}
+  towerSpawnSFX: {fileID: 0}
   deathParticle: {fileID: 2601876884035110369, guid: 4431e82507d5a1746a84c4f78a223a74, type: 3}
   healthPickup: {fileID: 4602745833125398909, guid: 32b5dcf034d6d3446afdb50446c8fe1c, type: 3}
   myTowerCost: {fileID: 11400000, guid: 20508d648fc77164d8033efbca20c0cb, type: 2}
@@ -683,7 +683,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5809569921255031761, guid: 143185f91ed39e04b9f153c845027b0b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 143185f91ed39e04b9f153c845027b0b, type: 3}
 --- !u!4 &174134926649220891 stripped
 Transform:
