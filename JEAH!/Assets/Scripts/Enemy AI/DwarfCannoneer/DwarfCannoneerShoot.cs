@@ -10,6 +10,8 @@ public class DwarfCannoneerShoot : EnemyShoot
     public bool shotBullet;
     public Animator anim;
 
+    public Vector3 shootPos;
+
 
 
     private void OnEnable()
@@ -31,6 +33,7 @@ public class DwarfCannoneerShoot : EnemyShoot
 
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("DwarfCannoneerProjectile");
                 _shotCounter = TimeBetweenShots;
+                bullet.GetComponent<DwarfCannoneerProjectileController>().shootPos = shootPos;
                 bullet.transform.position = _firePoint.position;
                 bullet.transform.rotation = _firePoint.transform.rotation;
                 bullet.SetActive(true);
