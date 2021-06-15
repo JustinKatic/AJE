@@ -44,7 +44,7 @@ public class ArcherMove : EnemyMove
         {
             navMeshAgent.isStopped = false;
             navMeshAgent.SetDestination(targetDestination.position);
-            LookTowards();
+            //LookTowards();
 
             if (!archerShoot.shootReady && HasLOS() && dist <= MyAttackRange)
             {
