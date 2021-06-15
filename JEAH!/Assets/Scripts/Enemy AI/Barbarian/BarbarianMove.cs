@@ -6,7 +6,7 @@ public class BarbarianMove : EnemyMove
 {
     public override void Move()
     {
-        LookTowards();
+        //LookTowards();
         navMeshAgent.SetDestination(targetDestination.position);
     }
 }
