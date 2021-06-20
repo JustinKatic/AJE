@@ -7,6 +7,8 @@ public class PlagueTower : TowersDefault
 
     public float tickRate;
     public float duration;
+    public GameObject powerUpFx;
+
 
 
     protected override void MyTriggerEffect()
@@ -20,6 +22,16 @@ public class PlagueTower : TowersDefault
             enemy.SetPlagueDebuffTrue(TowerDamage, tickRate, duration);
             i++;
         }
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if (powerdUp)
+            powerUpFx.SetActive(true);
+        else
+            powerUpFx.SetActive(false);
     }
 
 
