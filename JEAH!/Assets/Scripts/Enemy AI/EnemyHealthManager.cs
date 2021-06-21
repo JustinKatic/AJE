@@ -28,6 +28,7 @@ public class EnemyHealthManager : MonoBehaviour
 
 
     [SerializeField] GameObject deathParticle;
+    [SerializeField] Animator damageFXAnim;
     [SerializeField] GameObject model;
     private new SkinnedMeshRenderer renderer;
     private Material newMat;
@@ -63,6 +64,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     public void HurtEnemy(float damage)
     {
+        damageFXAnim.Play("EnemyScaleOnHitFX");
         StartCoroutine(OnHurtEffect());
         _currentHealth -= damage;
         if (IHaveAHealthBar)
