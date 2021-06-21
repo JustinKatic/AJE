@@ -44,7 +44,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] TextMeshProUGUI waveCounterTxt;
     [SerializeField] TextMeshProUGUI currentWaveTxt;
     [SerializeField] GameObject buildPromptTxt;
-    [SerializeField] Animator waveCounterAnim;
+    private Animator waveCounterAnim;
 
 
 
@@ -86,6 +86,7 @@ public class WaveSpawner : MonoBehaviour
         timeTakenToCompleteLevel = 0;
         cutsceneAnim = UIManager.GetComponent<Animator>();
         currentWaveTxt.text = waves[nextWaveNum.RuntimeValue].name;
+        waveCounterAnim = waveCounterTxt.gameObject.GetComponent<Animator>();
         waveCountdown = timeBeforeFirstWave;
         ShowBuildPromptText();
     }
