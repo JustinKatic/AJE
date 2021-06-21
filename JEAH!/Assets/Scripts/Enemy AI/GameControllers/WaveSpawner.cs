@@ -44,6 +44,9 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] TextMeshProUGUI waveCounterTxt;
     [SerializeField] TextMeshProUGUI currentWaveTxt;
     [SerializeField] GameObject buildPromptTxt;
+    [SerializeField] Animator waveCounterAnim;
+
+
 
     [Header("SAVE")]
     [SerializeField] BoolVariableList unlockedLevels;
@@ -118,7 +121,10 @@ public class WaveSpawner : MonoBehaviour
 
         else
         {
+            int currentWaveCounter = (int)Mathf.Round(waveCountdown);
             waveCountdown -= Time.deltaTime;
+            if (currentWaveCounter != (int)Mathf.Round(waveCountdown))
+                waveCounterAnim.Play("TextScaleFX");
             waveCounterTxt.text = Mathf.Round(waveCountdown).ToString();
         }
     }
