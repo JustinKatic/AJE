@@ -64,7 +64,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     public void HurtEnemy(float damage)
     {
-        damageFXAnim.Play("EnemyScaleOnHitFX");
+        //damageFXAnim.Play("EnemyScaleOnHitFX");
         StartCoroutine(OnHurtEffect());
         _currentHealth -= damage;
         if (IHaveAHealthBar)
