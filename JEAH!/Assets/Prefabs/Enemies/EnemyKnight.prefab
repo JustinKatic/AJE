@@ -116,8 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63ca6a0099e46345ae53b9d53500d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _CollidingDamageEveryX: 1
-  _damage: 20
+  _CollidingDamageEveryX: 1.5
+  _damage: 30
   playersCurrentHealth: {fileID: 11400000, guid: 4d7b1cc8dd422994d9a43ef5e09b5796, type: 2}
   floatingDmg: {fileID: 4480678578355624571, guid: fa8d7b65f4875d94bad62cf542575cd7, type: 3}
   PlayerHealthDecreasedEvent: {fileID: 11400000, guid: 65a272667d0f3084c8e53fbd4d7b8aee, type: 2}
@@ -224,7 +224,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.8
+  m_Time: 0.4
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -233,36 +233,45 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: -2.0751877
-        outSlope: -2.0751877
+        value: 0.7236786
+        inSlope: 1.1583755
+        outSlope: 1.1583755
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.74025387
+      - serializedVersion: 3
+        time: 0.42487627
+        value: 0.5921027
+        inSlope: -2.0939646
+        outSlope: -2.0939646
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.18357489
+        outWeight: 0.38513368
       - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: -0.3136364
-        outSlope: -0.3136364
+        time: 0.994812
+        value: 0.013160706
+        inSlope: -0.5555124
+        outSlope: -0.5555124
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.26570046
+        inWeight: 0.43537027
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 0}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.56169456, g: 0.9245283, b: 0.8926978, a: 0}
+      key1: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
+      ctime0: 6939
       ctime1: 65535
       ctime2: 0
       ctime3: 0
@@ -287,7 +296,7 @@ TrailRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.05
   m_Autodestruct: 0
   m_Emitting: 1
 --- !u!1 &2766947497281199158
@@ -741,7 +750,7 @@ NavMeshAgent:
   m_Acceleration: 80
   avoidancePriority: 50
   m_AngularSpeed: 200
-  m_StoppingDistance: 1.5
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -802,10 +811,10 @@ MonoBehaviour:
   towerHasAggro: 0
   hasFoundInitialTarget: 0
   anim: {fileID: 5905228939032629493}
-  ChargeSpeed: 25
-  MyChargeRange: 5
-  chargeUpTime: 1
-  chargeCooldown: 3
+  ChargeSpeed: 30
+  MyChargeRange: 5.5
+  chargeUpTime: 0.8
+  chargeCooldown: 1.4
   trail: {fileID: 1125484145578881197}
 --- !u!114 &2001868712367880853
 MonoBehaviour:
@@ -829,6 +838,7 @@ MonoBehaviour:
   currencySpawn: {fileID: 896518509110834054}
   plagueDebuff: 0
   deathParticle: {fileID: 6606425185224255905, guid: 7de7ef1b84658f44caed2769adcdd49a, type: 3}
+  damageFXAnim: {fileID: 0}
   model: {fileID: 8116269046774070368}
   plagueParticle: {fileID: 5090973573825549829}
 --- !u!1 &6753928225931390937
